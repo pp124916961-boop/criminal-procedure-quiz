@@ -1,124 +1,17 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>刑事訴訟法期間100題｜互動測驗</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>刑事訴訟法期間100題｜獨立題版</title>
 <style>
-:root{--bg:#f4f7fb;--card:#fff;--ink:#172033;--muted:#6d7789;--line:#dfe5ee;--blue:#214f9c;--blue2:#2c6bd8;--green:#137a52;--greenbg:#e9f8f1;--red:#b63b3b;--redbg:#fff0f0}
-*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;color:var(--ink);background:linear-gradient(180deg,#eaf2ff 0,#f7f9fc 300px,#f4f7fb 100%);min-height:100vh}
-button{font:inherit}.wrap{max-width:860px;margin:auto;padding:18px 14px 60px}.hero{padding:24px 4px 16px}.kicker{font-size:13px;font-weight:900;letter-spacing:.08em;color:var(--blue)}h1{font-size:clamp(30px,7vw,48px);line-height:1.08;margin:8px 0 10px;letter-spacing:-.04em}.sub{color:var(--muted);font-size:15px;line-height:1.7}
-.card{background:rgba(255,255,255,.97);border:1px solid var(--line);border-radius:24px;box-shadow:0 18px 48px rgba(24,47,84,.09);padding:20px}.hidden{display:none!important}
-.modebar{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.mode{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 13px;font-weight:800;cursor:pointer}.mode.active{background:var(--blue);border-color:var(--blue);color:#fff}
-.startgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.btn{border:0;border-radius:15px;padding:14px 16px;font-weight:900;cursor:pointer}.primary{background:var(--blue);color:#fff}.secondary{background:#edf3ff;color:var(--blue);border:1px solid #cfddf5}.meta{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:14px;font-weight:800;margin-bottom:10px}.track{height:9px;background:#e8edf5;border-radius:99px;overflow:hidden;margin-bottom:18px}.bar{height:100%;background:linear-gradient(90deg,var(--blue),var(--blue2));width:0;transition:.2s}.chapter{display:inline-block;background:#edf3ff;color:var(--blue);padding:7px 10px;border-radius:999px;font-size:13px;font-weight:900;margin-bottom:12px}
-.question{font-size:clamp(20px,5vw,28px);line-height:1.48;font-weight:900;letter-spacing:-.015em;margin:0 0 18px}.options{display:grid;gap:11px}.opt{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:16px;padding:14px 15px;cursor:pointer;transition:.12s}.opt:hover{border-color:#9fb4d8;transform:translateY(-1px)}.opt:disabled{cursor:default;transform:none}.letter{width:31px;height:31px;border-radius:9px;background:#eef2f7;display:grid;place-items:center;flex:0 0 auto;font-weight:950;color:#4e5b70}.txt{padding-top:2px;font-size:16px;line-height:1.55;font-weight:750}.opt.correct{border-color:#58b48d;background:var(--greenbg)}.opt.correct .letter{background:var(--green);color:#fff}.opt.wrong{border-color:#e19797;background:var(--redbg)}.opt.wrong .letter{background:var(--red);color:#fff}
-.feedback{display:none;margin-top:16px;padding:14px 15px;border-radius:15px;line-height:1.65}.feedback.show{display:block}.feedback.good{background:var(--greenbg);border:1px solid #bfe8d5;color:#0d6845}.feedback.bad{background:var(--redbg);border:1px solid #f0c5c5;color:#963434}.law{display:inline-block;margin-top:7px;background:rgba(255,255,255,.75);padding:5px 8px;border-radius:8px;font-size:13px;font-weight:900}
-.actions{display:flex;gap:10px;margin-top:18px}.actions .btn{flex:1}.ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}.score{text-align:center;font-size:64px;font-weight:950;letter-spacing:-.06em;color:var(--blue);line-height:1}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:20px 0}.stat{background:#f6f8fc;border-radius:14px;padding:12px;text-align:center}.stat b{display:block;font-size:23px}.stat span{font-size:12px;color:var(--muted)}.wrongitem{border-top:1px solid var(--line);padding:12px 0;line-height:1.6;font-size:14px}.note{font-size:12px;color:var(--muted);line-height:1.65;margin-top:16px}
-@media(max-width:560px){.wrap{padding:12px 10px 50px}.card{padding:17px;border-radius:20px}.startgrid{grid-template-columns:1fr}}
+:root{--ink:#172033;--muted:#6d7789;--line:#dfe5ee;--blue:#214f9c;--blue2:#2c6bd8;--green:#137a52;--greenbg:#e9f8f1;--red:#b63b3b;--redbg:#fff0f0}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;color:var(--ink);background:linear-gradient(180deg,#eaf2ff 0,#f7f9fc 300px,#f4f7fb 100%);min-height:100vh}button{font:inherit}.wrap{max-width:860px;margin:auto;padding:18px 14px 60px}.hero{padding:24px 4px 16px}.kicker{font-size:13px;font-weight:900;letter-spacing:.08em;color:var(--blue)}h1{font-size:clamp(30px,7vw,48px);line-height:1.08;margin:8px 0 10px;letter-spacing:-.04em}.sub{color:var(--muted);font-size:15px;line-height:1.7}.card{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 18px 48px rgba(24,47,84,.09);padding:20px}.hidden{display:none!important}.modebar{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.mode{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 13px;font-weight:800;cursor:pointer}.mode.active{background:var(--blue);border-color:var(--blue);color:#fff}.startgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.btn{border:0;border-radius:15px;padding:14px 16px;font-weight:900;cursor:pointer}.primary{background:var(--blue);color:#fff}.secondary{background:#edf3ff;color:var(--blue);border:1px solid #cfddf5}.meta{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:14px;font-weight:800;margin-bottom:10px}.track{height:9px;background:#e8edf5;border-radius:99px;overflow:hidden;margin-bottom:18px}.bar{height:100%;background:linear-gradient(90deg,var(--blue),var(--blue2));width:0;transition:.2s}.chapter{display:inline-block;background:#edf3ff;color:var(--blue);padding:7px 10px;border-radius:999px;font-size:13px;font-weight:900;margin-bottom:12px}.question{font-size:clamp(20px,5vw,28px);line-height:1.48;font-weight:900;margin:0 0 18px}.options{display:grid;gap:11px}.opt{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:16px;padding:14px 15px;cursor:pointer}.opt:disabled{cursor:default}.letter{width:31px;height:31px;border-radius:9px;background:#eef2f7;display:grid;place-items:center;flex:0 0 auto;font-weight:950}.txt{padding-top:2px;font-size:16px;line-height:1.55;font-weight:750}.opt.correct{border-color:#58b48d;background:var(--greenbg)}.opt.correct .letter{background:var(--green);color:#fff}.opt.wrong{border-color:#e19797;background:var(--redbg)}.opt.wrong .letter{background:var(--red);color:#fff}.feedback{display:none;margin-top:16px;padding:14px 15px;border-radius:15px;line-height:1.65}.feedback.show{display:block}.feedback.good{background:var(--greenbg);border:1px solid #bfe8d5;color:#0d6845}.feedback.bad{background:var(--redbg);border:1px solid #f0c5c5;color:#963434}.law{display:inline-block;margin-top:7px;background:#fff;padding:5px 8px;border-radius:8px;font-size:13px;font-weight:900}.actions{display:flex;gap:10px;margin-top:18px}.actions .btn{flex:1}.ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}.score{text-align:center;font-size:64px;font-weight:950;color:var(--blue);line-height:1}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:20px 0}.stat{background:#f6f8fc;border-radius:14px;padding:12px;text-align:center}.stat b{display:block;font-size:23px}.stat span{font-size:12px;color:var(--muted)}.wrongitem{border-top:1px solid var(--line);padding:12px 0;line-height:1.6;font-size:14px}.note{font-size:12px;color:var(--muted);line-height:1.65;margin-top:16px}@media(max-width:560px){.wrap{padding:12px 10px 50px}.card{padding:17px;border-radius:20px}.startgrid{grid-template-columns:1fr}}
 </style>
-</head>
-<body>
-<div class="wrap">
-<header class="hero">
-<div class="kicker">刑事訴訟法｜期間特訓</div>
-<h1>100 題互動選擇題</h1>
-<div class="sub">範圍：總則 → 簡易程序。點 A／B／C／D 後立即顯示對錯、正解與法條提示；支援錯題重考、隨機題序與本機進度保存。</div>
-</header>
-<section id="home" class="card">
-<div class="meta"><span>現行法版本</span><strong>民國115年5月13日修正</strong></div>
-<div class="sub">已依現行法設定：<b>抗告 §406＝10日；準抗告 §416＝10日</b>。</div>
-<div class="modebar">
-<button class="mode active" data-mode="ordered">依篇章順序</button>
-<button class="mode" data-mode="random">隨機100題</button>
-<button class="mode" data-mode="wrong">只考上次錯題</button>
-</div>
-<div class="startgrid">
-<button id="start" class="btn primary">開始考試</button>
-<button id="resume" class="btn secondary">接續上次進度</button>
-</div>
-<div class="note">作答後會立刻判分。瀏覽器關掉再打開，仍可接續上次進度。</div>
-</section>
-<section id="quiz" class="card hidden">
-<div class="meta"><span id="count"></span><span id="mini"></span></div>
-<div class="track"><div id="bar" class="bar"></div></div>
-<div id="chapter" class="chapter"></div>
-<h2 id="q" class="question"></h2>
-<div id="opts" class="options"></div>
-<div id="feedback" class="feedback"></div>
-<div class="actions">
-<button id="backhome" class="btn ghost">回首頁</button>
-<button id="next" class="btn primary hidden">下一題</button>
-</div>
-</section>
-<section id="result" class="card hidden">
-<div class="kicker" style="text-align:center;margin-bottom:8px">作答完成</div>
-<div id="score" class="score">0</div>
-<div class="sub" style="text-align:center">滿分 100</div>
-<div class="stats">
-<div class="stat"><b id="cnum">0</b><span>答對</span></div>
-<div class="stat"><b id="wnum">0</b><span>答錯</span></div>
-<div class="stat"><b id="acc">0%</b><span>正確率</span></div>
-</div>
-<div class="startgrid">
-<button id="retrywrong" class="btn primary">重考錯題</button>
-<button id="restart" class="btn secondary">全部重做</button>
-</div>
-<div id="wronglist"></div>
-</section>
-</div>
+</head><body>
+<div class="wrap"><header class="hero"><div class="kicker">刑事訴訟法｜期間特訓</div><h1>100 題互動選擇題｜獨立題版</h1><div class="sub">範圍：總則 → 簡易程序。每一題都能獨立作答，隨機模式不會出現「前題、同類案件」等需要上下文的敘述。</div></header>
+<section id="home" class="card"><div class="meta"><span>現行法版本</span><strong>民國115年5月13日修正</strong></div><div class="sub">點 A／B／C／D 後立即顯示對錯、正解與法條提示。<b>抗告 §406＝10日；準抗告 §416＝10日。</b></div><div class="modebar"><button class="mode active" data-mode="ordered">依篇章順序</button><button class="mode" data-mode="random">隨機100題</button><button class="mode" data-mode="wrong">只考上次錯題</button></div><div class="startgrid"><button id="start" class="btn primary">開始考試</button><button id="resume" class="btn secondary">接續上次進度</button></div><div class="note">本版已將所有承接前題的題目改寫為完整獨立題幹。</div></section>
+<section id="quiz" class="card hidden"><div class="meta"><span id="count"></span><span id="mini"></span></div><div class="track"><div id="bar" class="bar"></div></div><div id="chapter" class="chapter"></div><h2 id="q" class="question"></h2><div id="opts" class="options"></div><div id="feedback" class="feedback"></div><div class="actions"><button id="backhome" class="btn ghost">回首頁</button><button id="next" class="btn primary hidden">下一題</button></div></section>
+<section id="result" class="card hidden"><div class="kicker" style="text-align:center;margin-bottom:8px">作答完成</div><div id="score" class="score">0</div><div class="sub" style="text-align:center">滿分 100</div><div class="stats"><div class="stat"><b id="cnum">0</b><span>答對</span></div><div class="stat"><b id="wnum">0</b><span>答錯</span></div><div class="stat"><b id="acc">0%</b><span>正確率</span></div></div><div class="startgrid"><button id="retrywrong" class="btn primary">重考錯題</button><button id="restart" class="btn secondary">全部重做</button></div><div id="wronglist"></div></section></div>
 <script src="q1.js"></script><script src="q2.js"></script><script src="q3.js"></script><script src="q4.js"></script>
 <script>
-const QUESTIONS=[...window.QPART1,...window.QPART2,...window.QPART3,...window.QPART4];
-const L=["A","B","C","D"], KEY="cpl100_current_1150513";
-let mode="ordered", state={};
-const $=id=>document.getElementById(id);
-function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-function save(){localStorage.setItem(KEY,JSON.stringify(state))}
-function load(){try{return JSON.parse(localStorage.getItem(KEY))}catch(e){return null}}
-function show(id){["home","quiz","result"].forEach(x=>$(x).classList.toggle("hidden",x!==id))}
-document.querySelectorAll(".mode").forEach(b=>b.onclick=()=>{mode=b.dataset.mode;document.querySelectorAll(".mode").forEach(x=>x.classList.toggle("active",x===b))});
-function newExam(m=mode){
- let order=[...Array(100).keys()];
- if(m==="random")order=shuffle(order);
- if(m==="wrong"){let p=load(),w=p?.wrong||[];order=[...new Set(w)];if(!order.length)order=[...Array(100).keys()]}
- state={mode:m,order,pos:0,correct:0,answers:{},wrong:[]};save();show("quiz");render()
-}
-function render(){
- if(state.pos>=state.order.length){finish();return}
- const qi=state.order[state.pos],x=QUESTIONS[qi];
- $("count").textContent=`第 ${state.pos+1} / ${state.order.length} 題`;
- $("mini").textContent=`答對 ${state.correct}`;
- $("bar").style.width=`${state.pos/state.order.length*100}%`;
- $("chapter").textContent=x.chapter;$("q").textContent=`${qi+1}. ${x.q}`;
- $("opts").innerHTML="";$("feedback").className="feedback";$("next").classList.add("hidden");
- x.opts.forEach((t,i)=>{let b=document.createElement("button");b.className="opt";b.innerHTML=`<span class="letter">${L[i]}</span><span class="txt">${t}</span>`;b.onclick=()=>answer(i);$("opts").appendChild(b)});
- if(state.answers[qi]!==undefined)paint(qi,state.answers[qi])
-}
-function answer(choice){
- const qi=state.order[state.pos];if(state.answers[qi]!==undefined)return;
- const x=QUESTIONS[qi];state.answers[qi]=choice;
- if(choice===x.ans)state.correct++;else state.wrong.push(qi);
- paint(qi,choice);save()
-}
-function paint(qi,choice){
- const x=QUESTIONS[qi],good=choice===x.ans,bs=[...document.querySelectorAll(".opt")];
- bs.forEach((b,i)=>{b.disabled=true;if(i===x.ans)b.classList.add("correct");if(i===choice&&!good)b.classList.add("wrong")});
- let f=$("feedback");f.className=`feedback show ${good?"good":"bad"}`;
- f.innerHTML=`<b>${good?"✓ 正確":"✕ 錯誤"}</b><br>${good?"答對了。":`正確答案：${L[x.ans]}．${x.opts[x.ans]}`}<br>${x.exp}<br><span class="law">法條提示：${x.law}</span>`;
- $("next").classList.remove("hidden");$("mini").textContent=`答對 ${state.correct}`
-}
-function finish(){
- show("result");let total=state.order.length,score=Math.round(state.correct/total*100);
- $("score").textContent=score;$("cnum").textContent=state.correct;$("wnum").textContent=state.wrong.length;$("acc").textContent=score+"%";
- $("wronglist").innerHTML=state.wrong.length?'<div class="kicker" style="margin-top:22px">錯題清單</div>'+state.wrong.map(i=>{let x=QUESTIONS[i];return `<div class="wrongitem"><b>第${i+1}題｜${x.law}</b><br>${x.q}<br><span style="color:var(--green);font-weight:900">正解：${L[x.ans]}．${x.opts[x.ans]}</span></div>`}).join(""):'<div class="feedback show good" style="margin-top:20px"><b>滿分！</b><br>這輪沒有錯題。</div>';
- save()
-}
-$("start").onclick=()=>newExam(mode);
-$("resume").onclick=()=>{let p=load();if(!p?.order?.length)return newExam(mode);state=p;show("quiz");render()};
-$("next").onclick=()=>{state.pos++;save();render();scrollTo({top:0,behavior:"smooth"})};
-$("backhome").onclick=()=>{save();show("home")};
-$("retrywrong").onclick=()=>newExam("wrong");$("restart").onclick=()=>newExam("ordered");
-document.addEventListener("keydown",e=>{if($("quiz").classList.contains("hidden"))return;let k=e.key.toUpperCase(),i=L.indexOf(k);if(i>=0&&!$("opts").children[i].disabled)$("opts").children[i].click();else if(e.key==="Enter"&&!$("next").classList.contains("hidden"))$("next").click()});
-let prev=load();if(prev?.order?.length)$("resume").textContent=`接續上次進度（第 ${Math.min(prev.pos+1,prev.order.length)} 題）`;else{$("resume").disabled=true;$("resume").style.opacity=.55}
-</script>
-</body></html>
+const QUESTIONS=[...(window.QPART1||[]),...(window.QPART2||[]),...(window.QPART3||[]),...(window.QPART4||[])];const L=["A","B","C","D"],KEY="cpl100_independent_v3";let mode="ordered",state={};const $=id=>document.getElementById(id);function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}function save(){localStorage.setItem(KEY,JSON.stringify(state))}function load(){try{return JSON.parse(localStorage.getItem(KEY))}catch(e){return null}}function show(id){["home","quiz","result"].forEach(x=>$(x).classList.toggle("hidden",x!==id))}document.querySelectorAll(".mode").forEach(b=>b.onclick=()=>{mode=b.dataset.mode;document.querySelectorAll(".mode").forEach(x=>x.classList.toggle("active",x===b))});function newExam(m=mode){let order=[...Array(QUESTIONS.length).keys()];if(m==="random")order=shuffle(order);if(m==="wrong"){let p=load(),w=p?.wrong||[];order=[...new Set(w)];if(!order.length)order=[...Array(QUESTIONS.length).keys()]}state={mode:m,order,pos:0,correct:0,answers:{},wrong:[]};save();show("quiz");render()}function render(){if(state.pos>=state.order.length){finish();return}const qi=state.order[state.pos],x=QUESTIONS[qi];$("count").textContent=`第 ${state.pos+1} / ${state.order.length} 題`;$("mini").textContent=`答對 ${state.correct}`;$("bar").style.width=`${state.pos/state.order.length*100}%`;$("chapter").textContent=x.chapter;$("q").textContent=`${qi+1}. ${x.q}`;$("opts").innerHTML="";$("feedback").className="feedback";$("next").classList.add("hidden");x.opts.forEach((t,i)=>{let b=document.createElement("button");b.className="opt";b.innerHTML=`<span class="letter">${L[i]}</span><span class="txt">${t}</span>`;b.onclick=()=>answer(i);$("opts").appendChild(b)});if(state.answers[qi]!==undefined)paint(qi,state.answers[qi])}function answer(choice){const qi=state.order[state.pos];if(state.answers[qi]!==undefined)return;const x=QUESTIONS[qi];state.answers[qi]=choice;if(choice===x.ans)state.correct++;else state.wrong.push(qi);paint(qi,choice);save()}function paint(qi,choice){const x=QUESTIONS[qi],good=choice===x.ans,bs=[...document.querySelectorAll(".opt")];bs.forEach((b,i)=>{b.disabled=true;if(i===x.ans)b.classList.add("correct");if(i===choice&&!good)b.classList.add("wrong")});let f=$("feedback");f.className=`feedback show ${good?"good":"bad"}`;f.innerHTML=`<b>${good?"✓ 正確":"✕ 錯誤"}</b><br>${good?"答對了。":`正確答案：${L[x.ans]}．${x.opts[x.ans]}`}<br>${x.exp}<br><span class="law">法條提示：${x.law}</span>`;$("next").classList.remove("hidden");$("mini").textContent=`答對 ${state.correct}`}function finish(){show("result");let total=state.order.length,score=Math.round(state.correct/total*100);$("score").textContent=score;$("cnum").textContent=state.correct;$("wnum").textContent=state.wrong.length;$("acc").textContent=score+"%";$("wronglist").innerHTML=state.wrong.length?'<div class="kicker" style="margin-top:22px">錯題清單</div>'+state.wrong.map(i=>{let x=QUESTIONS[i];return `<div class="wrongitem"><b>第${i+1}題｜${x.law}</b><br>${x.q}<br><span style="color:var(--green);font-weight:900">正解：${L[x.ans]}．${x.opts[x.ans]}</span></div>`}).join(""):'<div class="feedback show good" style="margin-top:20px"><b>滿分！</b><br>這輪沒有錯題。</div>';save()}$("start").onclick=()=>newExam(mode);$("resume").onclick=()=>{let p=load();if(!p?.order?.length)return newExam(mode);state=p;show("quiz");render()};$("next").onclick=()=>{state.pos++;save();render();scrollTo({top:0,behavior:"smooth"})};$("backhome").onclick=()=>{save();show("home")};$("retrywrong").onclick=()=>newExam("wrong");$("restart").onclick=()=>newExam("ordered");let prev=load();if(prev?.order?.length)$("resume").textContent=`接續上次進度（第 ${Math.min(prev.pos+1,prev.order.length)} 題）`;else{$("resume").disabled=true;$("resume").style.opacity=.55}
+</script></body></html>

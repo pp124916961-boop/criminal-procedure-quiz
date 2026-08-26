@@ -1,22 +1,26 @@
 {
-  "template": "admin-procedure-20-53",
+  "template": "criminal-general-attempt",
   "question_count": 100,
+  "program_reused": true,
+  "source_field": "source",
+  "source_in_explanation": false,
   "schema": {
-    "question": "question",
-    "options": "options",
-    "answer": "answer",
+    "question": "q",
+    "options": "opts",
+    "answer": "ans",
     "law": "basis",
     "explanation": "explanation",
-    "topic": "tag",
-    "id": "id"
+    "source": "source",
+    "topic": "topic",
+    "id": "ans"
   },
-  "program_reused": true,
-  "source_added_inside_existing_explanation": true,
-  "bundle_parts": [
-    5381,
-    5381,
-    5381,
-    5381,
-    5380
-  ]
+  "parts": {
+    "p1.txt": 5134,
+    "p2.txt": 2567,
+    "p2b.txt": 2567,
+    "p3.txt": 5134,
+    "p4.txt": 5134,
+    "p5.txt": 5134,
+    "p6.txt": 266
+  }
 }

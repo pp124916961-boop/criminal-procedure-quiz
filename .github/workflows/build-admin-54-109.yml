@@ -7,6 +7,7 @@ on:
       - 'scripts/build_admin_54_109.py'
       - 'scripts/audit_admin_54_109.py'
       - 'scripts/reuse_criminal_quiz_template.py'
+      - 'scripts/inspect_criminal_template_dom.py'
   workflow_dispatch:
 
 permissions:
@@ -26,6 +27,8 @@ jobs:
         run: python scripts/build_admin_54_109.py
       - name: Audit legal basis and replace out-of-scope items
         run: python scripts/audit_admin_54_109.py
+      - name: Inspect Criminal Law template DOM
+        run: python scripts/inspect_criminal_template_dom.py
       - name: Reuse Criminal Law quiz program
         run: python scripts/reuse_criminal_quiz_template.py
       - name: Verify output

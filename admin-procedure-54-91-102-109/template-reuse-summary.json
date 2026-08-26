@@ -4,6 +4,7 @@
   "program_reused": true,
   "source_field": "source",
   "source_in_explanation": false,
+  "source_position": "above_question",
   "schema": {
     "question": "q",
     "options": "opts",
@@ -27,12 +28,12 @@
     0
   ],
   "parts": {
-    "p1.txt": 5090,
-    "p2.txt": 2545,
-    "p2b.txt": 2545,
-    "p3.txt": 5090,
-    "p4.txt": 5090,
-    "p5.txt": 5090,
-    "p6.txt": 262
+    "p1.txt": 5092,
+    "p2.txt": 2546,
+    "p2b.txt": 2546,
+    "p3.txt": 5092,
+    "p4.txt": 5092,
+    "p5.txt": 5092,
+    "p6.txt": 260
   }
 }

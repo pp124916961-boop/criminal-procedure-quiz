@@ -57,7 +57,6 @@ ekey = find_key(['explanation','exp','analysis','note','reason'], lambda v:isins
 skey = find_key(['source','origin','exam','citation','from','sourceLabel','source_label'], lambda v:isinstance(v,str) and ('年' in v or '考試' in v or '特考' in v or '出處' in v))
 tkey = find_key(['topic','type','category','tag','chapter'], lambda v:isinstance(v,str) and len(v)<=40)
 idkey = find_key(['id','no','number','index'], lambda v:isinstance(v,int))
-# A generic integer fallback must never be allowed to steal the answer field (e.g. Criminal template uses numeric `ans`).
 if idkey in {qkey, okey, akey, lkey, ekey, skey, tkey}:
     idkey = None
 
@@ -106,6 +105,14 @@ for a,b in {
 }.items():
     html = html.replace(a,b)
 
+# Keep the Criminal Law program/layout, but place the dedicated source box ABOVE the question text.
+# Original order: qmeta -> qTitle -> qSource -> options
+# New order:      qmeta -> qSource -> qTitle -> options
+source_move = re.compile(r'(<div class="qtitle" id="qTitle"></div>\s*)(<div class="source" id="qSource"></div>)')
+html, moved = source_move.subn(r'\2\n   \1', html, count=1)
+if moved != 1:
+    raise RuntimeError('Could not move qSource above qTitle in Criminal Law template')
+
 packed = base64.b64encode(gzip.compress(html.encode('utf-8'), compresslevel=9)).decode('ascii')
 orig_sizes = [len((SRC/name).read_text(encoding='utf-8')) for name in part_names]
 orig_total = sum(orig_sizes)
@@ -131,6 +138,7 @@ report = {
     'program_reused': True,
     'source_field': skey,
     'source_in_explanation': False,
+    'source_position': 'above_question',
     'schema': {'question':qkey,'options':okey,'answer':akey,'law':lkey,'explanation':ekey,'source':skey,'topic':tkey,'id':idkey},
     'answer_values_sample': [x.get(akey) for x in converted[:10]],
     'parts': {name: len(part) for name,part in zip(part_names,parts)},

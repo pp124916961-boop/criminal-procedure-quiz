@@ -5,14 +5,12 @@ SRC = Path('criminal-general-attempt')
 DST = Path('admin-procedure-54-91-102-109')
 DST.mkdir(parents=True, exist_ok=True)
 
-# Use the exact bundled program from yesterday's Criminal Law quiz.
 part_names = ['p1.txt','p2.txt','p2b.txt','p3.txt','p4.txt','p5.txt','p6.txt']
 b64 = ''.join((SRC / name).read_text(encoding='utf-8') for name in part_names)
 html = gzip.decompress(base64.b64decode(b64)).decode('utf-8')
 newq = json.loads((DST / 'questions.json').read_text(encoding='utf-8'))
 assert len(newq) == 100
 
-# Find the exact 100-question array in the Criminal Law program.
 patterns = [
     re.compile(r'((?:const|let|var)\s+([A-Za-z_$][\w$]*)\s*=\s*)(\[.*?\])(?=\s*;)', re.S),
     re.compile(r'(([A-Za-z_$][\w$]*)\s*=\s*)(\[.*?\])(?=\s*;)', re.S),
@@ -59,12 +57,13 @@ ekey = find_key(['explanation','exp','analysis','note','reason'], lambda v:isins
 skey = find_key(['source','origin','exam','citation','from','sourceLabel','source_label'], lambda v:isinstance(v,str) and ('年' in v or '考試' in v or '特考' in v or '出處' in v))
 tkey = find_key(['topic','type','category','tag','chapter'], lambda v:isinstance(v,str) and len(v)<=40)
 idkey = find_key(['id','no','number','index'], lambda v:isinstance(v,int))
+# A generic integer fallback must never be allowed to steal the answer field (e.g. Criminal template uses numeric `ans`).
+if idkey in {qkey, okey, akey, lkey, ekey, skey, tkey}:
+    idkey = None
 
 if not (qkey and okey and akey and ekey):
     raise RuntimeError(f'Could not map Criminal Law template schema; keys={sorted(all_keys)}')
 if not skey:
-    # The Criminal Law template is expected to have a dedicated source field.
-    # Refuse to squeeze source into explanation, because the user explicitly asked not to duplicate it there.
     raise RuntimeError(f'Criminal Law template has no dedicated source field; keys={sorted(all_keys)}')
 
 converted = []
@@ -88,31 +87,26 @@ for i, nq in enumerate(newq, 1):
     if tkey:
         base[tkey] = nq.get('topic','')
 
-    # Keep source ONLY in the template's dedicated source field.
+    # Source appears only in the Criminal Law template's dedicated source area.
     base[skey] = nq.get('source','').strip()
 
-    # Explanation contains explanation only; remove any previously appended duplicate source.
+    # Explanation stays clean: no repeated source underneath it.
     exp = nq.get('explanation','').strip()
     exp = re.sub(r'\n\s*原題出處：.*$', '', exp, flags=re.S).strip()
     base[ekey] = exp
-
     converted.append(base)
 
 new_literal = json.dumps(converted, ensure_ascii=False, separators=(',', ':'))
 html = html[:match.start(3)] + new_literal + html[match.end(3):]
 
-# Content labels only. CSS, buttons, navigation, stats, retry logic and layout remain Criminal Law version.
-label_repls = {
+for a,b in {
     '刑法總則到未遂犯': '行政程序法第54～91條、第102～109條',
     '刑法總則': '行政程序法',
     '未遂犯': '聽證、陳述意見、送達',
-}
-for a,b in label_repls.items():
+}.items():
     html = html.replace(a,b)
 
 packed = base64.b64encode(gzip.compress(html.encode('utf-8'), compresslevel=9)).decode('ascii')
-# Preserve yesterday Criminal Law bundle structure: 7 files, including p2b.
-# Use approximately the same split profile as the original, with the remainder in p6.
 orig_sizes = [len((SRC/name).read_text(encoding='utf-8')) for name in part_names]
 orig_total = sum(orig_sizes)
 pos = 0
@@ -138,6 +132,7 @@ report = {
     'source_field': skey,
     'source_in_explanation': False,
     'schema': {'question':qkey,'options':okey,'answer':akey,'law':lkey,'explanation':ekey,'source':skey,'topic':tkey,'id':idkey},
+    'answer_values_sample': [x.get(akey) for x in converted[:10]],
     'parts': {name: len(part) for name,part in zip(part_names,parts)},
 }
 (DST / 'template-reuse-summary.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')

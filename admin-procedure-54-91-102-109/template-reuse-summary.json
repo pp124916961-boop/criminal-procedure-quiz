@@ -1,0 +1,22 @@
+{
+  "template": "admin-procedure-20-53",
+  "question_count": 100,
+  "schema": {
+    "question": "question",
+    "options": "options",
+    "answer": "answer",
+    "law": "basis",
+    "explanation": "explanation",
+    "topic": "tag",
+    "id": "id"
+  },
+  "program_reused": true,
+  "source_added_inside_existing_explanation": true,
+  "bundle_parts": [
+    5381,
+    5381,
+    5381,
+    5381,
+    5380
+  ]
+}

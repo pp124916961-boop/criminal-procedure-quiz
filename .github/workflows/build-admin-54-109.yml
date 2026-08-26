@@ -6,7 +6,7 @@ on:
       - '.github/workflows/build-admin-54-109.yml'
       - 'scripts/build_admin_54_109.py'
       - 'scripts/audit_admin_54_109.py'
-      - 'scripts/reuse_admin_quiz_template.py'
+      - 'scripts/reuse_criminal_quiz_template.py'
   workflow_dispatch:
 
 permissions:
@@ -26,8 +26,8 @@ jobs:
         run: python scripts/build_admin_54_109.py
       - name: Audit legal basis and replace out-of-scope items
         run: python scripts/audit_admin_54_109.py
-      - name: Reuse yesterday quiz program exactly
-        run: python scripts/reuse_admin_quiz_template.py
+      - name: Reuse Criminal Law quiz program
+        run: python scripts/reuse_criminal_quiz_template.py
       - name: Verify output
         run: |
           python - <<'PY'
@@ -36,9 +36,11 @@ jobs:
           r=json.load(open('admin-procedure-54-91-102-109/template-reuse-summary.json',encoding='utf-8'))
           assert len(q)==100
           assert all(len(x['options'])==4 and x['answer'] in 'ABCD' and x['source'] and x['basis']!='OUT' for x in q)
-          assert r['program_reused'] is True and r['question_count']==100
-          assert all(pathlib.Path(f'admin-procedure-54-91-102-109/p{i}.txt').exists() for i in range(1,6))
-          print('verified yesterday-template quiz', len(q), 'questions')
+          assert r['program_reused'] is True and r['template']=='criminal-general-attempt'
+          assert r['source_in_explanation'] is False
+          for name in ['p1.txt','p2.txt','p2b.txt','p3.txt','p4.txt','p5.txt','p6.txt']:
+              assert pathlib.Path('admin-procedure-54-91-102-109',name).exists()
+          print('verified Criminal Law template with dedicated source only', len(q), 'questions')
           PY
       - name: Commit generated quiz
         run: |
@@ -46,5 +48,5 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add admin-procedure-54-91-102-109
           git diff --cached --quiet && exit 0
-          git commit -m 'Reuse yesterday admin quiz program for 54-91 102-109'
+          git commit -m 'Use Criminal Law quiz template for admin procedure 54-91 102-109'
           git push

@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - '.github/workflows/build-admin-54-109.yml'
+      - 'scripts/build_admin_54_109.py'
+      - 'scripts/audit_admin_54_109.py'
   workflow_dispatch:
 
 permissions:
@@ -21,13 +23,15 @@ jobs:
         run: pip install -q pandas pyarrow
       - name: Build 100-question quiz
         run: python scripts/build_admin_54_109.py
+      - name: Audit legal basis and replace out-of-scope items
+        run: python scripts/audit_admin_54_109.py
       - name: Verify output
         run: |
           python - <<'PY'
           import json
           q=json.load(open('admin-procedure-54-91-102-109/questions.json',encoding='utf-8'))
           assert len(q)==100
-          assert all(len(x['options'])==4 and x['answer'] in 'ABCD' and x['source'] for x in q)
+          assert all(len(x['options'])==4 and x['answer'] in 'ABCD' and x['source'] and x['basis']!='OUT' for x in q)
           print('verified', len(q), 'questions')
           PY
       - name: Commit generated quiz
@@ -36,5 +40,5 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add admin-procedure-54-91-102-109
           git diff --cached --quiet && exit 0
-          git commit -m 'Build admin procedure 54-91 102-109 quiz'
+          git commit -m 'Build and audit admin procedure 54-91 102-109 quiz'
           git push

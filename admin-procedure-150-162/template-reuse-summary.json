@@ -1,0 +1,29 @@
+{
+  "template": "admin-procedure-54-91-102-109",
+  "question_count": 100,
+  "program_reused": true,
+  "source_position": "above_question",
+  "source_in_explanation": false,
+  "stale_source_urls_removed": true,
+  "answer_values_sample": [
+    3,
+    3,
+    0,
+    1,
+    0,
+    0,
+    0,
+    3,
+    1,
+    2
+  ],
+  "parts": {
+    "p1.txt": 4469,
+    "p2.txt": 2234,
+    "p2b.txt": 2234,
+    "p3.txt": 4469,
+    "p4.txt": 4469,
+    "p5.txt": 4469,
+    "p6.txt": 228
+  }
+}

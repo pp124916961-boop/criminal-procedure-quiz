@@ -1,0 +1,51 @@
+name: Build Admin Procedure 92-134 Quiz
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-admin-92-134.yml'
+      - 'scripts/build_admin_92_134.py'
+      - 'scripts/reuse_current_admin_template_92_134.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install -q pandas pyarrow
+      - name: Build original-question bank
+        run: python scripts/build_admin_92_134.py
+      - name: Reuse current quiz program exactly
+        run: python scripts/reuse_current_admin_template_92_134.py
+      - name: Verify output
+        run: |
+          python - <<'PY'
+          import json,pathlib
+          q=json.load(open('admin-procedure-92-134/questions.json',encoding='utf-8'))
+          b=json.load(open('admin-procedure-92-134/build-summary.json',encoding='utf-8'))
+          r=json.load(open('admin-procedure-92-134/template-reuse-summary.json',encoding='utf-8'))
+          assert len(q)==100
+          assert len({x['question']+'|'.join(x['options']) for x in q})==100
+          assert all(len(x['options'])==4 and x['answer'] in 'ABCD' and x['source'] and x['basis'] for x in q)
+          assert b['original_questions_unedited'] is True
+          assert r['program_reused'] is True and r['source_position']=='above_question' and r['source_in_explanation'] is False
+          for n in ['index.html','p1.txt','p2.txt','p2b.txt','p3.txt','p4.txt','p5.txt','p6.txt']:
+              assert pathlib.Path('admin-procedure-92-134',n).exists()
+          print('verified APA 92-134',b,r)
+          PY
+      - name: Commit generated quiz
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add admin-procedure-92-134
+          git diff --cached --quiet && exit 0
+          git commit -m 'Build APA 92-134 original-question quiz'
+          git push

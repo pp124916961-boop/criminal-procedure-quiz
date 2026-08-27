@@ -1,0 +1,44 @@
+name: Fix Beigang Patrol v14 QR
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-beigang-v14.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fix QR popup on Beigang Patrol v14
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('beigang-patrol-v14/index.html')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace(
+              '<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>',
+              '<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>'
+          )
+          s = s.replace(
+              '#qr canvas{display:block;width:min(76vw,430px)!important;height:auto!important;margin:auto;background:#fff;border:10px solid #fff;image-rendering:pixelated}',
+              '#qr canvas,#qr img{display:block;width:min(76vw,430px)!important;height:auto!important;margin:auto;background:#fff;border:10px solid #fff;image-rendering:pixelated}'
+          )
+          old = "QRCode.toCanvas(p.q,{width:430,margin:4,errorCorrectionLevel:'M'},(e,c)=>{if(!e)q.appendChild(c)});"
+          new = "new QRCode(q,{text:p.q,width:430,height:430,colorDark:'#000000',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});"
+          if old not in s:
+              raise SystemExit('Expected QR render code not found')
+          s = s.replace(old, new)
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add beigang-patrol-v14/index.html
+          git diff --cached --quiet || git commit -m "Fix Beigang patrol v14 QR popup"
+          git push

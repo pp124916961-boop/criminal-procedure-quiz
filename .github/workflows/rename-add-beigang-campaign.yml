@@ -1,0 +1,63 @@
+name: Rename and Add Beigang Campaign Points
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/rename-add-beigang-campaign.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch patrol data
+        run: |
+          python - <<'PY'
+          import re, base64, gzip, json
+          from pathlib import Path
+          p=Path('beigang-patrol-v14/index.html')
+          s=p.read_text(encoding='utf-8')
+          m=re.search(r'const gz="([A-Za-z0-9+/=]+)";',s)
+          if not m:
+              raise SystemExit('gz data not found')
+          data=json.loads(gzip.decompress(base64.b64decode(m.group(1))).decode('utf-8'))
+
+          old_name='王雅雯、蔡岳儒、劉建國 北港聯合競選總部'
+          renamed_name='北港聯合競選宣傳車停放處'
+          new_payload='yiHt73XhZdptLkiV20fj1WmzRDGkzKillJI8jLAqO8I='
+
+          changed=False
+          # 將原本的競選總部 QR 點位改名（保留原 QR 不變）
+          for x in data:
+              if x.get('r')=='其他巡簽點' and x.get('n')==old_name:
+                  x['n']=renamed_name
+                  changed=True
+                  break
+
+          # 新增目前上傳的新 QR，名稱設為原競選總部名稱
+          if not any(x.get('r')=='其他巡簽點' and x.get('q')==new_payload for x in data):
+              used={x.get('i') for x in data}
+              num=111
+              while f'init-{num}' in used:
+                  num+=1
+              data.append({'i':f'init-{num}','r':'其他巡簽點','n':old_name,'q':new_payload})
+              changed=True
+
+          if changed:
+              new=base64.b64encode(gzip.compress(json.dumps(data,ensure_ascii=False,separators=(',',':')).encode('utf-8'))).decode('ascii')
+              s=s[:m.start(1)]+new+s[m.end(1):]
+              p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- beigang-patrol-v14/index.html; then
+            echo 'No changes needed'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add beigang-patrol-v14/index.html
+          git commit -m 'Rename campaign vehicle point and add campaign HQ QR'
+          git push

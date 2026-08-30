@@ -1,0 +1,52 @@
+name: Add Beigang Other Points
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/add-beigang-other-points.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch patrol data
+        run: |
+          python - <<'PY'
+          import re, base64, gzip, json
+          from pathlib import Path
+          p=Path('beigang-patrol-v14/index.html')
+          s=p.read_text(encoding='utf-8')
+          m=re.search(r'const gz="([A-Za-z0-9+/=]+)";',s)
+          if not m:
+              raise SystemExit('gz data not found')
+          data=json.loads(gzip.decompress(base64.b64decode(m.group(1))).decode('utf-8'))
+          additions=[
+            {"i":"init-106","r":"其他巡簽點","n":"里長宅（第八勤務區）","q":"5ICb2G79qyppRw5sInaHXSK/YmavP/5sSs0wIHFHBys="},
+            {"i":"init-107","r":"其他巡簽點","n":"全家銀樓（第八勤務區）","q":"+y50tf89JYYjqMZ69G9sLK72l8lezyqXdoW6+IgWth0="},
+            {"i":"init-108","r":"其他巡簽點","n":"一鄰鄰長宅（第十一勤務區）","q":"Jee0J2xwSUZiuOMuTa6Rjx2KWNShPo9Q3zrodwuo+Jo="},
+            {"i":"init-109","r":"其他巡簽點","n":"英山醫院","q":"dLYxp/L+qXBuXIXrX1NiW1ETfpMq+YXxn2xO8BZAvgg="}
+          ]
+          ids={x.get('i') for x in data}
+          changed=False
+          for x in additions:
+              if x['i'] not in ids:
+                  data.append(x); changed=True
+          if changed:
+              new=base64.b64encode(gzip.compress(json.dumps(data,ensure_ascii=False,separators=(',',':')).encode('utf-8'))).decode('ascii')
+              s=s[:m.start(1)]+new+s[m.end(1):]
+              p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- beigang-patrol-v14/index.html; then
+            echo 'No changes needed'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add beigang-patrol-v14/index.html
+          git commit -m 'Add 4 patrol points to Beigang v14'
+          git push

@@ -1,0 +1,44 @@
+name: Add Beigang Campaign HQ
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/add-beigang-campaign-hq.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch patrol data
+        run: |
+          python - <<'PY'
+          import re, base64, gzip, json
+          from pathlib import Path
+          p=Path('beigang-patrol-v14/index.html')
+          s=p.read_text(encoding='utf-8')
+          m=re.search(r'const gz="([A-Za-z0-9+/=]+)";',s)
+          if not m:
+              raise SystemExit('gz data not found')
+          data=json.loads(gzip.decompress(base64.b64decode(m.group(1))).decode('utf-8'))
+          addition={"i":"init-110","r":"其他巡簽點","n":"王雅雯、蔡岳儒、劉建國 北港聯合競選總部","q":"1ndR1JyAM2gYTveGJo11tVRqcf5oL/t5rD7bCcH2IQk="}
+          ids={x.get('i') for x in data}
+          if addition['i'] not in ids:
+              data.append(addition)
+              new=base64.b64encode(gzip.compress(json.dumps(data,ensure_ascii=False,separators=(',',':')).encode('utf-8'))).decode('ascii')
+              s=s[:m.start(1)]+new+s[m.end(1):]
+              p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- beigang-patrol-v14/index.html; then
+            echo 'No changes needed'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add beigang-patrol-v14/index.html
+          git commit -m 'Add campaign HQ patrol point to Beigang v14'
+          git push

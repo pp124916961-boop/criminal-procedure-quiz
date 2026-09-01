@@ -1,32 +1,137 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=yes">
-<meta name="theme-color" content="#f1ece4">
-<title>考試筆記</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
-:root{--paper:#fffdfa;--ink:#1e1d1b;--red:#c83333;--desk:#d3cabc;--border:#d7ccbf;--muted:#71695f}
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;color:var(--ink);background:#eee8de;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}button,input{font:inherit}.hidden{display:none!important}
-#home{height:100dvh;padding:max(12px,env(safe-area-inset-top)) 14px max(12px,env(safe-area-inset-bottom));display:grid;place-items:center;background:radial-gradient(circle at 15% 8%,#fff 0,transparent 27%),linear-gradient(145deg,#f6f0e6,#e7dccd)}
-.home-card{width:min(520px,100%);height:min(740px,100%);display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:clamp(8px,1.7vh,15px)}.brand{display:flex;align-items:center;gap:13px}.mark{width:50px;height:50px;border-radius:16px;background:#292622;color:#fff;display:grid;place-items:center;font-size:27px;font-weight:900;box-shadow:0 10px 24px #544b4030}.eyebrow{margin:0;color:var(--red);font:900 10px/1.2 system-ui;letter-spacing:.16em}.brand h1{margin:3px 0 0;font-size:clamp(30px,5.3vh,44px);line-height:1}.subjects{display:grid;grid-template-rows:repeat(6,minmax(42px,1fr));gap:clamp(6px,1vh,10px);min-height:0}.subject{border:1px solid var(--border);border-radius:16px;background:#fffdf9e8;padding:0 18px;display:flex;align-items:center;text-align:left;font-size:clamp(17px,2.45vh,21px);font-weight:700;color:var(--ink);box-shadow:0 6px 18px #3a2c2110;cursor:pointer}.subject:active{transform:scale(.987)}.subject.ready{border-color:#c7a89b;background:#fff8f3}.arrow{margin-left:auto;color:#9c9084;font-size:27px}.tag{margin-left:auto;background:#ecd9d1;color:var(--red);font:800 11px system-ui;border-radius:99px;padding:4px 8px}.subject.ready .arrow{margin-left:8px}.foot{text-align:center;color:var(--muted);font-size:11px;margin:0}
-#viewer{height:100dvh;display:grid;grid-template-rows:auto minmax(0,1fr) auto;background:var(--desk)}.viewer-head{height:62px;padding:max(7px,env(safe-area-inset-top)) 10px 6px;display:grid;grid-template-columns:44px 1fr 44px;align-items:center;background:#fffdf9fa;border-bottom:1px solid var(--border);z-index:4}.viewer-title{text-align:center}.viewer-title p{margin:0;color:var(--red);font:900 9px system-ui;letter-spacing:.14em}.viewer-title h2{margin:2px 0 0;font-size:22px;line-height:1}.icon{width:40px;height:40px;border:1px solid var(--border);border-radius:13px;background:#fff;color:var(--ink);display:grid;place-items:center;font-size:27px;cursor:pointer}
-.stage{position:relative;min-height:0;overflow:hidden;padding:8px;background:linear-gradient(#d8d0c5,#c8bcac)}.sheet-frame{position:absolute;left:50%;top:50%;width:900px;height:1270px;transform-origin:center center;flex:none}.note-sheet{position:absolute;inset:0;width:900px;height:1270px;overflow:hidden;padding:68px 55px 42px 78px;background:var(--paper);box-shadow:0 12px 34px #372b2022;border:1px solid #ece3d8;border-radius:12px;font-size:25px;line-height:1.42;letter-spacing:0;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}.note-sheet:before,.note-sheet:after{display:none!important}.note-sheet.dense{font-size:21px;line-height:1.3}.note-sheet.loose{font-size:26px;line-height:1.56}.note-sheet h1{text-align:center;margin:0 0 12px;font-size:42px;line-height:1.1;font-weight:700}.note-sheet h2{font-size:30px;line-height:1.18;margin:13px 0 9px;font-weight:700}.note-sheet p{margin:7px 0}.headrow{display:flex;align-items:center;gap:55px}.headrow h2{margin:0}.memo{font-size:30px}.item{margin:11px 0}.red{color:var(--red)}.black{color:var(--ink)}.underline{text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:2px;text-underline-offset:4px}.center{text-align:center}.star:before{content:"☆";color:var(--red);font-size:1.2em;margin-right:4px}.circ{display:inline-grid;place-items:center;min-width:1.55em;height:1.55em;padding:0 .16em;border:2px solid currentColor;border-radius:50%;line-height:1}.boxword,.boxed{border:2px solid currentColor;padding:1px 5px}.side{float:right;margin-left:10px}.side-tree{position:absolute;right:65px;margin-top:-120px}.longarrow{display:inline-block;min-width:430px}.flow{text-align:center;margin:25px 0;word-spacing:8px}.diagram{margin:15px 0}.small,small{display:block;font-size:.76em}.inline{display:inline-flex!important;margin-left:15px}.badges{display:flex;gap:100px;margin:15px 0 10px 100px}.badges span{border:3px solid var(--ink);border-radius:50%;padding:6px 12px}
-.tree{position:relative;margin:5px 0 5px 26px;padding-left:22px;border-left:3px solid var(--ink)}.tree>div{position:relative;margin:5px 0}.tree>div:before{content:"";position:absolute;left:-24px;top:.68em;width:18px;border-top:3px solid var(--ink)}.tree>div:last-child:after{content:"";position:absolute;left:-25px;top:.72em;bottom:-8px;width:5px;background:var(--paper)}.tree.tight{margin-top:2px;margin-bottom:2px}.tree.tight>div{margin:1px 0}.tree.wide{margin-left:45px}.tree.horizontal{display:flex;align-items:flex-start;gap:35px;border-left:0;padding-left:0}.tree.horizontal>div:before,.tree.horizontal>div:after{display:none}.tree.horizontal>div{margin:0}.tree.inline{border:0;padding:0}.tree.inline span{margin:0 12px}.tree.inline span+span:before{content:"／";margin-right:15px}.tree.red{border-color:var(--red)}.tree.red>div:before{border-color:var(--red)}.tree.red>div:last-child:after{background:var(--paper)}.pairlist{display:grid;grid-template-columns:1fr 1fr;gap:5px 32px;margin:8px 40px}.pairlist span:nth-child(even){border-left:2px solid #999;padding-left:25px}
-table{width:100%;border-collapse:collapse;margin:12px 0;background:#fffefa;font-size:.93em}th,td{border:2px solid var(--ink);padding:5px 7px;vertical-align:top;text-align:center}th{font-weight:700}.note-sheet.dense table{font-size:.88em}
-.controls{background:#fffdf9fc;border-top:1px solid var(--border);padding:8px 11px calc(8px + env(safe-area-inset-bottom));z-index:4}.pager{display:grid;grid-template-columns:1fr auto 1fr;gap:9px;align-items:center}.nav{height:39px;border:1px solid var(--border);border-radius:12px;background:#fff;color:var(--ink);font-weight:700;cursor:pointer}.nav:disabled{opacity:.34}.counter{min-width:80px;text-align:center;color:var(--muted);font:500 13px system-ui}.counter strong{color:var(--ink);font-size:18px}.slide{display:grid;grid-template-columns:22px 1fr 28px;align-items:center;gap:7px;margin-top:7px}.edge{font:700 10px system-ui;text-align:center;color:var(--muted)}#pageSlider{appearance:none;-webkit-appearance:none;width:100%;height:23px;background:transparent;margin:0}#pageSlider::-webkit-slider-runnable-track{height:5px;border-radius:99px;background:#d9cfc4}#pageSlider::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--red);border:2px solid white;margin-top:-7.5px;box-shadow:0 2px 7px #0003}#pageSlider::-moz-range-track{height:5px;border-radius:99px;background:#d9cfc4}#pageSlider::-moz-range-thumb{width:18px;height:18px;border:2px solid white;border-radius:50%;background:var(--red)}
-.modal{position:fixed;inset:0;z-index:20;display:grid;place-items:center;background:#1f1b187f;padding:22px;backdrop-filter:blur(5px)}.modal-card{width:min(340px,100%);background:#fffdf9;border-radius:22px;padding:24px;text-align:center;box-shadow:0 18px 55px #42302422}.modal-card h3{margin:0 0 8px;font-size:21px}.modal-card p{margin:0 0 18px;color:var(--muted);font-size:15px;line-height:1.55}.ok{width:100%;height:44px;border:0;border-radius:13px;background:var(--ink);color:#fff;font-weight:700}
-#zoom{position:fixed;inset:0;z-index:30;background:#171615;display:grid;grid-template-rows:50px minmax(0,1fr)}.zoom-bar{display:flex;align-items:center;justify-content:space-between;padding:0 12px;color:#fff;background:#201f1e}.zoom-label{font:700 12px system-ui}.close{width:38px;height:38px;border:0;border-radius:11px;background:#353331;color:#fff;font-size:26px}.zoom-area{overflow:auto;-webkit-overflow-scrolling:touch;padding:16px;touch-action:pan-x pan-y pinch-zoom}.zoom-sheet{position:relative;width:900px;height:1270px;margin:0 auto}
-@media(max-height:610px){.home-card{gap:6px}.mark{width:42px;height:42px}.brand h1{font-size:28px}.subjects{gap:5px}.subject{font-size:15px;border-radius:13px}.foot{display:none}.viewer-head{height:54px}.controls{padding-top:5px;padding-bottom:calc(5px + env(safe-area-inset-bottom))}.nav{height:34px}.slide{margin-top:3px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=yes">
+  <meta name="theme-color" content="#f1ece4">
+  <title>考試筆記</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Iansui&display=swap');
+    :root{--paper:#fffdfa;--ink:#1e1d1b;--red:#c83333;--rule:#d9dfd9;--desk:#d3cabc;--border:#d7ccbf;--muted:#71695f}
+    *{box-sizing:border-box}
+    html,body{margin:0;width:100%;height:100%;overflow:hidden;color:var(--ink);background:#eee8de;font-family:"Iansui","Klee One","DFKai-SB","標楷體",cursive}
+    button,input{font:inherit}.hidden{display:none!important}
+
+    #home{height:100dvh;padding:max(12px,env(safe-area-inset-top)) 14px max(12px,env(safe-area-inset-bottom));display:grid;place-items:center;background:radial-gradient(circle at 15% 8%,#fff 0,transparent 27%),linear-gradient(145deg,#f6f0e6,#e7dccd)}
+    .home-card{width:min(520px,100%);height:min(740px,100%);display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:clamp(8px,1.7vh,15px)}
+    .brand{display:flex;align-items:center;gap:13px}
+    .mark{width:50px;height:50px;border-radius:16px;background:#292622;color:#fff;display:grid;place-items:center;font-size:27px;font-weight:900;box-shadow:0 10px 24px #544b4030}
+    .eyebrow{margin:0;color:var(--red);font:900 10px/1.2 system-ui;letter-spacing:.16em}
+    .brand h1{margin:3px 0 0;font-size:clamp(30px,5.3vh,44px);line-height:1}
+    .subjects{display:grid;grid-template-rows:repeat(6,minmax(42px,1fr));gap:clamp(6px,1vh,10px);min-height:0}
+    .subject{border:1px solid var(--border);border-radius:16px;background:#fffdf9e8;padding:0 18px;display:flex;align-items:center;text-align:left;font-size:clamp(17px,2.45vh,21px);font-weight:700;color:var(--ink);box-shadow:0 6px 18px #3a2c2110;cursor:pointer}
+    .subject:active{transform:scale(.987)}
+    .subject.ready{border-color:#c7a89b;background:#fff8f3}
+    .arrow{margin-left:auto;color:#9c9084;font-size:27px}
+    .tag{margin-left:auto;background:#ecd9d1;color:var(--red);font:800 11px system-ui;border-radius:99px;padding:4px 8px}
+    .subject.ready .arrow{margin-left:8px}
+    .foot{text-align:center;color:var(--muted);font-size:11px;margin:0}
+
+    #viewer{height:100dvh;display:grid;grid-template-rows:auto minmax(0,1fr) auto;background:var(--desk)}
+    .viewer-head{height:62px;padding:max(7px,env(safe-area-inset-top)) 10px 6px;display:grid;grid-template-columns:44px 1fr 44px;align-items:center;background:#fffdf9fa;border-bottom:1px solid var(--border);z-index:4}
+    .viewer-title{text-align:center}
+    .viewer-title p{margin:0;color:var(--red);font:900 9px system-ui;letter-spacing:.14em}
+    .viewer-title h2{margin:2px 0 0;font-size:22px;line-height:1}
+    .icon{width:40px;height:40px;border:1px solid var(--border);border-radius:13px;background:#fff;color:var(--ink);display:grid;place-items:center;font-size:27px;cursor:pointer}
+
+    .stage{position:relative;min-height:0;overflow:hidden;padding:10px;background:linear-gradient(#d8d0c5,#c8bcac)}
+    .sheet-frame{position:absolute;left:50%;top:50%;width:900px;height:1270px;transform-origin:center center;flex:none}
+    .note-sheet{position:absolute;inset:0;width:900px;height:1270px;overflow:hidden;padding:68px 55px 42px 78px;background-color:var(--paper);box-shadow:0 9px 30px #372b201f;font-size:25px;line-height:1.42;letter-spacing:.008em}
+    .note-sheet:before,.note-sheet:after{display:none!important;content:none!important}
+    .note-sheet.dense{font-size:21px;line-height:1.3}.note-sheet.loose{font-size:26px;line-height:1.56}
+    .note-sheet h1{text-align:center;margin:0 0 12px;font-size:42px;line-height:1.1;font-weight:600}
+    .note-sheet h2{font-size:30px;line-height:1.18;margin:13px 0 9px;font-weight:600}
+    .note-sheet p{margin:7px 0}
+    .headrow{display:flex;align-items:center;gap:55px}.headrow h2{margin:0}.memo{font-size:30px}.item{margin:11px 0}
+    .red{color:var(--red)}.black{color:var(--ink)}.underline{text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:2px;text-underline-offset:4px}.center{text-align:center}
+    .star:before{content:"☆";color:var(--red);font-size:1.2em;margin-right:4px}.circ{display:inline-grid;place-items:center;min-width:1.55em;height:1.55em;padding:0 .16em;border:2px solid currentColor;border-radius:50%;line-height:1}.boxword,.boxed{border:2px solid currentColor;padding:1px 5px}
+    .side{float:right;margin-left:10px}.side-tree{position:absolute;right:65px;margin-top:-120px}.longarrow{display:inline-block;min-width:430px}.flow{text-align:center;margin:25px 0;word-spacing:8px}.diagram{margin:15px 0}.small,small{display:block;font-size:.76em}.inline{display:inline-flex!important;margin-left:15px}.badges{display:flex;gap:100px;margin:15px 0 10px 100px}.badges span{border:3px solid var(--ink);border-radius:50%;padding:6px 12px}
+    .tree{position:relative;margin:5px 0 5px 26px;padding-left:22px;border-left:3px solid var(--ink)}
+    .tree>div{position:relative;margin:5px 0}
+    .tree>div:before{content:"";position:absolute;left:-24px;top:.68em;width:18px;border-top:3px solid var(--ink)}
+    .tree>div:last-child:after{content:"";position:absolute;left:-25px;top:.72em;bottom:-8px;width:5px;background:var(--paper)}
+    .tree.tight{margin-top:2px;margin-bottom:2px}.tree.tight>div{margin:1px 0}.tree.wide{margin-left:45px}.tree.horizontal{display:flex;align-items:flex-start;gap:35px;border-left:0;padding-left:0}.tree.horizontal>div:before,.tree.horizontal>div:after{display:none}.tree.horizontal>div{margin:0}.tree.inline{border:0;padding:0}.tree.inline span{margin:0 12px}.tree.inline span+span:before{content:"／";margin-right:15px}.tree.red{border-color:var(--red)}.tree.red>div:before{border-color:var(--red)}.tree.red>div:last-child:after{background:var(--paper)}.pairlist{display:grid;grid-template-columns:1fr 1fr;gap:5px 32px;margin:8px 40px}.pairlist span:nth-child(even){border-left:2px solid #999;padding-left:25px}
+    table{width:100%;border-collapse:collapse;margin:12px 0;background:#fffefa9e;font-size:.93em}th,td{border:2px solid var(--ink);padding:5px 7px;vertical-align:top;text-align:center}th{font-weight:600}.note-sheet.dense table{font-size:.88em}
+
+    .controls{background:#fffdf9fc;border-top:1px solid var(--border);padding:8px 11px calc(8px + env(safe-area-inset-bottom));z-index:4}
+    .pager{display:grid;grid-template-columns:1fr auto 1fr;gap:9px;align-items:center}
+    .nav{height:39px;border:1px solid var(--border);border-radius:12px;background:#fff;color:var(--ink);font-weight:700;cursor:pointer}
+    .nav:disabled{opacity:.34}
+    .counter{min-width:80px;text-align:center;color:var(--muted);font:500 13px system-ui}.counter strong{color:var(--ink);font-size:18px}
+    .slide{display:grid;grid-template-columns:22px 1fr 28px;align-items:center;gap:7px;margin-top:7px}.edge{font:700 10px system-ui;text-align:center;color:var(--muted)}
+    #pageSlider{appearance:none;-webkit-appearance:none;width:100%;height:23px;background:transparent;margin:0}
+    #pageSlider::-webkit-slider-runnable-track{height:5px;border-radius:99px;background:#d9cfc4}
+    #pageSlider::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--red);border:2px solid white;margin-top:-7.5px;box-shadow:0 2px 7px #0003}
+    #pageSlider::-moz-range-track{height:5px;border-radius:99px;background:#d9cfc4}
+    #pageSlider::-moz-range-thumb{width:18px;height:18px;border:2px solid white;border-radius:50%;background:var(--red)}
+
+    .modal{position:fixed;inset:0;z-index:20;display:grid;place-items:center;background:#1f1b187f;padding:22px;backdrop-filter:blur(5px)}
+    .modal-card{width:min(340px,100%);background:#fffdf9;border-radius:22px;padding:24px;text-align:center;box-shadow:0 18px 55px #42302422}
+    .modal-card h3{margin:0 0 8px;font-size:21px}.modal-card p{margin:0 0 18px;color:var(--muted);font-size:15px;line-height:1.55}.ok{width:100%;height:44px;border:0;border-radius:13px;background:var(--ink);color:#fff;font-weight:700}
+
+    #zoom{position:fixed;inset:0;z-index:30;background:#171615;display:grid;grid-template-rows:50px minmax(0,1fr)}
+    .zoom-bar{display:flex;align-items:center;justify-content:space-between;padding:0 12px;color:#fff;background:#201f1e}
+    .zoom-label{font:700 12px system-ui}.close{width:38px;height:38px;border:0;border-radius:11px;background:#353331;color:#fff;font-size:26px}
+    .zoom-area{overflow:auto;-webkit-overflow-scrolling:touch;padding:16px;touch-action:pan-x pan-y pinch-zoom}.zoom-sheet{position:relative;width:900px;height:1270px;margin:0 auto}
+
+    @media(max-height:610px){
+      .home-card{gap:6px}.mark{width:42px;height:42px}.brand h1{font-size:28px}.subjects{gap:5px}.subject{font-size:15px;border-radius:13px}.foot{display:none}.viewer-head{height:54px}.controls{padding-top:5px;padding-bottom:calc(5px + env(safe-area-inset-bottom))}.nav{height:34px}.slide{margin-top:3px}
+    }
+  </style>
 </head>
 <body>
-<main id="home"><section class="home-card"><header class="brand"><div class="mark">筆</div><div><p class="eyebrow">EXAM NOTES</p><h1>考試筆記</h1></div></header><nav class="subjects" aria-label="科目"><button class="subject" data-subject="憲法">憲法<span class="arrow">›</span></button><button class="subject" data-subject="警察法規">警察法規<span class="arrow">›</span></button><button class="subject" data-subject="警察勤務">警察勤務<span class="arrow">›</span></button><button class="subject" data-subject="刑事訴訟法">刑事訴訟法<span class="arrow">›</span></button><button class="subject" data-subject="刑法">刑法<span class="arrow">›</span></button><button class="subject ready" id="adminBtn">行政法<span class="tag">30 頁</span><span class="arrow">›</span></button></nav><p class="foot">行政法為清楚重製版；保留原筆記分支與相對位置。</p></section></main>
-<main id="viewer" class="hidden"><header class="viewer-head"><button id="back" class="icon" aria-label="返回首頁">‹</button><div class="viewer-title"><p>考試筆記</p><h2>行政法</h2></div><button id="zoomBtn" class="icon" aria-label="放大閱讀">＋</button></header><section class="stage" id="stage"><div class="sheet-frame" id="frame"></div></section><section class="controls"><div class="pager"><button id="prev" class="nav">上一頁</button><div class="counter"><strong id="cur">1</strong> / 30</div><button id="next" class="nav">下一頁</button></div><div class="slide"><span class="edge">1</span><input id="pageSlider" type="range" min="1" max="30" value="1" step="1" aria-label="快速跳頁"><span class="edge">30</span></div></section></main>
-<div id="empty" class="modal hidden"><div class="modal-card"><h3 id="emptyTitle">筆記尚未上傳</h3><p>這個科目的筆記之後上傳後，可以直接接進來。</p><button id="emptyClose" class="ok">知道了</button></div></div><div id="zoom" class="hidden"><div class="zoom-bar"><span id="zoomLabel" class="zoom-label">第 1 / 30 頁</span><button id="zoomClose" class="close">×</button></div><div class="zoom-area" id="zoomArea"><div id="zoomSheet" class="zoom-sheet"></div></div></div>
-<script src="exact-pages.js"></script><script>
-const pages=EXACT_PAGES,$=id=>document.getElementById(id),TOTAL=pages.length;const home=$("home"),viewer=$("viewer"),frame=$("frame"),slider=$("pageSlider"),stage=$("stage");let pageNum=Math.min(TOTAL,Math.max(1,Number(localStorage.getItem("exam-notes:admin:page"))||1)),touchX=null;
-function sheetHTML(n){const p=pages[n-1];return `<article class="note-sheet ${p.c||""}" aria-label="行政法筆記第 ${n} 頁">${p.h}</article>`}function fit(){const scale=Math.min((stage.clientWidth-16)/900,(stage.clientHeight-16)/1270);frame.style.transform=`translate(-50%,-50%) scale(${Math.max(.1,scale)})`}function showPage(n){pageNum=Math.min(TOTAL,Math.max(1,Number(n)||1));frame.innerHTML=sheetHTML(pageNum);$("cur").textContent=pageNum;slider.value=pageNum;$("prev").disabled=pageNum===1;$("next").disabled=pageNum===TOTAL;$("zoomLabel").textContent=`第 ${pageNum} / ${TOTAL} 頁`;localStorage.setItem("exam-notes:admin:page",pageNum);fit()}function openAdmin(){home.classList.add("hidden");viewer.classList.remove("hidden");showPage(pageNum)}function showHome(){viewer.classList.add("hidden");home.classList.remove("hidden");$("zoom").classList.add("hidden")}function openZoom(){$("zoomSheet").innerHTML=sheetHTML(pageNum);$("zoom").classList.remove("hidden");$("zoomArea").scrollTo({top:0,left:0})}
-$("adminBtn").addEventListener("click",openAdmin);$("back").addEventListener("click",showHome);$("prev").addEventListener("click",()=>showPage(pageNum-1));$("next").addEventListener("click",()=>showPage(pageNum+1));slider.addEventListener("input",e=>showPage(e.target.value));$("zoomBtn").addEventListener("click",openZoom);$("zoomClose").addEventListener("click",()=>$("zoom").classList.add("hidden"));document.querySelectorAll(".subject:not(.ready)").forEach(btn=>btn.addEventListener("click",()=>{$("emptyTitle").textContent=btn.dataset.subject+"筆記尚未上傳";$("empty").classList.remove("hidden")}));$("emptyClose").addEventListener("click",()=>$("empty").classList.add("hidden"));stage.addEventListener("touchstart",e=>touchX=e.changedTouches[0].clientX,{passive:true});stage.addEventListener("touchend",e=>{if(touchX===null)return;const d=e.changedTouches[0].clientX-touchX;if(Math.abs(d)>55)showPage(pageNum+(d<0?1:-1));touchX=null},{passive:true});window.addEventListener("keydown",e=>{if(viewer.classList.contains("hidden"))return;if(e.key==="ArrowLeft")showPage(pageNum-1);if(e.key==="ArrowRight")showPage(pageNum+1);if(e.key==="Escape")$("zoom").classList.add("hidden")});window.addEventListener("resize",fit);if(window.ResizeObserver)new ResizeObserver(fit).observe(stage);
-</script></body></html>
+  <main id="home"><section class="home-card">
+    <header class="brand"><div class="mark">筆</div><div><p class="eyebrow">EXAM NOTES</p><h1>考試筆記</h1></div></header>
+    <nav class="subjects" aria-label="科目">
+      <button class="subject" data-subject="憲法">憲法<span class="arrow">›</span></button>
+      <button class="subject" data-subject="警察法規">警察法規<span class="arrow">›</span></button>
+      <button class="subject" data-subject="警察勤務">警察勤務<span class="arrow">›</span></button>
+      <button class="subject" data-subject="刑事訴訟法">刑事訴訟法<span class="arrow">›</span></button>
+      <button class="subject" data-subject="刑法">刑法<span class="arrow">›</span></button>
+      <button class="subject ready" id="adminBtn">行政法<span class="tag">30 頁</span><span class="arrow">›</span></button>
+    </nav>
+    <p class="foot">行政法保留原版面與分支圖相對位置；紙張已去除格線與圓孔。</p>
+  </section></main>
+
+  <main id="viewer" class="hidden">
+    <header class="viewer-head"><button id="back" class="icon" aria-label="返回首頁">‹</button><div class="viewer-title"><p>考試筆記</p><h2>行政法</h2></div><button id="zoomBtn" class="icon" aria-label="放大閱讀">＋</button></header>
+    <section class="stage" id="stage"><div class="sheet-frame" id="frame"></div></section>
+    <section class="controls"><div class="pager"><button id="prev" class="nav">上一頁</button><div class="counter"><strong id="cur">1</strong> / 30</div><button id="next" class="nav">下一頁</button></div><div class="slide"><span class="edge">1</span><input id="pageSlider" type="range" min="1" max="30" value="1" step="1" aria-label="快速跳頁"><span class="edge">30</span></div></section>
+  </main>
+
+  <div id="empty" class="modal hidden"><div class="modal-card"><h3 id="emptyTitle">筆記尚未上傳</h3><p>這個科目的筆記之後上傳後，可以直接接進來。</p><button id="emptyClose" class="ok">知道了</button></div></div>
+  <div id="zoom" class="hidden"><div class="zoom-bar"><span id="zoomLabel" class="zoom-label">第 1 / 30 頁</span><button id="zoomClose" class="close">×</button></div><div class="zoom-area" id="zoomArea"><div id="zoomSheet" class="zoom-sheet"></div></div></div>
+
+  <script src="exact-pages.js"></script>
+  <script>
+    window.addEventListener('load',()=>{
+      const pages=EXACT_PAGES,$=id=>document.getElementById(id),TOTAL=pages.length;
+      const home=$("home"),viewer=$("viewer"),frame=$("frame"),slider=$("pageSlider"),stage=$("stage");
+      let pageNum=Math.min(TOTAL,Math.max(1,Number(localStorage.getItem("exam-notes:admin:page"))||1)),touchX=null;
+
+      function sheetHTML(n){const p=pages[n-1];return `<article class="note-sheet ${p.c||""}" aria-label="行政法筆記第 ${n} 頁">${p.h}</article>`}
+      function fit(){const scale=Math.min((stage.clientWidth-20)/900,(stage.clientHeight-20)/1270);frame.style.transform=`translate(-50%,-50%) scale(${Math.max(.1,scale)})`}
+      function showPage(n){pageNum=Math.min(TOTAL,Math.max(1,Number(n)||1));frame.innerHTML=sheetHTML(pageNum);$("cur").textContent=pageNum;slider.value=pageNum;$("prev").disabled=pageNum===1;$("next").disabled=pageNum===TOTAL;$("zoomLabel").textContent=`第 ${pageNum} / ${TOTAL} 頁`;localStorage.setItem("exam-notes:admin:page",pageNum);fit()}
+      function openAdmin(){home.classList.add("hidden");viewer.classList.remove("hidden");showPage(pageNum)}
+      function showHome(){viewer.classList.add("hidden");home.classList.remove("hidden");$("zoom").classList.add("hidden")}
+      function openZoom(){$("zoomSheet").innerHTML=sheetHTML(pageNum);$("zoom").classList.remove("hidden");$("zoomArea").scrollTo({top:0,left:0})}
+
+      $("adminBtn").addEventListener("click",openAdmin);
+      $("back").addEventListener("click",showHome);
+      $("prev").addEventListener("click",()=>showPage(pageNum-1));
+      $("next").addEventListener("click",()=>showPage(pageNum+1));
+      slider.addEventListener("input",e=>showPage(e.target.value));
+      $("zoomBtn").addEventListener("click",openZoom);
+      $("zoomClose").addEventListener("click",()=>$("zoom").classList.add("hidden"));
+      document.querySelectorAll(".subject:not(.ready)").forEach(btn=>btn.addEventListener("click",()=>{$("emptyTitle").textContent=btn.dataset.subject+"筆記尚未上傳";$("empty").classList.remove("hidden")}));
+      $("emptyClose").addEventListener("click",()=>$("empty").classList.add("hidden"));
+
+      stage.addEventListener("touchstart",e=>touchX=e.changedTouches[0].clientX,{passive:true});
+      stage.addEventListener("touchend",e=>{if(touchX===null)return;const d=e.changedTouches[0].clientX-touchX;if(Math.abs(d)>55)showPage(pageNum+(d<0?1:-1));touchX=null},{passive:true});
+      window.addEventListener("keydown",e=>{if(viewer.classList.contains("hidden"))return;if(e.key==="ArrowLeft")showPage(pageNum-1);if(e.key==="ArrowRight")showPage(pageNum+1);if(e.key==="Escape")$("zoom").classList.add("hidden")});
+      window.addEventListener("resize",fit);
+      if(window.ResizeObserver){new ResizeObserver(fit).observe(stage)}
+    });
+  </script>
+</body>
+</html>

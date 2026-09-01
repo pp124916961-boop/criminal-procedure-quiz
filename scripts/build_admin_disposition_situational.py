@@ -34,6 +34,7 @@ def score(r):
  if any(k in S(r.get('exam_name')) for k in PREF):n+=4
  if '警察' in S(r.get('exam_name')) or '升官' in S(r.get('exam_name')):n+=5
  if any(k in q for k in ['行政契約','行政指導','法規命令','行政規則','行政計畫']) and '行政處分' not in q:n-=14
+ if any(k in q for k in ['行政訴訟種類','行政訴訟法','訴願管轄','國家賠償']) and not any(k in q for k in ['救濟期間','救濟方法']):n-=35
  return n+max(0,int(r.get('year_roc') or 0)-100)*.05
 
 df['score']=df.apply(score,axis=1);df['situational']=df.apply(situational,axis=1)
@@ -43,7 +44,7 @@ c=c.sort_values(['score','year_roc'],ascending=[False,False]).drop_duplicates('s
 def grp(r):
  t=T(r);q=S(r.get('question'))
  if '附款' in t or any(k in t for k in ['保留行政處分之廢止權','停止條件','解除條件','負擔']):return '附款辨識與合法性'
- if any(k in t for k in ['行政處分之無效','行政處分無效','重大明顯','程序補正','轉換','自始不生效力','效力繼續存在','行政處分之效力','行政處分效力','顯然錯誤','救濟期間','書面之行政處分','送達','公告日']):return '效力與瑕疵'
+ if any(k in t for k in ['行政處分之無效','行政處分無效','重大明顯','程序補正','轉換','自始不生效力','效力繼續存在','行政處分之效力','行政處分效力','顯然錯誤','救濟期間','書面之行政處分','書面行政處分','不記明理由','送達','公告日']):return '效力與瑕疵'
  if any(k in t for k in ['職權撤銷','信賴保護','信賴不值得','合法行政處分','廢止','補償']):return '撤銷廢止與信賴保護'
  if any(k in t for k in ['一般處分','事實行為']) or re.search('何者.*行政處分|何種.*行政處分|行政處分.*何者',q):return '行政處分／事實行為辨識'
  return '其他行政處分制度'
@@ -61,7 +62,7 @@ if len(sel)<100:raise RuntimeError(f'Only {len(sel)} relevant originals')
 sel=sel[:100]
 
 def law(r):
- t=T(r); a=S(r.get('answer')).strip().upper();o=[S(r.get(x)) for x in 'ABCD'];f=o['ABCD'.index(a)] if a in 'ABCD' else '';z=t+' '+f
+ q=S(r.get('question')); a=S(r.get('answer')).strip().upper();o=[S(r.get(x)) for x in 'ABCD'];f=o['ABCD'.index(a)] if a in 'ABCD' else '';z=q+' '+f
  if '附款' in z or any(k in z for k in ['保留行政處分之廢止權','停止條件','解除條件','負擔']):return '第93條、第94條','附款須先辨識期限、條件、負擔、保留廢止權或保留事後附加／變更負擔，再檢驗是否具法定容許性及與行政處分目的之正當合理關聯。'
  if '無效' in z or '重大明顯' in z or '自始不生效力' in z:return '第111條、第110條','行政處分原則自送達或通知發生效力；具有第111條所列或其他重大明顯瑕疵者無效，並自始不生效力。'
  if '行政處分之效力' in z or '行政處分效力' in z or '發生效力' in z or '效力繼續存在' in z:return '第110條','行政處分自送達、通知或使相對人知悉時起發生效力；在未經撤銷、廢止或因其他事由失效前，其效力原則上繼續存在。'
@@ -85,6 +86,6 @@ for i,r in enumerate(sel,1):
  qs.append({'id':i,'question':S(r.get('question')),'options':[S(r.get(x)) for x in 'ABCD'],'answer':a,'topic':grp(r),'basis':b,'explanation':e,'source':f"{int(r.get('year_roc'))}年｜{S(r.get('exam_name'))}｜{S(r.get('subject_zh'))}｜第{int(r.get('q_no'))}題",'source_papers':S(r.get('source_papers')),'year_roc':int(r.get('year_roc')),'situational':bool(r.get('situational'))})
 assert len(qs)==100 and len({q['question']+'|'.join(q['options']) for q in qs})==100
 (OUT/'questions.json').write_text(json.dumps(qs,ensure_ascii=False,indent=2),encoding='utf-8')
-summary={'count':100,'groups':dict(Counter(q['topic'] for q in qs)),'situational_count':sum(q['situational'] for q in qs),'years':dict(Counter(q['year_roc'] for q in qs)),'original_questions_unedited':True,'source_required':True}
+summary={'count':100,'groups':dict(Counter(q['topic'] for q in qs)),'situational_count':sum(q['situational'] for q in qs),'years':dict(Counter(q['year_roc'] for q in qs)),'original_questions_unedited':True,'source_required':True,'legal_basis_uses_question_and_correct_option':True}
 (OUT/'build-summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(summary,ensure_ascii=False,indent=2))

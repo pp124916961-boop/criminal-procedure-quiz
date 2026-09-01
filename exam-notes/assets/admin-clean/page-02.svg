@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1432" height="2023" viewBox="0 0 1432 2023">
+<rect width="100%" height="100%" fill="#fffdfa"/>
+<style>text{font-family:'Noto Sans CJK TC','PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif;dominant-baseline:hanging} .b{font-weight:700} .r{fill:#c83333} .k{fill:#1e1d1b} .g{fill:#766f67}</style>
+<text x="105" y="150" font-size="44" fill="#1e1d1b" text-anchor="start">二、管轄</text>
+<text x="300" y="150" font-size="35" fill="#c83333" text-anchor="start">（事務、土地、層級）</text>
+<text x="185" y="265" font-size="36" fill="#1e1d1b" text-anchor="start">（一）</text>
+<line x1="290" y1="280" x2="290" y2="410" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="290" y1="280" x2="318" y2="280" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="290" y1="410" x2="318" y2="410" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<text x="330" y="255" font-size="36" fill="#1e1d1b" text-anchor="start">管轄</text>
+<text x="440" y="255" font-size="36" fill="#c83333" text-anchor="start">法定</text>
+<text x="545" y="255" font-size="34" fill="#1e1d1b" text-anchor="start">：管轄權依</text>
+<line x1="790" y1="245" x2="790" y2="345" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="790" y1="245" x2="818" y2="245" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="790" y1="345" x2="818" y2="345" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<text x="830" y="230" font-size="32" fill="#1e1d1b" text-anchor="start">組織法規</text>
+<text x="830" y="300" font-size="32" fill="#1e1d1b" text-anchor="start">其他行政法規</text>
+<text x="1130" y="270" font-size="33" fill="#c83333" text-anchor="start">而取得</text>
+<text x="330" y="370" font-size="36" fill="#1e1d1b" text-anchor="start">管轄</text>
+<text x="440" y="370" font-size="36" fill="#c83333" text-anchor="start">恆定</text>
+<text x="545" y="370" font-size="34" fill="#1e1d1b" text-anchor="start">：移轉要</text>
+<text x="730" y="370" font-size="34" fill="#c83333" text-anchor="start">依法規</text>
+<text x="875" y="370" font-size="30" fill="#1e1d1b" text-anchor="start">（非行政規則）</text>
+<text x="185" y="535" font-size="40" fill="#1e1d1b" text-anchor="start">（二）變更管轄</text>
+<text x="250" y="650" font-size="35" fill="#1e1d1b" text-anchor="start">1. 要件</text>
+<line x1="470" y1="620" x2="470" y2="805" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="470" y1="620" x2="498" y2="620" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="470" y1="805" x2="498" y2="805" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<text x="515" y="610" font-size="34" fill="#c83333" text-anchor="start">組織法規變更</text>
+<text x="515" y="685" font-size="32" fill="#c83333" text-anchor="start">公告義務（如果後接的 H 法規也有更，就不用）</text>
+<text x="515" y="760" font-size="32" fill="#c83333" text-anchor="start">公告日起第 3 日生效（除非另定）</text>
+<text x="250" y="900" font-size="35" fill="#1e1d1b" text-anchor="start">2. 誰公告</text>
+<line x1="470" y1="880" x2="470" y2="1030" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="470" y1="880" x2="498" y2="880" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="470" y1="1030" x2="498" y2="1030" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<text x="515" y="865" font-size="34" fill="#c83333" text-anchor="start">原 H ＋ 後接收 H</text>
+<text x="845" y="865" font-size="27" fill="#1e1d1b" text-anchor="start">（原 H 被裁，後 H 自己公告就行）</text>
+<text x="515" y="955" font-size="34" fill="#c83333" text-anchor="start">共同上級選由</text>
+<text x="115" y="1115" font-size="46" fill="#c83333" text-anchor="start">☆</text>
+<text x="175" y="1125" font-size="40" fill="#1e1d1b" text-anchor="start">（三）移轉管轄</text>
+<line x1="230" y1="1230" x2="230" y2="1743" stroke="#1e1d1b" stroke-width="2" stroke-linecap="round"/>
+<line x1="420" y1="1230" x2="420" y2="1743" stroke="#1e1d1b" stroke-width="2" stroke-linecap="round"/>
+<line x1="650" y1="1230" x2="650" y2="1743" stroke="#1e1d1b" stroke-width="2" stroke-linecap="round"/>
+<line x1="895" y1="1230" x2="895" y2="1743" stroke="#1e1d1b" stroke-width="2" stroke-linecap="round"/>
+<line x1="1095" y1="1230" x2="1095" y2="1743" stroke="#1e1d1b" stroke-width="2" stroke-linecap="round"/>
+<line x1="1365" y1="1230" x2="1365" y2="1743" stroke="#1e1d1b" stroke-width="2" stroke-linecap="round"/>
+<line x1="230" y1="1230" x2="1365" y2="1230" stroke="#1e1d1b" stroke-width="2" stroke-linecap="round"/>
+<line x1="230" y1="1308" x2="1365" y2="1308" stroke="#1e1d1b" stroke-width="2" stroke-linecap="round"/>
+<line x1="230" y1="1403" x2="1365" y2="1403" stroke="#1e1d1b" stroke-width="2" stroke-linecap="round"/>
+<line x1="230" y1="1498" x2="1365" y2="1498" stroke="#1e1d1b" stroke-width="2" stroke-linecap="round"/>
+<line x1="230" y1="1593" x2="1365" y2="1593" stroke="#1e1d1b" stroke-width="2" stroke-linecap="round"/>
+<line x1="230" y1="1743" x2="1365" y2="1743" stroke="#1e1d1b" stroke-width="2" stroke-linecap="round"/>
+<text x="325.0" y="1248" font-size="30" fill="#1e1d1b" text-anchor="middle"></text>
+<text x="535.0" y="1248" font-size="30" fill="#c83333" text-anchor="middle">隸屬</text>
+<text x="772.5" y="1248" font-size="30" fill="#c83333" text-anchor="middle">管轄移轉</text>
+<text x="995.0" y="1248" font-size="30" fill="#c83333" text-anchor="middle">VA</text>
+<text x="1230.0" y="1248" font-size="30" fill="#c83333" text-anchor="middle">救濟</text>
+<text x="255" y="1326" font-size="29" fill="#1e1d1b" text-anchor="start">委任</text>
+<text x="255" y="1421" font-size="29" fill="#1e1d1b" text-anchor="start">委託</text>
+<text x="255" y="1516" font-size="29" fill="#1e1d1b" text-anchor="start">委辦</text>
+<text x="255" y="1611" font-size="29" fill="#1e1d1b" text-anchor="start">
+<tspan x="255" dy="0">行政委託</tspan>
+<tspan x="255" dy="34">（委託私人）</tspan>
+</text>
+<text x="445" y="1328" font-size="29" fill="#c83333" text-anchor="start">上 H ＞ 下 H</text>
+<text x="1150" y="1328" font-size="29" fill="#1e1d1b" text-anchor="start">上級</text>
+<text x="500" y="1423" font-size="34" fill="#c83333" text-anchor="start">×</text>
+<text x="745" y="1423" font-size="34" fill="#c83333" text-anchor="start">×</text>
+<text x="917" y="1421" font-size="28" fill="#c83333" text-anchor="start">原委託 H</text>
+<text x="1130" y="1419" font-size="25" fill="#1e1d1b" text-anchor="start">
+<tspan x="1130" dy="0">上級</tspan>
+<tspan x="1130" dy="29">有原委</tspan>
+</text>
+<text x="445" y="1518" font-size="28" fill="#c83333" text-anchor="start">中央 ＞ 地方</text>
+<text x="1150" y="1518" font-size="29" fill="#1e1d1b" text-anchor="start">上級</text>
+<text x="500" y="1638" font-size="34" fill="#c83333" text-anchor="start">×</text>
+<text x="675" y="1623" font-size="27" fill="#c83333" text-anchor="start">
+<tspan x="675" dy="0">個人團體</tspan>
+<tspan x="675" dy="31">移轉</tspan>
+</text>
+<text x="940" y="1633" font-size="30" fill="#c83333" text-anchor="start">私人</text>
+<rect x="1115" y="1618" width="130" height="45" rx="0" fill="none" stroke="#c83333" stroke-width="2"/>
+<text x="1125" y="1621" font-size="28" fill="#c83333" text-anchor="start">向原委</text>
+<text x="1115" y="1673" font-size="23" fill="#1e1d1b" text-anchor="start">（VA 是以私人名義作成）</text>
+</svg>

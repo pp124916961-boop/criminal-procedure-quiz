@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1432" height="2023" viewBox="0 0 1432 2023">
+<rect width="100%" height="100%" fill="#fffdfa"/>
+<style>text{font-family:'Noto Sans CJK TC','PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif;dominant-baseline:hanging} .b{font-weight:700} .r{fill:#c83333} .k{fill:#1e1d1b} .g{fill:#766f67}</style>
+<text x="716.0" y="70" font-size="50" fill="#1e1d1b" text-anchor="middle">行程法 NO2</text>
+<text x="120" y="150" font-size="44" fill="#1e1d1b" text-anchor="start">三、當事人</text>
+<text x="170" y="340" font-size="36" fill="#1e1d1b" text-anchor="start">（一）</text>
+<polyline points="280,300 280,920 320,920" fill="none" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="280" y1="330" x2="320" y2="330" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="280" y1="590" x2="320" y2="590" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<text x="330" y="300" font-size="36" fill="#1e1d1b" text-anchor="start">當事人：</text>
+<text x="510" y="300" font-size="36" fill="#c83333" text-anchor="start">被作用者</text>
+<text x="330" y="355" font-size="29" fill="#c83333" text-anchor="start">（SO 沒有行政 H，因為他是作用的）</text>
+<line x1="890" y1="245" x2="890" y2="510" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="890" y1="245" x2="918" y2="245" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="890" y1="510" x2="918" y2="510" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<text x="935" y="230" font-size="31" fill="#1e1d1b" text-anchor="start">申請</text>
+<text x="935" y="278" font-size="31" fill="#1e1d1b" text-anchor="start">VA</text>
+<text x="935" y="326" font-size="31" fill="#1e1d1b" text-anchor="start">VV</text>
+<text x="935" y="374" font-size="31" fill="#1e1d1b" text-anchor="start">指導</text>
+<text x="935" y="422" font-size="31" fill="#1e1d1b" text-anchor="start">陳情</text>
+<text x="935" y="470" font-size="31" fill="#1e1d1b" text-anchor="start">其他</text>
+<text x="1020" y="315" font-size="30" fill="#c83333" text-anchor="start">（無計劃、無法規）</text>
+<text x="330" y="585" font-size="36" fill="#1e1d1b" text-anchor="start">當事人能力：</text>
+<text x="575" y="585" font-size="36" fill="#c83333" text-anchor="start">誰可以被作用</text>
+<line x1="900" y1="565" x2="900" y2="820" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="900" y1="565" x2="928" y2="565" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="900" y1="820" x2="928" y2="820" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<text x="945" y="550" font-size="31" fill="#1e1d1b" text-anchor="start">自然人</text>
+<text x="945" y="605" font-size="31" fill="#1e1d1b" text-anchor="start">法人</text>
+<text x="945" y="660" font-size="31" fill="#1e1d1b" text-anchor="start">非法人團但有代表人</text>
+<text x="945" y="715" font-size="31" fill="#1e1d1b" text-anchor="start">行政 H</text>
+<text x="945" y="770" font-size="31" fill="#1e1d1b" text-anchor="start">其他</text>
+<text x="330" y="880" font-size="36" fill="#1e1d1b" text-anchor="start">行為能力：</text>
+<text x="530" y="880" font-size="34" fill="#c83333" text-anchor="start">被作用，而有法律行為能力</text>
+<line x1="960" y1="870" x2="960" y2="1130" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="960" y1="870" x2="988" y2="870" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="960" y1="1130" x2="988" y2="1130" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<text x="1000" y="850" font-size="29" fill="#1e1d1b" text-anchor="start">有行為能力自然人</text>
+<text x="1000" y="922" font-size="29" fill="#1e1d1b" text-anchor="start">法人</text>
+<text x="1000" y="994" font-size="29" fill="#1e1d1b" text-anchor="start">非法人團的代表 or 管理人</text>
+<text x="1000" y="1066" font-size="29" fill="#1e1d1b" text-anchor="start">行政 H 首長、代理、授權人</text>
+<line x1="1300" y1="840" x2="1300" y2="955" stroke="#c83333" stroke-width="4" stroke-linecap="round"/>
+<line x1="1300" y1="840" x2="1272" y2="840" stroke="#c83333" stroke-width="4" stroke-linecap="round"/>
+<line x1="1300" y1="955" x2="1272" y2="955" stroke="#c83333" stroke-width="4" stroke-linecap="round"/>
+<text x="1320" y="835" font-size="26" fill="#c83333" text-anchor="start">
+<tspan x="1320" dy="0">法代</tspan>
+<tspan x="1320" dy="30">本人</tspan>
+<tspan x="1320" dy="30">（本國可以）</tspan>
+</text>
+<text x="160" y="1350" font-size="40" fill="#1e1d1b" text-anchor="start">（二）視為當事人：</text>
+<text x="335" y="1430" font-size="34" fill="#1e1d1b" text-anchor="start">程序進行影響第三人權益</text>
+<text x="800" y="1430" font-size="31" fill="#c83333" text-anchor="start">（被作用之第三人）</text>
+<line x1="370" y1="1530" x2="370" y2="1640" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="370" y1="1530" x2="398" y2="1530" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="370" y1="1640" x2="398" y2="1640" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<text x="420" y="1515" font-size="34" fill="#1e1d1b" text-anchor="start">職權</text>
+<text x="420" y="1590" font-size="34" fill="#1e1d1b" text-anchor="start">申請</text>
+<text x="640" y="1545" font-size="38" fill="#1e1d1b" text-anchor="start">→</text>
+<text x="730" y="1540" font-size="36" fill="#c83333" text-anchor="start">通知其參加為當事人</text>
+</svg>

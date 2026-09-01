@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1432" height="2023" viewBox="0 0 1432 2023">
+<rect width="100%" height="100%" fill="#fffdfa"/>
+<style>text{font-family:'Noto Sans CJK TC','PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif;dominant-baseline:hanging} .b{font-weight:700} .r{fill:#c83333} .k{fill:#1e1d1b} .g{fill:#766f67}</style>
+<text x="716.0" y="70" font-size="52" fill="#1e1d1b" text-anchor="middle">行政法 NO1</text>
+<text x="120" y="150" font-size="44" fill="#1e1d1b" text-anchor="start">＊行程法</text>
+<text x="150" y="250" font-size="43" fill="#1e1d1b" text-anchor="start">一、法例</text>
+<text x="190" y="340" font-size="36" fill="#1e1d1b" text-anchor="start">（一）本法功能：</text>
+<text x="520" y="340" font-size="36" fill="#c83333" text-anchor="start">公、公民、法人、效、信</text>
+<text x="180" y="460" font-size="36" fill="#1e1d1b" text-anchor="start">（二）</text>
+<line x1="285" y1="475" x2="285" y2="620" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="285" y1="475" x2="313" y2="475" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="285" y1="620" x2="313" y2="620" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<text x="325" y="455" font-size="36" fill="#1e1d1b" text-anchor="start">行政程序：</text>
+<text x="535" y="455" font-size="31" fill="#c83333" text-anchor="start">VA、VV、法規命令、行政規則、行政計畫、行政指導、陳情</text>
+<text x="565" y="500" font-size="22" fill="#1e1d1b" text-anchor="start">①　②　　　③　　　　④　　　　⑤　　　　⑥</text>
+<text x="325" y="590" font-size="36" fill="#1e1d1b" text-anchor="start">行政 H</text>
+<line x1="500" y1="610" x2="500" y2="800" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="500" y1="610" x2="528" y2="610" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="500" y1="800" x2="528" y2="800" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<text x="545" y="595" font-size="34" fill="#c83333" text-anchor="start">國家</text>
+<text x="545" y="660" font-size="34" fill="#c83333" text-anchor="start">地方團體</text>
+<text x="545" y="725" font-size="34" fill="#c83333" text-anchor="start">其他行政主體</text>
+<text x="825" y="725" font-size="30" fill="#1e1d1b" text-anchor="start">（公法人、行政法人）</text>
+<line x1="500" y1="800" x2="455" y2="800" stroke="#c83333" stroke-width="4" stroke-linecap="round"/>
+<text x="425" y="780" font-size="46" fill="#c83333" text-anchor="start">☆</text>
+<text x="515" y="785" font-size="34" fill="#c83333" text-anchor="start">準行政 H：受託行使公權力之個人 or 團體</text>
+<text x="180" y="900" font-size="36" fill="#1e1d1b" text-anchor="start">（三）</text>
+<text x="270" y="900" font-size="36" fill="#1e1d1b" text-anchor="start">H 排除</text>
+<line x1="455" y1="890" x2="455" y2="1000" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="455" y1="890" x2="483" y2="890" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="455" y1="1000" x2="483" y2="1000" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<text x="500" y="875" font-size="32" fill="#1e1d1b" text-anchor="start">民意</text>
+<text x="500" y="925" font-size="32" fill="#1e1d1b" text-anchor="start">軍</text>
+<text x="500" y="975" font-size="32" fill="#1e1d1b" text-anchor="start">監</text>
+<polyline points="240,925 240,1075 290,1075" fill="none" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="290" y="1050" font-size="36" fill="#1e1d1b" text-anchor="start">事項排除：</text>
+<text x="505" y="1050" font-size="34" fill="#c83333" text-anchor="start">外外刑矯私</text>
+<text x="725" y="1050" font-size="34" fill="#c83333" text-anchor="start">學</text>
+<circle cx="742.0" cy="1068.7" r="22.1" fill="none" stroke="#c83333" stroke-width="3"/>
+<text x="785" y="1050" font-size="34" fill="#c83333" text-anchor="start">公</text>
+<circle cx="802.0" cy="1068.7" r="22.1" fill="none" stroke="#c83333" stroke-width="3"/>
+<text x="845" y="1050" font-size="34" fill="#c83333" text-anchor="start">考</text>
+<line x1="785" y1="1115" x2="785" y2="1230" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="785" y1="1115" x2="813" y2="1115" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="785" y1="1230" x2="813" y2="1230" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<text x="830" y="1095" font-size="34" fill="#1e1d1b" text-anchor="start">改變身分 or 處分</text>
+<text x="830" y="1180" font-size="34" fill="#1e1d1b" text-anchor="start">重大改變身分 or 重大利益</text>
+<line x1="1185" y1="1100" x2="1185" y2="1248" stroke="#c83333" stroke-width="4" stroke-linecap="round"/>
+<line x1="1185" y1="1100" x2="1157" y2="1100" stroke="#c83333" stroke-width="4" stroke-linecap="round"/>
+<line x1="1185" y1="1248" x2="1157" y2="1248" stroke="#c83333" stroke-width="4" stroke-linecap="round"/>
+<text x="1230" y="1100" font-size="34" fill="#c83333" text-anchor="start">
+<tspan x="1230" dy="0">例外要</tspan>
+<tspan x="1230" dy="40">適用本法</tspan>
+</text>
+<text x="180" y="1320" font-size="38" fill="#1e1d1b" text-anchor="start">（四）原則：</text>
+<text x="180" y="1435" font-size="46" fill="#c83333" text-anchor="start">☆</text>
+<text x="225" y="1442" font-size="38" fill="#1e1d1b" text-anchor="start">裁量目的性原則</text>
+<text x="245" y="1605" font-size="36" fill="#1e1d1b" text-anchor="start">瑕疵</text>
+<polyline points="390,1635 455,1635 455,1745" fill="none" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="455" y1="1580" x2="490" y2="1580" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="455" y1="1745" x2="490" y2="1745" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<circle cx="495" cy="1598" r="27" fill="none" stroke="#1e1d1b" stroke-width="3"/>
+<text x="480" y="1577" font-size="30" fill="#1e1d1b" text-anchor="start">外</text>
+<text x="555" y="1578" font-size="36" fill="#c83333" text-anchor="start">→ 裁量逾越</text>
+<circle cx="495" cy="1710" r="27" fill="none" stroke="#1e1d1b" stroke-width="3"/>
+<text x="480" y="1689" font-size="30" fill="#1e1d1b" text-anchor="start">內</text>
+<polyline points="525,1710 620,1710 620,1810" fill="none" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="620" y1="1740" x2="665" y2="1740" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<line x1="620" y1="1810" x2="665" y2="1810" stroke="#1e1d1b" stroke-width="4" stroke-linecap="round"/>
+<text x="670" y="1715" font-size="32" fill="#1e1d1b" text-anchor="start">考量不必要因素：</text>
+<text x="965" y="1715" font-size="32" fill="#c83333" text-anchor="start">裁量濫用</text>
+<text x="1145" y="1715" font-size="28" fill="#1e1d1b" text-anchor="start">（事實錯誤）</text>
+<text x="670" y="1785" font-size="32" fill="#1e1d1b" text-anchor="start">怠惰：</text>
+<text x="785" y="1785" font-size="32" fill="#c83333" text-anchor="start">裁量怠惰</text>
+</svg>

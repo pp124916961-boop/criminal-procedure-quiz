@@ -62,7 +62,7 @@ function cleanOriginal(im){
   for(let x=0;x<w;x++){let n=0;for(let y=0;y<h;y++)n+=ink[y*w+x];if(n>colLimit){for(let y=0;y<h;y++){const k=(y*w+x)*4;d[k]=d[k+1]=d[k+2]=255}}}
   ctx.putImageData(id,0,0);return c.toDataURL('image/webp',.88);
 }
-async function pageSrc(n){if(cache.has(n))return cache.get(n);if(n===1){const url=`assets/admin-clean/page-01.png?v=png-fixed-2`;cache.set(n,url);return url}const im=await loadImage(source(n));const url=cleanOriginal(im);cache.set(n,url);if(cache.size>5){for(const k of cache.keys()){if(Math.abs(k-n)>2){cache.delete(k);break}}}return url}
+async function pageSrc(n){if(cache.has(n))return cache.get(n);if(n<=5){const url=`assets/admin-clean/page-${nn(n)}.png?v=typed-batch-1-5`;cache.set(n,url);return url}const im=await loadImage(source(n));const url=cleanOriginal(im);cache.set(n,url);if(cache.size>5){for(const k of cache.keys()){if(Math.abs(k-n)>2){cache.delete(k);break}}}return url}
 async function preload(n){if(n<1||n>TOTAL||cache.has(n))return;try{await pageSrc(n)}catch(_){} }
 async function showPage(n){
  pageNum=Math.min(TOTAL,Math.max(1,Number(n)||1));const token=++loadToken;

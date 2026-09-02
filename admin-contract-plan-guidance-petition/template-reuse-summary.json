@@ -5,6 +5,9 @@
   "source_position": "above_question",
   "source_in_explanation": false,
   "stale_source_urls_removed": true,
+  "static_admin_disposition_mentions": 0,
+  "storage_isolated": true,
+  "visible_label": "行政契約・行政計畫・行政指導・陳情",
   "parts": {
     "p1.txt": 4995,
     "p2.txt": 2497,

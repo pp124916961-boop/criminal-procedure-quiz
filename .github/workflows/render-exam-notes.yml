@@ -1,0 +1,39 @@
+name: Render exam note PNGs
+
+on:
+  push:
+    paths:
+      - 'exam-notes/assets/admin-clean/*.svg'
+      - '.github/workflows/render-exam-notes.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install renderer and CJK fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y inkscape fonts-noto-cjk
+      - name: Render SVG masters to fixed PNG
+        run: |
+          set -e
+          for svg in exam-notes/assets/admin-clean/page-*.svg; do
+            [ -e "$svg" ] || continue
+            png="${svg%.svg}.png"
+            inkscape "$svg" --export-type=png --export-filename="$png" --export-width=1104
+          done
+      - name: Commit rendered PNG files
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add exam-notes/assets/admin-clean/page-*.png
+          if git diff --cached --quiet; then
+            echo 'No PNG changes.'
+          else
+            git commit -m 'Render fixed administrative note PNGs [skip ci]'
+            git push
+          fi

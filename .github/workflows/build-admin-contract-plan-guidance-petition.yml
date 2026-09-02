@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/build-admin-contract-plan-guidance-petition.yml'
       - 'scripts/build_admin_contract_plan_guidance_petition.py'
+      - 'scripts/fix_admin_contract_plan_guidance_petition_basis.py'
       - 'scripts/reuse_current_admin_template_contract_plan_guidance_petition.py'
   workflow_dispatch:
 
@@ -23,6 +24,8 @@ jobs:
         run: pip install -q pandas pyarrow
       - name: Build original-question bank
         run: python scripts/build_admin_contract_plan_guidance_petition.py
+      - name: Audit legal basis
+        run: python scripts/fix_admin_contract_plan_guidance_petition_basis.py
       - name: Reuse current quiz program exactly
         run: python scripts/reuse_current_admin_template_contract_plan_guidance_petition.py
       - name: Verify output

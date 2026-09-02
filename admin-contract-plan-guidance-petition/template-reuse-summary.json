@@ -6,15 +6,19 @@
   "source_in_explanation": false,
   "stale_source_urls_removed": true,
   "static_admin_disposition_mentions": 0,
-  "storage_isolated": true,
+  "storage_namespaced": true,
+  "cache_busted": true,
+  "revision": "20260903-contract-plan-guidance-petition-v3",
   "visible_label": "行政契約・行政計畫・行政指導・陳情",
+  "final_bundle_first_question": "行政機關與人民締結行政契約，互負給付義務者，依行政程序法第137條第1項第3款規定，人民之給付與行政機關之給付應相當，並具有正當合理之關聯。係指下列何項行政法之法律原則？",
+  "final_bundle_first_topic": "行政契約",
   "parts": {
-    "p1.txt": 4995,
-    "p2.txt": 2497,
-    "p2b.txt": 2497,
-    "p3.txt": 4995,
-    "p4.txt": 4995,
-    "p5.txt": 4995,
+    "p1.txt": 5005,
+    "p2.txt": 2501,
+    "p2b.txt": 2501,
+    "p3.txt": 5005,
+    "p4.txt": 5005,
+    "p5.txt": 5005,
     "p6.txt": 258
   }
 }

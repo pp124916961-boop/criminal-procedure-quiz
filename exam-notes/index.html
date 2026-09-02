@@ -39,12 +39,38 @@
 <div id="zoom" class="hidden"><div class="zoom-bar"><span id="zoomLabel" class="zoom-label">第 1 / 30 頁</span><button id="zoomClose" class="close">×</button></div><div class="zoom-area" id="zoomArea"><img id="zoomImage" class="zoom-image" alt="放大筆記"></div></div>
 <script>
 (()=>{
-const TOTAL=30,V='original-20260902',$=id=>document.getElementById(id),cache=new Map(),home=$('home'),viewer=$('viewer'),slider=$('pageSlider'),img=$('pageImage'),zimg=$('zoomImage'),stage=$('stage');
-let pageNum=Math.min(TOTAL,Math.max(1,Number(localStorage.getItem('exam-notes:admin:page'))||1)),touchX=null,loadToken=0;
+const TOTAL=30,V='original-preload-20260902b',$=id=>document.getElementById(id),home=$('home'),viewer=$('viewer'),slider=$('pageSlider'),img=$('pageImage'),zimg=$('zoomImage'),stage=$('stage');
+let pageNum=Math.min(TOTAL,Math.max(1,Number(localStorage.getItem('exam-notes:admin:page'))||1)),touchX=null,touchY=null,touchMulti=false,loadToken=0,preloadStarted=false;
 const nn=n=>String(n).padStart(2,'0');
 const source=n=>`assets/admin-pages/page-${nn(n)}.jpg?v=${V}`;
-async function pageSrc(n){if(cache.has(n))return cache.get(n);const url=source(n);cache.set(n,url);return url}
-async function preload(n){if(n<1||n>TOTAL||cache.has(n))return;try{await pageSrc(n)}catch(_){}}
+const preloadJobs=new Map();
+function preloadImage(n){
+ if(n<1||n>TOTAL)return Promise.resolve(false);
+ if(preloadJobs.has(n))return preloadJobs.get(n);
+ const job=new Promise(resolve=>{
+   const im=new Image();
+   im.decoding='async';
+   im.onload=()=>resolve(true);
+   im.onerror=()=>resolve(false);
+   im.src=source(n);
+ });
+ preloadJobs.set(n,job);
+ return job;
+}
+async function preloadAllPages(){
+ if(preloadStarted)return;
+ preloadStarted=true;
+ const order=[];
+ for(let d=0;d<TOTAL;d++){
+   const right=pageNum+d,left=pageNum-d;
+   if(right>=1&&right<=TOTAL&&!order.includes(right))order.push(right);
+   if(left>=1&&left<=TOTAL&&!order.includes(left))order.push(left);
+ }
+ let cursor=0;
+ const worker=async()=>{while(cursor<order.length){const n=order[cursor++];await preloadImage(n)}};
+ await Promise.all(Array.from({length:6},()=>worker()));
+}
+async function pageSrc(n){preloadImage(n);return source(n)}
 async function showPage(n){
  pageNum=Math.min(TOTAL,Math.max(1,Number(n)||1));const token=++loadToken;
  $('cur').textContent=pageNum;slider.value=pageNum;$('prev').disabled=pageNum===1;$('next').disabled=pageNum===TOTAL;$('zoomLabel').textContent=`第 ${pageNum} / ${TOTAL} 頁`;localStorage.setItem('exam-notes:admin:page',pageNum);
@@ -52,15 +78,29 @@ async function showPage(n){
  try{const src=await pageSrc(pageNum);if(token!==loadToken)return;img.src=src;img.alt=`行政法筆記第 ${pageNum} 頁`;await img.decode().catch(()=>{});$('loadMsg').classList.add('hidden')}
  catch(e){if(token!==loadToken)return;$('loadMsg').textContent='這一頁載入失敗，請重新整理後再試。'}
  finally{if(token===loadToken)img.classList.remove('loading')}
- preload(pageNum-1);preload(pageNum+1)
 }
-function openAdmin(){home.classList.add('hidden');viewer.classList.remove('hidden');showPage(pageNum)}
+function openAdmin(){home.classList.add('hidden');viewer.classList.remove('hidden');showPage(pageNum);preloadAllPages()}
 function showHome(){viewer.classList.add('hidden');home.classList.remove('hidden');$('zoom').classList.add('hidden')}
 async function openZoom(){try{zimg.src=await pageSrc(pageNum);zimg.alt=`行政法筆記第 ${pageNum} 頁放大圖`;$('zoom').classList.remove('hidden');$('zoomArea').scrollTo({top:0,left:0})}catch(_){}}
 $('adminBtn').addEventListener('click',openAdmin);$('back').addEventListener('click',showHome);$('prev').addEventListener('click',()=>showPage(pageNum-1));$('next').addEventListener('click',()=>showPage(pageNum+1));slider.addEventListener('input',e=>showPage(e.target.value));$('zoomBtn').addEventListener('click',openZoom);$('zoomClose').addEventListener('click',()=>$('zoom').classList.add('hidden'));
 document.querySelectorAll('.subject:not(.ready)').forEach(b=>b.addEventListener('click',()=>{$('emptyTitle').textContent=b.dataset.subject+'筆記尚未上傳';$('empty').classList.remove('hidden')}));$('emptyClose').addEventListener('click',()=>$('empty').classList.add('hidden'));
-stage.addEventListener('touchstart',e=>touchX=e.changedTouches[0].clientX,{passive:true});stage.addEventListener('touchend',e=>{if(touchX===null)return;const d=e.changedTouches[0].clientX-touchX;if(Math.abs(d)>55)showPage(pageNum+(d<0?1:-1));touchX=null},{passive:true});
+function resetTouch(){touchX=null;touchY=null;touchMulti=false}
+stage.addEventListener('touchstart',e=>{
+ if(e.touches.length!==1){touchMulti=true;touchX=null;touchY=null;return}
+ touchMulti=false;touchX=e.touches[0].clientX;touchY=e.touches[0].clientY;
+},{passive:true});
+stage.addEventListener('touchmove',e=>{
+ if(e.touches.length!==1||(typeof e.scale==='number'&&e.scale!==1)){touchMulti=true;touchX=null;touchY=null}
+},{passive:true});
+stage.addEventListener('touchend',e=>{
+ if(touchMulti||touchX===null||touchY===null||e.changedTouches.length!==1){resetTouch();return}
+ const dx=e.changedTouches[0].clientX-touchX,dy=e.changedTouches[0].clientY-touchY;
+ if(Math.abs(dx)>75&&Math.abs(dx)>Math.abs(dy)*1.35)showPage(pageNum+(dx<0?1:-1));
+ resetTouch();
+},{passive:true});
+stage.addEventListener('touchcancel',resetTouch,{passive:true});
 window.addEventListener('keydown',e=>{if(viewer.classList.contains('hidden'))return;if(e.key==='ArrowLeft')showPage(pageNum-1);if(e.key==='ArrowRight')showPage(pageNum+1);if(e.key==='Escape')$('zoom').classList.add('hidden')});
+setTimeout(preloadAllPages,80);
 })();
 </script>
 </body></html>

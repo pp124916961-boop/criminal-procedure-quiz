@@ -1,0 +1,52 @@
+name: Build Admin Contract Plan Guidance Petition Quiz
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-admin-contract-plan-guidance-petition.yml'
+      - 'scripts/build_admin_contract_plan_guidance_petition.py'
+      - 'scripts/reuse_current_admin_template_contract_plan_guidance_petition.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install -q pandas pyarrow
+      - name: Build original-question bank
+        run: python scripts/build_admin_contract_plan_guidance_petition.py
+      - name: Reuse current quiz program exactly
+        run: python scripts/reuse_current_admin_template_contract_plan_guidance_petition.py
+      - name: Verify output
+        run: |
+          python - <<'PY'
+          import json,pathlib
+          q=json.load(open('admin-contract-plan-guidance-petition/questions.json',encoding='utf-8'))
+          b=json.load(open('admin-contract-plan-guidance-petition/build-summary.json',encoding='utf-8'))
+          r=json.load(open('admin-contract-plan-guidance-petition/template-reuse-summary.json',encoding='utf-8'))
+          assert len(q)==100
+          assert len({x['question']+'|'.join(x['options']) for x in q})==100
+          assert all(len(x['options'])==4 and x['answer'] in 'ABCD' and x['source'] and x['basis'] for x in q)
+          assert b['original_questions_unedited'] is True
+          assert set(b['topics']).issubset({'行政契約','行政計畫','行政指導','陳情'})
+          assert r['program_reused'] is True and r['source_position']=='above_question' and r['source_in_explanation'] is False
+          for n in ['index.html','p1.txt','p2.txt','p2b.txt','p3.txt','p4.txt','p5.txt','p6.txt']:
+              assert pathlib.Path('admin-contract-plan-guidance-petition',n).exists()
+          print('verified',b,r)
+          PY
+      - name: Commit generated quiz
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add admin-contract-plan-guidance-petition
+          git diff --cached --quiet && exit 0
+          git commit -m 'Build APA contract plan guidance petition original-question quiz'
+          git push

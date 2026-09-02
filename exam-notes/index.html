@@ -62,13 +62,24 @@ function cleanOriginal(im){
   for(let x=0;x<w;x++){let n=0;for(let y=0;y<h;y++)n+=ink[y*w+x];if(n>colLimit){for(let y=0;y<h;y++){const k=(y*w+x)*4;d[k]=d[k+1]=d[k+2]=255}}}
   ctx.putImageData(id,0,0);return c.toDataURL('image/webp',.88);
 }
-async function pageSrc(n){if(cache.has(n))return cache.get(n);if(n<=10){const url=`assets/admin-clean/page-${nn(n)}.png?v=typed-batch-1-10`;cache.set(n,url);return url}const im=await loadImage(source(n));const url=cleanOriginal(im);cache.set(n,url);if(cache.size>5){for(const k of cache.keys()){if(Math.abs(k-n)>2){cache.delete(k);break}}}return url}
+async function pageSrc(n){if(cache.has(n))return cache.get(n);if(n<=15){const url=`assets/admin-clean/page-${nn(n)}.png?v=typed-batch-1-15`;cache.set(n,url);return url}const im=await loadImage(source(n));const url=cleanOriginal(im);cache.set(n,url);if(cache.size>5){for(const k of cache.keys()){if(Math.abs(k-n)>2){cache.delete(k);break}}}return url}
 async function preload(n){if(n<1||n>TOTAL||cache.has(n))return;try{await pageSrc(n)}catch(_){} }
-async function showPage(n){pageNum=Math.min(TOTAL,Math.max(1,Number(n)||1));const token=++loadToken;$('cur').textContent=pageNum;slider.value=pageNum;$('prev').disabled=pageNum===1;$('next').disabled=pageNum===TOTAL;$('zoomLabel').textContent=`第 ${pageNum} / ${TOTAL} 頁`;localStorage.setItem('exam-notes:admin:page',pageNum);img.classList.add('loading');$('loadMsg').textContent='清理頁面中…';$('loadMsg').classList.remove('hidden');try{const src=await pageSrc(pageNum);if(token!==loadToken)return;img.src=src;img.alt=`行政法筆記第 ${pageNum} 頁`;await img.decode().catch(()=>{});$('loadMsg').classList.add('hidden')}catch(e){if(token!==loadToken)return;$('loadMsg').textContent='這一頁載入失敗，請重新整理後再試。'}finally{if(token===loadToken)img.classList.remove('loading')}preload(pageNum-1);preload(pageNum+1)}
+async function showPage(n){
+ pageNum=Math.min(TOTAL,Math.max(1,Number(n)||1));const token=++loadToken;
+ $('cur').textContent=pageNum;slider.value=pageNum;$('prev').disabled=pageNum===1;$('next').disabled=pageNum===TOTAL;$('zoomLabel').textContent=`第 ${pageNum} / ${TOTAL} 頁`;localStorage.setItem('exam-notes:admin:page',pageNum);
+ img.classList.add('loading');$('loadMsg').textContent='清理頁面中…';$('loadMsg').classList.remove('hidden');
+ try{const src=await pageSrc(pageNum);if(token!==loadToken)return;img.src=src;img.alt=`行政法筆記第 ${pageNum} 頁`;await img.decode().catch(()=>{});$('loadMsg').classList.add('hidden')}
+ catch(e){if(token!==loadToken)return;$('loadMsg').textContent='這一頁載入失敗，請重新整理後再試。'}
+ finally{if(token===loadToken)img.classList.remove('loading')}
+ preload(pageNum-1);preload(pageNum+1)
+}
 function openAdmin(){home.classList.add('hidden');viewer.classList.remove('hidden');showPage(pageNum)}
 function showHome(){viewer.classList.add('hidden');home.classList.remove('hidden');$('zoom').classList.add('hidden')}
 async function openZoom(){try{zimg.src=await pageSrc(pageNum);zimg.alt=`行政法筆記第 ${pageNum} 頁放大圖`;$('zoom').classList.remove('hidden');$('zoomArea').scrollTo({top:0,left:0})}catch(_){} }
-$('adminBtn').addEventListener('click',openAdmin);$('back').addEventListener('click',showHome);$('prev').addEventListener('click',()=>showPage(pageNum-1));$('next').addEventListener('click',()=>showPage(pageNum+1));slider.addEventListener('input',e=>showPage(e.target.value));$('zoomBtn').addEventListener('click',openZoom);$('zoomClose').addEventListener('click',()=>$('zoom').classList.add('hidden'));document.querySelectorAll('.subject:not(.ready)').forEach(b=>b.addEventListener('click',()=>{$('emptyTitle').textContent=b.dataset.subject+'筆記尚未上傳';$('empty').classList.remove('hidden')}));$('emptyClose').addEventListener('click',()=>$('empty').classList.add('hidden'));stage.addEventListener('touchstart',e=>touchX=e.changedTouches[0].clientX,{passive:true});stage.addEventListener('touchend',e=>{if(touchX===null)return;const d=e.changedTouches[0].clientX-touchX;if(Math.abs(d)>55)showPage(pageNum+(d<0?1:-1));touchX=null},{passive:true});window.addEventListener('keydown',e=>{if(viewer.classList.contains('hidden'))return;if(e.key==='ArrowLeft')showPage(pageNum-1);if(e.key==='ArrowRight')showPage(pageNum+1);if(e.key==='Escape')$('zoom').classList.add('hidden')});
+$('adminBtn').addEventListener('click',openAdmin);$('back').addEventListener('click',showHome);$('prev').addEventListener('click',()=>showPage(pageNum-1));$('next').addEventListener('click',()=>showPage(pageNum+1));slider.addEventListener('input',e=>showPage(e.target.value));$('zoomBtn').addEventListener('click',openZoom);$('zoomClose').addEventListener('click',()=>$('zoom').classList.add('hidden'));
+document.querySelectorAll('.subject:not(.ready)').forEach(b=>b.addEventListener('click',()=>{$('emptyTitle').textContent=b.dataset.subject+'筆記尚未上傳';$('empty').classList.remove('hidden')}));$('emptyClose').addEventListener('click',()=>$('empty').classList.add('hidden'));
+stage.addEventListener('touchstart',e=>touchX=e.changedTouches[0].clientX,{passive:true});stage.addEventListener('touchend',e=>{if(touchX===null)return;const d=e.changedTouches[0].clientX-touchX;if(Math.abs(d)>55)showPage(pageNum+(d<0?1:-1));touchX=null},{passive:true});
+window.addEventListener('keydown',e=>{if(viewer.classList.contains('hidden'))return;if(e.key==='ArrowLeft')showPage(pageNum-1);if(e.key==='ArrowRight')showPage(pageNum+1);if(e.key==='Escape')$('zoom').classList.add('hidden')});
 })();
 </script>
 </body></html>

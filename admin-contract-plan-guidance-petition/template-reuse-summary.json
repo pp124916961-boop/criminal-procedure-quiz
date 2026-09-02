@@ -1,0 +1,17 @@
+{
+  "template": "admin-disposition-situational",
+  "question_count": 100,
+  "program_reused": true,
+  "source_position": "above_question",
+  "source_in_explanation": false,
+  "stale_source_urls_removed": true,
+  "parts": {
+    "p1.txt": 4893,
+    "p2.txt": 2446,
+    "p2b.txt": 2446,
+    "p3.txt": 4893,
+    "p4.txt": 4893,
+    "p5.txt": 4893,
+    "p6.txt": 252
+  }
+}

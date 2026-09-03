@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Decode uploaded note image
+      - name: Assemble uploaded note image
         shell: bash
         run: |
           set -euo pipefail
@@ -28,7 +28,9 @@ jobs:
           . "$READY"
           set +a
           mkdir -p "$(dirname "$TARGET")"
-          cat exam-notes/.note-import/chunk-*.b64 | tr -d '\r\n' | base64 -d > "$TARGET"
+          cat exam-notes/.note-import/chunk-*.part > "$TARGET"
+          test "$(stat -c%s "$TARGET")" = "$EXPECTED_SIZE"
+          echo "$EXPECTED_SHA256  $TARGET" | sha256sum -c -
           python - <<'PY'
           import os, re
           from pathlib import Path

@@ -27,22 +27,22 @@
 <button class="subject" data-subject="警察勤務">警察勤務<span class="arrow">›</span></button>
 <button class="subject" data-subject="刑事訴訟法">刑事訴訟法<span class="arrow">›</span></button>
 <button class="subject" data-subject="刑法">刑法<span class="arrow">›</span></button>
-<button class="subject ready" id="adminBtn">行政法<span class="tag">30 頁</span><span class="arrow">›</span></button>
-</nav><p class="foot">行政法 30 頁：直接顯示原始筆記。</p>
+<button class="subject ready" id="adminBtn">行政法<span class="tag">31 頁</span><span class="arrow">›</span></button>
+</nav><p class="foot">行政法 31 頁：直接顯示原始筆記。</p>
 </section></main>
 <main id="viewer" class="hidden">
 <header class="viewer-head"><button id="back" class="icon" aria-label="返回首頁">‹</button><div class="viewer-title"><p>考試筆記</p><h2>行政法</h2></div><button id="zoomBtn" class="icon" aria-label="放大閱讀">＋</button></header>
 <section class="stage" id="stage"><img id="pageImage" class="page-image" alt="行政法筆記第 1 頁" draggable="false"><div id="loadMsg" class="load-msg hidden">載入原稿中…</div></section>
-<section class="controls"><div class="pager"><button id="prev" class="nav">上一頁</button><div class="counter"><strong id="cur">1</strong> / 30</div><button id="next" class="nav">下一頁</button></div><div class="slide"><span class="edge">1</span><input id="pageSlider" type="range" min="1" max="30" value="1" step="1" aria-label="快速跳頁"><span class="edge">30</span></div></section>
+<section class="controls"><div class="pager"><button id="prev" class="nav">上一頁</button><div class="counter"><strong id="cur">1</strong> / 31</div><button id="next" class="nav">下一頁</button></div><div class="slide"><span class="edge">1</span><input id="pageSlider" type="range" min="1" max="31" value="1" step="1" aria-label="快速跳頁"><span class="edge">31</span></div></section>
 </main>
 <div id="empty" class="modal hidden"><div class="modal-card"><h3 id="emptyTitle">筆記尚未上傳</h3><p>這個科目的筆記之後上傳後，可以直接接進來。</p><button id="emptyClose" class="ok">知道了</button></div></div>
-<div id="zoom" class="hidden"><div class="zoom-bar"><span id="zoomLabel" class="zoom-label">第 1 / 30 頁</span><button id="zoomClose" class="close">×</button></div><div class="zoom-area" id="zoomArea"><img id="zoomImage" class="zoom-image" alt="放大筆記"></div></div>
+<div id="zoom" class="hidden"><div class="zoom-bar"><span id="zoomLabel" class="zoom-label">第 1 / 31 頁</span><button id="zoomClose" class="close">×</button></div><div class="zoom-area" id="zoomArea"><img id="zoomImage" class="zoom-image" alt="放大筆記"></div></div>
 <script>
 (()=>{
-const TOTAL=30,V='original-preload-20260902b',$=id=>document.getElementById(id),home=$('home'),viewer=$('viewer'),slider=$('pageSlider'),img=$('pageImage'),zimg=$('zoomImage'),stage=$('stage');
+const TOTAL=31,V='original-preload-20260903a',$=id=>document.getElementById(id),home=$('home'),viewer=$('viewer'),slider=$('pageSlider'),img=$('pageImage'),zimg=$('zoomImage'),stage=$('stage');
 let pageNum=Math.min(TOTAL,Math.max(1,Number(localStorage.getItem('exam-notes:admin:page'))||1)),touchX=null,touchY=null,touchMulti=false,loadToken=0,preloadStarted=false;
 const nn=n=>String(n).padStart(2,'0');
-const source=n=>`assets/admin-pages/page-${nn(n)}.jpg?v=${V}`;
+const source=n=>n===31?'https://exam-notes-page31-pp124916961-6530.vercel.app/page-31.jpg':`assets/admin-pages/page-${nn(n)}.jpg?v=${V}`;
 const preloadJobs=new Map();
 function preloadImage(n){
  if(n<1||n>TOTAL)return Promise.resolve(false);

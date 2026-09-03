@@ -1,0 +1,35 @@
+name: Add exam notes page 31
+
+on:
+  push:
+    paths:
+      - '.github/workflows/add-exam-notes-page31.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  add-page:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download page 31 image
+        run: |
+          set -e
+          mkdir -p exam-notes/assets/admin-pages
+          curl -L --fail --retry 3 --retry-delay 2 \
+            'https://exam-notes-page31-pp124916961-6530.vercel.app/page-31.jpg' \
+            -o exam-notes/assets/admin-pages/page-31.jpg
+          test -s exam-notes/assets/admin-pages/page-31.jpg
+          file exam-notes/assets/admin-pages/page-31.jpg
+      - name: Commit page 31
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add exam-notes/assets/admin-pages/page-31.jpg
+          if git diff --cached --quiet; then
+            echo 'No image changes.'
+          else
+            git commit -m 'Add administrative law note page 31 [skip ci]'
+            git push
+          fi

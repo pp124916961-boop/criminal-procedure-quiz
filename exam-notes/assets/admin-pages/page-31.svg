@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1052" height="1495" viewBox="0 0 1052 1495">
+  <style>
+    text{font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;fill:#111}
+    .title{font-size:39px;font-weight:800}
+    .head{font-size:28px;font-weight:800;fill:white}
+    .chapter{font-size:27px;font-weight:800}
+    .item{font-size:24px}
+    .method{font-size:24px}
+    .small{font-size:22px}
+    .line{stroke:#222;stroke-width:1.5}
+  </style>
+  <rect width="1052" height="1495" fill="#fff"/>
+  <text x="526" y="63" text-anchor="middle" class="title">行政程序法　書面／口頭方式整理（按篇章）</text>
+
+  <!-- table frame -->
+  <rect x="18" y="98" width="1016" height="1365" rx="5" fill="#fff" stroke="#222" stroke-width="2"/>
+  <rect x="18" y="98" width="1016" height="60" rx="5" fill="#0b3767"/>
+  <line x1="210" y1="98" x2="210" y2="1463" class="line"/>
+  <line x1="610" y1="98" x2="610" y2="1463" class="line"/>
+  <text x="114" y="137" text-anchor="middle" class="head">篇章</text>
+  <text x="410" y="137" text-anchor="middle" class="head">事項（條號）</text>
+  <text x="822" y="137" text-anchor="middle" class="head">方式</text>
+
+  <!-- 第一章 158-543 -->
+  <rect x="18" y="158" width="192" height="385" fill="#e9f2fb"/>
+  <text x="114" y="345" text-anchor="middle" class="chapter">第一章　總則</text>
+  <g class="line">
+    <line x1="210" y1="213" x2="1034" y2="213"/><line x1="210" y1="268" x2="1034" y2="268"/>
+    <line x1="210" y1="323" x2="1034" y2="323"/><line x1="210" y1="378" x2="1034" y2="378"/>
+    <line x1="210" y1="433" x2="1034" y2="433"/><line x1="210" y1="488" x2="1034" y2="488"/>
+    <line x1="18" y1="543" x2="1034" y2="543"/>
+  </g>
+  <g class="item">
+    <text x="232" y="194">行政協助之請求（19）</text><text x="635" y="194" class="method">原則書面；緊急情形例外</text>
+    <text x="232" y="249">代理人之委任（24）</text><text x="635" y="249" class="method">書面（提出委任書）</text>
+    <text x="232" y="304">當事人之選定、更換、增減（30）</text><text x="635" y="304" class="method">書面</text>
+    <text x="232" y="359">一般申請（35）</text><text x="635" y="359" class="method">書面或口頭</text>
+    <text x="232" y="414">調查證據時通知相關人陳述意見（39）</text><text x="635" y="414" class="method">書面通知</text>
+    <text x="232" y="469">聽證之通知（55）</text><text x="635" y="469" class="method">書面</text>
+    <text x="232" y="524">聽證程序（59）</text><text x="635" y="524" class="method">原則口頭（公開以言詞為之）</text>
+  </g>
+
+  <!-- 第二章 543-903 -->
+  <rect x="18" y="543" width="192" height="360" fill="#fff8d9"/>
+  <text x="114" y="700" text-anchor="middle" class="chapter">第二章</text>
+  <text x="114" y="738" text-anchor="middle" class="chapter">行政處分</text>
+  <line x1="210" y1="738" x2="1034" y2="738" class="line"/>
+  <line x1="210" y1="793" x2="1034" y2="793" class="line"/>
+  <line x1="210" y1="848" x2="1034" y2="848" class="line"/>
+  <line x1="18" y1="903" x2="1034" y2="903" class="line"/>
+  <text x="232" y="646" class="item">行政處分（95、108、127）</text>
+  <text x="635" y="580" class="method">原則：書面、口頭或其他方式</text>
+  <text x="635" y="616" class="method">例外書面：</text>
+  <text x="655" y="652" class="small">① 人民有正當理由請求書面（95）</text>
+  <text x="655" y="688" class="small">② 經聽證作成之處分（108）</text>
+  <text x="655" y="724" class="small">③ 命返還給付之處分（127）</text>
+  <text x="232" y="774" class="item">行政處分更正之通知（101）</text><text x="635" y="774" class="method">書面</text>
+  <text x="232" y="829" class="item">通知陳述意見（104）</text><text x="635" y="829" class="method">書面或口頭</text>
+  <text x="232" y="884" class="item">陳述意見（105、106）</text><text x="635" y="884" class="method">書面或口頭</text>
+
+  <!-- 第三章 903-1068 -->
+  <rect x="18" y="903" width="192" height="165" fill="#edf8e8"/>
+  <text x="114" y="972" text-anchor="middle" class="chapter">第三章</text>
+  <text x="114" y="1010" text-anchor="middle" class="chapter">行政契約</text>
+  <line x1="210" y1="958" x2="1034" y2="958" class="line"/><line x1="210" y1="1013" x2="1034" y2="1013" class="line"/>
+  <line x1="18" y1="1068" x2="1034" y2="1068" class="line"/>
+  <text x="232" y="939" class="item">行政契約締結（139）</text><text x="635" y="939" class="method">原則書面；法規另有其他方式者例外</text>
+  <text x="232" y="994" class="item">侵害第三人權利之同意（140）</text><text x="635" y="994" class="method">書面</text>
+  <text x="232" y="1049" class="item">行政契約之補償、調整、終止（145～147）</text><text x="635" y="1049" class="method">書面並敘明理由</text>
+
+  <!-- 第四章 1068-1178 -->
+  <rect x="18" y="1068" width="192" height="110" fill="#f0eafa"/>
+  <text x="114" y="1108" text-anchor="middle" class="chapter">第四章</text>
+  <text x="114" y="1142" text-anchor="middle" class="small" font-weight="800">法規命令及</text>
+  <text x="114" y="1170" text-anchor="middle" class="small" font-weight="800">行政規則</text>
+  <line x1="18" y1="1178" x2="1034" y2="1178" class="line"/>
+  <text x="232" y="1132" class="item">人民或團體提議訂定法規命令（152）</text><text x="635" y="1132" class="method">書面</text>
+
+  <!-- 第五章 1178-1233 -->
+  <rect x="18" y="1178" width="192" height="55" fill="#eef5fb"/>
+  <text x="114" y="1214" text-anchor="middle" class="small" font-weight="800">第五章　行政計畫</text>
+  <line x1="18" y1="1233" x2="1034" y2="1233" class="line"/>
+  <text x="410" y="1214" text-anchor="middle" class="item">—</text><text x="635" y="1214" class="small">無特別的一般書面／口頭規定</text>
+
+  <!-- 第六章 1233-1368 -->
+  <rect x="18" y="1233" width="192" height="135" fill="#fdebf4"/>
+  <text x="114" y="1309" text-anchor="middle" class="chapter">第六章　行政指導</text>
+  <line x1="18" y1="1368" x2="1034" y2="1368" class="line"/>
+  <text x="232" y="1312" class="item">行政指導之明示（167）</text>
+  <text x="635" y="1277" class="method">書面、口頭或其他方式</text>
+  <text x="635" y="1325" class="small">相對人請求交付文書 → 原則書面</text>
+
+  <!-- 第七章 1368-1463 -->
+  <rect x="18" y="1368" width="192" height="95" fill="#fff0e7"/>
+  <text x="114" y="1425" text-anchor="middle" class="chapter">第七章　陳情</text>
+  <text x="232" y="1425" class="item">陳情（169）</text><text x="635" y="1425" class="method">書面或口頭</text>
+</svg>

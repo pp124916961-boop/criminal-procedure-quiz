@@ -21,101 +21,46 @@
 <body>
 <main id="home"><section class="home-card">
 <header class="brand"><div class="mark">筆</div><div><p class="eyebrow">EXAM NOTES</p><h1>考試筆記</h1></div></header>
-<nav class="subjects" aria-label="科目">
-<button class="subject" data-subject="憲法">憲法<span class="arrow">›</span></button>
-<button class="subject" data-subject="警察法規">警察法規<span class="arrow">›</span></button>
-<button class="subject" data-subject="警察勤務">警察勤務<span class="arrow">›</span></button>
-<button class="subject" data-subject="刑事訴訟法">刑事訴訟法<span class="arrow">›</span></button>
-<button class="subject" data-subject="刑法">刑法<span class="arrow">›</span></button>
-<button class="subject ready" id="adminBtn">行政法<span class="tag"><span id="adminTotalTag">…</span> 頁</span><span class="arrow">›</span></button>
-</nav><p class="foot">行政法 <span id="adminTotalFoot">…</span> 頁：直接顯示原始筆記。</p>
+<nav class="subjects" id="subjectsNav" aria-label="科目"></nav>
+<p class="foot">各科直接顯示原始筆記；頁數由共用設定自動管理。</p>
 </section></main>
 <main id="viewer" class="hidden">
-<header class="viewer-head"><button id="back" class="icon" aria-label="返回首頁">‹</button><div class="viewer-title"><p>考試筆記</p><h2>行政法</h2></div><button id="zoomBtn" class="icon" aria-label="放大閱讀">＋</button></header>
-<section class="stage" id="stage"><img id="pageImage" class="page-image" alt="行政法筆記第 1 頁" draggable="false"><div id="loadMsg" class="load-msg hidden">載入原稿中…</div></section>
-<section class="controls"><div class="pager"><button id="prev" class="nav">上一頁</button><div class="counter"><strong id="cur">1</strong> / <span id="totalCount">…</span></div><button id="next" class="nav">下一頁</button></div><div class="slide"><span class="edge">1</span><input id="pageSlider" type="range" min="1" max="1" value="1" step="1" aria-label="快速跳頁"><span class="edge" id="lastPage">…</span></div></section>
+<header class="viewer-head"><button id="back" class="icon" aria-label="返回首頁">‹</button><div class="viewer-title"><p>考試筆記</p><h2 id="viewerSubject">筆記</h2></div><button id="zoomBtn" class="icon" aria-label="放大閱讀">＋</button></header>
+<section class="stage" id="stage"><img id="pageImage" class="page-image" alt="筆記第 1 頁" draggable="false"><div id="loadMsg" class="load-msg hidden">載入原稿中…</div></section>
+<section class="controls"><div class="pager"><button id="prev" class="nav">上一頁</button><div class="counter"><strong id="cur">1</strong> / <span id="totalCount">1</span></div><button id="next" class="nav">下一頁</button></div><div class="slide"><span class="edge">1</span><input id="pageSlider" type="range" min="1" max="1" value="1" step="1" aria-label="快速跳頁"><span class="edge" id="lastPage">1</span></div></section>
 </main>
 <div id="empty" class="modal hidden"><div class="modal-card"><h3 id="emptyTitle">筆記尚未上傳</h3><p>這個科目的筆記之後上傳後，可以直接接進來。</p><button id="emptyClose" class="ok">知道了</button></div></div>
 <div id="zoom" class="hidden"><div class="zoom-bar"><span id="zoomLabel" class="zoom-label">第 1 頁</span><button id="zoomClose" class="close">×</button></div><div class="zoom-area" id="zoomArea"><img id="zoomImage" class="zoom-image" alt="放大筆記"></div></div>
 <script src="config.js"></script>
 <script>
 (()=>{
-const CFG=(window.EXAM_NOTES_CONFIG&&window.EXAM_NOTES_CONFIG.admin)||{};
-const TOTAL=Math.max(1,Number(CFG.total)||1),$=id=>document.getElementById(id),home=$('home'),viewer=$('viewer'),slider=$('pageSlider'),img=$('pageImage'),zimg=$('zoomImage'),stage=$('stage');
-let pageNum=Math.min(TOTAL,Math.max(1,Number(localStorage.getItem('exam-notes:admin:page'))||1)),touchX=null,touchY=null,touchMulti=false,loadToken=0,preloadStarted=false;
+const ROOT=window.EXAM_NOTES_CONFIG||{},SUBJECTS=ROOT.subjects||{},ORDER=ROOT.order||Object.keys(SUBJECTS),$=id=>document.getElementById(id),home=$('home'),viewer=$('viewer'),slider=$('pageSlider'),img=$('pageImage'),zimg=$('zoomImage'),stage=$('stage');
+let activeKey=null,pageNum=1,touchX=null,touchY=null,touchMulti=false,loadToken=0;
+const preloadJobs=new Map(),preloadStarted=new Set();
 const nn=n=>String(n).padStart(2,'0');
-function fileName(n){
- const overrides=CFG.overrides||{};
- if(overrides[n])return overrides[n];
- return `${CFG.prefix||'page-'}${nn(n)}.${CFG.defaultExtension||'jpg'}`;
+const totalFor=key=>Math.max(0,Number((SUBJECTS[key]||{}).total)||0);
+function fileName(key,n){const cfg=SUBJECTS[key]||{},overrides=cfg.overrides||{};if(overrides[n])return overrides[n];return `${cfg.prefix||'page-'}${nn(n)}.${cfg.defaultExtension||'jpg'}`}
+function source(key,n){const cfg=SUBJECTS[key]||{},total=totalFor(key);return `${cfg.directory||'assets'}/${fileName(key,n)}?v=${cfg.version||total}`}
+function renderSubjects(){
+ const nav=$('subjectsNav');nav.innerHTML='';
+ ORDER.forEach(key=>{const cfg=SUBJECTS[key];if(!cfg)return;const total=totalFor(key),b=document.createElement('button');b.className='subject'+(total>0?' ready':'');b.dataset.key=key;b.append(document.createTextNode(cfg.name||key));if(total>0){const tag=document.createElement('span');tag.className='tag';tag.textContent=`${total} 頁`;b.append(tag)}const arrow=document.createElement('span');arrow.className='arrow';arrow.textContent='›';b.append(arrow);b.addEventListener('click',()=>openSubject(key));nav.append(b)})
 }
-const source=n=>`${CFG.directory||'assets/admin-pages'}/${fileName(n)}?v=${TOTAL}`;
-function applyConfig(){
- $('adminTotalTag').textContent=TOTAL;
- $('adminTotalFoot').textContent=TOTAL;
- $('totalCount').textContent=TOTAL;
- $('lastPage').textContent=TOTAL;
- slider.max=TOTAL;
-}
-applyConfig();
-const preloadJobs=new Map();
-function preloadImage(n){
- if(n<1||n>TOTAL)return Promise.resolve(false);
- if(preloadJobs.has(n))return preloadJobs.get(n);
- const job=new Promise(resolve=>{
-   const im=new Image();
-   im.decoding='async';
-   im.onload=()=>resolve(true);
-   im.onerror=()=>resolve(false);
-   im.src=source(n);
- });
- preloadJobs.set(n,job);
- return job;
-}
-async function preloadAllPages(){
- if(preloadStarted)return;
- preloadStarted=true;
- const order=[];
- for(let d=0;d<TOTAL;d++){
-   const right=pageNum+d,left=pageNum-d;
-   if(right>=1&&right<=TOTAL&&!order.includes(right))order.push(right);
-   if(left>=1&&left<=TOTAL&&!order.includes(left))order.push(left);
- }
- let cursor=0;
- const worker=async()=>{while(cursor<order.length){const n=order[cursor++];await preloadImage(n)}};
- await Promise.all(Array.from({length:6},()=>worker()));
-}
-async function pageSrc(n){preloadImage(n);return source(n)}
-async function showPage(n){
- pageNum=Math.min(TOTAL,Math.max(1,Number(n)||1));const token=++loadToken;
- $('cur').textContent=pageNum;slider.value=pageNum;$('prev').disabled=pageNum===1;$('next').disabled=pageNum===TOTAL;$('zoomLabel').textContent=`第 ${pageNum} / ${TOTAL} 頁`;localStorage.setItem('exam-notes:admin:page',pageNum);
- img.classList.add('loading');$('loadMsg').textContent='載入原稿中…';$('loadMsg').classList.remove('hidden');
- try{const src=await pageSrc(pageNum);if(token!==loadToken)return;img.src=src;img.alt=`行政法筆記第 ${pageNum} 頁`;await img.decode().catch(()=>{});$('loadMsg').classList.add('hidden')}
- catch(e){if(token!==loadToken)return;$('loadMsg').textContent='這一頁載入失敗，請重新整理後再試。'}
- finally{if(token===loadToken)img.classList.remove('loading')}
-}
-function openAdmin(){home.classList.add('hidden');viewer.classList.remove('hidden');showPage(pageNum);preloadAllPages()}
+function storageKey(key){return `exam-notes:${key}:page`}
+function preloadImage(key,n){const total=totalFor(key);if(n<1||n>total)return Promise.resolve(false);const id=`${key}:${n}`;if(preloadJobs.has(id))return preloadJobs.get(id);const job=new Promise(resolve=>{const im=new Image();im.decoding='async';im.onload=()=>resolve(true);im.onerror=()=>resolve(false);im.src=source(key,n)});preloadJobs.set(id,job);return job}
+async function preloadAllPages(key,center){if(preloadStarted.has(key))return;preloadStarted.add(key);const total=totalFor(key),order=[];for(let d=0;d<total;d++){const right=center+d,left=center-d;if(right>=1&&right<=total&&!order.includes(right))order.push(right);if(left>=1&&left<=total&&!order.includes(left))order.push(left)}let cursor=0;const worker=async()=>{while(cursor<order.length){const n=order[cursor++];await preloadImage(key,n)}};await Promise.all(Array.from({length:6},()=>worker()))}
+async function pageSrc(key,n){preloadImage(key,n);return source(key,n)}
+function applySubjectUI(key){const cfg=SUBJECTS[key],total=totalFor(key);$('viewerSubject').textContent=cfg.name;$('totalCount').textContent=total;$('lastPage').textContent=total;slider.max=total;slider.value=pageNum;$('cur').textContent=pageNum;$('zoomLabel').textContent=`第 ${pageNum} / ${total} 頁`}
+async function showPage(n){if(!activeKey)return;const key=activeKey,cfg=SUBJECTS[key],total=totalFor(key);pageNum=Math.min(total,Math.max(1,Number(n)||1));const token=++loadToken;$('cur').textContent=pageNum;slider.value=pageNum;$('prev').disabled=pageNum===1;$('next').disabled=pageNum===total;$('zoomLabel').textContent=`第 ${pageNum} / ${total} 頁`;localStorage.setItem(storageKey(key),pageNum);img.classList.add('loading');$('loadMsg').textContent='載入原稿中…';$('loadMsg').classList.remove('hidden');try{const src=await pageSrc(key,pageNum);if(token!==loadToken||key!==activeKey)return;img.src=src;img.alt=`${cfg.name}筆記第 ${pageNum} 頁`;await img.decode().catch(()=>{});$('loadMsg').classList.add('hidden')}catch(e){if(token!==loadToken||key!==activeKey)return;$('loadMsg').textContent='這一頁載入失敗，請重新整理後再試。'}finally{if(token===loadToken&&key===activeKey)img.classList.remove('loading')}}
+function openSubject(key){const cfg=SUBJECTS[key],total=totalFor(key);if(!cfg)return;if(total<=0){$('emptyTitle').textContent=(cfg.name||key)+'筆記尚未上傳';$('empty').classList.remove('hidden');return}activeKey=key;pageNum=Math.min(total,Math.max(1,Number(localStorage.getItem(storageKey(key)))||1));applySubjectUI(key);home.classList.add('hidden');viewer.classList.remove('hidden');showPage(pageNum);preloadAllPages(key,pageNum)}
 function showHome(){viewer.classList.add('hidden');home.classList.remove('hidden');$('zoom').classList.add('hidden')}
-async function openZoom(){try{zimg.src=await pageSrc(pageNum);zimg.alt=`行政法筆記第 ${pageNum} 頁放大圖`;$('zoom').classList.remove('hidden');$('zoomArea').scrollTo({top:0,left:0})}catch(_){}}
-$('adminBtn').addEventListener('click',openAdmin);$('back').addEventListener('click',showHome);$('prev').addEventListener('click',()=>showPage(pageNum-1));$('next').addEventListener('click',()=>showPage(pageNum+1));slider.addEventListener('input',e=>showPage(e.target.value));$('zoomBtn').addEventListener('click',openZoom);$('zoomClose').addEventListener('click',()=>$('zoom').classList.add('hidden'));
-document.querySelectorAll('.subject:not(.ready)').forEach(b=>b.addEventListener('click',()=>{$('emptyTitle').textContent=b.dataset.subject+'筆記尚未上傳';$('empty').classList.remove('hidden')}));$('emptyClose').addEventListener('click',()=>$('empty').classList.add('hidden'));
+async function openZoom(){if(!activeKey)return;const key=activeKey,cfg=SUBJECTS[key];try{zimg.src=await pageSrc(key,pageNum);zimg.alt=`${cfg.name}筆記第 ${pageNum} 頁放大圖`;$('zoom').classList.remove('hidden');$('zoomArea').scrollTo({top:0,left:0})}catch(_){}}
+renderSubjects();$('back').addEventListener('click',showHome);$('prev').addEventListener('click',()=>showPage(pageNum-1));$('next').addEventListener('click',()=>showPage(pageNum+1));slider.addEventListener('input',e=>showPage(e.target.value));$('zoomBtn').addEventListener('click',openZoom);$('zoomClose').addEventListener('click',()=>$('zoom').classList.add('hidden'));$('emptyClose').addEventListener('click',()=>$('empty').classList.add('hidden'));
 function resetTouch(){touchX=null;touchY=null;touchMulti=false}
-stage.addEventListener('touchstart',e=>{
- if(e.touches.length!==1){touchMulti=true;touchX=null;touchY=null;return}
- touchMulti=false;touchX=e.touches[0].clientX;touchY=e.touches[0].clientY;
-},{passive:true});
-stage.addEventListener('touchmove',e=>{
- if(e.touches.length!==1||(typeof e.scale==='number'&&e.scale!==1)){touchMulti=true;touchX=null;touchY=null}
-},{passive:true});
-stage.addEventListener('touchend',e=>{
- if(touchMulti||touchX===null||touchY===null||e.changedTouches.length!==1){resetTouch();return}
- const dx=e.changedTouches[0].clientX-touchX,dy=e.changedTouches[0].clientY-touchY;
- if(Math.abs(dx)>75&&Math.abs(dx)>Math.abs(dy)*1.35)showPage(pageNum+(dx<0?1:-1));
- resetTouch();
-},{passive:true});
+stage.addEventListener('touchstart',e=>{if(e.touches.length!==1){touchMulti=true;touchX=null;touchY=null;return}touchMulti=false;touchX=e.touches[0].clientX;touchY=e.touches[0].clientY},{passive:true});
+stage.addEventListener('touchmove',e=>{if(e.touches.length!==1||(typeof e.scale==='number'&&e.scale!==1)){touchMulti=true;touchX=null;touchY=null}},{passive:true});
+stage.addEventListener('touchend',e=>{if(touchMulti||touchX===null||touchY===null||e.changedTouches.length!==1){resetTouch();return}const dx=e.changedTouches[0].clientX-touchX,dy=e.changedTouches[0].clientY-touchY;if(Math.abs(dx)>75&&Math.abs(dx)>Math.abs(dy)*1.35)showPage(pageNum+(dx<0?1:-1));resetTouch()},{passive:true});
 stage.addEventListener('touchcancel',resetTouch,{passive:true});
 window.addEventListener('keydown',e=>{if(viewer.classList.contains('hidden'))return;if(e.key==='ArrowLeft')showPage(pageNum-1);if(e.key==='ArrowRight')showPage(pageNum+1);if(e.key==='Escape')$('zoom').classList.add('hidden')});
-setTimeout(preloadAllPages,80);
 })();
 </script>
 </body></html>

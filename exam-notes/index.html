@@ -39,10 +39,10 @@
 <div id="zoom" class="hidden"><div class="zoom-bar"><span id="zoomLabel" class="zoom-label">第 1 / 31 頁</span><button id="zoomClose" class="close">×</button></div><div class="zoom-area" id="zoomArea"><img id="zoomImage" class="zoom-image" alt="放大筆記"></div></div>
 <script>
 (()=>{
-const TOTAL=31,V='original-preload-20260903a',$=id=>document.getElementById(id),home=$('home'),viewer=$('viewer'),slider=$('pageSlider'),img=$('pageImage'),zimg=$('zoomImage'),stage=$('stage');
+const TOTAL=31,V='original-preload-20260903b',$=id=>document.getElementById(id),home=$('home'),viewer=$('viewer'),slider=$('pageSlider'),img=$('pageImage'),zimg=$('zoomImage'),stage=$('stage');
 let pageNum=Math.min(TOTAL,Math.max(1,Number(localStorage.getItem('exam-notes:admin:page'))||1)),touchX=null,touchY=null,touchMulti=false,loadToken=0,preloadStarted=false;
 const nn=n=>String(n).padStart(2,'0');
-const source=n=>n===31?'https://exam-notes-page31-pp124916961-6530.vercel.app/page-31.jpg':`assets/admin-pages/page-${nn(n)}.jpg?v=${V}`;
+const source=n=>n===31?`assets/admin-pages/page-31.svg?v=${V}`:`assets/admin-pages/page-${nn(n)}.jpg?v=${V}`;
 const preloadJobs=new Map();
 function preloadImage(n){
  if(n<1||n>TOTAL)return Promise.resolve(false);

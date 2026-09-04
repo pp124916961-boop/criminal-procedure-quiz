@@ -1,0 +1,185 @@
+name: Import criminal law notes from Firestorage
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-criminal-law-firestorage.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-criminal-law:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install browser downloader
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Download exact criminal law ZIP from Firestorage
+        env:
+          SHARE_URL: 'https://firestorage.ai/ja/f/D-goGtMzCZ3J'
+          EXPECTED_NAME: '刑法.zip'
+          EXPECTED_SIZE: '28864315'
+          EXPECTED_SHA256: '6db250f11ac7ead397f4afe4482306eeb930106fc6158b71371e213fe865a34b'
+        run: |
+          python - <<'PY'
+          import hashlib, os
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+          from urllib.parse import urljoin
+
+          share = os.environ['SHARE_URL']
+          name = os.environ['EXPECTED_NAME']
+          out = Path('/tmp/criminal-law.zip')
+
+          with sync_playwright() as p:
+              browser = p.chromium.launch(headless=True)
+              page = browser.new_page(accept_downloads=True)
+              page.goto(share, wait_until='domcontentloaded', timeout=120000)
+              try:
+                  page.wait_for_load_state('networkidle', timeout=30000)
+              except Exception:
+                  pass
+
+              candidates = [
+                  page.get_by_text(name, exact=True),
+                  page.locator(f'a:has-text("{name}")'),
+                  page.locator(f'text={name}')
+              ]
+              locator = None
+              for c in candidates:
+                  try:
+                      if c.count() > 0:
+                          locator = c.first
+                          locator.wait_for(state='visible', timeout=10000)
+                          break
+                  except Exception:
+                      continue
+              if locator is None:
+                  print('PAGE TITLE:', page.title())
+                  print('PAGE URL:', page.url)
+                  print('BODY PREVIEW:', page.locator('body').inner_text()[:5000])
+                  raise RuntimeError(f'Could not find file link: {name}')
+
+              href = None
+              try:
+                  href = locator.get_attribute('href')
+              except Exception:
+                  pass
+              if not href:
+                  try:
+                      href = locator.locator('xpath=ancestor-or-self::a[1]').get_attribute('href')
+                  except Exception:
+                      pass
+
+              downloaded = False
+              try:
+                  with page.expect_download(timeout=180000) as di:
+                      locator.click()
+                  di.value.save_as(str(out))
+                  downloaded = True
+              except Exception as first_error:
+                  if href:
+                      target = page.url if href == '#' else href
+                      if not target.startswith('http'):
+                          target = urljoin(page.url, target)
+                      r = page.request.get(target, timeout=180000)
+                      if r.ok:
+                          body = r.body()
+                          if body[:2] == b'PK':
+                              out.write_bytes(body)
+                              downloaded = True
+                  if not downloaded:
+                      print('PAGE TITLE:', page.title())
+                      print('PAGE URL:', page.url)
+                      print('CANDIDATE HREF:', href)
+                      print('BODY PREVIEW:', page.locator('body').inner_text()[:5000])
+                      raise first_error
+              browser.close()
+
+          data = out.read_bytes()
+          size = len(data)
+          sha = hashlib.sha256(data).hexdigest()
+          print('Downloaded size:', size)
+          print('Downloaded sha256:', sha)
+          assert size == int(os.environ['EXPECTED_SIZE']), (size, os.environ['EXPECTED_SIZE'])
+          assert sha == os.environ['EXPECTED_SHA256'], (sha, os.environ['EXPECTED_SHA256'])
+          assert data[:2] == b'PK', 'Not a ZIP archive'
+          PY
+
+      - name: Extract 98 original JPG pages without re-encoding
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, zipfile
+
+          zpath = Path('/tmp/criminal-law.zip')
+          dest = Path('exam-notes/assets/criminal-law')
+          dest.mkdir(parents=True, exist_ok=True)
+
+          existing = sorted(dest.glob('page-*.jpg'))
+          if existing:
+              raise SystemExit(f'Criminal law directory already contains {len(existing)} page JPGs; refusing to overwrite.')
+
+          pattern = re.compile(r'(^|/)刑法 \((\d+)\)\.JPG$', re.I)
+          with zipfile.ZipFile(zpath) as z:
+              matches = []
+              for info in z.infolist():
+                  if info.is_dir() or info.filename.startswith('__MACOSX/'):
+                      continue
+                  m = pattern.search(info.filename)
+                  if m:
+                      matches.append((int(m.group(2)), info))
+              matches.sort(key=lambda x: x[0])
+              numbers = [n for n, _ in matches]
+              assert numbers == list(range(1, 99)), f'Expected pages 1..98, got {numbers[:5]}...{numbers[-5:] if numbers else []}'
+              assert len(matches) == 98
+              for n, info in matches:
+                  data = z.read(info)
+                  assert data[:2] == b'\xff\xd8' and data[-2:] == b'\xff\xd9', f'Page {n} is not a complete JPEG'
+                  (dest / f'page-{n:02d}.jpg').write_bytes(data)
+
+          pages = sorted(dest.glob('page-*.jpg'))
+          assert len(pages) == 98
+          print('Imported', len(pages), 'criminal law JPG pages.')
+          print('First:', pages[0], pages[0].stat().st_size)
+          print('Last:', pages[-1], pages[-1].stat().st_size)
+          PY
+
+      - name: Update Criminal Law total to 98
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('exam-notes/config.js')
+          s = p.read_text(encoding='utf-8')
+          anchor = "    criminalLaw: Object.freeze({\n      name: '刑法',\n      total: 0,"
+          replacement = "    criminalLaw: Object.freeze({\n      name: '刑法',\n      total: 98,"
+          if anchor not in s:
+              if replacement in s:
+                  print('Criminal Law total is already 98.')
+              else:
+                  raise SystemExit('Could not safely locate Criminal Law total 0.')
+          else:
+              s = s.replace(anchor, replacement, 1)
+              p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Remove one-time import workflow
+        run: |
+          rm -f .github/workflows/import-criminal-law-firestorage.yml
+
+      - name: Commit criminal law notes and configuration
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git status --short
+          git commit -m 'Add 98 criminal law note pages from original JPGs'
+          git push

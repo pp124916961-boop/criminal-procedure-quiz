@@ -1,0 +1,151 @@
+name: Import administrative law page 32 from Firestorage
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-admin-page32-firestorage.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-page:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install browser downloader
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Download exact original JPG from Firestorage
+        env:
+          SHARE_URL: 'https://firestorage.ai/ja/f/FEPOFZCxEvE6'
+          EXPECTED_NAME: '行政法32.jpg'
+          EXPECTED_SIZE: '597065'
+          EXPECTED_SHA256: '0cf14cf50e01f281a98d74b9921f5ea63da64b77b6f12028dfd96f3ef977482f'
+        run: |
+          python - <<'PY'
+          import hashlib, os
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+
+          share = os.environ['SHARE_URL']
+          name = os.environ['EXPECTED_NAME']
+          out = Path('exam-notes/assets/admin-pages/page-32.jpg')
+          out.parent.mkdir(parents=True, exist_ok=True)
+
+          with sync_playwright() as p:
+              browser = p.chromium.launch(headless=True)
+              page = browser.new_page(accept_downloads=True)
+              page.goto(share, wait_until='domcontentloaded', timeout=120000)
+              try:
+                  page.wait_for_load_state('networkidle', timeout=30000)
+              except Exception:
+                  pass
+
+              candidates = [
+                  page.get_by_text(name, exact=True),
+                  page.locator(f'a:has-text("{name}")'),
+                  page.locator(f'text={name}')
+              ]
+              locator = None
+              for c in candidates:
+                  try:
+                      if c.count() > 0:
+                          locator = c.first
+                          locator.wait_for(state='visible', timeout=10000)
+                          break
+                  except Exception:
+                      continue
+              if locator is None:
+                  print('PAGE TITLE:', page.title())
+                  print('PAGE URL:', page.url)
+                  print('BODY PREVIEW:', page.locator('body').inner_text()[:5000])
+                  raise RuntimeError(f'Could not find file link: {name}')
+
+              href = None
+              try:
+                  href = locator.get_attribute('href')
+              except Exception:
+                  pass
+              if not href:
+                  try:
+                      href = locator.locator('xpath=ancestor-or-self::a[1]').get_attribute('href')
+                  except Exception:
+                      pass
+
+              downloaded = False
+              try:
+                  with page.expect_download(timeout=120000) as di:
+                      locator.click()
+                  di.value.save_as(str(out))
+                  downloaded = True
+              except Exception as first_error:
+                  if href:
+                      target = page.url if href == '#' else href
+                      if not target.startswith('http'):
+                          from urllib.parse import urljoin
+                          target = urljoin(page.url, target)
+                      r = page.request.get(target, timeout=120000)
+                      if r.ok:
+                          body = r.body()
+                          if body[:2] == b'\xff\xd8':
+                              out.write_bytes(body)
+                              downloaded = True
+                  if not downloaded:
+                      print('PAGE TITLE:', page.title())
+                      print('PAGE URL:', page.url)
+                      print('CANDIDATE HREF:', href)
+                      print('BODY PREVIEW:', page.locator('body').inner_text()[:5000])
+                      raise first_error
+              browser.close()
+
+          data = out.read_bytes()
+          size = len(data)
+          sha = hashlib.sha256(data).hexdigest()
+          print('Downloaded size:', size)
+          print('Downloaded sha256:', sha)
+          assert size == int(os.environ['EXPECTED_SIZE']), (size, os.environ['EXPECTED_SIZE'])
+          assert sha == os.environ['EXPECTED_SHA256'], (sha, os.environ['EXPECTED_SHA256'])
+          assert data[:2] == b'\xff\xd8' and data[-2:] == b'\xff\xd9', 'Not a complete JPEG'
+          PY
+
+      - name: Update Administrative Law total to 32
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('exam-notes/config.js')
+          s = p.read_text(encoding='utf-8')
+          anchor = "    admin: Object.freeze({\n      name: '行政法',\n      total: 31,"
+          replacement = "    admin: Object.freeze({\n      name: '行政法',\n      total: 32,"
+          if anchor not in s:
+              if replacement in s:
+                  print('Administrative Law total is already 32.')
+              else:
+                  raise SystemExit('Could not safely locate Administrative Law total 31.')
+          else:
+              s = s.replace(anchor, replacement, 1)
+              p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Remove temporary import files created during troubleshooting
+        run: |
+          rm -rf exam-notes/.note-import
+          rm -f exam-notes/assets/admin/chunk-*.b64
+          rmdir exam-notes/assets/admin 2>/dev/null || true
+          rm -f .github/workflows/import-exam-note-image.yml
+          rm -f .github/workflows/import-admin-page32-firestorage.yml
+
+      - name: Commit page 32 and configuration
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git status --short
+          git commit -m 'Add administrative law note page 32 from original JPG'
+          git push

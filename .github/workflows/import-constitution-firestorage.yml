@@ -1,0 +1,178 @@
+name: Import constitution notes from Firestorage
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-constitution-firestorage.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-constitution:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install browser downloader
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Download exact constitution ZIP from Firestorage
+        env:
+          SHARE_URL: 'https://firestorage.ai/ja/f/wsTgxSHGMVWH'
+          EXPECTED_NAME: '憲法.zip'
+          EXPECTED_SIZE: '23031810'
+          EXPECTED_SHA256: '544f925bb14948a7dbc3e2a4b4b15ab45cc246f8d86cef17bfc15ab181b9bd29'
+        run: |
+          python - <<'PY'
+          import hashlib, os
+          from pathlib import Path
+          from urllib.parse import urljoin
+          from playwright.sync_api import sync_playwright
+
+          share = os.environ['SHARE_URL']
+          name = os.environ['EXPECTED_NAME']
+          out = Path('/tmp/constitution.zip')
+
+          with sync_playwright() as p:
+              browser = p.chromium.launch(headless=True)
+              page = browser.new_page(accept_downloads=True)
+              page.goto(share, wait_until='domcontentloaded', timeout=120000)
+              try:
+                  page.wait_for_load_state('networkidle', timeout=30000)
+              except Exception:
+                  pass
+              candidates = [
+                  page.get_by_text(name, exact=True),
+                  page.locator(f'a:has-text("{name}")'),
+                  page.locator(f'text={name}')
+              ]
+              locator = None
+              for c in candidates:
+                  try:
+                      if c.count() > 0:
+                          locator = c.first
+                          locator.wait_for(state='visible', timeout=10000)
+                          break
+                  except Exception:
+                      continue
+              if locator is None:
+                  raise RuntimeError(f'Could not find file link: {name}')
+              href = None
+              try:
+                  href = locator.get_attribute('href')
+              except Exception:
+                  pass
+              if not href:
+                  try:
+                      href = locator.locator('xpath=ancestor-or-self::a[1]').get_attribute('href')
+                  except Exception:
+                      pass
+              downloaded = False
+              try:
+                  with page.expect_download(timeout=120000) as di:
+                      locator.click()
+                  di.value.save_as(str(out))
+                  downloaded = True
+              except Exception as first_error:
+                  if href:
+                      target = page.url if href == '#' else href
+                      if not target.startswith('http'):
+                          target = urljoin(page.url, target)
+                      r = page.request.get(target, timeout=120000)
+                      if r.ok:
+                          out.write_bytes(r.body())
+                          downloaded = True
+                  if not downloaded:
+                      raise first_error
+              browser.close()
+
+          data = out.read_bytes()
+          size = len(data)
+          sha = hashlib.sha256(data).hexdigest()
+          print('Downloaded size:', size)
+          print('Downloaded sha256:', sha)
+          assert size == int(os.environ['EXPECTED_SIZE']), (size, os.environ['EXPECTED_SIZE'])
+          assert sha == os.environ['EXPECTED_SHA256'], (sha, os.environ['EXPECTED_SHA256'])
+          assert data[:4] == b'PK\x03\x04', 'Not a ZIP file'
+          PY
+
+      - name: Extract 70 original JPG pages without re-encoding
+        run: |
+          python - <<'PY'
+          import re, zipfile
+          from pathlib import Path
+
+          zpath = Path('/tmp/constitution.zip')
+          outdir = Path('exam-notes/assets/constitution')
+          outdir.mkdir(parents=True, exist_ok=True)
+
+          with zipfile.ZipFile(zpath) as z:
+              files = [n for n in z.namelist() if not n.endswith('/') and n.lower().endswith(('.jpg', '.jpeg'))]
+              assert len(files) == 70, f'Expected 70 JPGs, got {len(files)}'
+
+              def page_num(name):
+                  nums = re.findall(r'\d+', Path(name).name)
+                  if not nums:
+                      raise ValueError(f'No page number in filename: {name}')
+                  return int(nums[-1])
+
+              files = sorted(files, key=lambda n: (page_num(n), n))
+              nums = [page_num(n) for n in files]
+              assert nums == list(range(1, 71)), f'Unexpected page numbers: {nums}'
+
+              for i, src in enumerate(files, 1):
+                  data = z.read(src)
+                  assert data[:2] == b'\xff\xd8' and data[-2:] == b'\xff\xd9', f'Invalid JPEG: {src}'
+                  dst = outdir / f'page-{i:02d}.jpg'
+                  dst.write_bytes(data)
+                  print(f'{src} -> {dst} ({len(data)} bytes)')
+          PY
+
+      - name: Update Constitution total to 70
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('exam-notes/config.js')
+          s = p.read_text(encoding='utf-8')
+          anchor = "    constitution: Object.freeze({\n      name: '憲法',\n      total: 0,"
+          replacement = "    constitution: Object.freeze({\n      name: '憲法',\n      total: 70,"
+          if anchor not in s:
+              if replacement in s:
+                  print('Constitution total is already 70.')
+              else:
+                  raise SystemExit('Could not safely locate Constitution total 0.')
+          else:
+              s = s.replace(anchor, replacement, 1)
+              p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Verify final constitution pages
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          d = Path('exam-notes/assets/constitution')
+          pages = sorted(d.glob('page-*.jpg'))
+          assert len(pages) == 70, len(pages)
+          assert pages[0].name == 'page-01.jpg'
+          assert pages[-1].name == 'page-70.jpg'
+          print('Verified 70 constitution JPG pages.')
+          PY
+
+      - name: Remove one-time import workflow
+        run: |
+          rm -f .github/workflows/import-constitution-firestorage.yml
+
+      - name: Commit constitution notes and configuration
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git status --short
+          git commit -m 'Add 70 constitution note pages from original JPGs'
+          git push

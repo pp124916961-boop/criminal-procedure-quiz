@@ -55,13 +55,13 @@ window.EXAM_NOTES_CONFIG = Object.freeze({
     }),
     admin: Object.freeze({
       name: '行政法',
-      total: 32,
+      total: 52,
       directory: 'assets/admin-pages',
       prefix: 'page-',
       defaultExtension: 'jpg',
       // 只有不是一般 JPG 的特殊頁面才需要列在這裡。
       overrides: Object.freeze({
-        31: 'page-31.svg'
+        51: 'page-51.svg'
       })
     })
   })

@@ -39,7 +39,7 @@ window.EXAM_NOTES_CONFIG = Object.freeze({
     }),
     criminalProcedure: Object.freeze({
       name: '刑事訴訟法',
-      total: 0,
+      total: 97,
       directory: 'assets/criminal-procedure',
       prefix: 'page-',
       defaultExtension: 'jpg',

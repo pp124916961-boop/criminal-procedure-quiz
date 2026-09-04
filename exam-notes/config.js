@@ -31,7 +31,7 @@ window.EXAM_NOTES_CONFIG = Object.freeze({
     }),
     policeDuty: Object.freeze({
       name: '警察勤務',
-      total: 0,
+      total: 78,
       directory: 'assets/police-duty',
       prefix: 'page-',
       defaultExtension: 'jpg',

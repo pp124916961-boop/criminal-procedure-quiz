@@ -15,7 +15,7 @@ window.EXAM_NOTES_CONFIG = Object.freeze({
   subjects: Object.freeze({
     constitution: Object.freeze({
       name: '憲法',
-      total: 0,
+      total: 70,
       directory: 'assets/constitution',
       prefix: 'page-',
       defaultExtension: 'jpg',

@@ -1,0 +1,26 @@
+{
+  "template": "admin-contract-plan-guidance-petition",
+  "question_count": 100,
+  "program_reused": true,
+  "round": 2,
+  "new_path": "admin-procedure-1-19-round2",
+  "source_position": "above_question",
+  "source_in_explanation": false,
+  "storage_namespaced": true,
+  "storage_literal_keys_found": [
+    "admin-contract-plan-guidance-petition::"
+  ],
+  "cache_busted": true,
+  "revision": "20260906-admin-1-19-round2-v1",
+  "final_bundle_first_question": "下列行為，何者不適用行政程序法之程序規定？",
+  "final_bundle_first_topic": "法例與適用範圍",
+  "parts": {
+    "p1.txt": 4718,
+    "p2.txt": 2358,
+    "p2b.txt": 2358,
+    "p3.txt": 4718,
+    "p4.txt": 4718,
+    "p5.txt": 4718,
+    "p6.txt": 244
+  }
+}

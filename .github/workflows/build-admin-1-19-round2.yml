@@ -1,0 +1,53 @@
+name: Build Admin Procedure 1-19 Round 2 Quiz
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-admin-1-19-round2.yml'
+      - 'scripts/build_admin_1_19_round2.py'
+      - 'scripts/reuse_current_admin_template_1_19_round2.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install -q pandas pyarrow
+      - name: Build second 100 original questions
+        run: python scripts/build_admin_1_19_round2.py
+      - name: Reuse current quiz program exactly
+        run: python scripts/reuse_current_admin_template_1_19_round2.py
+      - name: Verify no overlap and final bundle
+        run: |
+          python - <<'PY'
+          import json,pathlib
+          q=json.load(open('admin-procedure-1-19-round2/questions.json',encoding='utf-8'))
+          b=json.load(open('admin-procedure-1-19-round2/build-summary.json',encoding='utf-8'))
+          r=json.load(open('admin-procedure-1-19-round2/template-reuse-summary.json',encoding='utf-8'))
+          assert len(q)==100
+          assert b['round']==2 and b['overlap_with_round1']==0
+          assert b['original_questions_unedited'] is True
+          assert all(len(x['options'])==4 and x['answer'] in 'ABCD' and x['source'] and x['basis'] for x in q)
+          assert r['program_reused'] is True and r['storage_namespaced'] is True and r['cache_busted'] is True
+          assert r['final_bundle_first_question']==q[0]['question']
+          assert r['source_position']=='above_question' and r['source_in_explanation'] is False
+          for n in ['index.html','p1.txt','p2.txt','p2b.txt','p3.txt','p4.txt','p5.txt','p6.txt']:
+              assert pathlib.Path('admin-procedure-1-19-round2',n).exists()
+          print('verified',b,r)
+          PY
+      - name: Commit generated round 2 quiz
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add admin-procedure-1-19-round2
+          git diff --cached --quiet && exit 0
+          git commit -m 'Build APA 1-19 round 2 original-question quiz'
+          git push

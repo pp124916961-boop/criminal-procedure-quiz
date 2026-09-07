@@ -42,7 +42,6 @@ for mm in re.finditer(r'localStorage\.(?:getItem|setItem|removeItem)\(\s*([\'\"]
 for k in keys:
     nk=k+'::administrative-penalty-act-full'
     prefix=prefix.replace("'"+k+"'","'"+nk+"'").replace('"'+k+'"','"'+nk+'"')
-    suffix=suffix.replace("'"+k+"'","'"'+nk+'"') if False else suffix
     suffix=suffix.replace("'"+k+"'","'"+nk+"'").replace('"'+k+'"','"'+nk+'"')
 html=prefix+lit+suffix
 

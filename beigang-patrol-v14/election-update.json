@@ -1,0 +1,22 @@
+{
+  "route": "選舉巡簽線",
+  "remove_from_other": [
+    "北港聯合競選宣傳車停放處",
+    "王雅雯、蔡岳儒、劉建國 北港聯合競選總部",
+    "吳雅雯、蔡岳儒、劉建國 北港聯合競選總部"
+  ],
+  "points": [
+    ["吳雅雯住宅", "b37NdMIL22ISWtD1lz97t0knzqLjqu9ocZFHNPsfkq8="],
+    ["吳建彰住宅", "ZZT9fVFIclTx25viaOrnji6Gdh/6Yx181prqFZxdj98="],
+    ["蔡岳儒服務處", "0rc7/dtBs7mFE9+5o1dSZuDBDKFxuPgBCrl4RiqjoIg="],
+    ["競選宣傳車停放處（公園民有路口）", "1ndR1JyAM2gYTveGJo11tVRqcf5oL/t5rD7bCcH2IQk="],
+    ["黃美蘭住宅", "/Lwtr6CZuCN5OC8/5BnRuZYlP4Od8kFtusn5Ho83cuE="],
+    ["國民黨部", "YFIHE7u+63OljiRcuniNVuKV+YABfyfRQHQvxn4W1YE="],
+    ["蔡孟真服務處", "XqyHKgVwMuvQq3cPaIXVJGOejnBVfNkvpxBBfg9Fzno="],
+    ["黃美蘭服務處", "8MuI4Kgrq2KSlX7R3vviMdnMVHP0wNIP0ABkR/mt8ww="],
+    ["蕭美文競選總部", "Wxjegd/st2j3ixreg7Fkon8V8FefJNnPC7aERWpu7KU="],
+    ["吳雅雯競選總部", "yiHt73XhZdptLkiV20fj1WmzRDGkzKillJI8jLAqO8I="],
+    ["蕭美文住宅", "ak9eW8rZwExWSw7oxCgI6/iUopkKuYyoRRgSqmQ7PN0="],
+    ["北港鎮公所", "iC4w42WglQK1C122GQhG4MI5aaYxIo7UNDhJDMVsF/g="]
+  ]
+}

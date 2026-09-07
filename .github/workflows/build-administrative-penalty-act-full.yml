@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/build-administrative-penalty-act-full.yml'
       - 'scripts/build_administrative_penalty_act_full.py'
+      - 'scripts/audit_administrative_penalty_act_full.py'
       - 'scripts/reuse_current_template_administrative_penalty_act_full.py'
   workflow_dispatch:
 
@@ -23,6 +24,8 @@ jobs:
         run: pip install -q pandas pyarrow
       - name: Build 100 original Administrative Penalty Act questions
         run: python scripts/build_administrative_penalty_act_full.py
+      - name: Audit legal basis and remedies
+        run: python scripts/audit_administrative_penalty_act_full.py
       - name: Reuse current quiz program exactly
         run: python scripts/reuse_current_template_administrative_penalty_act_full.py
       - name: Verify final output
@@ -40,6 +43,10 @@ jobs:
           assert b['scope']=='行政罰法第1條至第46條（全法）'
           assert r['program_reused'] is True and r['source_position']=='above_question' and r['source_in_explanation'] is False
           assert r['storage_namespaced'] is True and r['cache_busted'] is True
+          q41=[x for x in q if '不得對裁處案件之實體決定聲明不服' in x['question'] or '單獨對扣留' in x['question']]
+          q35=[x for x in q if '強制其到指定處所查證身分不服' in x['question']]
+          assert q41 and all(x['basis']=='第41條' for x in q41)
+          assert q35 and all(x['basis']=='第35條' for x in q35)
           parts=['p1.txt','p2.txt','p2b.txt','p3.txt','p4.txt','p5.txt','p6.txt']
           for n in ['index.html',*parts]: assert (root/n).exists()
           html=gzip.decompress(base64.b64decode(''.join((root/n).read_text() for n in parts))).decode()
@@ -49,6 +56,11 @@ jobs:
               except:continue
               if isinstance(a,list) and len(a)==100 and a and isinstance(a[0],dict) and 'opts' in a[0]: arrays.append(a)
           assert arrays and arrays[0][0]['q']==q[0]['question']
+          final=arrays[0]
+          f41=[x for x in final if '不得對裁處案件之實體決定聲明不服' in x['q'] or '單獨對扣留' in x['q']]
+          f35=[x for x in final if '強制其到指定處所查證身分不服' in x['q']]
+          assert f41 and all(x['basis']=='第41條' for x in f41)
+          assert f35 and all(x['basis']=='第35條' for x in f35)
           print('verified',b,r)
           PY
       - name: Commit generated quiz

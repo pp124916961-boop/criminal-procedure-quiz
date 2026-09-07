@@ -1,0 +1,32 @@
+{
+  "count": 100,
+  "scope": "行政罰法第1條至第46條（全法）",
+  "groups": {
+    "法例與責任（§1～13）": 33,
+    "共同違法與裁量、追繳沒入（§14～23）": 25,
+    "一行為數行為、時效與管轄（§24～32）": 25,
+    "裁處程序、扣留與附則（§33～46）": 17
+  },
+  "years": {
+    "114": 7,
+    "106": 8,
+    "104": 10,
+    "102": 12,
+    "108": 7,
+    "109": 9,
+    "113": 5,
+    "110": 5,
+    "107": 4,
+    "112": 10,
+    "111": 5,
+    "115": 5,
+    "105": 7,
+    "101": 3,
+    "103": 3
+  },
+  "original_questions_unedited": true,
+  "source_required": true,
+  "classification_uses_question_and_correct_option": true,
+  "current_law_articles": 46,
+  "current_law_last_amended_roc": "111-06-15"
+}

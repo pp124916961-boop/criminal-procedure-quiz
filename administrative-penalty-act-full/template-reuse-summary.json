@@ -1,0 +1,25 @@
+{
+  "template": "admin-procedure-1-19-round2",
+  "question_count": 100,
+  "program_reused": true,
+  "new_path": "administrative-penalty-act-full",
+  "source_position": "above_question",
+  "source_in_explanation": false,
+  "storage_namespaced": true,
+  "storage_literal_keys_found": [
+    "admin-contract-plan-guidance-petition::::admin-procedure-1-19-round2"
+  ],
+  "cache_busted": true,
+  "revision": "20260907-administrative-penalty-act-full-v1",
+  "final_bundle_first_question": "人民得依行政罰法之規定申請舉行聽證者，不包括下列何種裁處？",
+  "final_bundle_first_topic": "法例與責任（§1～13）",
+  "parts": {
+    "p1.txt": 4925,
+    "p2.txt": 2461,
+    "p2b.txt": 2461,
+    "p3.txt": 4925,
+    "p4.txt": 4925,
+    "p5.txt": 4925,
+    "p6.txt": 254
+  }
+}

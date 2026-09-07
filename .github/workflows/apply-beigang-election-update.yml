@@ -1,0 +1,74 @@
+name: Apply Beigang Patrol Data Update
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-beigang-election-update.yml'
+      - 'beigang-patrol-v14/election-update.json'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply patrol data update
+        run: |
+          python - <<'PY'
+          import re, base64, gzip, json
+          from pathlib import Path
+
+          page = Path('beigang-patrol-v14/index.html')
+          cfg = json.loads(Path('beigang-patrol-v14/election-update.json').read_text(encoding='utf-8'))
+          s = page.read_text(encoding='utf-8')
+
+          mgz = re.search(r'const gz="([A-Za-z0-9+/=]+)";', s)
+          mroutes = re.search(r'const routes=(\[[^;]+\]);', s)
+          if not mgz or not mroutes:
+              raise SystemExit('patrol data not found')
+
+          data = json.loads(gzip.decompress(base64.b64decode(mgz.group(1))).decode('utf-8'))
+          routes = json.loads(mroutes.group(1))
+          route = cfg['route']
+          remove = set(cfg.get('remove_from_other', []))
+
+          data = [x for x in data if not (x.get('r') == '其他巡簽點' and x.get('n') in remove)]
+          data = [x for x in data if x.get('r') != route]
+
+          used = {x.get('i') for x in data}
+          n = 112
+          for name, qr in cfg['points']:
+              while f'init-{n}' in used:
+                  n += 1
+              pid = f'init-{n}'
+              used.add(pid)
+              n += 1
+              data.append({'i': pid, 'r': route, 'n': name, 'q': qr})
+
+          routes = [r for r in routes if r != route]
+          if '其他巡簽點' in routes:
+              routes.insert(routes.index('其他巡簽點'), route)
+          else:
+              routes.append(route)
+
+          new_gz = base64.b64encode(gzip.compress(json.dumps(data, ensure_ascii=False, separators=(',', ':')).encode('utf-8'))).decode('ascii')
+          s = s[:mgz.start(1)] + new_gz + s[mgz.end(1):]
+
+          mroutes = re.search(r'const routes=(\[[^;]+\]);', s)
+          rj = json.dumps(routes, ensure_ascii=False, separators=(',', ':'))
+          s = s[:mroutes.start(1)] + rj + s[mroutes.end(1):]
+
+          page.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit updated page
+        run: |
+          if git diff --quiet -- beigang-patrol-v14/index.html; then
+            echo 'No changes needed'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add beigang-patrol-v14/index.html
+          git commit -m 'Update Beigang v14 patrol routes'
+          git push

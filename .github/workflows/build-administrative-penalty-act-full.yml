@@ -24,7 +24,16 @@ jobs:
       - name: Install dependencies
         run: pip install -q pandas pyarrow
       - name: Build 100 strict original Administrative Penalty Act questions
-        run: python scripts/build_administrative_penalty_act_full_strict.py
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('scripts/build_administrative_penalty_act_full_strict.py')
+          s=p.read_text(encoding='utf-8')
+          s=s.replace("('一行為數行為、時效與管轄（§24～32）',25)","('一行為數行為、時效與管轄（§24～32）',26)")
+          s=s.replace("('裁處程序、扣留與附則（§33～46）',25)","('裁處程序、扣留與附則（§33～46）',24)")
+          p.write_text(s,encoding='utf-8')
+          PY
+          python scripts/build_administrative_penalty_act_full_strict.py
       - name: Audit legal basis and remedies
         run: python scripts/audit_administrative_penalty_act_full.py
       - name: Reuse current quiz program exactly
@@ -43,6 +52,7 @@ jobs:
           assert b['original_questions_unedited'] is True and b['source_required'] is True
           assert b['scope']=='行政罰法第1條至第46條（全法）'
           assert b['strict_scope_filter'] is True and b['other_law_only_questions']==0
+          assert b['groups']=={'法例與責任（§1～13）':25,'共同違法與裁量、追繳沒入（§14～23）':25,'一行為數行為、時效與管轄（§24～32）':26,'裁處程序、扣留與附則（§33～46）':24}
           assert all(('行政罰法' in x['question'] or '行政罰' in x['question']) for x in q)
           assert not any(('行政罰法' not in x['question'] and any(k in x['question'] for k in ['行政執行法','行政執行時','刑事訴訟法','社會秩序維護法','警察職權行使法'])) for x in q)
           assert r['program_reused'] is True and r['source_position']=='above_question' and r['source_in_explanation'] is False

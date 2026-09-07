@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/build-administrative-penalty-act-full.yml'
       - 'scripts/build_administrative_penalty_act_full.py'
+      - 'scripts/build_administrative_penalty_act_full_strict.py'
       - 'scripts/audit_administrative_penalty_act_full.py'
       - 'scripts/reuse_current_template_administrative_penalty_act_full.py'
   workflow_dispatch:
@@ -22,8 +23,8 @@ jobs:
           python-version: '3.12'
       - name: Install dependencies
         run: pip install -q pandas pyarrow
-      - name: Build 100 original Administrative Penalty Act questions
-        run: python scripts/build_administrative_penalty_act_full.py
+      - name: Build 100 strict original Administrative Penalty Act questions
+        run: python scripts/build_administrative_penalty_act_full_strict.py
       - name: Audit legal basis and remedies
         run: python scripts/audit_administrative_penalty_act_full.py
       - name: Reuse current quiz program exactly
@@ -41,13 +42,16 @@ jobs:
           assert all(len(x['options'])==4 and x['answer'] in 'ABCD' and x['source'] and x['basis'] for x in q)
           assert b['original_questions_unedited'] is True and b['source_required'] is True
           assert b['scope']=='行政罰法第1條至第46條（全法）'
+          assert b['strict_scope_filter'] is True and b['other_law_only_questions']==0
+          assert all(('行政罰法' in x['question'] or '行政罰' in x['question']) for x in q)
+          assert not any(('行政罰法' not in x['question'] and any(k in x['question'] for k in ['行政執行法','行政執行時','刑事訴訟法','社會秩序維護法','警察職權行使法'])) for x in q)
           assert r['program_reused'] is True and r['source_position']=='above_question' and r['source_in_explanation'] is False
           assert r['storage_namespaced'] is True and r['cache_busted'] is True
           def qt(x): return x['question']+' '+x['options']['ABCD'.index(x['answer'])]
           q41=[x for x in q if '不得對裁處案件之實體決定聲明不服' in qt(x) or '單獨對扣留' in qt(x)]
-          q35=[x for x in q if '強制其到指定處所查證身分不服' in qt(x)]
-          assert q41 and all(x['basis']=='第41條' for x in q41)
-          assert q35 and all(x['basis']=='第35條' for x in q35)
+          q35=[x for x in q if '強制其到指定處所查證身分不服' in qt(x) or ('強制排除抗拒保全證據' in qt(x) and '不服' in qt(x))]
+          assert all(x['basis']=='第41條' for x in q41)
+          assert all(x['basis']=='第35條' for x in q35)
           parts=['p1.txt','p2.txt','p2b.txt','p3.txt','p4.txt','p5.txt','p6.txt']
           for n in ['index.html',*parts]: assert (root/n).exists()
           html=gzip.decompress(base64.b64decode(''.join((root/n).read_text() for n in parts))).decode()
@@ -60,10 +64,10 @@ jobs:
           final=arrays[0]
           def ft(x): return x['q']+' '+x['opts'][x['ans']]
           f41=[x for x in final if '不得對裁處案件之實體決定聲明不服' in ft(x) or '單獨對扣留' in ft(x)]
-          f35=[x for x in final if '強制其到指定處所查證身分不服' in ft(x)]
-          assert f41 and all(x['basis']=='第41條' for x in f41)
-          assert f35 and all(x['basis']=='第35條' for x in f35)
-          print('verified',b,r)
+          f35=[x for x in final if '強制其到指定處所查證身分不服' in ft(x) or ('強制排除抗拒保全證據' in ft(x) and '不服' in ft(x))]
+          assert all(x['basis']=='第41條' for x in f41)
+          assert all(x['basis']=='第35條' for x in f35)
+          print('verified strict bank',b,r)
           PY
       - name: Commit generated quiz
         run: |
@@ -71,5 +75,5 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add administrative-penalty-act-full
           git diff --cached --quiet && exit 0
-          git commit -m 'Build Administrative Penalty Act full original-question quiz'
+          git commit -m 'Build strict Administrative Penalty Act full original-question quiz'
           git push

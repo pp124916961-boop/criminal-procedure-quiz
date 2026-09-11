@@ -1,6 +1,6 @@
 from pathlib import Path
 import base64,gzip,json,re,copy
-SRC=Path('admin-disposition-situational')
+SRC=Path('admin-procedure-92-134')
 DST=Path('criminal-law-life-body-100'); DST.mkdir(parents=True,exist_ok=True)
 parts=['p1.txt','p2.txt','p2b.txt','p3.txt','p4.txt','p5.txt','p6.txt']
 b64=''.join((SRC/n).read_text(encoding='utf-8') for n in parts)
@@ -63,6 +63,6 @@ assert newq[0]['question'] in check and newq[-1]['question'] in check
 REV='20260911-criminal-law-life-body-100-v1'
 loader=f'''<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>刑法分則｜殺人・傷害・墮胎・遺棄・185-4｜100題歷屆原題</title><script>(async()=>{{const v='{REV}';const names={json.dumps(parts)};const a=(await Promise.all(names.map(n=>fetch(n+'?v='+v,{{cache:'no-store'}}).then(r=>r.text())))).join('');const b=atob(a);const u=Uint8Array.from(b,c=>c.charCodeAt(0));const t=await new Response(new Blob([u]).stream().pipeThrough(new DecompressionStream('gzip'))).text();document.open();document.write(t);document.close()}})();</script>'''
 (DST/'index.html').write_text(loader,encoding='utf-8')
-summary={'template':'admin-disposition-situational','question_count':100,'program_reused':True,'new_path':'criminal-law-life-body-100','source_position':'above_question','source_in_explanation':False,'storage_namespaced':True,'cache_busted':True,'revision':REV,'parts':{n:len(p) for n,p in zip(parts,out)}}
+summary={'template':'admin-procedure-92-134','question_count':100,'program_reused':True,'new_path':'criminal-law-life-body-100','source_position':'above_question','source_in_explanation':False,'storage_namespaced':True,'cache_busted':True,'revision':REV,'parts':{n:len(p) for n,p in zip(parts,out)}}
 (DST/'template-reuse-summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(summary,ensure_ascii=False,indent=2))

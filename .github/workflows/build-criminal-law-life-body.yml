@@ -1,0 +1,58 @@
+name: Build Criminal Law Life Body Quiz
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-criminal-law-life-body.yml'
+      - 'scripts/build_criminal_law_life_body.py'
+      - 'scripts/reuse_current_template_criminal_law_life_body.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install -q pandas pyarrow
+      - name: Build 100 original criminal law questions
+        run: python scripts/build_criminal_law_life_body.py
+      - name: Reuse fixed quiz program
+        run: python scripts/reuse_current_template_criminal_law_life_body.py
+      - name: Verify output
+        run: |
+          python - <<'PY'
+          import json,pathlib,base64,gzip,re
+          root=pathlib.Path('criminal-law-life-body-100')
+          q=json.load(open(root/'questions.json',encoding='utf-8'))
+          b=json.load(open(root/'build-summary.json',encoding='utf-8'))
+          r=json.load(open(root/'template-reuse-summary.json',encoding='utf-8'))
+          assert len(q)==100 and len({x['question']+'|'.join(x['options']) for x in q})==100
+          assert all(len(x['options'])==4 and x['answer'] in 'ABCD' and x['source'] for x in q)
+          assert b['original_questions_unedited'] is True
+          assert r['program_reused'] is True and r['source_position']=='above_question' and r['source_in_explanation'] is False
+          assert set(b['groups']).issubset({'殺人罪章（§271～276）','傷害罪章（§277～287）','墮胎罪章（§288～292）','遺棄罪章（§293～295）','發生交通事故逃逸（§185-4）'})
+          assert b['groups'].get('墮胎罪章（§288～292）',0)>=8
+          assert b['groups'].get('遺棄罪章（§293～295）',0)>=12
+          assert b['groups'].get('發生交通事故逃逸（§185-4）',0)>=8
+          parts=['p1.txt','p2.txt','p2b.txt','p3.txt','p4.txt','p5.txt','p6.txt']
+          html=gzip.decompress(base64.b64decode(''.join((root/n).read_text() for n in parts))).decode()
+          assert q[0]['question'] in html and q[-1]['question'] in html
+          assert html.find('id="qSource"') < html.find('id="qTitle"')
+          assert 'feedbackSource' not in html
+          print('verified',b,r)
+          PY
+      - name: Commit generated quiz
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add criminal-law-life-body-100
+          git diff --cached --quiet && exit 0
+          git commit -m 'Build criminal law life and bodily integrity original-question quiz'
+          git push

@@ -1,0 +1,23 @@
+{
+  "template": "admin-procedure-92-134",
+  "question_count": 100,
+  "program_reused": true,
+  "new_path": "criminal-law-life-body-100",
+  "source_position": "above_question",
+  "source_in_explanation": false,
+  "storage_namespaced": true,
+  "storage_literal_keys_found": [],
+  "cache_busted": true,
+  "revision": "20260911-criminal-law-life-body-100-v2",
+  "final_bundle_first_question": "檢察官以被告甲涉嫌殺害甫生產後之嬰兒，構成刑法第274條生母殺嬰罪提起公訴。第一審法院行準備程序時，被告甲就被訴事實，承認於分娩後基於羞愧之心，當場殺害剛出生的嬰兒，惟同時主張其於行為時，因長期受精神疾病的困擾，致不能辨識自己行為違法，無責任能力。本例情形，法院得否依刑事訴訟法第273條之1之規定，踐行告知被告簡式審判程序之旨，並聽取當事人、辯護人之意見後，裁定進行簡式審判程序？",
+  "final_bundle_last_question": "甲開車不慎，撞倒乙駕駛之機車，致乙及後座搭載之丙均受輕傷。乙告訴甲過失傷害，經起訴並判決甲無罪確定後，丙於告訴期間內又向同一地檢署告訴甲過失傷害並經提起公訴。有關法院應如何判決，依現行實務見解，下列敘述，何者正確？",
+  "parts": {
+    "p1.txt": 7985,
+    "p2.txt": 3992,
+    "p2b.txt": 3992,
+    "p3.txt": 7985,
+    "p4.txt": 7985,
+    "p5.txt": 7985,
+    "p6.txt": 412
+  }
+}

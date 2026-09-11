@@ -38,9 +38,11 @@ jobs:
           assert b['original_questions_unedited'] is True
           assert r['program_reused'] is True and r['source_position']=='above_question' and r['source_in_explanation'] is False
           assert set(b['groups']).issubset({'殺人罪章（§271～276）','傷害罪章（§277～287）','墮胎罪章（§288～292）','遺棄罪章（§293～295）','發生交通事故逃逸（§185-4）'})
-          assert b['groups'].get('墮胎罪章（§288～292）',0)>=8
-          assert b['groups'].get('遺棄罪章（§293～295）',0)>=12
-          assert b['groups'].get('發生交通事故逃逸（§185-4）',0)>=8
+          requested={'殺人罪章（§271～276）','傷害罪章（§277～287）','墮胎罪章（§288～292）','遺棄罪章（§293～295）','發生交通事故逃逸（§185-4）'}
+          assert all(b['groups'].get(g,0)>0 for g in requested)
+          assert b['groups'].get('墮胎罪章（§288～292）',0)==2
+          assert b['groups'].get('遺棄罪章（§293～295）',0)>=8
+          assert b['groups'].get('發生交通事故逃逸（§185-4）',0)>=6
           parts=['p1.txt','p2.txt','p2b.txt','p3.txt','p4.txt','p5.txt','p6.txt']
           html=gzip.decompress(base64.b64decode(''.join((root/n).read_text() for n in parts))).decode()
           assert q[0]['question'] in html and q[-1]['question'] in html

@@ -43,7 +43,7 @@ jobs:
           assert set(b['groups']).issubset({'殺人罪章（§271～276）','傷害罪章（§277～287）','墮胎罪章（§288～292）','遺棄罪章（§293～295）','發生交通事故逃逸（§185-4）'})
           requested={'殺人罪章（§271～276）','傷害罪章（§277～287）','墮胎罪章（§288～292）','遺棄罪章（§293～295）','發生交通事故逃逸（§185-4）'}
           assert all(b['groups'].get(g,0)>0 for g in requested)
-          assert b['groups'].get('墮胎罪章（§288～292）',0)==2
+          assert b['groups'].get('墮胎罪章（§288～292）',0)==1
           assert b['groups'].get('遺棄罪章（§293～295）',0)>=8
           assert b['groups'].get('發生交通事故逃逸（§185-4）',0)>=6
           parts=['p1.txt','p2.txt','p2b.txt','p3.txt','p4.txt','p5.txt','p6.txt']

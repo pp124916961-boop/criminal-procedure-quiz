@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>刑法分則生命身體法益｜100題國考原題</title>
+<style>
+:root {
+  --bg:#f4f7fb; --card:#fff; --text:#172033; --muted:#64748b; --line:#dbe3ef;
+  --navy:#17365d; --blue:#2563eb; --green:#087f5b; --red:#c92a2a; --amber:#9a6700;
+  --shadow:0 12px 28px rgba(15,23,42,.08); --radius:18px;
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif; background:var(--bg); color:var(--text); }
+button { font:inherit; }
+.app { max-width:820px; margin:0 auto; padding:16px 14px 40px; }
+.hero { background:linear-gradient(135deg,#102a43,#1e4f87); color:#fff; padding:20px; border-radius:22px; box-shadow:var(--shadow); }
+.hero h1 { margin:0 0 8px; font-size:clamp(24px,7vw,38px); line-height:1.2; }
+.hero p { margin:6px 0 0; color:#dbeafe; line-height:1.6; }
+.badges { display:flex; flex-wrap:wrap; gap:7px; margin-top:13px; }
+.badge { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22); padding:6px 9px; border-radius:999px; font-size:13px; }
+.panel { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:16px; margin-top:14px; }
+.controls { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+.btn { border:0; border-radius:13px; padding:12px 14px; cursor:pointer; font-weight:750; min-height:48px; }
+.btn-primary { background:var(--navy); color:white; }
+.btn-soft { background:#eaf1fb; color:#193b67; }
+.btn-danger { background:#fff0f0; color:#a61e1e; }
+.btn:disabled { opacity:.45; cursor:not-allowed; }
+.stats { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:12px; }
+.stat { border:1px solid var(--line); border-radius:13px; padding:9px 6px; text-align:center; background:#fbfdff; }
+.stat b { display:block; font-size:20px; }
+.stat span { font-size:12px; color:var(--muted); }
+.progress { height:10px; background:#e7edf5; border-radius:999px; overflow:hidden; margin-top:12px; }
+.progress > div { height:100%; background:linear-gradient(90deg,#1d4ed8,#3b82f6); width:0%; transition:width .25s; }
+.qmeta { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; color:var(--muted); font-size:13px; margin-bottom:10px; }
+.sourcebox { background:#fff8e7; border:1px solid #eed9a7; color:#725012; border-radius:11px; padding:9px 10px; font-size:13px; line-height:1.55; margin:0 0 10px; }
+.sourcebox a { color:#1d4ed8; font-weight:750; text-decoration:none; }
+.qtitle { font-size:21px; font-weight:800; line-height:1.55; margin:8px 0 14px; white-space:pre-wrap; }
+.options { display:grid; gap:10px; }
+.option { width:100%; text-align:left; border:1.5px solid var(--line); background:#fff; color:var(--text); border-radius:14px; padding:13px 14px; line-height:1.5; cursor:pointer; transition:.15s; }
+.option:hover { border-color:#9fb6d4; background:#f8fbff; }
+.option.locked { cursor:default; }
+.option.correct { border-color:#34a27a; background:#ecfdf5; }
+.option.wrong { border-color:#e06666; background:#fff1f2; }
+.optletter { display:inline-flex; width:27px; height:27px; border-radius:50%; align-items:center; justify-content:center; margin-right:9px; background:#eef3f9; font-weight:800; }
+.correct .optletter { background:#c9f4df; color:#065f46; }
+.wrong .optletter { background:#ffd5d9; color:#9f1239; }
+.feedback { display:none; margin-top:14px; border-radius:15px; padding:14px; border:1px solid var(--line); background:#fafcff; }
+.feedback.show { display:block; }
+.feedback.good { border-color:#a7dfc8; background:#f0fdf7; }
+.feedback.bad { border-color:#f0b5bb; background:#fff7f7; }
+.feedback h3 { margin:0 0 8px; font-size:18px; }
+.basis { background:#eef4ff; border-left:4px solid #3b82f6; padding:10px 11px; border-radius:8px; line-height:1.55; margin-top:9px; }
+.explain { line-height:1.7; margin-top:9px; color:#334155; }
+.nav { display:grid; grid-template-columns:1fr 1.4fr; gap:10px; margin-top:14px; }
+.note { color:var(--muted); font-size:13px; line-height:1.65; }
+.result { display:none; }
+.result.show { display:block; }
+.resultScore { font-size:52px; font-weight:900; color:var(--navy); margin:5px 0; }
+.wronglist { max-height:340px; overflow:auto; border-top:1px solid var(--line); margin-top:12px; }
+.wrongitem { padding:10px 2px; border-bottom:1px solid var(--line); line-height:1.5; font-size:14px; }
+.jump { display:grid; grid-template-columns:repeat(10,1fr); gap:5px; margin-top:10px; }
+.jbtn { min-width:0; padding:7px 0; border:1px solid var(--line); border-radius:8px; background:#fff; font-size:12px; }
+.jbtn.done { background:#eaf1fb; border-color:#a8bfdb; }
+.jbtn.current { outline:2px solid #2563eb; }
+.sourceLinks a { color:#1d4ed8; text-decoration:none; }
+.footer { text-align:center; color:#7b8798; font-size:12px; margin-top:20px; line-height:1.6; }
+@media (max-width:520px) {
+  .stats { grid-template-columns:repeat(2,1fr); }
+  .jump { grid-template-columns:repeat(10,1fr); }
+  .jbtn { font-size:10px; padding:6px 0; }
+  .qtitle { font-size:19px; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <section class="hero">
+    <h1>刑法分則｜生命・身體法益<br>100 題國考原題</h1>
+    <p>範圍：殺人罪章、傷害罪章、墮胎罪章、遺棄罪章，並納入刑法第185條之4發生交通事故逃逸罪。收錄司法特考、警察特考、警大二技、警佐班等歷屆選擇題原題；題幹與選項不改編。</p>
+    <div class="badges">
+      <span class="badge">共 100 題</span><span class="badge">四選一</span><span class="badge">即答即解</span><span class="badge">錯題重練</span><span class="badge">手機友善</span>
+    </div>
+  </section>
+
+  <section class="panel" id="controlPanel">
+    <div class="controls">
+      <button class="btn btn-primary" id="startSeq">依序開始 100 題</button>
+      <button class="btn btn-soft" id="startRandom">隨機開始 100 題</button>
+      <button class="btn btn-soft" id="resumeBtn">繼續上次進度</button>
+      <button class="btn btn-danger" id="resetBtn">清除作答紀錄</button>
+    </div>
+    <div class="stats">
+      <div class="stat"><b id="statDone">0</b><span>已作答</span></div>
+      <div class="stat"><b id="statCorrect">0</b><span>答對</span></div>
+      <div class="stat"><b id="statWrong">0</b><span>答錯</span></div>
+      <div class="stat"><b id="statRate">0%</b><span>正確率</span></div>
+    </div>
+    <div class="progress"><div id="progressBar"></div></div>
+    <p class="note">本版 100 題只收錄原本即為選擇題之歷屆原題，不將三等或研究所申論題改寫成四選一；範圍限殺人、傷害、墮胎、遺棄罪章及刑法第185條之4。操作與統計方式與原刑法測驗完全相同。</p>
+  </section>
+
+  <section class="panel" id="quizPanel" style="display:none">
+    <div class="qmeta">
+      <span id="qCount">第 1 / 100 題</span>
+      <span id="qTag">國考原題</span>
+    </div>
+    <div class="sourcebox"><b>出處：</b><span id="qSource"></span> <a id="qSourceLink" href="#" target="_blank" rel="noopener">查看原卷／答案 ↗</a></div>
+    <div class="qtitle" id="qTitle"></div>
+    <div class="options" id="options"></div>
+    <div class="feedback" id="feedback">
+      <h3 id="feedbackTitle"></h3>
+      <div id="correctAnswer"></div>
+      <div class="basis"><b>考點／法條：</b><span id="basis"></span></div>
+      <div class="explain"><b>簡要解析：</b><span id="explanation"></span></div>
+      <div class="explain"><b>原題出處：</b><span id="feedbackSource"></span></div>
+    </div>
+    <div class="nav">
+      <button class="btn btn-soft" id="prevBtn">上一題</button>
+      <button class="btn btn-primary" id="nextBtn">下一題</button>
+    </div>
+    <div class="jump" id="jump"></div>
+  </section>
+
+  <section class="panel result" id="resultPanel">
+    <div class="qmeta"><span>本回合完成</span><span id="resultMode"></span></div>
+    <div class="resultScore" id="resultScore">0 / 100</div>
+    <p id="resultText"></p>
+    <div class="controls">
+      <button class="btn btn-primary" id="retryWrong">只重練本回合錯題</button>
+      <button class="btn btn-soft" id="restart">重新作答 100 題</button>
+    </div>
+    <div class="wronglist" id="wrongList"></div>
+  </section>
+
+  <section class="panel sourceLinks">
+    <b>核對基準</b>
+    <p class="note">現行法：法務部全國法規資料庫《中華民國刑法》。原題與答案：考選部考畢試題查詢平臺；每題另於題目上方標示年度、考試、類科與原題號。</p>
+    <p class="note"><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0000001" target="_blank" rel="noopener">中華民國刑法全文</a> ・ <a href="https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx" target="_blank" rel="noopener">考選部考畢試題查詢</a></p>
+  </section>
+
+  <div class="footer">本題庫供讀書複習使用；遇修法、釋字／憲判或實務見解變動時，應以最新官方資料為準。</div>
+</div>
+
+<script src="q1.js"></script><script src="q2.js"></script><script src="q3.js"></script><script src="q4.js"></script>
+<script>
+const RAW_QUESTIONS=[...(window.QPART1||[]),...(window.QPART2||[]),...(window.QPART3||[]),...(window.QPART4||[])];
+const QUESTIONS=RAW_QUESTIONS.map((q,i)=>({
+  id:i+1,
+  question:q.q,
+  options:q.opts,
+  answer:q.ans,
+  basis:q.law,
+  explanation:q.note||"請依該題所示法條與理論複習。",
+  source:q.source,
+  url:q.url,
+  tag:"國考原題"
+}));
+const LETTERS=["A","B","C","D"];
+const STORE_KEY="criminal_law_life_body_v1";
+let state={
+  order:QUESTIONS.map(q=>q.id),
+  pos:0,
+  answers:{},
+  mode:"依序100題",
+  sessionIds:QUESTIONS.map(q=>q.id)
+};
+
+function qById(id) { return QUESTIONS.find(q=>q.id===id); }
+function loadStored() {
+  try {
+    const s=JSON.parse(localStorage.getItem(STORE_KEY));
+    if(s && Array.isArray(s.order) && s.answers) return s;
+  } catch(e) {}
+  return null;
+}
+function save() { localStorage.setItem(STORE_KEY, JSON.stringify(state)); updateStats(); }
+function shuffle(arr) {
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--) {
+    const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+function start(mode) {
+  const ids=QUESTIONS.map(q=>q.id);
+  state={ order:mode==="random"?shuffle(ids):ids, pos:0, answers:{}, mode:mode==="random"?"隨機100題":"依序100題", sessionIds:ids };
+  document.getElementById("resultPanel").classList.remove("show");
+  document.getElementById("quizPanel").style.display="block";
+  save(); render();
+  window.scrollTo({top:document.getElementById("quizPanel").offsetTop-8,behavior:"smooth"});
+}
+function resume() {
+  const s=loadStored();
+  if(!s) { alert("目前沒有可繼續的進度。"); return; }
+  state=s;
+  document.getElementById("resultPanel").classList.remove("show");
+  document.getElementById("quizPanel").style.display="block";
+  render();
+}
+function render() {
+  if(!state.order.length) return;
+  if(state.pos<0) state.pos=0;
+  if(state.pos>=state.order.length) { finish(); return; }
+  const id=state.order[state.pos], q=qById(id), ans=state.answers[id];
+  if(!q) return;
+  document.getElementById("qCount").textContent=`第 ${state.pos+1} / ${state.order.length} 題｜${q.basis}`;
+  document.getElementById("qTag").textContent=q.tag;
+  document.getElementById("qSource").textContent=q.source;
+  const srcLink=document.getElementById("qSourceLink");
+  srcLink.href=q.url||"https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx";
+  document.getElementById("qTitle").textContent=q.question;
+  const box=document.getElementById("options"); box.innerHTML="";
+  q.options.forEach((opt,idx)=>{
+    const b=document.createElement("button");
+    b.className="option"+(ans!==undefined?" locked":"");
+    if(ans!==undefined && idx===q.answer) b.classList.add("correct");
+    if(ans!==undefined && idx===ans && ans!==q.answer) b.classList.add("wrong");
+    b.innerHTML=`<span class="optletter">${LETTERS[idx]}</span>${escapeHtml(opt)}`;
+    b.disabled=ans!==undefined;
+    b.onclick=()=>choose(idx);
+    box.appendChild(b);
+  });
+  const fb=document.getElementById("feedback");
+  if(ans!==undefined) {
+    fb.className="feedback show "+(ans===q.answer?"good":"bad");
+    document.getElementById("feedbackTitle").textContent=ans===q.answer?"✅ 答對":"❌ 答錯";
+    document.getElementById("correctAnswer").innerHTML=`<b>正確答案：${LETTERS[q.answer]}．${escapeHtml(q.options[q.answer])}</b>`;
+    document.getElementById("basis").textContent=q.basis;
+    document.getElementById("explanation").textContent=q.explanation;
+    document.getElementById("feedbackSource").textContent=q.source;
+  } else {
+    fb.className="feedback";
+  }
+  document.getElementById("prevBtn").disabled=state.pos===0;
+  document.getElementById("nextBtn").textContent=state.pos===state.order.length-1?"完成本回合":"下一題";
+  buildJump(); updateStats();
+}
+function choose(idx) {
+  const id=state.order[state.pos];
+  if(state.answers[id]!==undefined) return;
+  state.answers[id]=idx;
+  save(); render();
+}
+function go(delta) {
+  if(delta>0 && state.pos===state.order.length-1) { finish(); return; }
+  state.pos=Math.max(0,Math.min(state.order.length-1,state.pos+delta));
+  save(); render();
+  window.scrollTo({top:document.getElementById("quizPanel").offsetTop-8,behavior:"smooth"});
+}
+function buildJump() {
+  const el=document.getElementById("jump"); el.innerHTML="";
+  state.order.forEach((id,i)=>{
+    const b=document.createElement("button"); b.className="jbtn";
+    if(state.answers[id]!==undefined) b.classList.add("done");
+    if(i===state.pos) b.classList.add("current");
+    b.textContent=i+1;
+    b.onclick=()=>{state.pos=i; save(); render();};
+    el.appendChild(b);
+  });
+}
+function sessionAnsweredIds() { return state.order.filter(id=>state.answers[id]!==undefined); }
+function updateStats() {
+  const ids=sessionAnsweredIds();
+  let c=0; ids.forEach(id=>{ const q=qById(id); if(q && state.answers[id]===q.answer) c++; });
+  const w=ids.length-c, rate=ids.length?Math.round(c/ids.length*100):0;
+  document.getElementById("statDone").textContent=ids.length;
+  document.getElementById("statCorrect").textContent=c;
+  document.getElementById("statWrong").textContent=w;
+  document.getElementById("statRate").textContent=rate+"%";
+  document.getElementById("progressBar").style.width=(state.order.length?ids.length/state.order.length*100:0)+"%";
+}
+function finish() {
+  const ids=state.order;
+  const answered=ids.filter(id=>state.answers[id]!==undefined);
+  if(answered.length<ids.length) {
+    const ok=confirm(`目前尚有 ${ids.length-answered.length} 題未作答，仍要結束本回合嗎？`);
+    if(!ok) return;
+  }
+  let correct=0, wrongIds=[];
+  ids.forEach(id=>{
+    const a=state.answers[id], q=qById(id);
+    if(q && a===q.answer) correct++; else wrongIds.push(id);
+  });
+  document.getElementById("quizPanel").style.display="none";
+  const rp=document.getElementById("resultPanel"); rp.classList.add("show");
+  document.getElementById("resultMode").textContent=state.mode;
+  document.getElementById("resultScore").textContent=`${correct} / ${ids.length}`;
+  const rate=Math.round(correct/ids.length*100);
+  document.getElementById("resultText").textContent=`正確率 ${rate}%。錯題 ${wrongIds.length} 題，可直接進入錯題重練。`;
+  const wl=document.getElementById("wrongList"); wl.innerHTML="";
+  if(!wrongIds.length) wl.innerHTML='<div class="wrongitem">🎉 本回合全對。</div>';
+  else wrongIds.forEach(id=>{
+    const q=qById(id), a=state.answers[id];
+    const d=document.createElement("div"); d.className="wrongitem";
+    const your=a===undefined?"未作答":`${LETTERS[a]}．${escapeHtml(q.options[a])}`;
+    d.innerHTML=`<b>第${id}題</b><br><span style="color:#725012">出處：${escapeHtml(q.source)}</span><br>${escapeHtml(q.question)}<br><span style="color:#a61e1e">你的答案：${your}</span><br><span style="color:#087f5b">正解：${LETTERS[q.answer]}．${escapeHtml(q.options[q.answer])}</span>`;
+    wl.appendChild(d);
+  });
+  document.getElementById("retryWrong").disabled=!wrongIds.length;
+  document.getElementById("retryWrong").onclick=()=>{
+    state={order:wrongIds,pos:0,answers:{},mode:"錯題重練",sessionIds:wrongIds};
+    rp.classList.remove("show"); document.getElementById("quizPanel").style.display="block"; save(); render();
+  };
+  window.scrollTo({top:rp.offsetTop-8,behavior:"smooth"});
+}
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+}
+document.getElementById("startSeq").onclick=()=>start("seq");
+document.getElementById("startRandom").onclick=()=>start("random");
+document.getElementById("resumeBtn").onclick=resume;
+document.getElementById("resetBtn").onclick=()=>{
+  if(confirm("確定清除所有本機作答紀錄？")) {
+    localStorage.removeItem(STORE_KEY);
+    state={order:QUESTIONS.map(q=>q.id),pos:0,answers:{},mode:"依序100題",sessionIds:QUESTIONS.map(q=>q.id)};
+    document.getElementById("quizPanel").style.display="none";
+    document.getElementById("resultPanel").classList.remove("show");
+    document.getElementById("resumeBtn").textContent="繼續上次進度";
+    updateStats();
+  }
+};
+document.getElementById("prevBtn").onclick=()=>go(-1);
+document.getElementById("nextBtn").onclick=()=>go(1);
+document.getElementById("restart").onclick=()=>start("seq");
+
+const stored=loadStored();
+if(stored) {
+  state=stored;
+  const n=Object.keys(stored.answers||{}).length;
+  document.getElementById("resumeBtn").textContent=`繼續上次進度（${n}題）`;
+}
+updateStats();
+</script>
+</body>
+</html>

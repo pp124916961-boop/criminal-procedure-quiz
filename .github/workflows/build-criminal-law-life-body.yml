@@ -36,6 +36,9 @@ jobs:
           assert len(q)==100 and len({x['question']+'|'.join(x['options']) for x in q})==100
           assert all(len(x['options'])==4 and x['answer'] in 'ABCD' and x['source'] for x in q)
           assert b['original_questions_unedited'] is True
+          assert b['substantive_special_part_filter'] is True
+          hard=['刑事訴訟法','簡式審判','簡易判決','緩起訴','提起公訴','自訴','上訴','公示送達','審判期日','不受理判決','證據能力','羈押','搜索','扣押','準抗告','檢察官偵查','偵查終結','不起訴處分','告訴期間','一事不再理','法院應如何判決','法院得否','第三審法院','第二審法院']
+          assert not any(any(k in x['question'] for k in hard) for x in q)
           assert r['program_reused'] is True and r['source_position']=='above_question' and r['source_in_explanation'] is False
           assert set(b['groups']).issubset({'殺人罪章（§271～276）','傷害罪章（§277～287）','墮胎罪章（§288～292）','遺棄罪章（§293～295）','發生交通事故逃逸（§185-4）'})
           requested={'殺人罪章（§271～276）','傷害罪章（§277～287）','墮胎罪章（§288～292）','遺棄罪章（§293～295）','發生交通事故逃逸（§185-4）'}

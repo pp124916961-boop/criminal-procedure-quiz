@@ -66,9 +66,31 @@ def classify(r):
     g=max(scores,key=scores.get)
     return g if scores[g]>0 else ''
 
+STEM_EXTRA={
+ '殺人罪章（§271～276）':['殺害','殺死','射殺','砍殺','毒殺','勒死','掐死','自殺','死亡'],
+ '傷害罪章（§277～287）':['毆打','打傷','受傷','重傷','骨折','截肢','傷勢','傷口','毀敗','身體或健康'],
+ '墮胎罪章（§288～292）':['墮胎','懷胎','懷孕','胎兒'],
+ '遺棄罪章（§293～295）':['遺棄','無自救力','扶養','扶助','養育','保護義務','生存所必要'],
+ '發生交通事故逃逸（§185-4）':['肇事逃逸','事故逃逸','交通事故','發生事故','逃逸','離開現場']
+}
+PROCEDURE_HARD=[
+ '刑事訴訟法','簡式審判','簡易判決','緩起訴','提起公訴','自訴','上訴',
+ '傳票','公示送達','審判期日','不受理判決','證據能力','羈押','搜索','扣押',
+ '準抗告','檢察官偵查','偵查終結','不起訴處分','告訴期間','一事不再理',
+ '法院應如何判決','法院得否','第三審法院','第二審法院'
+]
+
 def scope_signal(r,g):
-    z=focus(r)
-    return count_hits(z,GROUPS[g])>0
+    q=S(r.get('question'))
+    # The requested range is substantive Criminal Code special-part law, not criminal procedure
+    # questions that merely happen to mention murder/injury as the charged offense.
+    if any(k in q for k in PROCEDURE_HARD):
+        return False
+    # Require the target offence/chapter to appear in the stem itself, not only in a distractor
+    # or the correct option. Natural fact-pattern verbs are accepted in addition to article names.
+    if count_hits(q,GROUPS[g])>0:
+        return True
+    return any(k in q for k in STEM_EXTRA[g])
 
 def score(r):
     q=S(r.get('question')); a=answer_text(r); g=classify(r)
@@ -187,6 +209,8 @@ summary={
  'preferred_exam_count':sum(any(k in q['source'] for k in PREF) for q in qs),
  'original_questions_unedited':True,'source_required':True,
  'classification_uses_question_and_correct_option':True,
+ 'substantive_special_part_filter':True,
+ 'criminal_procedure_only_questions':0,
  'current_code_checked':'115-07-22'
 }
 (OUT/'build-summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')

@@ -7,14 +7,35 @@ b64=''.join((SRC/n).read_text(encoding='utf-8') for n in parts)
 html=gzip.decompress(base64.b64decode(b64)).decode('utf-8')
 newq=json.loads((DST/'questions.json').read_text(encoding='utf-8')); assert len(newq)==100
 m=re.search(r'((?:const|let|var)\\s+QUESTIONS\\s*=\\s*)(\\[.*?\\])(?=\\s*;)',html,re.S)
-if not m:
+arr_start=arr_end=None; old=None
+if m:
+    try:
+        cand=json.loads(m.group(2))
+        if isinstance(cand,list) and len(cand)==100:
+            old=cand; arr_start=m.start(2); arr_end=m.end(2)
+    except Exception:
+        pass
+if old is None:
     for mm in re.finditer(r'((?:const|let|var)\\s+[A-Za-z_$][\\w$]*\\s*=\\s*)(\\[.*?\\])(?=\\s*;)',html,re.S):
         try:a=json.loads(mm.group(2))
         except:continue
-        if isinstance(a,list) and len(a)==100 and a and isinstance(a[0],dict) and 'opts' in a[0]:
-            m=mm;break
-if not m:raise RuntimeError('quiz array not found')
-old=json.loads(m.group(2)); converted=[]
+        if isinstance(a,list) and len(a)==100 and a and isinstance(a[0],dict) and ('opts' in a[0] or 'options' in a[0]):
+            old=a; arr_start=mm.start(2); arr_end=mm.end(2); break
+if old is None:
+    dec=json.JSONDecoder()
+    for mm in re.finditer(r'\\[\\s*\\{',html):
+        try:
+            a,end=dec.raw_decode(html[mm.start():])
+        except Exception:
+            continue
+        if isinstance(a,list) and len(a)==100 and a and isinstance(a[0],dict) and ('opts' in a[0] or 'options' in a[0]):
+            old=a; arr_start=mm.start(); arr_end=mm.start()+end; break
+if old is None:
+    vars_=re.findall(r'(?:const|let|var)\\s+([A-Za-z_$][\\w$]*)\\s*=',html)
+    oi=html.find('"opts"'); qi=html.find('"q"')
+    print('template diagnostics',{'length':len(html),'vars':vars_[:40],'opts_at':oi,'q_at':qi,'opts_context':html[max(0,oi-120):oi+180] if oi>=0 else ''})
+    raise RuntimeError('quiz array not found')
+converted=[]
 for i,nq in enumerate(newq):
     b=copy.deepcopy(old[i])
     b['q']=nq['question']; b['opts']=nq['options']; b['ans']='ABCD'.index(nq['answer'])
@@ -22,7 +43,7 @@ for i,nq in enumerate(newq):
     if 'url' in b:b['url']=''
     converted.append(b)
 lit=json.dumps(converted,ensure_ascii=False,separators=(',',':'))
-prefix=html[:m.start(2)]; suffix=html[m.end(2):]
+prefix=html[:arr_start]; suffix=html[arr_end:]
 
 # Static labels only; original-question text is injected after label replacement.
 for old in ['行政程序法｜行政處分實境辨識強化','行政處分實境辨識強化','行政處分實境辨識']:

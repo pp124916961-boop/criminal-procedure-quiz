@@ -1,0 +1,20 @@
+{
+  "template": "criminal-law-life-body-100",
+  "question_count": 50,
+  "program_reused": true,
+  "new_path": "criminal-illegality-50",
+  "source_position": "above_question",
+  "source_in_explanation": false,
+  "storage_namespaced": true,
+  "cache_busted": true,
+  "revision": "20260914-criminal-illegality-50-v1",
+  "parts": {
+    "p1.txt": 3765,
+    "p2.txt": 1882,
+    "p2b.txt": 1882,
+    "p3.txt": 3765,
+    "p4.txt": 3765,
+    "p5.txt": 3765,
+    "p6.txt": 196
+  }
+}

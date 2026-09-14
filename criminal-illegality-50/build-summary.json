@@ -1,0 +1,37 @@
+{
+  "count": 50,
+  "scope": "刑法總則違法性：刑法§21～24＋超法規阻卻違法事由",
+  "groups": {
+    "正當防衛（刑法§23）": 24,
+    "緊急避難（刑法§24）": 9,
+    "依法令／業務正當行為（刑法§21～22）": 5,
+    "超法規阻卻違法事由": 12
+  },
+  "available_pool": {
+    "緊急避難（刑法§24）": 9,
+    "超法規阻卻違法事由": 14,
+    "正當防衛（刑法§23）": 26,
+    "依法令／業務正當行為（刑法§21～22）": 23
+  },
+  "years": {
+    "101": 2,
+    "102": 2,
+    "103": 2,
+    "104": 2,
+    "106": 3,
+    "107": 2,
+    "108": 6,
+    "109": 7,
+    "110": 5,
+    "111": 3,
+    "112": 10,
+    "113": 3,
+    "114": 3
+  },
+  "preferred_exam_count": 50,
+  "original_questions_unedited": true,
+  "source_required": true,
+  "self_defense_and_necessity_priority": true,
+  "substantive_wrongfulness_filter": true,
+  "current_code_checked": "115-07-22"
+}

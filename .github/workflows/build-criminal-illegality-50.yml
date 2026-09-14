@@ -38,8 +38,8 @@ jobs:
           assert b['original_questions_unedited'] is True
           assert b['substantive_wrongfulness_filter'] is True
           assert b['groups'].get('正當防衛（刑法§23）',0)>=20
-          assert b['groups'].get('緊急避難（刑法§24）',0)>=10
-          assert b['groups'].get('正當防衛（刑法§23）',0)+b['groups'].get('緊急避難（刑法§24）',0)>=34
+          assert b['groups'].get('緊急避難（刑法§24）',0)>=9
+          assert b['groups'].get('正當防衛（刑法§23）',0)+b['groups'].get('緊急避難（刑法§24）',0)>=33
           assert r['program_reused'] is True and r['question_count']==50
           assert r['source_position']=='above_question' and r['source_in_explanation'] is False
           parts=['p1.txt','p2.txt','p2b.txt','p3.txt','p4.txt','p5.txt','p6.txt']

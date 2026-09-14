@@ -23,15 +23,15 @@ GROUPS={
  '正當防衛（刑法§23）':[
    '正當防衛','防衛過當','防衛行為過當','現在不法之侵害','現在不法侵害','不法侵害',
    '防衛意思','防衛自己','防衛他人','防衛第三人','防衛挑撥','挑唆防衛','防衛權',
-   '誤想防衛','偶然防衛','容許構成要件錯誤','刑法第23條','第23條'
+   '誤想防衛','偶然防衛','容許構成要件錯誤','刑法第23條'
  ],
  '緊急避難（刑法§24）':[
    '緊急避難','避難過當','避難行為過當','緊急危難','出於不得已','不得已之行為',
-   '生命、身體、自由、財產','特別義務','法益權衡','利益衡量','刑法第24條','第24條'
+   '生命、身體、自由、財產','特別義務','法益權衡','利益衡量','刑法第24條'
  ],
  '依法令／業務正當行為（刑法§21～22）':[
    '依法令之行為','依法令行為','上級公務員命令','上級命令','明知命令違法',
-   '業務上之正當行為','業務正當行為','刑法第21條','刑法第22條','第21條','第22條'
+   '業務上之正當行為','業務正當行為','刑法第21條','刑法第22條'
  ],
  '超法規阻卻違法事由':[
    '被害人承諾','得被害人承諾','被害人同意','推定承諾','推測承諾','義務衝突',
@@ -109,9 +109,7 @@ subj=df.get('subject',pd.Series(['']*len(df),index=df.index)).astype(str)
 subjzh=df.get('subject_zh',pd.Series(['']*len(df),index=df.index)).astype(str)
 exam=df.get('exam_name',pd.Series(['']*len(df),index=df.index)).astype(str)
 mask=(subj.str.contains('criminal',case=False,regex=False)
-      | subjzh.str.contains('刑法',regex=False)
-      | subjzh.str.contains('法學',regex=False)
-      | exam.str.contains('警察|司法|律師|警大|警佐',regex=True))
+      | subjzh.str.contains('刑法',regex=False))
 df=df[mask].copy()
 df['group']=df.apply(classify,axis=1)
 df=df[df.group!=''].copy()

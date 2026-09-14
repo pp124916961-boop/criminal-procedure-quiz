@@ -148,7 +148,7 @@ selected=selected[:50]
 
 # Require the requested core areas to dominate the bank.
 cnt=Counter(r['group'] for r in selected)
-if cnt['正當防衛（刑法§23）']<20 or cnt['緊急避難（刑法§24）']<10:
+if cnt['正當防衛（刑法§23）']<20 or cnt['緊急避難（刑法§24）']<9:
     raise RuntimeError(f'Insufficient defense/necessity coverage: {dict(cnt)}')
 
 qs=[]

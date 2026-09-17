@@ -1,1 +1,320 @@
-<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>行政程序法第1～19條｜100題國考選擇題</title><script>(async()=>{const names=[1,2,3,4,5].map(n=>`p${n}.txt`);const a=(await Promise.all(names.map(n=>fetch(n).then(r=>r.text())))).join('');const b=atob(a);const u=Uint8Array.from(b,c=>c.charCodeAt(0));const t=await new Response(new Blob([u]).stream().pipeThrough(new DecompressionStream('gzip'))).text();document.open();document.write(t);document.close()})();</script>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>行政程序法第1～19條｜100題國考選擇題</title>
+<style>
+:root {
+  --bg:#f4f7fb; --card:#fff; --text:#172033; --muted:#64748b; --line:#dbe3ef;
+  --navy:#17365d; --blue:#2563eb; --green:#087f5b; --red:#c92a2a; --amber:#9a6700;
+  --shadow:0 12px 28px rgba(15,23,42,.08); --radius:18px;
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif; background:var(--bg); color:var(--text); }
+button { font:inherit; }
+.app { max-width:820px; margin:0 auto; padding:16px 14px 40px; }
+.hero { background:linear-gradient(135deg,#102a43,#1e4f87); color:#fff; padding:20px; border-radius:22px; box-shadow:var(--shadow); }
+.hero h1 { margin:0 0 8px; font-size:clamp(24px,7vw,38px); line-height:1.2; }
+.hero p { margin:6px 0 0; color:#dbeafe; line-height:1.6; }
+.badges { display:flex; flex-wrap:wrap; gap:7px; margin-top:13px; }
+.badge { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22); padding:6px 9px; border-radius:999px; font-size:13px; }
+.panel { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:16px; margin-top:14px; }
+.controls { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+.btn { border:0; border-radius:13px; padding:12px 14px; cursor:pointer; font-weight:750; min-height:48px; }
+.btn-primary { background:var(--navy); color:white; }
+.btn-soft { background:#eaf1fb; color:#193b67; }
+.btn-danger { background:#fff0f0; color:#a61e1e; }
+.btn:disabled { opacity:.45; cursor:not-allowed; }
+.stats { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:12px; }
+.stat { border:1px solid var(--line); border-radius:13px; padding:9px 6px; text-align:center; background:#fbfdff; }
+.stat b { display:block; font-size:20px; }
+.stat span { font-size:12px; color:var(--muted); }
+.progress { height:10px; background:#e7edf5; border-radius:999px; overflow:hidden; margin-top:12px; }
+.progress > div { height:100%; background:linear-gradient(90deg,#1d4ed8,#3b82f6); width:0%; transition:width .25s; }
+.qmeta { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; color:var(--muted); font-size:13px; margin-bottom:10px; }
+.qtitle { font-size:21px; font-weight:800; line-height:1.55; margin:8px 0 14px; white-space:pre-wrap; }
+.options { display:grid; gap:10px; }
+.option { width:100%; text-align:left; border:1.5px solid var(--line); background:#fff; color:var(--text); border-radius:14px; padding:13px 14px; line-height:1.5; cursor:pointer; transition:.15s; }
+.option:hover { border-color:#9fb6d4; background:#f8fbff; }
+.option.locked { cursor:default; }
+.option.correct { border-color:#34a27a; background:#ecfdf5; }
+.option.wrong { border-color:#e06666; background:#fff1f2; }
+.optletter { display:inline-flex; width:27px; height:27px; border-radius:50%; align-items:center; justify-content:center; margin-right:9px; background:#eef3f9; font-weight:800; }
+.correct .optletter { background:#c9f4df; color:#065f46; }
+.wrong .optletter { background:#ffd5d9; color:#9f1239; }
+.feedback { display:none; margin-top:14px; border-radius:15px; padding:14px; border:1px solid var(--line); background:#fafcff; }
+.feedback.show { display:block; }
+.feedback.good { border-color:#a7dfc8; background:#f0fdf7; }
+.feedback.bad { border-color:#f0b5bb; background:#fff7f7; }
+.feedback h3 { margin:0 0 8px; font-size:18px; }
+.basis { background:#eef4ff; border-left:4px solid #3b82f6; padding:10px 11px; border-radius:8px; line-height:1.55; margin-top:9px; }
+.explain { line-height:1.7; margin-top:9px; color:#334155; }
+.nav { display:grid; grid-template-columns:1fr 1.4fr; gap:10px; margin-top:14px; }
+.note { color:var(--muted); font-size:13px; line-height:1.65; }
+.result { display:none; }
+.result.show { display:block; }
+.resultScore { font-size:52px; font-weight:900; color:var(--navy); margin:5px 0; }
+.wronglist { max-height:340px; overflow:auto; border-top:1px solid var(--line); margin-top:12px; }
+.wrongitem { padding:10px 2px; border-bottom:1px solid var(--line); line-height:1.5; font-size:14px; }
+.jump { display:grid; grid-template-columns:repeat(10,1fr); gap:5px; margin-top:10px; }
+.jbtn { min-width:0; padding:7px 0; border:1px solid var(--line); border-radius:8px; background:#fff; font-size:12px; }
+.jbtn.done { background:#eaf1fb; border-color:#a8bfdb; }
+.jbtn.current { outline:2px solid #2563eb; }
+.sourceLinks a { color:#1d4ed8; text-decoration:none; }
+.footer { text-align:center; color:#7b8798; font-size:12px; margin-top:20px; line-height:1.6; }
+@media (max-width:520px) {
+  .stats { grid-template-columns:repeat(2,1fr); }
+  .jump { grid-template-columns:repeat(10,1fr); }
+  .jbtn { font-size:10px; padding:6px 0; }
+  .qtitle { font-size:19px; }
+}
+</style>
+<link rel="stylesheet" href="https://law-quiz-hub.pp124916961.chatgpt.site/wrong-history.css?v=1">
+</head>
+<body>
+<div class="app">
+  <section class="hero">
+    <h1>行政程序法 1～19 條<br>100 題國考選擇題</h1>
+    <p>收錄高普考、司法特考、警察特考等考選部歷屆原題；題幹與選項不改編。每題作答後，不論對錯都立即顯示現行法條依據與簡要解析。</p>
+    <div class="badges">
+      <span class="badge">共 100 題</span><span class="badge">四選一</span><span class="badge">即答即解</span><span class="badge">錯題重練</span><span class="badge">手機友善</span>
+    </div>
+  </section>
+
+  <section class="panel" id="controlPanel">
+    <div class="controls">
+      <button class="btn btn-primary" id="startSeq">依序開始 100 題</button>
+      <button class="btn btn-soft" id="startRandom">隨機開始 100 題</button>
+      <button class="btn btn-soft" id="resumeBtn">繼續上次進度</button>
+      <button class="btn btn-danger" id="resetBtn">清除本次作答</button>
+    </div>
+    <div class="stats">
+      <div class="stat"><b id="statDone">0</b><span>已作答</span></div>
+      <div class="stat"><b id="statCorrect">0</b><span>答對</span></div>
+      <div class="stat"><b id="statWrong">0</b><span>答錯</span></div>
+      <div class="stat"><b id="statRate">0%</b><span>正確率</span></div>
+    </div>
+    <div class="progress"><div id="progressBar"></div></div>
+    <p class="note">本版 100 題採歷屆國考既有選擇題題幹與選項，不自行改編；來源以近年高普考、司法特考、警察特考及其他考選部國考為主。答案與解析則依目前有效的《行政程序法》第 1～19 條判斷。</p>
+  </section>
+
+  <section class="panel" id="quizPanel" style="display:none">
+    <div class="qmeta">
+      <span id="qCount">第 1 / 100 題</span>
+      <span id="qTag">命題型</span>
+    </div>
+    <div class="qtitle" id="qTitle"></div>
+    <div class="options" id="options"></div>
+    <div class="feedback" id="feedback">
+      <h3 id="feedbackTitle"></h3>
+      <div id="correctAnswer"></div>
+      <div class="basis"><b>法條依據：</b><span id="basis"></span></div>
+      <div class="explain"><b>簡要解析：</b><span id="explanation"></span></div>
+    </div>
+    <div class="nav">
+      <button class="btn btn-soft" id="prevBtn">上一題</button>
+      <button class="btn btn-primary" id="nextBtn">下一題</button>
+    </div>
+    <div class="jump" id="jump"></div>
+  </section>
+
+  <section class="panel result" id="resultPanel">
+    <div class="qmeta"><span>本回合完成</span><span id="resultMode"></span></div>
+    <div class="resultScore" id="resultScore">0 / 100</div>
+    <p id="resultText"></p>
+    <div class="controls">
+      <button class="btn btn-primary" id="retryWrong">只重練本回合錯題</button>
+      <button class="btn btn-soft" id="restart">重新作答 100 題</button>
+    </div>
+    <div class="wronglist" id="wrongList"></div>
+  </section>
+
+  <section class="panel sourceLinks">
+    <b>核對基準</b>
+    <p class="note">現行法：法務部全國法規資料庫《行政程序法》。題型參考：考選部考畢試題查詢平台（如 114 年普通考試行政法概要、近年警察／司法類科相關科目）。</p>
+    <p class="note"><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030055" target="_blank" rel="noopener">行政程序法全文</a> ・ <a href="https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx" target="_blank" rel="noopener">考選部考畢試題查詢</a></p>
+  </section>
+
+  <div class="footer">本題庫供讀書複習使用；遇修法、釋字／憲判或實務見解變動時，應以最新官方資料為準。</div>
+</div>
+
+<script src="https://law-quiz-hub.pp124916961.chatgpt.site/wrong-history.js?v=1"></script>
+<script>
+const QUESTIONS = [{"id":1,"article":1,"question":"下列何者不屬於行政程序法之立法目的？","options":["撙節機關之經費支出","確保依法行政之原則","增進人民對行政之信賴","使行政行為遵循公正、公開與民主之程序"],"answer":0,"basis":"行政程序法第1條","explanation":"第1條列舉公正、公開、民主程序、依法行政、保障人民權益、提高行政效能及增進信賴，並未列「撙節機關經費」。","tag":"110年行政警察人員－警察法規概要｜歷屆原題"},{"id":2,"article":2,"question":"下列何者非屬我國行政程序法上所規範之行政行為？","options":["行政處分","直接強制","法規命令","行政指導"],"answer":1,"basis":"行政程序法第2條第1項","explanation":"第2條第1項列舉行政處分、行政契約、法規命令與行政規則、行政計畫、行政指導及陳情；直接強制屬行政執行。","tag":"113年一般行政－法學大意｜歷屆原題"},{"id":3,"article":2,"question":"行政程序法第2 條「本法所稱行政機關，係指代表國家、地方自治團體或其他行政主體表示意思，從事公共事務，具有單獨法定地位之組織」，此種情形在法律解釋上稱為：","options":["司法解釋","立法解釋","行政解釋","擬制"],"answer":1,"basis":"行政程序法第2條第2項","explanation":"立法者直接在法律條文中界定用語意義，屬立法解釋。","tag":"104年資訊處理－法學知識與英文｜歷屆原題"},{"id":4,"article":2,"question":"民間團體或個人受託行使公權力所生之法律關係，下列敘述何者錯誤？","options":["於受委託之範圍以外，非為行政機關","於受委託之範圍以外與第三人發生法律關係者，應屬公法關係","受委託行使公權力之團體，其執行職務之人，視同委託機關之公務員","於受委託之範圍內，應以該私人或團體的名義作成行政處分"],"answer":1,"basis":"行政程序法第2條第3項、第16條","explanation":"受託者僅於委託範圍內視為行政機關；範圍外並不當然形成公法關係，因此B錯誤。","tag":"110年一般行政－行政法｜歷屆原題"},{"id":5,"article":2,"question":"關於委託行使公權力之概念，下列敘述何者錯誤？","options":["受託行使公權力之個人或團體，於委託範圍內，視為行政機關","委託行使公權力得僅限於私經濟行政","委託方式得以行政處分或行政契約為之","行政機關得依法規將其權限之一部分，委託民間團體或個人辦理"],"answer":1,"basis":"行政程序法第2條第3項、第16條","explanation":"委託行使的是公權力，不是「僅限於私經濟行政」；第16條明定得依法規委託民間團體或個人辦理部分權限。","tag":"111年一般民政－行政法｜歷屆原題"},{"id":6,"article":2,"question":"行政程序法規定，受託行使公權力之個人，於委託範圍內，視為以下何者？","options":["公務人員","行政機關","法人團體","營造物"],"answer":1,"basis":"行政程序法第2條第3項","explanation":"受託行使公權力之個人或團體，於委託範圍內「視為行政機關」。","tag":"99年法制－行政法｜歷屆原題"},{"id":7,"article":3,"question":"依據行政程序法第3 條規定，下列何者有行政程序法中程序規定之適用？","options":["臺中市議會就各議員助理核發身分證明文件","監察院公告監察委員就外籍移工管制問題所為調查報告書","財政部國稅局就所得稅法扣除額範圍所為函釋","臺北地方法院針對矚目案件對一般民眾核發旁聽證"],"answer":2,"basis":"行政程序法第3條第2項、第3項","explanation":"各級民意機關、司法機關、監察機關之行政行為原則排除；財政部國稅局並非第3條第2項所列機關。","tag":"113年一般行政－法學大意｜歷屆原題"},{"id":8,"article":3,"question":"依行政程序法第3 條第3 項第6 款規定，關於學校或其他教育機構為達成教育目的之內部程序，不適用該法之程序規定。下列何者非屬本項範圍？","options":["課業指導","成績評量","維持紀律之合理措施","勒令退學處分"],"answer":3,"basis":"行政程序法第3條第3項第6款","explanation":"第3條排除的是為達成教育目的之「內部程序」；勒令退學對學生身分有重大外部法律效果，不屬此處單純內部程序。","tag":"112年一般行政－法學大意｜歷屆原題"},{"id":9,"article":3,"question":"下列何種行政行為適用行政程序法之程序規定？","options":["不起訴處分","學生成績之評定","交通違規之記點決定","對公務員之申誡決定"],"answer":2,"basis":"行政程序法第3條","explanation":"不起訴屬刑事程序、學生成績屬教育內部程序、公務員申誡屬人事行政；交通違規記點不在第3條排除範圍。","tag":"111年教育行政－行政法概要｜歷屆原題"},{"id":10,"article":3,"question":"關於行政程序法適用之敘述，下列何者錯誤？","options":["立法院拒絕民眾申請參觀立法院時，不適用行政程序法","內政部移民署就本國人之入、出境許可，不適用行政程序法","外交部就援助友邦之行為，不適用行政程序法","檢察官指派司法警察調查犯罪嫌疑人之犯罪事證，不適用行政程序法"],"answer":1,"basis":"行政程序法第3條第2項、第3項","explanation":"第3條第3項第2款排除的是「外國人」出、入境等行為，本國人並不在該款文字範圍，所以B錯。","tag":"111年教育行政－行政法概要｜歷屆原題"},{"id":11,"article":3,"question":"依據行政程序法規定，下列行政行為，何者適用行政程序法？","options":["對於走私貨物行為人之追緝","營業稅資料查核","對於公務員之平時考核","國家考試之評分"],"answer":1,"basis":"行政程序法第3條第3項","explanation":"走私追緝涉及犯罪偵查、公務員考核屬人事行政、國考評分明文排除；營業稅資料查核不在排除項目。","tag":"110年一般行政－行政法｜歷屆原題"},{"id":12,"article":3,"question":"下列何機關之行政行為，應適用行政程序法之程序規定？","options":["各級民意機關","司法機關","監察機關","消防機關"],"answer":3,"basis":"行政程序法第3條第2項","explanation":"第3條第2項排除各級民意、司法、監察機關；消防機關不在列舉排除之列。","tag":"112年人事行政－法學大意｜歷屆原題"},{"id":13,"article":4,"question":"行政行為不得與法律相牴觸，此係涉及下列何種原則？","options":["平等原則","法律優位原則","信賴保護原則","比例原則"],"answer":1,"basis":"行政程序法第4條","explanation":"行政行為應受法律拘束，不能牴觸法律，這是法律優位原則。","tag":"113年一般行政－法學大意｜歷屆原題"},{"id":14,"article":4,"question":"行政機關之行為，必須受到法律及一般法律原則之拘束，此為下列何項原則之內涵？","options":["信賴保護原則","依法行政原則","比例原則","平等原則"],"answer":1,"basis":"行政程序法第4條","explanation":"第4條明定行政行為應受法律及一般法律原則拘束，是依法行政原則的核心表現。","tag":"110年人事行政－法學大意｜歷屆原題"},{"id":15,"article":4,"question":"關於法律優位原則之敘述，下列何者正確？","options":["地方自治團體就委辦事項，可基於法律之授權，訂定自治條例或自治規則，不受中央主管機關法規命令之拘束","行政機關訂定行政命令，不得牴觸法律授權範圍及意旨，但基於執行必要，可限縮法律之適用","行政行為應受法律之拘束，法律應僅限於立法院通過並經總統公布者","在行政法之成文法規範體系中，憲法效力最高，法律次之，行政命令再次之，自治規章居於最下位"],"answer":3,"basis":"行政程序法第4條","explanation":"行政命令不得違反法律；「法律」的拘束也不能狹義限於立法院通過者。D正確呈現成文法規範基本位階。","tag":"111年行政警察人員－行政法｜歷屆原題"},{"id":16,"article":4,"question":"公務員對人民執行職務行使公權力，不得以下列何者作為其法律上之依據？","options":["憲法","法律","依法律授權所訂定之行政命令","機關首長之裁示"],"answer":3,"basis":"行政程序法第4條","explanation":"限制人民權利的公權力行使不能只以機關首長裁示作為法律依據。","tag":"113年教育行政－行政法概要｜歷屆原題"},{"id":17,"article":4,"question":"下列何種行政行為，須有法律之依據？","options":["舉辦園遊會","在公園內興建遊樂設施","禁止甲於海邊垂釣","發放加菜金於消防隊"],"answer":2,"basis":"行政程序法第4條","explanation":"禁止人民垂釣屬限制人民自由權利的干預行政，依法行政、法律保留要求有法律依據。","tag":"114年法警－行政法概要｜歷屆原題"},{"id":18,"article":4,"question":"關於依法行政原則，下列敘述何者正確？","options":["法律優於行政規則是屬於積極依法行政之內涵","大學在招生簡章中設置招生條件缺乏法律依據，不符合法律保留原則","法律授權行政機關訂定法規命令時，應符合授權明確性原則","警察機關受理民眾刑案報案作業要點亦得作為干預人民權利之依據"],"answer":2,"basis":"行政程序法第4條","explanation":"法規命令作為人民權利義務規範時，法律授權須符合授權明確性；行政規則不能單獨作為干預人民權利依據。","tag":"114年法警－行政法概要｜歷屆原題"},{"id":19,"article":4,"question":"下列關於依法行政原則之敘述何者錯誤？","options":["所謂依法行政之「法」，僅指成文法","法律優越原則稱為消極的依法行政原則","法律保留原則稱為積極的依法行政原則","行政機關行使職權，不應僅以組織法，更應以行為法之授權為依據"],"answer":0,"basis":"行政程序法第4條","explanation":"第4條明文也要求行政行為受一般法律原則拘束，因此依法行政之「法」不僅限成文法。","tag":"105年一般行政－行政法概要｜歷屆原題"},{"id":20,"article":4,"question":"關於依法行政之敘述，下列何者錯誤？","options":["執行法律之細節性、技術性次要事項，由行政機關發布命令為必要之規範，不違反法律保留原則","法律優位原則又稱為消極的依法行政原則","給付行政措施，只要預算允許，即無須適用法律保留原則","對於人民違反行政法上義務之裁罰，其處罰之構成要件，應以法律或法律明確授權之命令定之"],"answer":2,"basis":"行政程序法第4條","explanation":"給付行政並非只要有預算就一律排除法律保留；涉及重大公益或重要基本權事項仍可能須法律依據。","tag":"113年人事行政－行政法｜歷屆原題"},{"id":21,"article":5,"question":"行政程序法第5 條規定：「行政行為之內容應明確」，下列敘述何者正確？","options":["懲處之構成要件，法律不得以抽象概念表示","所謂內容應該明確，僅限於行政處分","書面行政處分書雖漏未記載處分相對人之性別，但已有足資辨別之特徵者，符合明確性原則","行政指導無需符合明確性原則"],"answer":2,"basis":"行政程序法第5條","explanation":"明確性不要求禁止一切抽象概念；第5條規範「行政行為」而不限行政處分。對象已有足資辨識特徵時，仍可符合明確性。","tag":"114年一般行政－行政法概要｜歷屆原題"},{"id":22,"article":5,"question":"關於行政行為明確性原則之敘述，下列何者錯誤？","options":["明確性原則要求行政行為之內容必須明確，使人民知悉規制之內容","明確性原則之目的，係為追求行政行為之可預見性","行政機關作成沒入處分時，沒入之標的已滅失，係違反明確性原則","行政機關之裁罰處分，未記載罰鍰數額，係違反明確性原則"],"answer":2,"basis":"行政程序法第5條","explanation":"標的已滅失主要涉及處分內容能否實現等問題，不是「內容不明確」；C錯誤。","tag":"112年法警－行政法概要｜歷屆原題"},{"id":23,"article":5,"question":"關於明確性原則之敘述，下列何者錯誤？","options":["法律授權以命令為補充規定，授權之目的、內容與範圍應具體明確","行政行為之內容應明確","為求明確，法規不得使用不確定法律概念或概括條款","法律使用之文字，其意義應可經由司法審查加以確認"],"answer":2,"basis":"行政程序法第5條","explanation":"明確性並不禁止使用不確定法律概念或概括條款，只要意義可理解、可預見並可受司法審查。","tag":"108年教育行政－行政法概要｜歷屆原題"},{"id":24,"article":5,"question":"關於明確性原則之敘述，下列何者錯誤？","options":["立法者原則上亦受明確性要求之拘束","法律明確性之要求，非僅指法律文義具體詳盡之體例而言","明確性原則，在禁止法規內運用不確定法律概念或概括條款","強調國家行為，內容必須明確，涉及人民權利義務事項時，尤應有清楚之界限與範圍"],"answer":2,"basis":"行政程序法第5條","explanation":"不確定法律概念並非一律禁止，重點在於可理解、可預見及可司法審查。","tag":"111年教育行政－行政法概要｜歷屆原題"},{"id":25,"article":5,"question":"參照司法院大法官解釋，下列何者非屬法律明確性原則之判斷基準？","options":["意義非難以理解","須符合授權明確性","受規範者得以預見","可經由司法審查加以確認"],"answer":1,"basis":"行政程序法第5條","explanation":"法律明確性的常見判準是意義可理解、受規範者可預見、可司法審查；授權明確性是另一項授權法理要求。","tag":"112年人事行政－法學大意｜歷屆原題"},{"id":26,"article":6,"question":"行政機關應受行政慣例拘束，與下列何項原則直接相關？","options":["比例原則","授權明確性原則","平等原則","不溯及既往原則"],"answer":2,"basis":"行政程序法第6條","explanation":"行政自我拘束是平等原則的具體化：同類案件形成合法慣例後，無正當理由不得任意差別處理。","tag":"113年法制－行政法｜歷屆原題"},{"id":27,"article":6,"question":"行政自我拘束原則是指行政機關作成行政行為時，如無正當理由，應受其行政慣例之拘束。該原則實為下列何種原則之要求而來？","options":["平等原則","法律保留原則","比例原則","法明確性原則"],"answer":0,"basis":"行政程序法第6條","explanation":"行政自我拘束原則源自平等原則。","tag":"113年一般行政－法學大意｜歷屆原題"},{"id":28,"article":6,"question":"甲、乙兩人同時違反交通規則，警察僅對甲科處罰鍰，可能違反下列何種原則？","options":["比例原則","經濟性原則","明確性原則","平等原則"],"answer":3,"basis":"行政程序法第6條","explanation":"同樣情形無正當理由差別處理，首先涉及第6條平等原則。","tag":"107年一般行政－行政法概要｜歷屆原題"},{"id":29,"article":6,"question":"關於行政程序法所定「行政行為，非有正當理由，不得為差別待遇」之內涵，下列敘述何者錯誤？","options":["得斟酌事物性質之差異而為合理之區別對待","可導出行政自我拘束原則","非指絕對、機械之形式上平等","不適用於給付行政之領域"],"answer":3,"basis":"行政程序法第6條","explanation":"平等原則也適用給付行政，D錯誤。","tag":"108年教育行政－行政法概要｜歷屆原題"},{"id":30,"article":6,"question":"行政機關未有正當理由不提供身心障礙者必要協助，違反下列那一項行政法一般法律原則？","options":["比例原則","信賴保護","平等原則","不溯及既往"],"answer":2,"basis":"行政程序法第6條","explanation":"無正當理由未依實質差異提供必要協助，涉及平等原則。","tag":"111年教育行政－行政法概要｜歷屆原題"},{"id":31,"article":6,"question":"供公眾使用之建築物，違反建築法第77條規定，未定期辦理公共安全檢查簽證及申報，行政機關違反先前先通知當事人補辦程序之慣例，即逕行採取裁罰措施，係違反何種行政法一般原理原則？","options":["平等原則","比例原則","禁止不當聯結原則","法律優位原則"],"answer":0,"basis":"行政程序法第6條","explanation":"行政機關既已形成合法處理慣例，無正當理由改變對同類案件之處理，涉及行政自我拘束與平等原則。","tag":"112年一般行政－行政法｜歷屆原題"},{"id":32,"article":7,"question":"下列何者係國家行使公權力時，要求「方法與目的」之均衡，以保護人民的權利免於遭受國家的過度侵害，又稱「禁止過度原則」？","options":["信賴保護原則","依法行政原則","法治國原則","比例原則"],"answer":3,"basis":"行政程序法第7條","explanation":"禁止過度原則即比例原則，包含適合性、必要性及衡量性。","tag":"112年一般行政－行政法｜歷屆原題"},{"id":33,"article":7,"question":"關於比例原則之敘述，下列何者正確？","options":["以誠信原則作為其核心概念","行政程序法與行政執行法皆有比例原則之規定","若是追求正當公益，則無須考量手段之妥當性","只追求最小之侵害手段，至於目的性如何，則不必加以考量"],"answer":1,"basis":"行政程序法第7條","explanation":"行政程序法第7條及行政執行法均有比例原則規範；其審查並非只看最小侵害。","tag":"113年人事行政－行政法概要｜歷屆原題"},{"id":34,"article":7,"question":"關於比例原則之敘述，下列何者錯誤？","options":["僅適用於行政處罰行為","必須依序審查適合性、必要性及狹義比例性","立法者或行政機關必須就各種適合手段中，選擇對人民基本權侵害最少，且相同有效之手段","法律規定之處罰，未分情節輕重一律相同，係違反比例原則"],"answer":0,"basis":"行政程序法第7條","explanation":"比例原則並非僅適用於行政處罰，行政行為普遍受其拘束。","tag":"112年一般行政－法學大意｜歷屆原題"},{"id":35,"article":7,"question":"建築物牆面繫掛廣告物，不問其廣告物對市容景觀影響程度有無差別，一律禁止，有違下列何種原則？","options":["誠信原則","比例原則","明確性原則","信賴保護原則"],"answer":1,"basis":"行政程序法第7條","explanation":"不分情節一律全面禁止，容易構成過度限制，涉及比例原則。","tag":"109年一般行政－法學大意｜歷屆原題"},{"id":36,"article":7,"question":"關於比例原則之敘述，下列何者錯誤？","options":["行政機關有多種方法可以達成行政目的時，得依職權採取其中任一方法","行政機關必須採取有助於達成目的之方法","行政機關應衡量採取之方法，對於人民權益是否侵害過大","行政機關採取之方法，對人民造成之損害，不得與欲達成目的之利益顯失均衡"],"answer":0,"basis":"行政程序法第7條","explanation":"有多種同樣有效方法時，仍須選擇對人民權益損害最少者，不能任選。","tag":"109年一般行政－法學大意｜歷屆原題"},{"id":37,"article":7,"question":"關於比例原則之敘述，下列何者正確？","options":["不適用於行政強制執行所採取之各種處置","只拘束行政處分之作成，不拘束法規命令之訂定","行政行為採取之方法必須是達成目的之唯一手段","採取之方法所造成之損害不得與欲達成目的之利益顯失均衡"],"answer":3,"basis":"行政程序法第7條第3款","explanation":"第7條第3款就是狹義比例性：造成損害不得與欲達成利益顯失均衡。","tag":"108年教育行政－行政法概要｜歷屆原題"},{"id":38,"article":7,"question":"警械使用條例第6 條規定：「警察人員應基於急迫需要，合理使用槍械，不得逾越必要程度。」此為下列那一原則的表現？","options":["誠實信用原則","信賴保護原則","比例原則","正當程序原則"],"answer":2,"basis":"行政程序法第7條","explanation":"「不得逾越必要程度」典型表現比例原則。","tag":"106年一般民政－行政法概要｜歷屆原題"},{"id":39,"article":7,"question":"比例原則所規範的內容，係指下列那兩者之間的關係？","options":["公權力主體組成之不同性別比例","行政機關動用的資源與法院動用的資源","公權力方法及所生損害與欲達成的目的及利益","行政決定獲致的有形經濟利益與耗損的隱形環境利益"],"answer":2,"basis":"行政程序法第7條","explanation":"比例原則衡量行政手段、損害與所追求目的、利益之關係。","tag":"106年一般民政－行政法概要｜歷屆原題"},{"id":40,"article":7,"question":"依行政程序法規定，下列何者不屬於比例原則之內涵？","options":["行政行為應有法律之依據","行政行為應有助於行政目的之達成","若有多種行政行為均同樣能達成行政目的，行政機關應選擇對人民權益損害最少者","行政行為所造成之損害不得與欲達成行政目的之利益顯失均衡"],"answer":0,"basis":"行政程序法第7條","explanation":"有法律依據屬依法行政／法律保留問題；B、C、D分別對應第7條適合性、必要性、衡量性。","tag":"110年人事行政－法學大意｜歷屆原題"},{"id":41,"article":8,"question":"有關法律上經常被引用的「誠實信用」原則，下列何者錯誤？","options":["誠實信用原則為民法上之原則，公法領域並無適用","「誠實信用」本身為不確定法律概念的一種","公、私法上之法律行為，均應當遵守誠實信用原則","從誠實信用原則可以導出「禁止權利濫用」的要求"],"answer":0,"basis":"行政程序法第8條","explanation":"行政程序法第8條已明文規定行政行為應以誠實信用方法為之，因此A錯。","tag":"113年一般行政－法學大意｜歷屆原題"},{"id":42,"article":8,"question":"關於誠信原則之敘述，下列何者正確？","options":["誠信原則僅為民事法之法律原則，並不適用於行政行為","行政契約之雙方當事人應本於誠信原則履行契約義務","誠信原則之適用取決於各該行政法規中是否有明文規定","現行行政程序法並無明定誠信原則"],"answer":1,"basis":"行政程序法第8條","explanation":"第8條明文規定誠實信用；行政契約雙方亦應受誠信原則拘束。","tag":"114年法警－行政法概要｜歷屆原題"},{"id":43,"article":8,"question":"環保主管機關查獲廠商之油槽滲透污染地下水，遂通知負責人甲限期改善，否則依法處罰。但在限期改善屆滿之前，因新聞媒體壓力，環保主管機關先行對甲處以罰鍰。甲不服，可主張環保主管機關違反下列何種原則？","options":["法律保留原則","平等原則","比例原則","誠實信用原則"],"answer":3,"basis":"行政程序法第8條","explanation":"機關先給予改善期限卻在期限屆滿前反悔處罰，破壞人民對先前行政行為的合理信賴，涉及誠信與信賴保護。","tag":"108年教育行政－行政法｜歷屆原題"},{"id":44,"article":8,"question":"行政機關對人民作成違法授益行政處分後，若不得撤銷該處分，係基於下列何種原則之考量？","options":["信賴保護原則","不當聯結禁止原則","誠實信用原則","行政自我拘束原則"],"answer":0,"basis":"行政程序法第8條","explanation":"違法授益處分的撤銷限制，核心考量之一是保護人民值得保護的信賴。","tag":"109年一般行政－法學大意｜歷屆原題"},{"id":45,"article":8,"question":"關於信賴保護原則之適用，下列何者不屬於其要件？","options":["限於行政處分之撤銷或廢止","人民應有信賴之基礎","信賴須值得保護","人民有相對應之信賴表現"],"answer":0,"basis":"行政程序法第8條","explanation":"信賴保護不是只限行政處分撤銷、廢止；一般要件包括信賴基礎、信賴表現及值得保護的信賴。","tag":"105年商業行政－行政法概要｜歷屆原題"},{"id":46,"article":9,"question":"依行政程序法規定，行政機關於行政程序進行中應注意之情形，下列敘述何者正確？","options":["應一律注意當事人有利及不利之事項","僅需注意當事人不利事項，由當事人自行提示有利事項","僅需注意當事人不利事項，但依當事人請求注意有利事項","僅需注意當事人不利事項，但當事人可提起行政爭訟以維護權益"],"answer":0,"basis":"行政程序法第9條","explanation":"第9條要求行政機關對當事人有利及不利情形一律注意。","tag":"109年一般行政－法學大意｜歷屆原題"},{"id":47,"article":10,"question":"行政機關應依下列何種方式行使裁量權？","options":["為實現行政任務，得附加法律規定所無之條件","為實現行政任務，得考量法律授權目的以外之因素","應採取裁量基準所定最小干預方式，無須考量個案情節之差異","應視個案事實情況、衡酌規範目的，進行合義務裁量"],"answer":3,"basis":"行政程序法第10條","explanation":"裁量必須在法定範圍內、符合授權目的，且應考量個案，不得機械套用裁量基準。","tag":"114年一般行政－行政法概要｜歷屆原題"},{"id":48,"article":10,"question":"行政機關僅依照裁量基準作成行政處分，而未實際審酌個案之具體情形時，可能構成何種裁量瑕疵？","options":["裁量逾越","裁量濫用","裁量怠惰","裁量收縮"],"answer":2,"basis":"行政程序法第10條","explanation":"只機械套用基準、不實際進行個案裁量，屬未行使應行使之裁量，可能構成裁量怠惰。","tag":"113年人事行政－行政法概要｜歷屆原題"},{"id":49,"article":10,"question":"關於行政裁量，下列敘述何者錯誤？","options":["行政機關對法律效果之選擇屬於行政裁量","法院原則上尊重行政裁量之決定","行政裁量區分為決定裁量與選擇裁量","行政裁量並無違法問題"],"answer":3,"basis":"行政程序法第10條","explanation":"裁量仍受法定範圍與授權目的拘束，逾越、濫用或怠惰均可能違法。","tag":"112年人事行政－行政法概要｜歷屆原題"},{"id":50,"article":10,"question":"關於行政機關裁量權之行使，下列何者不屬於司法審查之範圍？","options":["裁量是否不當","是否裁量逾越","有無違反比例原則","有無裁量怠惰"],"answer":0,"basis":"行政程序法第10條","explanation":"法院審查裁量違法（逾越、濫用、怠惰等），但純粹「不當」原則上是行政監督範圍。","tag":"109年一般行政－行政法｜歷屆原題"},{"id":51,"article":10,"question":"下列何者非屬行政裁量之瑕疵？","options":["不當妨礙行政效率","逾越法定裁量範圍","不符法規授權目的","怠於行使裁量權限"],"answer":0,"basis":"行政程序法第10條","explanation":"第10條直接要求不得逾越裁量範圍且應符合授權目的；怠於裁量也是典型瑕疵。單純「不當妨礙行政效率」不是典型裁量違法類型。","tag":"109年一般行政－法學大意｜歷屆原題"},{"id":52,"article":10,"question":"對行政裁量之敘述，下列何者錯誤？","options":["行政機關非有法律授權不得行使裁量權","行政機關得自由決定不行使裁量權","行政機關行使裁量權不得逾越法定之裁量範圍","行政機關行使裁量權應符合法規授權之目的"],"answer":1,"basis":"行政程序法第10條","explanation":"有裁量權時行政機關仍有依法作成合義務裁量的義務，不能任意拒絕行使。","tag":"106年一般民政－行政法概要｜歷屆原題"},{"id":53,"article":11,"question":"關於行政機關管轄權之敘述，下列何者錯誤？","options":["行政機關之管轄權，原則上應依據組織法規或其他行政法規定之","基於管轄權恆定原則，無論何種情形下管轄權皆不可能發生變動","數機關就同一事件依法皆有管轄權者，依受理先後順序判定","關於管轄權之有無，行政機關應依職權調查"],"answer":1,"basis":"行政程序法第11條、第13條、第17條","explanation":"管轄原則法定，但法律明文允許委任、委託、法規或事實變更等變動，所以並非「任何情形都不可能變動」。","tag":"110年教育行政－行政法概要｜歷屆原題"},{"id":54,"article":11,"question":"關於管轄法定原則之敘述，下列何者錯誤？","options":["設定行政機關管轄權之法規不包括行政規則","行政機關不得與人民以合意方式設定管轄權","行政機關僅得依法規將權限移轉予其他機關","行政機關僅得因法規修正而喪失原有管轄權"],"answer":3,"basis":"行政程序法第11條、第15條至第18條","explanation":"除法規變更外，事實變更也可能使機關喪失管轄；第18條即明文規定。","tag":"110年一般行政－行政法概要｜歷屆原題"},{"id":55,"article":11,"question":"依行政程序法之規定，關於行政機關管轄權變動之合法性，下列敘述何者錯誤？","options":["如無法律明文禁止，原則上得任意為之","須有法律規定或有明確授權","須依法公告並刊登政府公報或新聞紙","須有權限移轉行為"],"answer":0,"basis":"行政程序法第11條第5項、第15條、第16條","explanation":"管轄權非依法規不得設定或變更，不能因「法律未禁止」就任意變動。","tag":"110年一般行政－行政法｜歷屆原題"},{"id":56,"article":11,"question":"下列關於管轄權之敘述，何者錯誤？","options":["行政機關之管轄權，依其組織法規或其他行政法規定之","管轄權非依法規不得設定或變更","行政機關之組織法規變更管轄權之規定，而相關行政法規所定管轄機關尚未一併修正時，得僅由原管轄機關公告變更管轄之事項","行政機關經裁併者，行政機關之組織法規變更管轄權之規定，而相關行政法規所定管轄機關尚未一併修正時，得僅由組織法規變更後之管轄機關公告變更管轄之事項"],"answer":2,"basis":"行政程序法第11條第2項、第3項","explanation":"一般情形應由原管轄機關會同新管轄機關公告，或由共同上級機關公告；只有機關經裁併時才可由新管轄機關單獨公告。","tag":"103年一般行政－行政法｜歷屆原題"},{"id":57,"article":12,"question":"下列何者非屬行政程序法第12 條規定，得作為判定管轄權之審酌依據？","options":["不動產之所在地","自然人之住所或居所","經營企業之處所","行政法院所在地"],"answer":3,"basis":"行政程序法第12條","explanation":"第12條依序以不動產所在地、企業或事業處所、自然人住居所／法人主事務所及事件原因地等判斷，沒有行政法院所在地。","tag":"110年一般行政－行政法概要｜歷屆原題"},{"id":58,"article":13,"question":"數行政機關對於同一事件均有管轄權時，依行政程序法規定，下列敘述何者正確？","options":["數行政機關得共同作成行政行為","先由各行政機關協議決定管轄機關","先由各行政機關之共同上級機關指定管轄機關","有為緊急行為之必要時，為必要職務行為之機關應通知其他機關"],"answer":3,"basis":"行政程序法第13條","explanation":"原則由受理在先機關管轄；必要時機關應先做必要職務行為並通知其他機關。","tag":"110年一般行政－行政法概要｜歷屆原題"},{"id":59,"article":13,"question":"同一事件，數行政機關依法均有管轄權者，有關管轄競合之敘述，下列何者錯誤？","options":["由受理在先之機關管轄","不能分別受理之先後者，由各該機關協議定之","不能協議或有統一管轄之必要時，由共同上級機關指定管轄","無共同上級機關時，由各該上級機關共同管轄"],"answer":3,"basis":"行政程序法第13條第1項","explanation":"無共同上級機關時，是「由各該上級機關協議定之」，不是共同管轄。","tag":"112年一般行政－行政法概要｜歷屆原題"},{"id":60,"article":13,"question":"甲機關與乙機關對於民眾丙所提出之申請依法皆有管轄權，關於管轄權之決定，下列敘述何者錯誤？","options":["由受理在先之機關取得管轄權","不能分辨受理之先後者，逕由共同上級機關指定管轄","如有為職務行為之必要，應即通知其他機關","無共同上級機關時，由各該上級機關協議定之"],"answer":1,"basis":"行政程序法第13條","explanation":"不能分辨受理先後時，應先由各該機關協議；不能協議或有統一管轄必要，才由共同上級機關指定。","tag":"114年教育行政－行政法概要｜歷屆原題"},{"id":61,"article":14,"question":"關於行政機關之管轄，下列敘述何者錯誤？","options":["同一事件，數行政機關依規定均有管轄權者，由受理在先之機關管轄","數行政機關於管轄權有爭議時，由主張管轄之機關協議","人民對指定管轄之決定，不得聲明不服","行政機關應於其權限範圍內互相協助"],"answer":1,"basis":"行政程序法第14條、第19條","explanation":"管轄權有爭議時，有共同上級機關者由共同上級機關決定；不是由「主張管轄的機關」自行協議決定。","tag":"112年一般行政－行政法概要｜歷屆原題"},{"id":62,"article":14,"question":"關於數行政機關於管轄權有爭議時之處理，下列敘述何者錯誤？","options":["由其共同上級機關決定之，無共同上級機關時，由各該上級機關協議定之","人民就其依法規申請之事件，得向共同上級機關申請指定管轄","管轄權爭議未經決定前，如有導致人民難以回復之重大損害之虞時，該管轄權爭議之一方，應依當事人申請為緊急之臨時處置","人民對行政機關所為指定管轄之決定，得聲明不服"],"answer":3,"basis":"行政程序法第14條第4項","explanation":"人民對依第14條所為指定管轄決定「不得聲明不服」，所以D錯。","tag":"110年移民行政－行政法概要與刑事訴訟法概要｜歷屆原題"},{"id":63,"article":15,"question":"依行政程序法之規定，行政機關得依法規將其權限之一部分，以下列何種方式交所屬下級機關執行之？","options":["委託","委任","委辦","職務協助"],"answer":1,"basis":"行政程序法第15條第1項","explanation":"交由所屬下級機關執行稱「委任」。","tag":"110年行政警察人員－警察法規概要｜歷屆原題"},{"id":64,"article":15,"question":"依行政程序法規定，下列何者非屬管轄權移轉之合法要件？","options":["權限移轉須有法規之依據","須經上級機關核定後公告之","須公告內容包括移轉之事項及法規依據","須刊登政府公報或新聞紙"],"answer":1,"basis":"行政程序法第15條第3項、第16條第2項","explanation":"法條要求法規依據、公告移轉事項及法規依據並刊登公報或新聞紙，並未概括要求「須經上級機關核定」。","tag":"107年一般行政－行政法概要｜歷屆原題"},{"id":65,"article":15,"question":"下列何者非屬行政機關權限之移轉？","options":["甲縣政府得將其管轄事務委辦予其所屬乙鎮公所辦理","內政部警政署得將跨區案件之調查，委任其轄下之刑事警察局處理","丙直轄市環保局得將其垃圾清除業務，委託丁直轄市環保局處理","民營拖吊業者協助警察機關執行違規拖吊作業"],"answer":3,"basis":"行政程序法第15條、第16條、第19條","explanation":"民營拖吊業者若僅受指揮協助執行，是行政助手，不是管轄權移轉。","tag":"112年一般行政－行政法概要｜歷屆原題"},{"id":66,"article":15,"question":"外交部委託內政部移民署撤銷或廢止外國人持有之簽證，屬下列何種性質？","options":["權限委任","機關委辦","職務代理","權限委託"],"answer":3,"basis":"行政程序法第15條第2項","explanation":"外交部與內政部移民署並非上下隸屬機關，將部分權限交其執行屬權限委託。","tag":"112年人事行政－行政法｜歷屆原題"},{"id":67,"article":15,"question":"關於行政機關之管轄，下列敘述何者錯誤？","options":["行政機關因法規變更而喪失管轄權時，如經當事人及有管轄權機關之同意，得繼續為案件之處理","同一事件，數行政機關均有管轄權者，應先由受理在先之機關管轄","數行政機關於管轄權有爭議時，人民就其依法規申請之事件，原則上得向共同上級機關申請指定管轄","行政機關不能依其組織法或其他行政法規，定其土地管轄權者，由上級機關指定"],"answer":3,"basis":"行政程序法第12條至第18條","explanation":"不能依組織法規等定土地管轄時，應依第12條順序判斷，不是逕由上級機關指定。","tag":"112年人事行政－行政法｜歷屆原題"},{"id":68,"article":15,"question":"關於行政機關管轄權之規定，下列敘述何者錯誤？","options":["機關得依法規將一部分權限，委託所屬機關執行之","管轄權非依法規不得設定或變更","委託事項及法規依據應公告，並刊登政府公報或新聞紙","行政機關對事件管轄權之有無，應依職權調查"],"answer":0,"basis":"行政程序法第15條、第17條","explanation":"對所屬下級機關是「委任」而非「委託」，A用語錯誤。","tag":"105年商業行政－行政法概要｜歷屆原題"},{"id":69,"article":15,"question":"行政院大陸委員會將其權限授與財團法人海峽交流基金會辦理兩岸人民相關事務，係屬下列何種性質？","options":["行政程序法第15 條第1 項之權限委任","行政程序法第15 條第2 項之權限委託","行政程序法第16 條第1 項之行政委託","行政程序法第19 條之職務協助"],"answer":2,"basis":"行政程序法第16條第1項","explanation":"海基會是民間團體，行政機關依法將部分權限交其辦理，屬第16條行政委託。","tag":"106年退除役軍人轉任－行政法概要｜歷屆原題"},{"id":70,"article":16,"question":"下列何者屬「行政機關委託行使公權力」？","options":["交通監理機關委託民間汽車修護廠辦理汽車定期檢驗","便利商店代收房屋稅款","公立小學委託餐飲業者辦理營養午餐","地方政府環境保護局委託民間研究單位檢測空氣品質"],"answer":0,"basis":"行政程序法第16條","explanation":"民間修護廠辦理法定汽車定期檢驗，屬受託行使公權力；其餘選項多屬單純事實或勞務協助。","tag":"106年法警－行政法概要｜歷屆原題"},{"id":71,"article":16,"question":"下列何者行使公權力，須由委託機關以法律行為委託始得為之？","options":["私立大學授予學位","船長為維持船上治安所為之緊急處分","私人汽車修理廠辦理汽車檢驗業務","扣繳義務人扣取納稅義務人之稅款"],"answer":2,"basis":"行政程序法第16條","explanation":"私人汽車修理廠辦理法定檢驗，是典型須由行政機關依法委託的公權力事項。","tag":"110年一般行政－行政法｜歷屆原題"},{"id":72,"article":16,"question":"下列何者屬於委託行使公權力行為？","options":["機關辦公處所清潔勞務之委託","機關委託民間業者實施汽車定期檢驗業務","警察指揮民間拖吊業者實施交通違規車輛拖吊業務","公營事業的經營活動"],"answer":1,"basis":"行政程序法第16條","explanation":"民間業者依法受託辦理汽車定期檢驗，是委託行使公權力；清潔與單純行政助手不屬之。","tag":"110年海巡行政－行政法｜歷屆原題"},{"id":73,"article":16,"question":"下列有關行政機關將其權限一部分委託民間團體或個人辦理的公權力委託（行政委託）行為之敘述，何者錯誤？","options":["委託機關應將委託事項及法規依據公告之，並刊登政府公報或新聞紙","受託行使公權力之團體或個人，於委託範圍內視為行政機關","以受託團體或個人名義所為之行政處分，其訴願管轄機關為委託機關","以受託團體或個人名義所為之行政處分，其訴願管轄機關為委託機關之上級機關"],"answer":3,"basis":"行政程序法第2條第3項、第16條","explanation":"第16條要求公告；受託者在範圍內視為行政機關。受託者處分的訴願原則向原委託機關提起，因此D錯。","tag":"111年專利師－專利行政與救濟法規｜歷屆原題"},{"id":74,"article":17,"question":"依據行政程序法規定，有關行政機關管轄權移轉，下列敘述何者正確？","options":["行政機關得依法規將其權限之一部分，委託民間團體辦理，但不包括個人","行政機關因法規或事實之變更而喪失管轄權時，應將案件移送有管轄權之機關，並通知當事人","行政機關得依法規將其權限之一部分，委任所屬下級機關執行之，但不可委託不相隸屬之行政機關","行政機關之間職務協助亦影響管轄權之變動"],"answer":1,"basis":"行政程序法第15條至第19條","explanation":"第18條明定因法規或事實變更喪失管轄時原則移送並通知；A、C、D皆與第15、16、19條不符。","tag":"106年一般行政－行政法概要｜歷屆原題"},{"id":75,"article":17,"question":"依行政程序法規定，行政機關對事件管轄權之處理，下列敘述何者正確？","options":["行政機關對事件管轄權之有無，不待當事人主張或與其他機關產生爭議，均應依職權調查","行政機關對人民申請事件認無管轄權者，應對當事人為不受理之通知，並表明得提起行政訴訟之意旨","人民向無管轄權之機關提出申請，經移送有管轄權之機關時，已逾越法定期間者，應為不受理之通知","行政機關對事件之管轄權，得依行政機關相互間之協議，變更組織法規所定之管轄權"],"answer":0,"basis":"行政程序法第17條","explanation":"第17條要求機關依職權調查；無管轄應移送而非單純不受理，且合法期間內誤投經移送者視同未逾期。","tag":"105年人事行政－行政法概要｜歷屆原題"},{"id":76,"article":17,"question":"行政機關對事件管轄權之有無，應依職權調查；其認無管轄權者，依法應如何處理？","options":["由受理機關繼續處理該案件","交由上級機關指定管轄機關","告知當事人逕向有管轄權機關提出","應即移送有管轄權之機關，並通知當事人"],"answer":3,"basis":"行政程序法第17條第1項","explanation":"法條明定應即移送有管轄權機關並通知當事人。","tag":"95年行政警察人員－行政法概要｜歷屆原題"},{"id":77,"article":18,"question":"關於管轄之敘述，下列何者錯誤？","options":["管轄權非依法規不得設定或變更","行政機關對事件管轄權之有無，應依職權調查；其認無管轄權者，應即移送有管轄權之機關，並通知當事人","行政機關得依法規將其權限之一部分，委任所屬下級機關執行之","行政機關因業務上之需要，得向無隸屬關係之其他機關請求協助，不得將權限之一部分委託其執行"],"answer":3,"basis":"行政程序法第11條、第15條、第17條、第19條","explanation":"除行政協助外，第15條第2項明文允許依法規將部分權限委託不相隸屬行政機關，因此D錯。","tag":"106年一般行政－行政法概要｜歷屆原題"},{"id":78,"article":19,"question":"關於職務協助之敘述，下列何者正確？","options":["職務協助具有臨時性、被動性與輔助性，並強調共同一體之行政機能","職務協助與權限之委任或委託相同，均涉及管轄權之變更或移轉","執行職務所需資料為他機關所有，請求機關應依政府資訊公開法請求之","於職務協助之情形，被請求機關所持有之資料，並無個人資料保護法之適用"],"answer":0,"basis":"行政程序法第19條","explanation":"職務協助不移轉管轄權，具有臨時、輔助性；必要資料由他機關持有正是第19條得請求協助的事由。","tag":"110年一般行政－行政法概要｜歷屆原題"},{"id":79,"article":19,"question":"依行政程序法規定，關於職務協助之敘述，下列何者正確？","options":["被請求機關認有正當理由不能協助者，得於通知其直接上級機關後，以書面拒絕請求協助機關","若所請求之協助行為非屬被請求機關權限範圍者，得於經其直接上級機關同意後拒絕提供職務協助","由無隸屬關係之被請求機關協助執行，顯較經濟者，行政機關得請求其協助執行職務","被請求機關認為無提供行政協助之義務者，應將其理由通知請求協助機關，請求協助機關不得異議"],"answer":2,"basis":"行政程序法第19條第2項第5款、第4至6項","explanation":"由其他機關協助顯較經濟，是法定得請求協助事由。對拒絕理由有異議仍可由上級機關決定。","tag":"108年教育行政－行政法概要｜歷屆原題"},{"id":80,"article":19,"question":"有關行政程序法規定之機關間職務協助，下列敘述何者錯誤？","options":["除緊急情形外，應以書面為之","被請求機關不得拒絕","被請求機關得向請求協助機關要求負擔職務協助所需費用","得向無隸屬關係之其他機關請求協助"],"answer":1,"basis":"行政程序法第19條第3項至第7項","explanation":"第19條明定「應拒絕」與「得拒絕」事由，所以B錯。","tag":"108年教育行政－行政法概要｜歷屆原題"},{"id":81,"article":19,"question":"有關職務協助之敘述，下列何者錯誤？","options":["請求職務協助者，必須互無隸屬關係之機關間","受請求之機關於協助範圍內，取得請求機關之代理權","請求職務協助之標的，不限於事實行為，亦得包括法律行為","受請求協助機關應於其權限範圍內協助"],"answer":1,"basis":"行政程序法第19條","explanation":"職務協助不發生權限移轉或代理權授與，受請求機關仍在自己的權限範圍內協助，因此B錯。","tag":"106年法警－行政法概要｜歷屆原題"},{"id":82,"article":19,"question":"行政協助所需費用，其負擔金額及支付方式，如何定之？","options":["報請財政部估價訂之","請求協助機關及被請求機關以協議定之","由其共同上級機關邀請專家學者開會定之","由經濟部訂之"],"answer":1,"basis":"行政程序法第19條第7項","explanation":"費用金額與支付方式先由雙方協議；協議不成時再由共同上級機關定之。","tag":"106年一般行政－行政法概要｜歷屆原題"},{"id":83,"article":19,"question":"甲機關請求乙機關協助執行職務，乙機關認為將因此支付鉅額費用始能完成該行為。依行政程序法之規定，下列敘述何者正確？","options":["乙機關應以書面通知甲機關之上級機關，並要求甲機關負擔所需費用","乙機關應將此理由通知甲機關，甲機關如有異議，應由二機關之共同上級機關決定","乙機關不得以此理由拒絕甲機關之請求協助","乙機關得請求甲機關負擔所需費用，甲機關如有異議，應提起行政訴訟"],"answer":2,"basis":"行政程序法第19條第4項至第7項","explanation":"單純協助需支付鉅額費用並非第4、5項法定拒絕事由；被請求機關可依第7項要求請求機關負擔費用。","tag":"108年教育行政－行政法｜歷屆原題"},{"id":84,"article":19,"question":"行政機關依行政程序法第19條所為之職務協助行為，下列敘述何者錯誤？","options":["請求協助原則上以口頭為之","被請求協助機關認有正當理由不能協助者，得拒絕之","如提供協助將嚴重妨害其自身職務之執行者，應拒絕之","如請求協助機關對被請求機關之拒絕有異議時，得由其共同上級機關決定之"],"answer":0,"basis":"行政程序法第19條第3項至第6項","explanation":"請求協助除緊急情形外應以書面為之，所以A「原則口頭」錯誤。","tag":"103年一般行政－行政法｜歷屆原題"},{"id":85,"article":19,"question":"有關行政機關間之「職務協助」制度，下列敘述何者錯誤？","options":["行政機關為發揮共同一體之行政機能，應於其權限範圍內互相協助","請求協助，以口頭為原則","被請求機關認有正當理由不能協助者，得拒絕之","如提供協助，將嚴重妨害其自身職務之執行者，應拒絕之"],"answer":1,"basis":"行政程序法第19條","explanation":"第19條第3項是「除緊急情形外，應以書面為之」，不是口頭為原則。","tag":"95年行政警察人員－行政法概要｜歷屆原題"},{"id":86,"article":19,"question":"稅捐稽徵機關為確認某納稅義務人及其扶養親屬之資料，函請戶政機關提供戶籍資料，性質屬於下列何者？","options":["職務協助","權限委託","權限委任","委辦"],"answer":0,"basis":"行政程序法第19條第2項第4款","explanation":"執行職務所需資料由另一無隸屬關係機關持有，是典型職務協助。","tag":"111年一般民政－行政法｜歷屆原題"},{"id":87,"article":19,"question":"考選部依法報請考試院核定後，將法官遴選事務交由司法院辦理，性質為下列何者？","options":["權限委任","權限委託","委辦","行政委託"],"answer":1,"basis":"行政程序法第15條第2項","explanation":"考選部與司法院並非上下隸屬機關，法規依據下將部分權限交由另一行政機關性質上屬權限委託。","tag":"111年行政警察人員－行政法｜歷屆原題"},{"id":88,"article":11,"question":"關於行政機關土地管轄之敘述，下列何者正確？","options":["僅依不動產所在地、住居所或營業所認定之","行政處分違反土地管轄規定者，行政機關即應撤銷原處分","數行政機關於管轄權有爭議時，有共同上級機關者，由該共同上級機關決定之","同一事件數行政機關均有管轄權者，由各該機關協議之"],"answer":2,"basis":"行政程序法第12條至第14條","explanation":"管轄爭議有共同上級機關時，由共同上級機關決定。數機關均有管轄時則先看受理先後，並非一開始就協議。","tag":"115年普通考試－行政法概要｜歷屆原題"},{"id":89,"article":15,"question":"下列何者非屬權限委任所須具備之合法性要件？","options":["須有法規授權依據","原管轄機關須有權限委任法律行為","須經受委任機關同意","須公告與刊登政府公報或新聞紙"],"answer":2,"basis":"行政程序法第15條第1項、第3項","explanation":"委任須依法規，並由原機關作成委任行為且公告、刊登；法條並未以受委任機關同意為成立要件。","tag":"115年普通考試－行政法概要｜歷屆原題"},{"id":90,"article":2,"question":"行政機關，係指代表國家、地方自治團體或其他行政主體表示意思，從事公共事務，具有單獨法定地位之組織。下列何者非屬判斷「單獨法定地位之組織」之依據？","options":["中央或地方立法機關設置該組織之計畫","中央或地方立法機關設置該組織之通則","中央或地方立法機關設置該組織之條例","中央或地方立法機關設置該組織之法律"],"answer":0,"basis":"行政程序法第2條第2項","explanation":"單獨法定地位須有法規範上的組織設置依據；單純「計畫」不是法定組織依據。","tag":"111年教育行政－行政法概要｜歷屆原題"},{"id":91,"article":2,"question":"受託行使公權力之民間團體或私人，下列敘述何者正確？","options":["在委託權限範圍內，視為行政機關","在委託權限範圍內，以原委託機關之名義作成決定","受委託之個人，並非行使公權力","受委託之個人，不得從事限制人民權利之行為"],"answer":0,"basis":"行政程序法第2條第3項、第16條","explanation":"受託者在委託範圍內依法視為行政機關，且通常以自己名義行使受託公權力。","tag":"103年一般行政－行政法｜歷屆原題"},{"id":92,"article":4,"question":"警察對人民查驗身分須具備法律授權依據，係基於下列何種原則？","options":["法律明確性原則","信賴保護原則","法律保留原則","誠實信用原則"],"answer":2,"basis":"行政程序法第4條","explanation":"對人民自由權利的干預須有法律或法律明確授權依據，屬法律保留要求。","tag":"109年一般行政－法學大意｜歷屆原題"},{"id":93,"article":6,"question":"若在某一道路範圍內之私有土地均辦理徵收，僅因某人之私有土地屬既成道路，有公用地役關係，主管機關以命令規定繼續使用，即毋庸同時徵收補償。主管機關此種作為顯與下列何種原則相違？","options":["信賴保護原則","合法裁量原則","明確性原則","平等原則"],"answer":3,"basis":"行政程序法第6條","explanation":"同一道路範圍的私有土地，若無正當理由僅對特定土地不予補償，涉及平等原則。","tag":"106年一般民政－行政法概要｜歷屆原題"},{"id":94,"article":7,"question":"下列敘述何者屬於比例原則之內涵？","options":["採取之手段所造成之損害不得與欲達成目的之利益顯失均衡","法律在規範內容上須明確，使人民可預見其行為之法律效果","人民對行政行為所形成之合理信賴應受保護","行政行為之手段與目的間應有實質關聯"],"answer":0,"basis":"行政程序法第7條第3款","explanation":"A正是第7條第3款的衡量性；其餘分別涉及明確、信賴保護與不當聯結。","tag":"105年商業行政－行政法概要｜歷屆原題"},{"id":95,"article":4,"question":"依司法院大法官解釋，關於法律保留原則之敘述，下列何者錯誤？","options":["限制人民身體自由之事項，一律必須有法律明文規定","給付行政係屬公共利益之一環，一律無須有法律依據","執行法律之細節性、技術性事項，得由主管機關發布命令為必要之規範","對於公務員免職處分之構成要件，應以法律定之"],"answer":1,"basis":"行政程序法第4條","explanation":"給付行政並非一律排除法律保留；重大公共利益或重要權利事項仍可能要求法律依據。","tag":"108年教育行政－行政法｜歷屆原題"},{"id":96,"article":10,"question":"關於行政機關訂定裁量基準，下列敘述何者錯誤？","options":["須能實踐具體個案正義","須顧及法律適用之一致性及符合平等原則","須遵循法律授予裁量權之目的及範圍","須有授權訂定裁量基準之法律規定"],"answer":3,"basis":"行政程序法第10條","explanation":"裁量基準通常是機關為統一裁量所訂行政規則，不以法律另行授權為必要；但內容須受第10條授權目的與範圍拘束。","tag":"111年教育行政－行政法概要｜歷屆原題"},{"id":97,"article":10,"question":"行政機關基於錯誤認定之事實而為行政決定，屬於下列何種裁量瑕疵？","options":["裁量逾越","裁量濫用","裁量怠惰","裁量違反比例原則"],"answer":1,"basis":"行政程序法第10條","explanation":"以錯誤事實為裁量基礎，屬裁量濫用的一種。","tag":"111年教育行政－行政法概要｜歷屆原題"},{"id":98,"article":3,"question":"關於行政程序法所規定之行政程序，下列敘述何者錯誤？","options":["依行政程序法第1 條規定，行政程序應遵循公正、公開與民主之原則","為使行政程序當事人不致淪為行政程序之客體，行政程序法透過「告知」之規定，以確保其權益","為達到便民之目的，公務員應隨時主動與當事人接觸，不限於行政程序中","行政程序法之程序規定，就考試院有關考選命題之行為，並不適用之"],"answer":2,"basis":"行政程序法第1條、第3條","explanation":"行政程序保障並不意味公務員可在程序外隨時主動與當事人接觸；C錯誤。D則是第3條第3項第8款明文排除。","tag":"108年教育行政－行政法｜歷屆原題"},{"id":99,"article":11,"question":"國稅之稽徵屬財政部所屬國稅局之職務權限，學理上稱為何種管轄？","options":["事物管轄","土地管轄","層級管轄","功能管轄"],"answer":0,"basis":"行政程序法第11條第1項","explanation":"哪一類型行政事項由哪個機關負責，屬事物管轄。","tag":"113年教育行政－行政法概要｜歷屆原題"},{"id":100,"article":11,"question":"關於行政機關管轄權之敘述，下列何者正確？","options":["在法律規定有中央主管機關與地方主管機關之層級管轄情形，地方自治團體可於自治條例中決定其執行機關","行政機關之管轄，須為管轄恆定，並無例外","行政機關之管轄權，得依機關首長之指令變更之","自治監督機關代行處理地方行政機關之權限，並不屬於管轄恆定原則之例外"],"answer":0,"basis":"行政程序法第11條","explanation":"地方自治團體於法律已分配地方主管權限時，可依自治組織規範決定執行機關；其餘選項把管轄恆定說成絕對或允許首長任意變更，都不正確。","tag":"111年一般民政－行政法｜歷屆原題"}];
+const LETTERS = ["A","B","C","D"];
+const STORE_KEY = "apa1to19_100q_original_v2";
+let state = {
+  order: QUESTIONS.map(q=>q.id),
+  pos: 0,
+  answers: {},
+  mode: "依序100題",
+  sessionIds: QUESTIONS.map(q=>q.id)
+};
+
+function qById(id) { return QUESTIONS.find(q=>q.id===id); }
+function loadStored() {
+  try {
+    const s=JSON.parse(localStorage.getItem(STORE_KEY));
+    if(s && Array.isArray(s.order) && s.answers) return s;
+  } catch(e) {}
+  return null;
+}
+const wrongHistory = window.QuizWrongHistory?.mount({quizId:"admin-procedure-1-19", title:"行政程序法第1～19條｜第一回", questions:QUESTIONS, getState:()=>state, idsAreQuestionIds:true}) || {capture(){},newRound(){}};
+if(!window.QuizWrongHistory){ const warning=document.createElement("p"); warning.textContent="錯題紀錄功能未載入，請確認網路後重新整理。"; (document.getElementById("controlPanel")||document.getElementById("home")).appendChild(warning); }
+function save() { wrongHistory.capture(state); localStorage.setItem(STORE_KEY, JSON.stringify(state)); updateStats(); }
+function shuffle(arr) {
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--) {
+    const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+function start(mode) {
+  const ids=QUESTIONS.map(q=>q.id);
+  state={ order: mode==="random"?shuffle(ids):ids, pos:0, answers:{}, mode: mode==="random"?"隨機100題":"依序100題", sessionIds:ids };
+  document.getElementById("resultPanel").classList.remove("show");
+  document.getElementById("quizPanel").style.display="block";
+  save(); render();
+  window.scrollTo({top:document.getElementById("quizPanel").offsetTop-8,behavior:"smooth"});
+}
+function resume() {
+  const s=loadStored();
+  if(!s) { alert("目前沒有可繼續的進度。"); return; }
+  state=s;
+  document.getElementById("resultPanel").classList.remove("show");
+  document.getElementById("quizPanel").style.display="block";
+  render();
+}
+function render() {
+  if(!state.order.length) return;
+  if(state.pos<0) state.pos=0;
+  if(state.pos>=state.order.length) { finish(); return; }
+  const id=state.order[state.pos], q=qById(id), ans=state.answers[id];
+  document.getElementById("qCount").textContent=`第 ${state.pos+1} / ${state.order.length} 題（題庫 #${id}）｜第 ${q.article} 條`;
+  document.getElementById("qTag").textContent=q.tag;
+  document.getElementById("qTitle").textContent=q.question;
+  const box=document.getElementById("options"); box.innerHTML="";
+  q.options.forEach((opt,idx)=>{
+    const b=document.createElement("button");
+    b.className="option"+(ans!==undefined?" locked":"");
+    if(ans!==undefined && idx===q.answer) b.classList.add("correct");
+    if(ans!==undefined && idx===ans && ans!==q.answer) b.classList.add("wrong");
+    b.innerHTML=`<span class="optletter">${LETTERS[idx]}</span>${escapeHtml(opt)}`;
+    b.disabled=ans!==undefined;
+    b.onclick=()=>choose(idx);
+    box.appendChild(b);
+  });
+  const fb=document.getElementById("feedback");
+  if(ans!==undefined) {
+    fb.className="feedback show "+(ans===q.answer?"good":"bad");
+    document.getElementById("feedbackTitle").textContent=ans===q.answer?"✅ 答對":"❌ 答錯";
+    document.getElementById("correctAnswer").innerHTML=`<b>正確答案：${LETTERS[q.answer]}．${escapeHtml(q.options[q.answer])}</b>`;
+    document.getElementById("basis").textContent=q.basis;
+    document.getElementById("explanation").textContent=q.explanation;
+  } else {
+    fb.className="feedback";
+  }
+  document.getElementById("prevBtn").disabled=state.pos===0;
+  document.getElementById("nextBtn").textContent=state.pos===state.order.length-1?"完成本回合":"下一題";
+  buildJump(); updateStats();
+}
+function choose(idx) {
+  const id=state.order[state.pos];
+  if(state.answers[id]!==undefined) return;
+  state.answers[id]=idx;
+  save(); render();
+}
+function go(delta) {
+  if(delta>0 && state.pos===state.order.length-1) { finish(); return; }
+  state.pos=Math.max(0,Math.min(state.order.length-1,state.pos+delta));
+  save(); render();
+  window.scrollTo({top:document.getElementById("quizPanel").offsetTop-8,behavior:"smooth"});
+}
+function buildJump() {
+  const el=document.getElementById("jump"); el.innerHTML="";
+  state.order.forEach((id,i)=>{
+    const b=document.createElement("button"); b.className="jbtn";
+    if(state.answers[id]!==undefined) b.classList.add("done");
+    if(i===state.pos) b.classList.add("current");
+    b.textContent=i+1;
+    b.onclick=()=>{state.pos=i; save(); render();};
+    el.appendChild(b);
+  });
+}
+function sessionAnsweredIds() { return state.order.filter(id=>state.answers[id]!==undefined); }
+function updateStats() {
+  const ids=sessionAnsweredIds();
+  let c=0; ids.forEach(id=>{ if(state.answers[id]===qById(id).answer) c++; });
+  const w=ids.length-c, rate=ids.length?Math.round(c/ids.length*100):0;
+  document.getElementById("statDone").textContent=ids.length;
+  document.getElementById("statCorrect").textContent=c;
+  document.getElementById("statWrong").textContent=w;
+  document.getElementById("statRate").textContent=rate+"%";
+  document.getElementById("progressBar").style.width=(state.order.length?ids.length/state.order.length*100:0)+"%";
+}
+function finish() {
+  const ids=state.order;
+  const answered=ids.filter(id=>state.answers[id]!==undefined);
+  if(answered.length<ids.length) {
+    const ok=confirm(`目前尚有 ${ids.length-answered.length} 題未作答，仍要結束本回合嗎？`);
+    if(!ok) return;
+  }
+  let correct=0, wrongIds=[];
+  ids.forEach(id=>{
+    const a=state.answers[id], q=qById(id);
+    if(a===q.answer) correct++; else wrongIds.push(id);
+  });
+  document.getElementById("quizPanel").style.display="none";
+  const rp=document.getElementById("resultPanel"); rp.classList.add("show");
+  document.getElementById("resultMode").textContent=state.mode;
+  document.getElementById("resultScore").textContent=`${correct} / ${ids.length}`;
+  const rate=Math.round(correct/ids.length*100);
+  document.getElementById("resultText").textContent=`正確率 ${rate}%。錯題 ${wrongIds.length} 題，可直接進入錯題重練。`;
+  const wl=document.getElementById("wrongList"); wl.innerHTML="";
+  if(!wrongIds.length) wl.innerHTML='<div class="wrongitem">🎉 本回合全對。</div>';
+  else wrongIds.forEach(id=>{
+    const q=qById(id), a=state.answers[id];
+    const d=document.createElement("div"); d.className="wrongitem";
+    const your=a===undefined?"未作答":`${LETTERS[a]}．${escapeHtml(q.options[a])}`;
+    d.innerHTML=`<b>第${id}題（第${q.article}條）</b><br>${escapeHtml(q.question)}<br><span style="color:#a61e1e">你的答案：${your}</span><br><span style="color:#087f5b">正解：${LETTERS[q.answer]}．${escapeHtml(q.options[q.answer])}</span>`;
+    wl.appendChild(d);
+  });
+  document.getElementById("retryWrong").disabled=!wrongIds.length;
+  document.getElementById("retryWrong").onclick=()=>{
+    state={order:wrongIds,pos:0,answers:{},mode:"錯題重練",sessionIds:wrongIds};
+    rp.classList.remove("show"); document.getElementById("quizPanel").style.display="block"; save(); render();
+  };
+  window.scrollTo({top:rp.offsetTop-8,behavior:"smooth"});
+}
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+}
+document.getElementById("startSeq").onclick=()=>start("seq");
+document.getElementById("startRandom").onclick=()=>start("random");
+document.getElementById("resumeBtn").onclick=resume;
+document.getElementById("resetBtn").onclick=()=>{
+  if(confirm("只清除本次作答，歷史錯題仍保留。確定清除？")) {
+    localStorage.removeItem(STORE_KEY);
+    state={order:QUESTIONS.map(q=>q.id),pos:0,answers:{},mode:"依序100題",sessionIds:QUESTIONS.map(q=>q.id)};
+    document.getElementById("quizPanel").style.display="none";
+    document.getElementById("resultPanel").classList.remove("show");
+    updateStats();
+  }
+};
+document.getElementById("prevBtn").onclick=()=>go(-1);
+document.getElementById("nextBtn").onclick=()=>go(1);
+document.getElementById("restart").onclick=()=>start("seq");
+
+const stored=loadStored();
+if(stored) {
+  state=stored;
+  const n=Object.keys(stored.answers||{}).length;
+  document.getElementById("resumeBtn").textContent=`繼續上次進度（${n}題）`;
+}
+updateStats();
+
+wrongHistory.capture(state,true); save();
+</script>
+</body>
+</html>

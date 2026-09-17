@@ -72,6 +72,7 @@ button { font:inherit; }
   .qtitle { font-size:19px; }
 }
 </style>
+<link rel="stylesheet" href="https://law-quiz-hub.pp124916961.chatgpt.site/wrong-history.css?v=1">
 </head>
 <body>
 <div class="app">
@@ -88,7 +89,7 @@ button { font:inherit; }
       <button class="btn btn-primary" id="startSeq">依序開始 100 題</button>
       <button class="btn btn-soft" id="startRandom">隨機開始 100 題</button>
       <button class="btn btn-soft" id="resumeBtn">繼續上次進度</button>
-      <button class="btn btn-danger" id="resetBtn">清除作答紀錄</button>
+      <button class="btn btn-danger" id="resetBtn">清除本次作答</button>
     </div>
     <div class="stats">
       <div class="stat"><b id="statDone">0</b><span>已作答</span></div>
@@ -143,6 +144,7 @@ button { font:inherit; }
 </div>
 
 <script src="q1.js"></script><script src="q2.js"></script><script src="q3.js"></script><script src="q4.js"></script>
+<script src="https://law-quiz-hub.pp124916961.chatgpt.site/wrong-history.js?v=1"></script>
 <script>
 const RAW_QUESTIONS=[...(window.QPART1||[]),...(window.QPART2||[]),...(window.QPART3||[]),...(window.QPART4||[])];
 const QUESTIONS=RAW_QUESTIONS.map((q,i)=>({
@@ -174,7 +176,9 @@ function loadStored() {
   } catch(e) {}
   return null;
 }
-function save() { localStorage.setItem(STORE_KEY, JSON.stringify(state)); updateStats(); }
+const wrongHistory = window.QuizWrongHistory?.mount({quizId:"criminal-law-general", title:"刑法總則至未遂犯｜國考原題版", questions:QUESTIONS, getState:()=>state, idsAreQuestionIds:true}) || {capture(){},newRound(){}};
+if(!window.QuizWrongHistory){ const warning=document.createElement("p"); warning.textContent="錯題紀錄功能未載入，請確認網路後重新整理。"; (document.getElementById("controlPanel")||document.getElementById("home")).appendChild(warning); }
+function save() { wrongHistory.capture(state); localStorage.setItem(STORE_KEY, JSON.stringify(state)); updateStats(); }
 function shuffle(arr) {
   const a=[...arr];
   for(let i=a.length-1;i>0;i--) {
@@ -204,7 +208,7 @@ function render() {
   if(state.pos>=state.order.length) { finish(); return; }
   const id=state.order[state.pos], q=qById(id), ans=state.answers[id];
   if(!q) return;
-  document.getElementById("qCount").textContent=`第 ${state.pos+1} / ${state.order.length} 題｜${q.basis}`;
+  document.getElementById("qCount").textContent=`第 ${state.pos+1} / ${state.order.length} 題（題庫 #${id}）｜${q.basis}`;
   document.getElementById("qTag").textContent=q.tag;
   document.getElementById("qSource").textContent=q.source;
   const srcLink=document.getElementById("qSourceLink");
@@ -311,7 +315,7 @@ document.getElementById("startSeq").onclick=()=>start("seq");
 document.getElementById("startRandom").onclick=()=>start("random");
 document.getElementById("resumeBtn").onclick=resume;
 document.getElementById("resetBtn").onclick=()=>{
-  if(confirm("確定清除所有本機作答紀錄？")) {
+  if(confirm("只清除本次作答，歷史錯題仍保留。確定清除？")) {
     localStorage.removeItem(STORE_KEY);
     state={order:QUESTIONS.map(q=>q.id),pos:0,answers:{},mode:"依序100題",sessionIds:QUESTIONS.map(q=>q.id)};
     document.getElementById("quizPanel").style.display="none";
@@ -327,10 +331,13 @@ document.getElementById("restart").onclick=()=>start("seq");
 const stored=loadStored();
 if(stored) {
   state=stored;
+  state=stored;
   const n=Object.keys(stored.answers||{}).length;
   document.getElementById("resumeBtn").textContent=`繼續上次進度（${n}題）`;
 }
 updateStats();
+
+wrongHistory.capture(state,true); save();
 </script>
 </body>
 </html>

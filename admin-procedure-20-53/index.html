@@ -1,1 +1,320 @@
-<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>行政程序法第20～53條｜100題國考選擇題</title><script>(async()=>{const names=[1,2,3,4,5].map(n=>`p${n}.txt`);const a=(await Promise.all(names.map(n=>fetch(n).then(r=>r.text())))).join("");const b=atob(a);const u=Uint8Array.from(b,c=>c.charCodeAt(0));const t=await new Response(new Blob([u]).stream().pipeThrough(new DecompressionStream("gzip"))).text();document.open();document.write(t);document.close()})();</script>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>行政程序法第20～53條｜100題國考選擇題</title>
+<style>
+:root {
+  --bg:#f4f7fb; --card:#fff; --text:#172033; --muted:#64748b; --line:#dbe3ef;
+  --navy:#17365d; --blue:#2563eb; --green:#087f5b; --red:#c92a2a; --amber:#9a6700;
+  --shadow:0 12px 28px rgba(15,23,42,.08); --radius:18px;
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif; background:var(--bg); color:var(--text); }
+button { font:inherit; }
+.app { max-width:820px; margin:0 auto; padding:16px 14px 40px; }
+.hero { background:linear-gradient(135deg,#102a43,#1e4f87); color:#fff; padding:20px; border-radius:22px; box-shadow:var(--shadow); }
+.hero h1 { margin:0 0 8px; font-size:clamp(24px,7vw,38px); line-height:1.2; }
+.hero p { margin:6px 0 0; color:#dbeafe; line-height:1.6; }
+.badges { display:flex; flex-wrap:wrap; gap:7px; margin-top:13px; }
+.badge { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22); padding:6px 9px; border-radius:999px; font-size:13px; }
+.panel { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:16px; margin-top:14px; }
+.controls { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+.btn { border:0; border-radius:13px; padding:12px 14px; cursor:pointer; font-weight:750; min-height:48px; }
+.btn-primary { background:var(--navy); color:white; }
+.btn-soft { background:#eaf1fb; color:#193b67; }
+.btn-danger { background:#fff0f0; color:#a61e1e; }
+.btn:disabled { opacity:.45; cursor:not-allowed; }
+.stats { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:12px; }
+.stat { border:1px solid var(--line); border-radius:13px; padding:9px 6px; text-align:center; background:#fbfdff; }
+.stat b { display:block; font-size:20px; }
+.stat span { font-size:12px; color:var(--muted); }
+.progress { height:10px; background:#e7edf5; border-radius:999px; overflow:hidden; margin-top:12px; }
+.progress > div { height:100%; background:linear-gradient(90deg,#1d4ed8,#3b82f6); width:0%; transition:width .25s; }
+.qmeta { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; color:var(--muted); font-size:13px; margin-bottom:10px; }
+.qtitle { font-size:21px; font-weight:800; line-height:1.55; margin:8px 0 14px; white-space:pre-wrap; }
+.options { display:grid; gap:10px; }
+.option { width:100%; text-align:left; border:1.5px solid var(--line); background:#fff; color:var(--text); border-radius:14px; padding:13px 14px; line-height:1.5; cursor:pointer; transition:.15s; }
+.option:hover { border-color:#9fb6d4; background:#f8fbff; }
+.option.locked { cursor:default; }
+.option.correct { border-color:#34a27a; background:#ecfdf5; }
+.option.wrong { border-color:#e06666; background:#fff1f2; }
+.optletter { display:inline-flex; width:27px; height:27px; border-radius:50%; align-items:center; justify-content:center; margin-right:9px; background:#eef3f9; font-weight:800; }
+.correct .optletter { background:#c9f4df; color:#065f46; }
+.wrong .optletter { background:#ffd5d9; color:#9f1239; }
+.feedback { display:none; margin-top:14px; border-radius:15px; padding:14px; border:1px solid var(--line); background:#fafcff; }
+.feedback.show { display:block; }
+.feedback.good { border-color:#a7dfc8; background:#f0fdf7; }
+.feedback.bad { border-color:#f0b5bb; background:#fff7f7; }
+.feedback h3 { margin:0 0 8px; font-size:18px; }
+.basis { background:#eef4ff; border-left:4px solid #3b82f6; padding:10px 11px; border-radius:8px; line-height:1.55; margin-top:9px; }
+.explain { line-height:1.7; margin-top:9px; color:#334155; }
+.nav { display:grid; grid-template-columns:1fr 1.4fr; gap:10px; margin-top:14px; }
+.note { color:var(--muted); font-size:13px; line-height:1.65; }
+.result { display:none; }
+.result.show { display:block; }
+.resultScore { font-size:52px; font-weight:900; color:var(--navy); margin:5px 0; }
+.wronglist { max-height:340px; overflow:auto; border-top:1px solid var(--line); margin-top:12px; }
+.wrongitem { padding:10px 2px; border-bottom:1px solid var(--line); line-height:1.5; font-size:14px; }
+.jump { display:grid; grid-template-columns:repeat(10,1fr); gap:5px; margin-top:10px; }
+.jbtn { min-width:0; padding:7px 0; border:1px solid var(--line); border-radius:8px; background:#fff; font-size:12px; }
+.jbtn.done { background:#eaf1fb; border-color:#a8bfdb; }
+.jbtn.current { outline:2px solid #2563eb; }
+.sourceLinks a { color:#1d4ed8; text-decoration:none; }
+.footer { text-align:center; color:#7b8798; font-size:12px; margin-top:20px; line-height:1.6; }
+@media (max-width:520px) {
+  .stats { grid-template-columns:repeat(2,1fr); }
+  .jump { grid-template-columns:repeat(10,1fr); }
+  .jbtn { font-size:10px; padding:6px 0; }
+  .qtitle { font-size:19px; }
+}
+</style>
+<link rel="stylesheet" href="https://law-quiz-hub.pp124916961.chatgpt.site/wrong-history.css?v=1">
+</head>
+<body>
+<div class="app">
+  <section class="hero">
+    <h1>行政程序法 20～53 條<br>100 題國考選擇題</h1>
+    <p>收錄高普考、司法特考、警察特考等考選部歷屆原題；題幹與選項不改編。每題作答後，不論對錯都立即顯示現行法條依據與簡要解析。</p>
+    <div class="badges">
+      <span class="badge">共 100 題</span><span class="badge">四選一</span><span class="badge">即答即解</span><span class="badge">錯題重練</span><span class="badge">手機友善</span>
+    </div>
+  </section>
+
+  <section class="panel" id="controlPanel">
+    <div class="controls">
+      <button class="btn btn-primary" id="startSeq">依序開始 100 題</button>
+      <button class="btn btn-soft" id="startRandom">隨機開始 100 題</button>
+      <button class="btn btn-soft" id="resumeBtn">繼續上次進度</button>
+      <button class="btn btn-danger" id="resetBtn">清除本次作答</button>
+    </div>
+    <div class="stats">
+      <div class="stat"><b id="statDone">0</b><span>已作答</span></div>
+      <div class="stat"><b id="statCorrect">0</b><span>答對</span></div>
+      <div class="stat"><b id="statWrong">0</b><span>答錯</span></div>
+      <div class="stat"><b id="statRate">0%</b><span>正確率</span></div>
+    </div>
+    <div class="progress"><div id="progressBar"></div></div>
+    <p class="note">本版 100 題採歷屆考試既有選擇題題幹與選項，不自行改編；以高普考、司法特考、警察特考等行政法／行政法概要題型為主。答案與解析依現行《行政程序法》第 20～53 條判斷；第 44、45 條現已刪除，故不作現行條文考點。</p>
+  </section>
+
+  <section class="panel" id="quizPanel" style="display:none">
+    <div class="qmeta">
+      <span id="qCount">第 1 / 100 題</span>
+      <span id="qTag">命題型</span>
+    </div>
+    <div class="qtitle" id="qTitle"></div>
+    <div class="options" id="options"></div>
+    <div class="feedback" id="feedback">
+      <h3 id="feedbackTitle"></h3>
+      <div id="correctAnswer"></div>
+      <div class="basis"><b>法條依據：</b><span id="basis"></span></div>
+      <div class="explain"><b>簡要解析：</b><span id="explanation"></span></div>
+    </div>
+    <div class="nav">
+      <button class="btn btn-soft" id="prevBtn">上一題</button>
+      <button class="btn btn-primary" id="nextBtn">下一題</button>
+    </div>
+    <div class="jump" id="jump"></div>
+  </section>
+
+  <section class="panel result" id="resultPanel">
+    <div class="qmeta"><span>本回合完成</span><span id="resultMode"></span></div>
+    <div class="resultScore" id="resultScore">0 / 100</div>
+    <p id="resultText"></p>
+    <div class="controls">
+      <button class="btn btn-primary" id="retryWrong">只重練本回合錯題</button>
+      <button class="btn btn-soft" id="restart">重新作答 100 題</button>
+    </div>
+    <div class="wronglist" id="wrongList"></div>
+  </section>
+
+  <section class="panel sourceLinks">
+    <b>核對基準</b>
+    <p class="note">現行法：法務部全國法規資料庫《行政程序法》。題型參考：考選部考畢試題查詢平台（如 114 年普通考試行政法概要、近年警察／司法類科相關科目）。</p>
+    <p class="note"><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030055" target="_blank" rel="noopener">行政程序法全文</a> ・ <a href="https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx" target="_blank" rel="noopener">考選部考畢試題查詢</a></p>
+  </section>
+
+  <div class="footer">本題庫供讀書複習使用；遇修法、釋字／憲判或實務見解變動時，應以最新官方資料為準。</div>
+</div>
+
+<script src="https://law-quiz-hub.pp124916961.chatgpt.site/wrong-history.js?v=1"></script>
+<script>
+const QUESTIONS = [{"id":1,"article":20,"question":"下列何者非屬行政程序法所稱之當事人？","options":["行政處分之相對人","行政機關","參加程序之利害關係人","申請人"],"answer":1,"basis":"行政程序法第20條","explanation":"第20條列舉申請人、處分相對人、行政契約與行政指導相對人、陳情人及依本法參加程序之人，並未把行政機關本身列為本條所稱當事人。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":2,"article":20,"question":"下列何者為行政程序法所稱之當事人？","options":["未成年人之法定代理人","公司之監察人","對行政機關陳情之人","訴願機關"],"answer":2,"basis":"行政程序法第20條第5款","explanation":"對行政機關陳情之人，明列為行政程序之當事人。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":3,"article":20,"question":"行政程序法所稱行政程序之當事人，不包括下列何人？","options":["申請人或行政行為之相對人","依行政程序法參加行政程序之利害關係人","行政程序之證人","對行政機關陳情之人"],"answer":2,"basis":"行政程序法第20條","explanation":"證人是調查證據之相關人員，不是第20條列舉之當事人。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":4,"article":20,"question":"依行政程序法第 20 條之規定，下列何者非行政程序之當事人？","options":["依行政程序法規定參加行政程序之參加人","與人民締結行政契約之行政機關","與行政機關締結行政契約之相對人","申請行政機關作成行政處分之申請人"],"answer":1,"basis":"行政程序法第20條","explanation":"第20條列「與行政機關締結行政契約之相對人」，而非締約行政機關本身。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":5,"article":20,"question":"行政程序法所稱當事人不包含行政機關所為何種行政程序之相對人？","options":["行政處分","行政契約","行政指導","事實行為"],"answer":3,"basis":"行政程序法第20條","explanation":"第20條未將一般事實行為之相對人列入當事人種類。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":6,"article":21,"question":"依行政程序法之規定，下列何者具有行政程序之當事人能力？①未滿七歲之自然人 ②公司 ③設有代表人之非法人團體 ④行政院","options":["①②③④","②③","①②③","②③④"],"answer":0,"basis":"行政程序法第21條","explanation":"自然人不論年齡均有當事人能力；法人、設有代表人或管理人之非法人團體及行政機關亦有。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":7,"article":21,"question":"下列何者不具行政程序上之當事人能力？","options":["法人","獨資商號","設有代表人或管理人之非法人團體","行政機關"],"answer":1,"basis":"行政程序法第21條","explanation":"獨資商號本身通常不是獨立權利義務主體；其權利義務歸屬自然人業主。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":8,"article":21,"question":"下列何者不具有行政程序之當事人能力？","options":["自然人","非法人之團體設有代表人或管理人者","行政機關","立法機關"],"answer":3,"basis":"行政程序法第21條","explanation":"第21條列自然人、法人、具代表人或管理人之非法人團體、行政機關等；立法機關不在本款行政機關概念內。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":9,"article":21,"question":"下列何者不具有行政程序之當事人能力？","options":["自然人","非法人團體設有代表人或管理人者","立法機關","行政機關"],"answer":2,"basis":"行政程序法第21條","explanation":"立法機關不屬第21條列舉之行政程序當事人能力主體。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":10,"article":21,"question":"依行政程序法之規定，下列何者不具有行政程序之當事人能力？","options":["未成年人","外國人","非法人團體未設有代表人者","行政機關"],"answer":2,"basis":"行政程序法第21條","explanation":"非法人團體須設有代表人或管理人，始依第21條取得當事人能力。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":11,"article":22,"question":"依行政程序法之規定，下列何者不具備行政程序之行為能力？","options":["滿二十歲之自然人","胎兒","法人","行政機關首長"],"answer":1,"basis":"行政程序法第22條","explanation":"胎兒不具有自行為行政程序行為之能力。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":12,"article":22,"question":"依行政程序法，下列何者不符合「行政程序行為能力」之規定？","options":["依民法規定，有行為能力之自然人，即具備行政程序行為能力","無行政程序行為能力者，徵得行政機關同意，即可為行政程序行為","行政機關由首長或其代理人、授權人為行政程序行為者","非法人團體由其代表人或管理人為行政程序行為者"],"answer":1,"basis":"行政程序法第22條","explanation":"無行政程序行為能力者應由法定代理人代為，並非經行政機關同意即可自行為之。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":13,"article":22,"question":"關於行政程序當事人能力與行為能力，下列敘述何者正確？","options":["當事人能力係作為行政程序主體之資格；行為能力則係行政程序中作成有法律行為之能力","自然人僅具有當事人能力之主體、無行為能力","法人僅具有行為能力、無當事人能力之主體","行政程序當事人能力與行為能力之審查，僅得由法院為之"],"answer":0,"basis":"行政程序法第21條、第22條","explanation":"當事人能力是成為程序主體的資格；行為能力則是能否有效自行為程序行為。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":14,"article":22,"question":"行政程序法有關當事人之規定，下列敘述何者正確？","options":["行政機關實施行政指導之相對人，非當事人","行政機關不具有行政程序之當事人能力","無行政程序行為能力者，應由其法定代理人代為行政程序行為","選定或指定當事人有二人以上時，應共同為行政程序行為"],"answer":2,"basis":"行政程序法第22條第2項","explanation":"無行政程序行為能力者，應由法定代理人代為程序行為。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":15,"article":23,"question":"依據行政程序法規定，有關行政程序當事人之敘述，下列何者錯誤？","options":["法人具有行政程序之當事人能力","當事人經行政機關之許可，得偕同輔佐人到場","法律上利益受影響之第三人，不得為當事人","當事人之更換，非以書面通知行政機關不生效力"],"answer":2,"basis":"行政程序法第23條、第30條、第31條","explanation":"程序進行將影響第三人權利或法律上利益時，機關得依職權或申請通知其參加為當事人，所以C錯。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":16,"article":26,"question":"依行政程序法之規定，下列關於代理人之敘述，何者正確？","options":["代理權不因本人死亡而消滅","代理權之授與，及於該行政程序有關之全部程序行為，因此代理人亦得撤回申請，不須特別授權","代理人有二人以上者，應共同代理","每一當事人委任之代理人，不得逾五人"],"answer":0,"basis":"行政程序法第24條至第26條","explanation":"第26條明定代理權不因本人死亡或程序行為能力喪失而消滅。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":17,"article":25,"question":"依行政程序法之規定，下列有關當事人委任代理人之敘述，何者正確？","options":["每一當事人委任之代理人，不得超過二人","代理人有三人以上者，其中一人得單獨代理當事人","行政程序代理人應於行政程序終結前，提出委任書","代理人經本人同意得委任他人為複代理人"],"answer":3,"basis":"行政程序法第25條第3項","explanation":"代理人經本人同意，得委任他人為複代理人。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":18,"article":24,"question":"行政程序上每一當事人委任之代理人，不得逾幾人？","options":["1 人","2 人","3 人","4 人"],"answer":2,"basis":"行政程序法第24條第2項","explanation":"每一當事人委任之代理人不得逾三人。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":19,"article":24,"question":"關於行政程序代理人，下列敘述何者正確？","options":["原則上，每一當事人得委任 1 至 3 名代理人","代理權之授與，及於該行政程序有關之全部行為，包括撤回申請程序","行政程序代理人應於每次為行政程序行為時，提出委任書","代理權授與之撤回，無須通知行政機關，即對行政機關發生效力"],"answer":0,"basis":"行政程序法第24條","explanation":"每一當事人代理人不得逾三人；撤回申請須特別授權，委任書於最初行為時提出，撤回代理權須通知機關才生效。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":20,"article":26,"question":"行政程序法有關當事人委任代理人之規定，下列敘述何者錯誤？","options":["每一當事人委任之代理人，不得逾 3 人","代理人有 2 人以上者，均得單獨代理當事人","代理人經本人同意得委任他人為複代理人","代理權因本人死亡而消滅"],"answer":3,"basis":"行政程序法第24條至第26條","explanation":"代理權不因本人死亡或行政程序行為能力喪失而消滅。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":21,"article":25,"question":"依行政程序法第 24 條以下關於「代理」之規定，下列說明何者錯誤？","options":["每一當事人委任之代理人，不得逾三人","代理人未經本人同意得委任他人為複代理人","代理人有二人以上者，均得單獨代理當事人","除依法規或行政程序之性質不得授權者外，當事人得自由委任代理人"],"answer":1,"basis":"行政程序法第25條第3項","explanation":"複代理須經本人同意，不能由代理人自行任意委任。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":22,"article":25,"question":"下列有關代理人之敘述，何者依行政程序法之規定係屬正確？","options":["代理人有二人以上者必須共同代理","代理人得任意委任他人為複代理人","代理人有二人以上且委任契約訂明必須共同代理，其代理人仍得單獨代理","代理權因本人死亡而消滅"],"answer":2,"basis":"行政程序法第25條第1項、第2項","explanation":"即使委任約定共同代理，對行政程序仍各得單獨代理。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":23,"article":26,"question":"關於行政程序法上當事人之規定，下列敘述何者錯誤？","options":["代理人有2人以上者，均得單獨代理當事人","選定或指定當事人有2人以上時，均得單獨為全體為行政程序行為","代理人之代理權因本人死亡或其行政程序行為能力喪失而消滅","無行政程序行為能力者，應由其法定代理人代為行政程序行為"],"answer":2,"basis":"行政程序法第26條","explanation":"代理權不因本人死亡或程序行為能力喪失而消滅。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":24,"article":27,"question":"選定或指定之當事人為下列何種行政程序行為時，得不經全體有共同利益之當事人同意？","options":["參加聽證","撤回申請","拋棄權利","簽署保證書"],"answer":0,"basis":"行政程序法第27條第4項","explanation":"撤回申請、權利拋棄或義務負擔須全體同意；一般參加聽證等程序行為則不須。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":25,"article":27,"question":"行政機關舉行聽證時，因當事人及利害關係人人數眾多，且利害關係複雜，為使聽證程序正常進行，依行政程序法規定，得選定當事人。下列敘述何者錯誤？","options":["有共同利益之多數當事人，未共同委任代理人者，得選定其中至多五人為當事人","選定當事人有數人者，均得單獨為全體於聽證程序中陳述意見","當事人之選定非以書面通知行政機關者，選定不生效力","經選定當事人者，僅得由該當事人為程序行為，其他當事人一律脫離行政程序"],"answer":3,"basis":"行政程序法第27條至第30條","explanation":"其他當事人原則脫離程序，但撤回申請、拋棄權利或負擔義務仍須全體有共同利益之人同意，因此D的「一律」錯。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":26,"article":31,"question":"以下關於輔佐人之敘述何者錯誤？","options":["行政機關認為必要時，得命當事人或代理人偕同輔佐人到場","行政機關認為不適當時，對輔佐人得撤銷其許可或禁止其陳述","當事人或代理人得不經行政機關之許可，偕同輔佐人到場","輔佐人所為之陳述，當事人或代理人未立即提出異議者，視為其所自為"],"answer":2,"basis":"行政程序法第31條","explanation":"當事人或代理人偕同輔佐人到場，原則上須經行政機關許可。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":27,"article":33,"question":"關於行政程序法之迴避，下列敘述何者錯誤？","options":["公務員在行政程序中發現事件當事人曾為三等親內之姻親，應自行迴避","公務員在稅務事件中發現當事人為其所厭惡之國小導師，自認執行職務有偏頗之虞，向所屬機關自請迴避，機關認為不符應自行迴避事由，應否准之","當事人有具體事證，足認承辦公務員執行職務有偏頗之虞，得向公務員所屬機關申請迴避","公務員所屬機關之長官於公務員有應自行迴避之事由而不迴避，而未經當事人申請迴避時，應依職權命其迴避"],"answer":1,"basis":"行政程序法第32條、第33條","explanation":"執行職務有偏頗之虞雖非第32條法定自行迴避事由，仍屬第33條得申請迴避範圍；並非因此當然必須否准。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":28,"article":33,"question":"下列何者非公務員在行政程序中，應自行迴避之情形？","options":["本人或其配偶、前配偶、四親等內之血親或三親等內之姻親或曾有此關係者為事件之當事人時","本人或其配偶、前配偶，就該事件與當事人有共同權利人或共同義務人之關係者","於該事件，曾為證人、鑑定人者","有具體事實，足認其執行職務有偏頗之虞者"],"answer":3,"basis":"行政程序法第32條、第33條","explanation":"偏頗之虞是第33條「申請迴避」事由，不是第32條列舉的自行迴避事由。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":29,"article":32,"question":"下列何種事由，依行政程序法之規定，公務員應自行迴避？","options":["甲逃漏稅被國稅局查獲，承辦稅務員是甲胞妹的三親等之姻親","任職勞工局的乙檢查員執行勞動檢查，發現受檢之事業負責人是其前妻","衛生局科員丙在過年期間，和親友前往曾受其督導已通過食品安全認證的餐廳用餐","調查員丁在查緝一處毒窟時，發現其胞弟正在場吸食三級毒品"],"answer":1,"basis":"行政程序法第32條第1款","explanation":"事件當事人是公務員之前配偶，屬應自行迴避。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":30,"article":33,"question":"關於行政程序中之迴避，下列何者正確？","options":["公務員四親等內之姻親為事件之當事人時，公務員應自行迴避","有具體事實，公務員自認執行職務有偏頗之虞，應自行迴避","人民申請迴避，應向公務員所屬之上級機關為之","被申請迴避之公務員，對於該申請得提出意見書"],"answer":3,"basis":"行政程序法第33條第2項","explanation":"被申請迴避的公務員得提出意見書；申請則向其所屬機關為之。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":31,"article":32,"question":"行政程序法有關公務員在行政程序中迴避之規定，下列之敘述何者正確？","options":["有具體事實，足認公務員執行職務有偏頗之虞者，公務員應自行迴避","公務員之四親等內之血親為事件之當事人時，應自行迴避","當事人之申請迴避，應舉其原因及事實，向該公務員所屬機關之上級機關為之","不服行政機關之駁回申請迴避決定者，得於五日內提請行政院人事行政總處覆決"],"answer":1,"basis":"行政程序法第32條第1款","explanation":"四親等內血親為事件當事人時，公務員應自行迴避。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":32,"article":33,"question":"在行政程序中，下列何者並非公務員應自行迴避之情形？","options":["本人或其四親等內之血親或三親等內之姻親或曾有此關係者為事件之當事人時","本人或其配偶、前配偶，就該事件與當事人有共同權利人或共同義務人之關係者","於該事件，曾為證人、鑑定人者","有具體事實，足認其執行職務有偏頗之虞者"],"answer":3,"basis":"行政程序法第32條、第33條","explanation":"偏頗之虞屬申請迴避事由；其餘均屬第32條自行迴避。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":33,"article":33,"question":"依行政程序法第 33 條規定，當事人申請公務員自行迴避，向該公務員所屬機關為之，但經駁回後，對駁回決定不服者，得於（X 日）內提請上級機關覆決，受理機關除有正當理由外，應於（Y 日）內為適當之處置。X、Y 各為：","options":["10 日、10日","10 日、5 日","5 日、10日","15 日、10日"],"answer":2,"basis":"行政程序法第33條第3項","explanation":"駁回後5日內提請上級機關覆決；受理機關原則10日內處置。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":34,"article":32,"question":"依行政程序法第32條規定，下列何種情形，公務員應自行迴避？","options":["四親等內之姻親為事件當事人","曾為該事件之鑑定人","執行職務有偏頗之虞","於土地登記案件曾為該土地之所有人"],"answer":1,"basis":"行政程序法第32條第4款","explanation":"曾於該事件擔任證人或鑑定人者，應自行迴避。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":35,"article":33,"question":"有關行政程序法規範的迴避，下列何者錯誤？","options":["申請迴避之理由僅「釋明」為已足，無庸「證明」","被申請迴避之公務員在其所屬機關就該申請事件為准許或駁回之決定前，毋庸停止行政程序","行政程序法並未如同各種訴訟法規定，賦予違反迴避明確之效果","否准迴避之申請時，得於五日內提請上級機關覆決"],"answer":1,"basis":"行政程序法第33條第4項","explanation":"在所屬機關決定前原則應停止行政程序；僅急迫情形仍應為必要處置。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":36,"article":35,"question":"下列有關行政程序開始之敘述，何者正確？","options":["基於行政程序可能嚴重影響當事人權益，故應由當事人申請後始得開始","行政程序之開始由當事人依法規提出申請者，得以書面或言詞為之","以言詞為之者，應附錄音檔案供受理之行政機關佐證","非經當事人申請，行政程序不得開始"],"answer":1,"basis":"行政程序法第34條、第35條","explanation":"依法規提出申請，除法規另有規定外，得以書面或言詞為之。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":37,"article":34,"question":"行政程序之開始與終結，原則上是採：","options":["當事人進行主義","職權進行主義","申請主義","法定主義"],"answer":1,"basis":"行政程序法第34條","explanation":"行政程序之開始原則由行政機關依職權定之。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":38,"article":34,"question":"行政程序之開始與終結，原則上係採：","options":["當事人進行主義","職權進行主義","申請主義","法定主義"],"answer":1,"basis":"行政程序法第34條","explanation":"原則採職權進行主義。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":39,"article":36,"question":"行政程序法第 36 條規定：「行政機關應依職權調查證據，不受當事人主張之拘束，對當事人有利及不利事項一律注意。」此係下列何種主義之內涵？","options":["自由心證主義","職權調查主義","處分權主義","辯論主義"],"answer":1,"basis":"行政程序法第36條","explanation":"第36條明文採職權調查主義。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":40,"article":36,"question":"依行政程序法規定，行政機關應依職權調查證據。下列敘述何者錯誤？","options":["對於當事人有利、不利之事項，一律注意","當事人於行政程序中，得自行提出證據","行政機關調查證據，應受當事人主張之拘束","機關在為決定時，即應斟酌全部陳述與調查事實及證據的結果"],"answer":2,"basis":"行政程序法第36條、第37條、第43條","explanation":"職權調查不受當事人主張拘束，因此C錯。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":41,"article":36,"question":"行政程序法關於行政機關之調查證據，下列之敘述何者錯誤？","options":["調查證據受當事人主張之拘束","基於調查證據之必要，得以書面通知相關人陳述意見","基於調查證據之必要，得要求當事人提供必要之文書","為瞭解事實真相，得實施勘驗"],"answer":0,"basis":"行政程序法第36條、第39條、第40條、第42條","explanation":"行政機關依職權調查，不受當事人主張拘束。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":42,"article":53,"question":"行政程序法規定行政機關調查事實與證據，下列敘述何者錯誤？","options":["採職權調查主義，不受當事人意思之拘束","證人得向機關請求法定之日費及旅費","需兼顧對當事人有利不利事項","機關要求第三人提供必要之文書資料，依行政程序法規定應支付費用"],"answer":3,"basis":"行政程序法第36條、第40條、第53條","explanation":"第40條得要求第三人提供必要資料，行政程序法並未因此一律規定須向第三人支付費用。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":43,"article":36,"question":"依據行政程序法，關於行政機關調查證據，下列敘述何者錯誤？","options":["行政機關調查事實與證據，得製作書面紀錄","行政機關依職權調查證據，但受當事人主張之拘束","行政機關得選定適當之人為鑑定","行政機關為瞭解事實真相，得實施勘驗"],"answer":1,"basis":"行政程序法第36條、第38條、第41條、第42條","explanation":"行政機關依職權調查證據，不受當事人主張拘束。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":44,"article":37,"question":"下列關於行政程序中調查事實及證據之敘述何者錯誤？","options":["當事人於行政程序中不得自行提出證據","行政機關應對當事人有利及不利事項一律注意","行政機關應依職權調查證據，不受當事人主張之拘束","當事人於行政程序中，得向行政機關申請調查事實及證據"],"answer":0,"basis":"行政程序法第36條、第37條","explanation":"當事人得自行提出證據，也得申請行政機關調查。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":45,"article":41,"question":"有關行政程序之進行，下列敘述何者正確？","options":["行政機關調查證據時，僅就有利於當事人之部分注意之","行政機關為瞭解事實真相，應實施勘驗","行政機關基於調查事實及證據之必要，僅得要求當事人提供必要之文書、資料或物品，不及於第三人","行政機關得自行選定適當之人擔任鑑定人，提供書面鑑定"],"answer":3,"basis":"行政程序法第36條、第40條至第42條","explanation":"行政機關得選定適當之人為鑑定，並可採書面鑑定。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":46,"article":37,"question":"行政程序法關於行政機關調查事實及證據之規定，下列敘述何者錯誤？","options":["行政機關實施勘驗時，應通知當事人到場。但不能通知者，不在此限","當事人僅得向行政機關申請調查事實及證據，不得自行提出證據","行政機關得要求當事人或第三人提供必要之文書、資料或物品","行政機關得選定適當之人以書面為鑑定，必要時，得通知鑑定人到場說明"],"answer":1,"basis":"行政程序法第37條","explanation":"當事人不僅可申請調查，也得自行提出證據。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":47,"article":42,"question":"有關行政機關調查證據的敘述，下列何者錯誤？","options":["行政機關調查證據，不受當事人主張之拘束","當事人於行政程序中，得向行政機關申請調查證據","當事人於行政程序中，得自行提出證據","行政機關實施勘驗時，行政機關不能通知當事人者，不得實施"],"answer":3,"basis":"行政程序法第42條","explanation":"勘驗原則應通知當事人到場，但不能通知者不在此限。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":48,"article":36,"question":"行政程序法第36條規定：「行政機關應依職權調查證據，不受當事人主張之拘束，對當事人有利及不利事項一律注意。」其採職權調查主義設計之主要根據為下列何者？","options":["依法行政原則","行政行為明確性原則","信賴保護原則","正當法律程序"],"answer":0,"basis":"行政程序法第36條","explanation":"行政機關須查明正確事實以依法作成行政決定，職權調查與依法行政密切相關。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":49,"article":41,"question":"依行政程序法之規定，關於行政機關於行政程序中調查事實及證據之敘述，下列何者正確？","options":["行政機關基於調查事實及證據之必要，應以書面通知相關之人進行聽證程序","基於程序客觀性之要求，當事人僅得向行政機關申請調查證據，而不得自行提出","行政機關調查事實及證據，應依職權或當事人之申請製作書面紀錄，並送達予當事人","行政機關得選定適當之人以書面為鑑定，必要時並得通知鑑定人到場說明"],"answer":3,"basis":"行政程序法第37條、第38條、第39條、第41條","explanation":"行政機關得選定適當之人為鑑定；以書面為鑑定者，必要時得通知鑑定人到場說明。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":50,"article":39,"question":"行政程序法關於陳述意見之規定，下列論述何者正確？","options":["凡行政處分均必須給予相對人陳述意見之機會","經行政機關通知陳述意見者，均應親自到場陳述","行政機關基於調查事實及證據之必要，得通知相關人陳述意見","行政機關通知陳述意見，均應以書面為之"],"answer":2,"basis":"行政程序法第39條","explanation":"第39條授權機關基於調查必要，以書面通知相關人陳述意見；不是所有行政處分均一律依本條辦理。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":51,"article":42,"question":"下列何者不是調查證據的方法？","options":["解釋","鑑定","勘驗","詢問當事人"],"answer":0,"basis":"行政程序法第39條至第42條","explanation":"鑑定、勘驗及通知相關人陳述意見均屬調查方法；「解釋」不是此處調查證據方法。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":52,"article":46,"question":"依行政程序法規定，關於閱覽卷宗之敘述，下列何者正確？","options":["行政程序之卷宗閱覽，原則上由行政機關依據職權定之，例外方由行政程序當事人或利害關係人提出申請","為使行政程序當事人或利害關係人得為行政程序之進行為充分之準備，故於行政程序開始前，應即許其閱覽卷宗","就行政機關所為閱覽卷宗之准駁決定不服，因該決定為行政處分，得單獨就此提起行政救濟","卷宗內容若涉及依法應保密之國防機密，行政機關得拒絕提供閱覽"],"answer":3,"basis":"行政程序法第46條","explanation":"涉及國防、軍事、外交等依法應秘密且有保密必要者，行政機關得拒絕閱覽。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":53,"article":46,"question":"關於行政程序法中申請閱覽卷宗之規定，下列敘述何者正確？","options":["基於知的權利任何人皆可依行政程序法規定申請之","卷宗閱覽之申請依法並無期間上之限制","若卷宗閱覽之申請欠缺維護法律上利益之必要時，主管機關得否准之","此規定在政府資訊公開法制定施行後完全沒適用餘地"],"answer":2,"basis":"行政程序法第46條第1項","explanation":"閱卷須以主張或維護法律上利益有必要者為限。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":54,"article":46,"question":"依行政程序法及政府資訊公開法之規定，有關卷宗閱覽與資訊公開之請求，下列敘述何者正確？","options":["卷宗閱覽之請求，以行政程序當事人提出為限","資訊公開之請求，申請人得就拒絶決定提起行政救濟","卷宗閱覽之請求，不以維護當事人法律上利益有必要者為限","資訊公開之請求，須以維護申請人法律上利益有必要者為限"],"answer":1,"basis":"行政程序法第46條","explanation":"行政程序法閱卷限當事人或利害關係人且須有法律上利益必要；政府資訊公開法另有其救濟機制。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":55,"article":46,"question":"依據行政程序法，關於申請閱覽卷宗，以下敘述何者錯誤？","options":["當事人或利害關係人均得申請","申請理由限維護其法律上利益有必要者","拒絕申請理由，包括行政決定前之準備作業文件","有侵害第三人權利之虞之資料，於無保密必要之部分，仍應准許閱覽"],"answer":3,"basis":"行政程序法第46條第2項、第3項","explanation":"分離原則明文只針對第2款、第3款保密事項；第4款「有侵害第三人權利之虞」並無同樣的強制分離規定。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":56,"article":46,"question":"行政程序法中有關閱覽卷宗之規定，下列何者正確？","options":["任何人均得請求閱覽、抄錄行政程序有關卷宗資料","當事人得就未給予閱覽卷宗之處置，直接提起訴願","閱覽卷宗時如發現其中資料關於他人之記載有錯誤，得請求更正","適用分離原則，故涉及公務機密之文書資料中，如無保密必要之部分，仍應准許閱覽"],"answer":3,"basis":"行政程序法第46條第3項","explanation":"涉及依法規應秘密之公務機密資料，如可分離，無保密必要部分仍應准許閱覽。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":57,"article":46,"question":"行政程序法關於行政正當程序要求之規定，下列敘述何者錯誤？","options":["處分作成之機關應具備公正性","應提供相對人閱覽卷宗之機會","任何人均得依行政程序法主張政府資訊公開","處分之作成應告知救濟方法、期間及受理機關"],"answer":2,"basis":"行政程序法第46條","explanation":"行政程序法第46條閱卷權並非任何人均可主張，須是當事人或利害關係人且有法律上利益必要。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":58,"article":46,"question":"下列關於閱覽卷宗之敘述，何者正確？","options":["利害關係人向行政機關申請閱覽卷宗者，皆須經當事人同意，行政機關始得允許閱覽","縱使涉及國防、軍事、外交等依法規規定有保密必要之事項，與其相關無保密必要之部分，仍應准許閱覽","行政決定前之擬稿，其與當事人權益相關者，得依申請，准許當事人閱覽","行政機關就與當事人權益相關之卷宗，雖得依申請准許其閱覽，但不得准許其攝影"],"answer":1,"basis":"行政程序法第46條第3項","explanation":"第2款、第3款保密資料若可分離，其他無保密必要部分仍應准許閱覽。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":59,"article":46,"question":"行政機關依行政程序法之規定，於下列何種情形，不得拒絕人民申請閱覽卷宗？","options":["申請閱覽擬稿文件","申請機密性文件","申請他人未同意提供之病歷資料","申請卷宗檔案過大，影印費時"],"answer":3,"basis":"行政程序法第46條第2項","explanation":"「卷宗過大、影印費時」不是第46條列舉的拒絕事由。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":60,"article":46,"question":"依行政程序法第 46 條規定，關於閱覽卷宗，如何進行？","options":["當事人或利害關係人得向行政機關申請","不必主張或維護其法律上利益有必要者","行政決定前之擬稿或其他準備作業文件，不得拒絕提供","當事人就卷宗內容關於自身之記載有錯誤者，無請求機關更正之權"],"answer":0,"basis":"行政程序法第46條","explanation":"當事人或利害關係人在為主張或維護法律上利益有必要時，得申請閱覽、抄寫、複印或攝影。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":61,"article":46,"question":"依行政程序法規定，何人向行政機關申請閱覽、抄寫、複印或攝影有關資料或卷宗時，行政機關原則上不得拒絕？","options":["任何人","當事人或利害關係人","各級政府機關","立法院"],"answer":1,"basis":"行政程序法第46條第1項","explanation":"閱卷請求權主體是當事人或利害關係人，並以法律上利益必要為限。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":62,"article":46,"question":"關於行政程序法第46條之閱覽卷宗，下列敘述何者錯誤？","options":["當事人或利害關係人得向行政機關申請閱覽卷宗","申請閱覽卷宗須以主張或維護其法律上利益有必要者為限","行政機關不得拒絕當事人閱覽卷宗之申請","當事人申請閱覽卷宗被拒絕，不得逕行提起行政訴訟"],"answer":2,"basis":"行政程序法第46條","explanation":"第46條明定多項得拒絕閱卷事由，所以C「不得拒絕」錯誤。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":63,"article":46,"question":"關於行政程序法閱覽卷宗請求權之說明，下列何者正確？","options":["閱覽卷宗請求權為任何人民於行政程序中皆享有之權利","行政機關對於閱卷請求所為之決定為具有實體效力之行政處分","請求閱覽卷宗，限於有利於申請人主張或維護法律利益","閱覽卷宗如發現資料內容關於他人之記載有錯誤，得請求更正"],"answer":2,"basis":"行政程序法第46條","explanation":"閱卷限於主張或維護其法律上利益有必要；更正權只針對關於自身記載之錯誤。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":64,"article":47,"question":"依行政程序法規定，有關禁止公務員與當事人程序外接觸之敘述，下列何者錯誤？","options":["公務員因職務上必要而為程序外接觸，並非法律所禁止之行為","公務員與當事人為程序外接觸時所使用之書面文件，應對社會大眾公開","如與當事人以電話聯絡，須作成書面紀錄，且將接觸對象、時間、地點及內容清楚記載","其他當事人如對公務員程序外接觸有疑義，不得立即提出救濟，僅得對實體決定聲明不服時一併提出"],"answer":1,"basis":"行政程序法第47條","explanation":"程序外接觸書面應附卷並對「其他當事人」公開，不是對社會大眾公開。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":65,"article":47,"question":"行政程序法關於禁止公務員為程序外接觸之規定，下列敘述，何者錯誤？","options":["在行政程序中，公務員完全不得與當事人為程序外接觸","在行政程序中，必要時公務員得與當事人為程序外接觸","公務員為程序外之接觸時，應將所有往來文書附卷","公務員為程序外之接觸非以書面為之者，應作成書面紀錄"],"answer":0,"basis":"行政程序法第47條","explanation":"基於行政程序職務上必要，仍得為程序外接觸，但須附卷、紀錄並向其他當事人公開。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":66,"article":47,"question":"依行政程序法規定，關於公務員在行政程序中之行為，下列何者正確？","options":["除基於公共利益之必要外，不得與當事人為程序外之接觸","若與當事人為程序外之接觸，僅須將往來文件附卷即可","程序外接觸之書面，基於個人資料保護理由，不得對其他當事人公開","若以言詞與當事人為程序外接觸時，應作成書面紀錄，並對其他當事人公開"],"answer":3,"basis":"行政程序法第47條","explanation":"非書面程序外接觸須作成書面紀錄，記載對象、時間、地點、內容並對其他當事人公開。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":67,"article":48,"question":"依行政程序法之規定，下列有關期間計算之敘述，何者錯誤？","options":["期間之末日為星期日、國定假日或其他休息日者，以該日之次日為期間之末日","期間以日、星期、月或年計算者，其始日不計算在內","期間涉及人民之處罰或其他不利行政處分，其始日不計算在內","期間以時計算者，即時起算"],"answer":2,"basis":"行政程序法第48條","explanation":"不利處分期間的始日不計時刻，以一日論；不是始日不計入。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":68,"article":48,"question":"期間以日計算者，其計算方法如何？","options":["即日起算","始日不計算在內","自第三日起算","期間涉及不利行政處分者，始日不計算在內"],"answer":1,"basis":"行政程序法第48條第2項","explanation":"以日計算原則始日不計入；法律規定即日起算者例外。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":69,"article":51,"question":"依行政程序法規定，關於期間之敘述，下列何者錯誤？","options":["期間以時計算者，即時起算","期間涉及處罰之行政處分，其始日不計時刻不列入期間之計算","基於法規之申請，以掛號方式向行政機關提出者，以交郵當日之郵戳為準","行政機關對於人民依法規之申請，如無特別規定，其處理時間為 2 個月"],"answer":1,"basis":"行政程序法第48條至第51條","explanation":"處罰等不利處分之始日是不計時刻「以一日論」，不是不列入期間。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":70,"article":48,"question":"依行政程序法規定，停止營業20日之行政處分，其20日應如何計算？","options":["其始日不計算在內，其末日為星期日、國定假日或其他休息日者，以該日之次日為期間之末日","其始日不計算在內，其末日為星期日、國定假日或其他休息日者，照計","其始日不計時刻以1日論，其末日為星期日、國定假日或其他休息日者，以該日之次日為期間之末日","其始日不計時刻以1日論，其末日為星期日、國定假日或其他休息日者，照計"],"answer":3,"basis":"行政程序法第48條第5項","explanation":"不利行政處分期間始日不計時刻以一日論，末日遇休息日原則照計。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":71,"article":48,"question":"關於期間之計算，下列何者正確？","options":["期間以日計算者，始日應算入","期間以時計算，隔日起算","期間之末日為星期日，以該日為期間之末日","期間涉及對人民處罰者，始日以一日論"],"answer":3,"basis":"行政程序法第48條","explanation":"涉及處罰等不利處分，始日不計時刻以一日論。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":72,"article":51,"question":"關於行政程序法期間規定之敘述，下列何者正確？","options":["人民於法定期間內提出申請，經移送有管轄權之機關者，須再次提出申請","期間之末日為星期六者，以其次星期一下午為期間末日","申請人因不諳法令，不能於法定期間內提出申請，得申請回復原狀","除法規另有規定外，行政機關應訂定人民申請之處理期間"],"answer":3,"basis":"行政程序法第51條第1項","explanation":"行政機關原則應按申請事項類別訂定處理期間並公告。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":73,"article":48,"question":"依據行政程序法之規定，對於涉及人民之處罰或其他不利行政處分之期間的計算，下列敘述何者正確？","options":["始日不計時刻以 1 日論","末日為星期日、國定假日或其他休息日者，以該日之次日為期間之末日","始日不計入","末日為星期六者，不列入計算，而以次星期一上午 10：00 為期間末日"],"answer":0,"basis":"行政程序法第48條第5項","explanation":"不利行政處分期間始日不計時刻以一日論。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":74,"article":48,"question":"依據行政程序法規定，有關期日與期間之敘述，下列何者正確？","options":["期間以日、星期、月或年計算者，其始日計算在內","基於法規之申請，以掛號郵寄方式向行政機關提出者，以行政機關收文日為準","期間以時計算者，即時起算","期間涉及人民之處罰者，其始日不計算在內"],"answer":2,"basis":"行政程序法第48條、第49條","explanation":"以時計算者即時起算；掛號申請以交郵郵戳為準。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":75,"article":50,"question":"關於行政程序法上期日與期間之敘述，下列何者錯誤？","options":["基於法規之申請，以掛號郵寄方式向行政機關提出者，以交郵當日之郵戳為準","行政機關對於人民依法規之申請，除法規另有規定外，應按各事項類別，訂定處理期間公告，未依前項規定訂定處理期間者，其處理期間為2個月","因天災或其他不應歸責於申請人之事由，致基於法規之申請不能於法定期間內提出者，得於其原因消滅後10日內，申請回復原狀","期間以日、星期、月或年計算者，其始日一律不計算在內"],"answer":3,"basis":"行政程序法第48條至第51條","explanation":"法律規定「即日起算」時，始日仍要計入，所以D的「一律」錯誤。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":76,"article":48,"question":"關於行政程序法上期日與期間之敘述，下列何者正確？","options":["基於法規之申請，以掛號郵寄方式向行政機關提出者，以送達簽收當日之郵戳為準","行政機關對於人民依法規之申請，除法規另有規定外，應按各事項類別，訂定處理期間公告，未依前項規定訂定處理期間者，其處理期間為1個月","因天災或其他不應歸責於申請人之事由，致基於法規之申請不能於法定期間內提出者，得於其原因消滅後30日內，申請回復原狀","期間以日、星期、月或年計算者，其始日不計算在內，但法律規定即日起算者，不在此限"],"answer":3,"basis":"行政程序法第48條第2項","explanation":"以日、週、月、年計算原則始日不計，法律規定即日起算者例外。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":77,"article":50,"question":"因天災或其他不應歸責於申請人之事由，致基於法規之申請不能於法定期間內提出者，得於其原因消滅後幾日內，申請回復原狀？","options":["7日","10日","30日","1年"],"answer":1,"basis":"行政程序法第50條第1項","explanation":"原則應於原因消滅後10日內申請回復原狀。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":78,"article":50,"question":"依行政程序法規定，因天災致基於法規之申請不能於法定期間內提出者，於其原因消滅後，申請人得以下列何種方式補救？","options":["申請程序再開","申請回復原狀","聲明異議","逕提訴願救濟"],"answer":1,"basis":"行政程序法第50條","explanation":"屬不應歸責事由逾越法定申請期間時，可依第50條申請回復原狀。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":79,"article":50,"question":"依行政程序法第五十條之規定，因天災或其他不應歸責於申請人之事由，致基於法規之申請不能於法定期間內提出者，得於其原因消滅後至遲幾日內，申請回復原狀？","options":["3日","7日","10日","30日"],"answer":2,"basis":"行政程序法第50條第1項","explanation":"原因消滅後原則10日內。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":80,"article":51,"question":"行政機關對於人民依法規之申請，未依行政程序法第五十一條第一項規定訂定處理期間者，其處理期間一律為:","options":["一個月","二個月","三個月","六個月"],"answer":1,"basis":"行政程序法第51條第2項","explanation":"未另訂處理期間者，法定補充期間為二個月。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":81,"article":51,"question":"依行政程序法第51 條規定，行政機關對於人民申請之處理期間，如未訂定者，其處理期間為：","options":["2星期","2個月","4個月","依各機關首長決定"],"answer":1,"basis":"行政程序法第51條第2項","explanation":"未訂定處理期間者為二個月。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":82,"article":51,"question":"行政程序法第五十一條第二項規定，人民依法申請案，行政機關應訂定處理期間，行政機關如未訂有處理期間者，其處理期間為：","options":["十天","二十天","一個月","二個月"],"answer":3,"basis":"行政程序法第51條第2項","explanation":"未訂定處理期間時為二個月。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":83,"article":51,"question":"行政機關對於人民依法規之申請，除法規另有規定外，應按各事項類別，訂定處理期間公告之，若行政機關未訂定處理期間者，依據行政程序法第51條所規定，其處理期間為：","options":["15日","1個月","2個月","3個月"],"answer":2,"basis":"行政程序法第51條第2項","explanation":"法定補充處理期間為二個月。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":84,"article":51,"question":"行政機關對於人民依法規之申請，除法規另有規定外，應按各事項類別，訂定處理期間公告之。未依規定訂定處理期間者，其處理期間為多久？","options":["1個月","2個月","3個月","6個月"],"answer":1,"basis":"行政程序法第51條第2項","explanation":"未訂定即以二個月為處理期間。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":85,"article":51,"question":"各行政機關對於人民依法規申請事件，未訂有處理期間者，依據行政程序法規定，其處理期間為何？","options":["1個月","2個月","3個月","6個月"],"answer":1,"basis":"行政程序法第51條第2項","explanation":"答案為二個月。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":86,"article":51,"question":"行政機關對於人民依法規之申請，除法規另有規定外，應按各事項類別，訂定處理期間公告之；如未依法規另訂定處理期間者，原則上，其處理期間為幾個月？","options":["半個月","1個月","2個月","3個月"],"answer":2,"basis":"行政程序法第51條第2項","explanation":"原則二個月。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":87,"article":51,"question":"行政機關對於人民依法規之申請，未訂定處理期間者，其處理期間為：","options":["一個月","二個月","三個月","四個月"],"answer":1,"basis":"行政程序法第51條第2項","explanation":"未訂定處理期間者為二個月。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":88,"article":51,"question":"人民依法規申請事項，行政機關應按各事項類別，訂定處理期間公告之。若未依規定訂定處理期間者，其處理期間原則上為多久？","options":["1 個月","2 個月","3 個月","6 個月"],"answer":1,"basis":"行政程序法第51條第2項","explanation":"未另定者為二個月。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":89,"article":51,"question":"行政機關對人民依法規之申請，應按各事項類別，訂定處理期間公告之。未訂定處理期間者，其處理期間為：","options":["一個月","二個月","三個月","四個月"],"answer":1,"basis":"行政程序法第51條第2項","explanation":"未訂者為二個月。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":90,"article":51,"question":"行政機關對於人民依法規之申請，除法規另有規定外，應按各事項類別，訂定處理期間公告之。若未訂定處理期間者，其處理期間為：","options":["二個月","三個月","四個月","六個月"],"answer":0,"basis":"行政程序法第51條第2項","explanation":"答案是二個月。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":91,"article":51,"question":"依行政程序法第51條之規定，行政機關對於人民依法規之申請，除法規另有規定外，應按各事項類別，訂定處理期間公告之。如未依此規定訂定處理期間者，其處理期間至遲為多久？","options":["十五日","三十日","二個月","三個月"],"answer":2,"basis":"行政程序法第51條第2項","explanation":"未訂定時處理期間為二個月。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":92,"article":52,"question":"行政程序所生之費用，依行政程序法之規定，原則上由下列何者負擔？","options":["行政機關","程序之當事人","行政機關與程序之當事人平均分擔","行政機關與程序之當事人依事務種類不同所定之分擔基準表分擔"],"answer":0,"basis":"行政程序法第52條第1項","explanation":"行政程序所生費用原則由行政機關負擔；專為當事人或利害關係人利益支出者例外。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":93,"article":53,"question":"行政程序法有關行政程序所生費用之規定，下列敘述何者錯誤？","options":["證人得向行政機關請求法定之日費及旅費","鑑定人得向行政機關請求相當之報酬","行政機關負擔專為利害關係人利益所支出之費用","鑑定人得請求行政機關預行酌給法定之日費"],"answer":2,"basis":"行政程序法第52條、第53條","explanation":"專為利害關係人利益所支出之費用，不由行政機關負擔。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":94,"article":52,"question":"依據行政程序法規定，有關行政程序費用之敘述，下列何者正確？","options":["行政程序所生之費用，由當事人負擔","證人僅得向行政機關請求法定之日費","證人法定日費之標準，由內政部定之","專為當事人利益所支出之費用，非行政機關負擔範圍"],"answer":3,"basis":"行政程序法第52條、第53條","explanation":"專為當事人或利害關係人利益所支出費用不由行政機關負擔；證人可請求日費及旅費。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":95,"article":53,"question":"依行政程序法第52 條以下關於「費用」之規定，下列何者之說明不正確？","options":["行政程序所生之費用，原則由行政機關負擔","因可歸責於當事人或利害關係人之事由，致程序有顯著之延滯者，其因延滯所生之費用，由其負擔","證人得向行政機關請求相當之報酬","鑑定人得向行政機關請求法定之日費與旅費"],"answer":2,"basis":"行政程序法第52條、第53條","explanation":"相當報酬是鑑定人可請求；證人僅有法定日費及旅費。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":96,"article":53,"question":"關於行政程序所生之費用，下列陳述何者正確？","options":["原則上由行政機關負擔","證人除得請求法定之日費及旅費外，並得請求相當之報酬","證人或鑑定人之費用及報酬，不得請求行政機關預行酌給之","證人或鑑定人之費用，除法規另有規定外，其標準由司法院定之"],"answer":0,"basis":"行政程序法第52條、第53條","explanation":"費用原則由行政機關負擔；相當報酬限鑑定人，且費用報酬得預行酌給，費用標準原則由行政院定。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":97,"article":53,"question":"有關行政程序所生之費用，下列敘述何者錯誤？","options":["由行政機關負擔","證人之費用，不得請求行政機關預行酌給之","鑑定人得向行政機關請求法定之日費及旅費，並得請求相當之報酬","因可歸責於當事人之事由，致程序有顯著之延滯者，其因延滯所生之費用，由其負擔"],"answer":1,"basis":"行政程序法第52條、第53條","explanation":"證人之法定日費、旅費也得請求行政機關預行酌給。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":98,"article":53,"question":"關於行政程序法有關費用規定之敘述，下列何者錯誤？","options":["可歸責於當事人之事由，致程序有顯著之延滯者，延滯所生費用由當事人負擔","專為當事人或利害關係人利益所支出之費用，由其自行負擔","證人或鑑定人得向行政機關請求法定之日費與旅費","鑑定人得向行政機關請求相當之報酬，但不得預行酌給之"],"answer":3,"basis":"行政程序法第52條、第53條","explanation":"鑑定人報酬可請求行政機關預行酌給，所以D錯。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":99,"article":52,"question":"有關行政程序費用的負擔原則，下列何者正確？","options":["專為當事人利益所支出之費用，由當事人負擔","證人費用均應由當事人負擔","鑑定人旅費由當事人負擔","經申請而開始之程序費用，由當事人負擔"],"answer":0,"basis":"行政程序法第52條","explanation":"一般費用由行政機關負擔，但專為當事人或利害關係人利益支出者不在此限。","tag":"歷屆國考原題｜題幹、選項原文"},{"id":100,"article":24,"question":"行政程序上每一當事人委任之代理人，不得逾幾人：","options":["一人","二人","三人","五人"],"answer":2,"basis":"行政程序法第24條第2項","explanation":"代理人最多三人。","tag":"歷屆國考原題｜題幹、選項原文"}];
+const LETTERS = ["A","B","C","D"];
+const STORE_KEY = "apa20to53_100q_original_v1";
+let state = {
+  order: QUESTIONS.map(q=>q.id),
+  pos: 0,
+  answers: {},
+  mode: "依序100題",
+  sessionIds: QUESTIONS.map(q=>q.id)
+};
+
+function qById(id) { return QUESTIONS.find(q=>q.id===id); }
+function loadStored() {
+  try {
+    const s=JSON.parse(localStorage.getItem(STORE_KEY));
+    if(s && Array.isArray(s.order) && s.answers) return s;
+  } catch(e) {}
+  return null;
+}
+const wrongHistory = window.QuizWrongHistory?.mount({quizId:"admin-procedure-20-53", title:"行政程序法第20～53條", questions:QUESTIONS, getState:()=>state, idsAreQuestionIds:true}) || {capture(){},newRound(){}};
+if(!window.QuizWrongHistory){ const warning=document.createElement("p"); warning.textContent="錯題紀錄功能未載入，請確認網路後重新整理。"; (document.getElementById("controlPanel")||document.getElementById("home")).appendChild(warning); }
+function save() { wrongHistory.capture(state); localStorage.setItem(STORE_KEY, JSON.stringify(state)); updateStats(); }
+function shuffle(arr) {
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--) {
+    const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+function start(mode) {
+  const ids=QUESTIONS.map(q=>q.id);
+  state={ order: mode==="random"?shuffle(ids):ids, pos:0, answers:{}, mode: mode==="random"?"隨機100題":"依序100題", sessionIds:ids };
+  document.getElementById("resultPanel").classList.remove("show");
+  document.getElementById("quizPanel").style.display="block";
+  save(); render();
+  window.scrollTo({top:document.getElementById("quizPanel").offsetTop-8,behavior:"smooth"});
+}
+function resume() {
+  const s=loadStored();
+  if(!s) { alert("目前沒有可繼續的進度。"); return; }
+  state=s;
+  document.getElementById("resultPanel").classList.remove("show");
+  document.getElementById("quizPanel").style.display="block";
+  render();
+}
+function render() {
+  if(!state.order.length) return;
+  if(state.pos<0) state.pos=0;
+  if(state.pos>=state.order.length) { finish(); return; }
+  const id=state.order[state.pos], q=qById(id), ans=state.answers[id];
+  document.getElementById("qCount").textContent=`第 ${state.pos+1} / ${state.order.length} 題（題庫 #${id}）｜第 ${q.article} 條`;
+  document.getElementById("qTag").textContent=q.tag;
+  document.getElementById("qTitle").textContent=q.question;
+  const box=document.getElementById("options"); box.innerHTML="";
+  q.options.forEach((opt,idx)=>{
+    const b=document.createElement("button");
+    b.className="option"+(ans!==undefined?" locked":"");
+    if(ans!==undefined && idx===q.answer) b.classList.add("correct");
+    if(ans!==undefined && idx===ans && ans!==q.answer) b.classList.add("wrong");
+    b.innerHTML=`<span class="optletter">${LETTERS[idx]}</span>${escapeHtml(opt)}`;
+    b.disabled=ans!==undefined;
+    b.onclick=()=>choose(idx);
+    box.appendChild(b);
+  });
+  const fb=document.getElementById("feedback");
+  if(ans!==undefined) {
+    fb.className="feedback show "+(ans===q.answer?"good":"bad");
+    document.getElementById("feedbackTitle").textContent=ans===q.answer?"✅ 答對":"❌ 答錯";
+    document.getElementById("correctAnswer").innerHTML=`<b>正確答案：${LETTERS[q.answer]}．${escapeHtml(q.options[q.answer])}</b>`;
+    document.getElementById("basis").textContent=q.basis;
+    document.getElementById("explanation").textContent=q.explanation;
+  } else {
+    fb.className="feedback";
+  }
+  document.getElementById("prevBtn").disabled=state.pos===0;
+  document.getElementById("nextBtn").textContent=state.pos===state.order.length-1?"完成本回合":"下一題";
+  buildJump(); updateStats();
+}
+function choose(idx) {
+  const id=state.order[state.pos];
+  if(state.answers[id]!==undefined) return;
+  state.answers[id]=idx;
+  save(); render();
+}
+function go(delta) {
+  if(delta>0 && state.pos===state.order.length-1) { finish(); return; }
+  state.pos=Math.max(0,Math.min(state.order.length-1,state.pos+delta));
+  save(); render();
+  window.scrollTo({top:document.getElementById("quizPanel").offsetTop-8,behavior:"smooth"});
+}
+function buildJump() {
+  const el=document.getElementById("jump"); el.innerHTML="";
+  state.order.forEach((id,i)=>{
+    const b=document.createElement("button"); b.className="jbtn";
+    if(state.answers[id]!==undefined) b.classList.add("done");
+    if(i===state.pos) b.classList.add("current");
+    b.textContent=i+1;
+    b.onclick=()=>{state.pos=i; save(); render();};
+    el.appendChild(b);
+  });
+}
+function sessionAnsweredIds() { return state.order.filter(id=>state.answers[id]!==undefined); }
+function updateStats() {
+  const ids=sessionAnsweredIds();
+  let c=0; ids.forEach(id=>{ if(state.answers[id]===qById(id).answer) c++; });
+  const w=ids.length-c, rate=ids.length?Math.round(c/ids.length*100):0;
+  document.getElementById("statDone").textContent=ids.length;
+  document.getElementById("statCorrect").textContent=c;
+  document.getElementById("statWrong").textContent=w;
+  document.getElementById("statRate").textContent=rate+"%";
+  document.getElementById("progressBar").style.width=(state.order.length?ids.length/state.order.length*100:0)+"%";
+}
+function finish() {
+  const ids=state.order;
+  const answered=ids.filter(id=>state.answers[id]!==undefined);
+  if(answered.length<ids.length) {
+    const ok=confirm(`目前尚有 ${ids.length-answered.length} 題未作答，仍要結束本回合嗎？`);
+    if(!ok) return;
+  }
+  let correct=0, wrongIds=[];
+  ids.forEach(id=>{
+    const a=state.answers[id], q=qById(id);
+    if(a===q.answer) correct++; else wrongIds.push(id);
+  });
+  document.getElementById("quizPanel").style.display="none";
+  const rp=document.getElementById("resultPanel"); rp.classList.add("show");
+  document.getElementById("resultMode").textContent=state.mode;
+  document.getElementById("resultScore").textContent=`${correct} / ${ids.length}`;
+  const rate=Math.round(correct/ids.length*100);
+  document.getElementById("resultText").textContent=`正確率 ${rate}%。錯題 ${wrongIds.length} 題，可直接進入錯題重練。`;
+  const wl=document.getElementById("wrongList"); wl.innerHTML="";
+  if(!wrongIds.length) wl.innerHTML='<div class="wrongitem">🎉 本回合全對。</div>';
+  else wrongIds.forEach(id=>{
+    const q=qById(id), a=state.answers[id];
+    const d=document.createElement("div"); d.className="wrongitem";
+    const your=a===undefined?"未作答":`${LETTERS[a]}．${escapeHtml(q.options[a])}`;
+    d.innerHTML=`<b>第${id}題（第${q.article}條）</b><br>${escapeHtml(q.question)}<br><span style="color:#a61e1e">你的答案：${your}</span><br><span style="color:#087f5b">正解：${LETTERS[q.answer]}．${escapeHtml(q.options[q.answer])}</span>`;
+    wl.appendChild(d);
+  });
+  document.getElementById("retryWrong").disabled=!wrongIds.length;
+  document.getElementById("retryWrong").onclick=()=>{
+    state={order:wrongIds,pos:0,answers:{},mode:"錯題重練",sessionIds:wrongIds};
+    rp.classList.remove("show"); document.getElementById("quizPanel").style.display="block"; save(); render();
+  };
+  window.scrollTo({top:rp.offsetTop-8,behavior:"smooth"});
+}
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+}
+document.getElementById("startSeq").onclick=()=>start("seq");
+document.getElementById("startRandom").onclick=()=>start("random");
+document.getElementById("resumeBtn").onclick=resume;
+document.getElementById("resetBtn").onclick=()=>{
+  if(confirm("只清除本次作答，歷史錯題仍保留。確定清除？")) {
+    localStorage.removeItem(STORE_KEY);
+    state={order:QUESTIONS.map(q=>q.id),pos:0,answers:{},mode:"依序100題",sessionIds:QUESTIONS.map(q=>q.id)};
+    document.getElementById("quizPanel").style.display="none";
+    document.getElementById("resultPanel").classList.remove("show");
+    updateStats();
+  }
+};
+document.getElementById("prevBtn").onclick=()=>go(-1);
+document.getElementById("nextBtn").onclick=()=>go(1);
+document.getElementById("restart").onclick=()=>start("seq");
+
+const stored=loadStored();
+if(stored) {
+  state=stored;
+  const n=Object.keys(stored.answers||{}).length;
+  document.getElementById("resumeBtn").textContent=`繼續上次進度（${n}題）`;
+}
+updateStats();
+
+wrongHistory.capture(state,true); save();
+</script>
+</body>
+</html>

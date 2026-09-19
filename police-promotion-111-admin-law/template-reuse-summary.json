@@ -6,6 +6,8 @@
   "source_position": "above_question",
   "source_in_explanation": false,
   "storage_namespaced": true,
+  "persistent_wrong_history": true,
+  "wrong_history_ui": "date + wrong-count summary; click for question details",
   "cache_busted": true,
-  "revision": "20260919-police-promotion-111-admin-law-official-v2"
+  "revision": "20260919-police-promotion-111-admin-law-official-history-v3"
 }

@@ -57,6 +57,39 @@ def namespace_storage(text):
 prefix=namespace_storage(prefix); suffix=namespace_storage(suffix)
 html=prefix+lit+suffix
 
+# Add the same persistent wrong-answer history module used by the neighboring quizzes.
+# It stores attempt history separately from the ordinary resumable progress key.
+if 'wrong-history.css' not in html:
+    html=html.replace('</head>','<link rel="stylesheet" href="https://law-quiz-hub.pp124916961.chatgpt.site/wrong-history.css?v=1">\n</head>',1)
+
+if 'wrong-history.js' not in html:
+    qpos=html.find('const QUESTIONS')
+    script_pos=html.rfind('<script>',0,qpos)
+    if qpos < 0 or script_pos < 0:
+        raise RuntimeError('could not locate main quiz script for wrong-history module')
+    html=html[:script_pos]+'<script src="https://law-quiz-hub.pp124916961.chatgpt.site/wrong-history.js?v=1"></script>\n'+html[script_pos:]
+
+if 'QuizWrongHistory?.mount' not in html:
+    save_marker='function save(){'
+    if save_marker not in html:
+        raise RuntimeError('save() hook not found for wrong-history module')
+    mount_js='''const wrongHistory = window.QuizWrongHistory?.mount({quizId:"police-promotion-111-admin-law", title:"111警察升官等－行政法", questions:QUESTIONS, getState:()=>state, idsAreQuestionIds:false}) || {capture(){},newRound(){}};
+if(!window.QuizWrongHistory){ const warning=document.createElement("p"); warning.textContent="錯題紀錄功能未載入，請確認網路後重新整理。"; (document.getElementById("controlPanel")||document.getElementById("home")).appendChild(warning); }
+'''
+    html=html.replace(save_marker,mount_js+'function save(){ wrongHistory.capture(state); ',1)
+
+    # A brand-new ordinary attempt gets its own history round.
+    m=re.search(r'(function start\([^)]*\)\{.*?state\s*=\s*\{.*?\};)(\s*currentRoundWrong\s*=\s*\[\];)',html,re.S)
+    if not m:
+        raise RuntimeError('start() hook not found for wrong-history new round')
+    html=html[:m.end(1)]+'\n  wrongHistory.newRound(state);'+html[m.end(1):]
+
+    # Wrong-question retry is also a distinct attempt in history.
+    retry_old="state.order=wrong; state.pos=0; state.mode='錯題重練'; currentRoundWrong=[];"
+    retry_new="state.order=wrong; state.pos=0; state.mode='錯題重練'; wrongHistory.newRound(state); currentRoundWrong=[];"
+    if retry_old in html:
+        html=html.replace(retry_old,retry_new,1)
+
 if html.find('id="qSource"') > html.find('id="qTitle"'):
     raise RuntimeError('source not above question')
 if 'feedbackSource' in html: raise RuntimeError('source duplicated in feedback')
@@ -74,9 +107,9 @@ browser_html=gzip.decompress(base64.b64decode(''.join(out))).decode('utf-8')
 assert newq[0]['question'] in browser_html and newq[-1]['question'] in browser_html
 assert browser_html.find('id="qSource"') < browser_html.find('id="qTitle"')
 
-REV='20260919-police-promotion-111-admin-law-official-v2'
+REV='20260919-police-promotion-111-admin-law-official-history-v3'
 loader=f'''<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>111警察升官等｜行政法｜50題原題</title><script>(async()=>{{const v='{REV}';const names={json.dumps(parts)};const a=(await Promise.all(names.map(n=>fetch(n+'?v='+v,{{cache:'no-store'}}).then(r=>r.text())))).join('');const b=atob(a);const u=Uint8Array.from(b,c=>c.charCodeAt(0));const t=await new Response(new Blob([u]).stream().pipeThrough(new DecompressionStream('gzip'))).text();document.open();document.write(t);document.close()}})();</script>'''
 (DST/'index.html').write_text(loader,encoding='utf-8')
-summary={'template':'criminal-illegality-50','question_count':50,'program_reused':True,'new_path':'police-promotion-111-admin-law','source_position':'above_question','source_in_explanation':False,'storage_namespaced':True,'cache_busted':True,'revision':REV}
+summary={'template':'criminal-illegality-50','question_count':50,'program_reused':True,'new_path':'police-promotion-111-admin-law','source_position':'above_question','source_in_explanation':False,'storage_namespaced':True,'persistent_wrong_history':True,'wrong_history_ui':'date + wrong-count summary; click for question details','cache_busted':True,'revision':REV}
 (DST/'template-reuse-summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(summary,ensure_ascii=False,indent=2))

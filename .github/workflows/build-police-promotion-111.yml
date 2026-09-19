@@ -1,4 +1,4 @@
-name: Build 111 Police Promotion Quiz
+name: Build 111 Police Promotion Admin Law
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
           python-version: '3.12'
       - name: Install dependencies
         run: pip install -q pandas pyarrow
-      - name: Build 111 police promotion original questions
+      - name: Build 111 police promotion admin law originals
         run: python scripts/build_police_promotion_111.py
       - name: Reuse fixed quiz program
         run: python scripts/reuse_template_police_promotion_111.py
@@ -29,14 +29,13 @@ jobs:
         run: |
           python - <<'PY'
           import json,pathlib,base64,gzip
-          root=pathlib.Path('police-promotion-111-sergeant-to-inspector')
+          root=pathlib.Path('police-promotion-111-admin-law')
           q=json.load(open(root/'questions.json',encoding='utf-8'))
           b=json.load(open(root/'build-summary.json',encoding='utf-8'))
           r=json.load(open(root/'template-reuse-summary.json',encoding='utf-8'))
-          assert len(q)==158
-          assert b['subjects']=={'國文':10,'法學知識與英文':49,'行政法':50,'警察法規':49}
+          assert len(q)==50
           assert b['original_questions_unedited'] is True
-          assert r['program_reused'] is True and r['question_count']==158
+          assert r['program_reused'] is True and r['question_count']==50
           parts=['p1.txt','p2.txt','p2b.txt','p3.txt','p4.txt','p5.txt','p6.txt']
           html=gzip.decompress(base64.b64decode(''.join((root/n).read_text() for n in parts))).decode()
           assert q[0]['question'] in html and q[-1]['question'] in html
@@ -47,7 +46,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add police-promotion-111-sergeant-to-inspector
+          git add police-promotion-111-admin-law
           git diff --cached --quiet && exit 0
-          git commit -m 'Build 111 police promotion original-question quiz'
+          git commit -m 'Build 111 police promotion admin-law original quiz'
           git push

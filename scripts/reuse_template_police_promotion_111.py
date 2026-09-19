@@ -74,7 +74,7 @@ browser_html=gzip.decompress(base64.b64decode(''.join(out))).decode('utf-8')
 assert newq[0]['question'] in browser_html and newq[-1]['question'] in browser_html
 assert browser_html.find('id="qSource"') < browser_html.find('id="qTitle"')
 
-REV='20260919-police-promotion-111-admin-law-v1'
+REV='20260919-police-promotion-111-admin-law-official-v2'
 loader=f'''<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>111警察升官等｜行政法｜50題原題</title><script>(async()=>{{const v='{REV}';const names={json.dumps(parts)};const a=(await Promise.all(names.map(n=>fetch(n+'?v='+v,{{cache:'no-store'}}).then(r=>r.text())))).join('');const b=atob(a);const u=Uint8Array.from(b,c=>c.charCodeAt(0));const t=await new Response(new Blob([u]).stream().pipeThrough(new DecompressionStream('gzip'))).text();document.open();document.write(t);document.close()}})();</script>'''
 (DST/'index.html').write_text(loader,encoding='utf-8')
 summary={'template':'criminal-illegality-50','question_count':50,'program_reused':True,'new_path':'police-promotion-111-admin-law','source_position':'above_question','source_in_explanation':False,'storage_namespaced':True,'cache_busted':True,'revision':REV}

@@ -36,10 +36,17 @@ jobs:
           assert len(q)==50
           assert b['original_questions_unedited'] is True
           assert r['program_reused'] is True and r['question_count']==50
+          assert r['persistent_wrong_history'] is True
           parts=['p1.txt','p2.txt','p2b.txt','p3.txt','p4.txt','p5.txt','p6.txt']
           html=gzip.decompress(base64.b64decode(''.join((root/n).read_text() for n in parts))).decode()
           assert q[0]['question'] in html and q[-1]['question'] in html
           assert html.find('id="qSource"') < html.find('id="qTitle"')
+          assert 'wrong-history.js?v=1' in html
+          assert 'wrong-history.css?v=1' in html
+          assert 'QuizWrongHistory?.mount' in html
+          assert 'quizId:"police-promotion-111-admin-law"' in html
+          assert 'wrongHistory.capture(state)' in html
+          assert 'wrongHistory.newRound(state)' in html
           print('verified')
           PY
       - name: Commit generated quiz

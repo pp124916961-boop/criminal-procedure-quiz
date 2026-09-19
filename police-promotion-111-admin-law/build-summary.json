@@ -1,7 +1,16 @@
 {
   "count": 50,
-  "scope": "111年警察人員升官等考試－警正－行政警察人員－行政法",
+  "scope": "考選部111年警察人員升官等考試－警正－行政警察人員－行政法－試題代號6101",
+  "question_source": "MOEX official PDF",
+  "answer_source": "MOEX official standard-answer PDF",
+  "question_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=111170&q=1&s=0204&t=Q",
+  "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=111170&q=1&s=0204&t=S",
+  "answer_sequence": "CDAAAACDAACBCBADACBDDBDDCCAAABDCDCABADADBDBBABAABB",
+  "first_question": "關於行政法法源之敘述，下列何者錯誤？",
+  "last_question": "國家依法徵收人民之財產，應給予合理之補償。此項補償為下列何者？",
+  "official_question_code": "6101",
   "original_questions_unedited": true,
   "source_required": true,
-  "official_answer_basis": true
+  "official_answer_basis": true,
+  "dataset_filter_used": false
 }

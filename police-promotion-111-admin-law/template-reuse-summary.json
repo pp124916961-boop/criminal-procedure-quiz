@@ -1,0 +1,11 @@
+{
+  "template": "criminal-illegality-50",
+  "question_count": 50,
+  "program_reused": true,
+  "new_path": "police-promotion-111-admin-law",
+  "source_position": "above_question",
+  "source_in_explanation": false,
+  "storage_namespaced": true,
+  "cache_busted": true,
+  "revision": "20260919-police-promotion-111-admin-law-v1"
+}

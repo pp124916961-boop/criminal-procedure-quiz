@@ -105,13 +105,38 @@ if old_jump not in html:
     raise RuntimeError('question-number browser hook not found')
 html=html.replace(old_jump,new_jump,1)
 
-# Force the persistent wrong-history module to use this quiz's own ID/title,
-# even if the source template already has a mount call.
-mount_pattern=r'QuizWrongHistory\?\.mount\(\{quizId:"[^"]+",\s*title:"[^"]+",\s*questions:QUESTIONS,\s*getState:\(\)=>state,\s*idsAreQuestionIds:false\}\)'
+# Persistent wrong-answer history, using this quiz's own ID/title.
+if 'wrong-history.css' not in html:
+    html=html.replace('</head>','<link rel="stylesheet" href="https://law-quiz-hub.pp124916961.chatgpt.site/wrong-history.css?v=1">\n</head>',1)
+if 'wrong-history.js' not in html:
+    qpos=html.find('const QUESTIONS')
+    script_pos=html.rfind('<script>',0,qpos)
+    if qpos < 0 or script_pos < 0:
+        raise RuntimeError('could not locate main quiz script')
+    html=html[:script_pos]+'<script src="https://law-quiz-hub.pp124916961.chatgpt.site/wrong-history.js?v=1"></script>\n'+html[script_pos:]
+
 mount_repl='QuizWrongHistory?.mount({quizId:"constitution-rights-100", title:"憲法－基本原則＋自由權利100題", questions:QUESTIONS, getState:()=>state, idsAreQuestionIds:false})'
-html,n=re.subn(mount_pattern,mount_repl,html,count=1,flags=re.S)
-if n!=1:
-    raise RuntimeError('wrong-history mount replacement failed')
+if 'QuizWrongHistory?.mount' in html:
+    mount_pattern=r'QuizWrongHistory\?\.mount\(\{.*?\}\)'
+    html,n=re.subn(mount_pattern,mount_repl,html,count=1,flags=re.S)
+    if n!=1:
+        raise RuntimeError('wrong-history mount replacement failed')
+else:
+    save_marker='function save(){'
+    if save_marker not in html:
+        raise RuntimeError('save() hook not found')
+    mount_js='''const wrongHistory = window.QuizWrongHistory?.mount({quizId:"constitution-rights-100", title:"憲法－基本原則＋自由權利100題", questions:QUESTIONS, getState:()=>state, idsAreQuestionIds:false}) || {capture(){},newRound(){}};\nif(!window.QuizWrongHistory){ const warning=document.createElement("p"); warning.textContent="錯題紀錄功能未載入，請確認網路後重新整理。"; (document.getElementById("controlPanel")||document.getElementById("home")).appendChild(warning); }\n'''
+    html=html.replace(save_marker,mount_js+'function save(){ wrongHistory.capture(state); ',1)
+
+if 'wrongHistory.newRound(state)' not in html:
+    m=re.search(r'(function start\([^)]*\)\{.*?state\s*=\s*\{.*?\};)(\s*currentRoundWrong\s*=\s*\[\];)',html,re.S)
+    if not m:
+        raise RuntimeError('start() hook not found')
+    html=html[:m.end(1)]+'\n  wrongHistory.newRound(state);'+html[m.end(1):]
+    retry_old="state.order=wrong; state.pos=0; state.mode='錯題重練'; currentRoundWrong=[];"
+    retry_new="state.order=wrong; state.pos=0; state.mode='錯題重練'; wrongHistory.newRound(state); currentRoundWrong=[];"
+    if retry_old in html:
+        html=html.replace(retry_old,retry_new,1)
 
 # Presentation/source checks.
 if html.find('id="qSource"') > html.find('id="qTitle"'):

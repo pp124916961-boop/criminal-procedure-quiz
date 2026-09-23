@@ -71,9 +71,17 @@ lit=json.dumps(converted,ensure_ascii=False,separators=(',',':'))
 prefix=html[:arr_start]; suffix=html[arr_end:]
 
 # Keep the template/layout untouched; only relabel the subject.
-for oldlabel in ['刑法總則｜違法性','刑法總則 違法性','違法性｜50題歷屆原題','刑法 → 行政處分 50 題歷屆原題','刑法 → 行政處分','行政處分 50 題歷屆原題']:
-    prefix=prefix.replace(oldlabel,'憲法｜基本原則＋自由權利')
-    suffix=suffix.replace(oldlabel,'憲法｜基本原則＋自由權利')
+title_replacements={
+    '刑法 → 行政處分 50 題歷屆原題':'憲法 → 基本原則＋自由權利 50 題歷屆原題',
+    '行政處分 50 題歷屆原題':'憲法 → 基本原則＋自由權利 50 題歷屆原題',
+    '刑法 → 行政處分':'憲法｜基本原則＋自由權利',
+    '刑法總則｜違法性':'憲法｜基本原則＋自由權利',
+    '刑法總則 違法性':'憲法｜基本原則＋自由權利',
+    '違法性｜50題歷屆原題':'憲法 → 基本原則＋自由權利 50 題歷屆原題'
+}
+for oldlabel,newlabel in title_replacements.items():
+    prefix=prefix.replace(oldlabel,newlabel)
+    suffix=suffix.replace(oldlabel,newlabel)
 
 # Separate localStorage from every other quiz.
 ns='constitution-rights-50'

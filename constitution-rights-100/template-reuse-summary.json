@@ -1,0 +1,12 @@
+{
+  "template": "criminal-illegality-50",
+  "program_reused": true,
+  "question_count": 100,
+  "new_path": "constitution-rights-100",
+  "source_position": "above_question",
+  "official_source_links": true,
+  "question_number_colors": "correct green / wrong red",
+  "storage_namespaced": true,
+  "persistent_wrong_history": true,
+  "revision": "20260924-constitution-rights-100-source-jump-v1"
+}

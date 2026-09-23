@@ -45,7 +45,7 @@ for i,nq in enumerate(newq):
     b['basis']=nq['basis']
     b['explanation']=nq['explanation']
     b['source']=nq['source']
-    if 'url' in b:b['url']=''
+    b['url']=nq.get('source_url','')
     converted.append(b)
 
 lit=json.dumps(converted,ensure_ascii=False,separators=(',',':'))
@@ -80,6 +80,23 @@ def namespace_storage(text):
     return text
 prefix=namespace_storage(prefix); suffix=namespace_storage(suffix)
 html=prefix+lit+suffix
+
+# Question-number browser: correct = green, wrong = red.
+jump_css='''<style id="answer-jump-colors">
+.jbtn.correct{background:#eaf8ef;border-color:#7bc8ad;color:#166534;font-weight:800}
+.jbtn.wrong{background:#fff0f0;border-color:#f0a6a6;color:#b42318;font-weight:800}
+</style>'''
+html=html.replace('</head>',jump_css+'\n</head>',1)
+old_jump="b.className='jbtn'+(state.answers[qi]?' done':'')+(idx===state.pos?' current':'');"
+new_jump="const qa=state.answers[qi];\n    b.className='jbtn'+(qa?(qa.correct?' correct':' wrong'):'')+(idx===state.pos?' current':'');"
+if old_jump not in html:
+    raise RuntimeError('question-number browser hook not found')
+html=html.replace(old_jump,new_jump,1)
+
+# Every source link must point to the official exam PDF, never back to this quiz.
+if not all(q.get('source_url','').startswith('https://wwwq.moex.gov.tw/') for q in newq):
+    raise RuntimeError('missing or non-official source_url')
+
 
 # Same persistent wrong-answer history module as the promotion admin-law quiz:
 # date + wrong-count list -> click into wrong question numbers/details.
@@ -128,7 +145,7 @@ browser_html=gzip.decompress(base64.b64decode(''.join(out))).decode('utf-8')
 assert newq[0]['question'] in browser_html and newq[-1]['question'] in browser_html
 assert browser_html.find('id="qSource"') < browser_html.find('id="qTitle"')
 
-REV='20260923-constitution-rights-50-round2-promotion-template-v1'
+REV='20260924-constitution-rights-50-round2-source-jump-v2'
 loader=f'''<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>憲法｜基本原則＋自由權利｜第二回｜50題原題</title><script>(async()=>{{const v='{REV}';const names={json.dumps(parts)};const a=(await Promise.all(names.map(n=>fetch(n+'?v='+v,{{cache:'no-store'}}).then(r=>r.text())))).join('');const b=atob(a);const u=Uint8Array.from(b,c=>c.charCodeAt(0));const t=await new Response(new Blob([u]).stream().pipeThrough(new DecompressionStream('gzip'))).text();document.open();document.write(t);document.close()}})();</script>'''
 (DST/'index.html').write_text(loader,encoding='utf-8')
 

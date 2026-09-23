@@ -166,3 +166,5 @@ print(json.dumps(summary,ensure_ascii=False,indent=2))
 
 
 # trigger: round2-publish-v1
+
+# retrigger source-jump-fix 20260924

@@ -609,22 +609,22 @@
   },
   {
     "id": 33,
-    "question": "下列關於人性尊嚴之敘述，何者錯誤？",
+    "question": "關於憲法所保障之自由及權利，下列敘述何者正確？",
     "options": [
-      "維護人性尊嚴與尊重人格發展，乃自由民主憲政秩序之核心價值",
-      "每個人皆具有其獨特性與不可替代性，因此人之價值無法、亦不應被量化",
-      "基於尊重人的自由意志，應保障被告緘默之自由",
-      "為回復名譽而命加害人公開道歉，則應考量名譽受侵害之形式、程度定相當之方式，縱涉及加害人自我羞辱，亦非憲法所不許"
+      "仍得基於公共利益保護之目的而為限制",
+      "以憲法中明文列舉的自由及權利為限",
+      "以不會造成他人權利或自由之限制者為限",
+      "以有增進公共利益之效果者方受憲法保障"
     ],
-    "answer": "D",
-    "topic": "人性尊嚴",
-    "basis": "憲法基本權核心價值",
-    "explanation": "本題依考選部107年一般警察人員四等考試官方標準答案，答案為D。",
-    "source": "107年一般警察人員四等考試｜各類別｜法學知識（中華民國憲法概要、法學緒論）｜第7題",
-    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=404&code=107070&q=1&s=0418&t=Q",
-    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=402&code=107070&q=1&s=0418&t=S",
-    "year_roc": 107,
-    "q_no": 7
+    "answer": "A",
+    "topic": "基本權總論",
+    "basis": "憲法第22條、第23條",
+    "explanation": "本題依考選部108年一般警察人員四等考試官方標準答案，答案為A。",
+    "source": "108年一般警察人員四等考試｜各類別｜法學知識（包括中華民國憲法概要、法學緒論）｜第10題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=404&code=108070&q=1&s=0605&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=404&code=108070&q=1&s=0605&t=S",
+    "year_roc": 108,
+    "q_no": 10
   },
   {
     "id": 34,

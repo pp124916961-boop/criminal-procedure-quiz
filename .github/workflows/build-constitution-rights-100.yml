@@ -1,0 +1,57 @@
+name: Build Constitution Rights 100
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-constitution-rights-100.yml'
+      - 'scripts/reuse_template_constitution_rights_100.py'
+      - 'constitution-rights-100/questions.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build Constitution 100
+        run: python scripts/reuse_template_constitution_rights_100.py
+      - name: Verify final quiz
+        run: |
+          python - <<'PY'
+          import json,pathlib,base64,gzip
+          root=pathlib.Path('constitution-rights-100')
+          q=json.load(open(root/'questions.json',encoding='utf-8'))
+          q1=json.load(open(pathlib.Path('constitution-rights-50')/'questions.json',encoding='utf-8'))
+          q2=json.load(open(pathlib.Path('constitution-rights-50-round2')/'questions.json',encoding='utf-8'))
+          assert len(q)==100
+          assert [x['question'] for x in q] == [x['question'] for x in q1+q2]
+          norm=lambda s: ''.join(s.split())
+          assert len({norm(x['question']) for x in q})==100
+          assert all(x.get('source_url','').startswith('https://wwwq.moex.gov.tw/') for x in q)
+          parts=['p1.txt','p2.txt','p2b.txt','p3.txt','p4.txt','p5.txt','p6.txt']
+          html=gzip.decompress(base64.b64decode(''.join((root/n).read_text() for n in parts))).decode()
+          assert q[0]['question'] in html and q[-1]['question'] in html
+          assert html.find('id="qSource"') < html.find('id="qTitle"')
+          assert 'quizId:"constitution-rights-100"' in html
+          assert 'wrongHistory.capture(state)' in html
+          assert 'wrongHistory.newRound(state)' in html
+          assert '.jbtn.correct' in html and '.jbtn.wrong' in html
+          assert "qa.correct?' correct':' wrong'" in html
+          assert 'https://wwwq.moex.gov.tw/' in html
+          assert '刑法 → 行政處分' not in html
+          print('verified Constitution 100-question quiz')
+          PY
+      - name: Commit generated quiz
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add constitution-rights-100
+          git diff --cached --quiet && exit 0
+          git commit -m 'Build Constitution 100-question historical quiz'
+          git push

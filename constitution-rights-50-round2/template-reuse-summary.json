@@ -1,0 +1,11 @@
+{
+  "template": "criminal-illegality-50",
+  "matches_promotion_admin_law_program": true,
+  "question_count": 50,
+  "new_path": "constitution-rights-50-round2",
+  "source_position": "above_question",
+  "storage_namespaced": true,
+  "persistent_wrong_history": true,
+  "wrong_history_ui": "date + wrong-count summary; click for question details",
+  "revision": "20260923-constitution-rights-50-round2-promotion-template-v1"
+}

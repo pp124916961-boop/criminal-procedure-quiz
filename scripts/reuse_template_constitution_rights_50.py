@@ -187,3 +187,5 @@ print(json.dumps(summary,ensure_ascii=False,indent=2))
 # retrigger title-fix round1
 
 # retrigger full-title round1 v2
+
+# retrigger source-jump-fix 20260924

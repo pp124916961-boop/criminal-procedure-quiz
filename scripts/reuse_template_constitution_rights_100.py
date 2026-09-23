@@ -109,7 +109,7 @@ html=html.replace(old_jump,new_jump,1)
 # even if the source template already has a mount call.
 mount_pattern=r'QuizWrongHistory\?\.mount\(\{quizId:"[^"]+",\s*title:"[^"]+",\s*questions:QUESTIONS,\s*getState:\(\)=>state,\s*idsAreQuestionIds:false\}\)'
 mount_repl='QuizWrongHistory?.mount({quizId:"constitution-rights-100", title:"憲法－基本原則＋自由權利100題", questions:QUESTIONS, getState:()=>state, idsAreQuestionIds:false})'
-html,n=re.subn(mount_pattern,mount_repl,html,count=1)
+html,n=re.subn(mount_pattern,mount_repl,html,count=1,flags=re.S)
 if n!=1:
     raise RuntimeError('wrong-history mount replacement failed')
 

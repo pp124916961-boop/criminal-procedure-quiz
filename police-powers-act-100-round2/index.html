@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>警察職權行使法｜第二回100題進階測驗</title>
+<style>
+:root{--navy:#102a43;--blue:#2563eb;--bg:#f4f7fb;--card:#fff;--text:#172033;--muted:#65758b;--line:#dfe6ef}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+.app{max-width:900px;margin:auto;padding:16px 12px 56px}
+.hero{background:linear-gradient(135deg,#102a43,#234e70);color:#fff;border-radius:24px;padding:26px 22px;box-shadow:0 12px 34px rgba(16,42,67,.18)}
+.hero h1{font-size:30px;line-height:1.22;margin:0 0 10px}
+.hero p{margin:0;line-height:1.75;color:#e6eef7;font-size:14px}
+.badges{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}
+.badge{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.23);border-radius:999px;padding:6px 10px;font-size:12px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin-top:14px;box-shadow:0 5px 18px rgba(20,40,80,.05)}
+.controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+button{font:inherit;cursor:pointer}
+.btn{border:0;border-radius:12px;padding:12px 13px;font-weight:800}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-soft{background:#edf3fb;color:#17324d}
+.btn-danger{background:#fff0f0;color:#b42318}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:15px}
+.stat{background:#f7f9fc;border-radius:13px;text-align:center;padding:10px}
+.stat b{display:block;font-size:22px}
+.stat span{font-size:11px;color:var(--muted)}
+.progress{height:9px;background:#e8edf4;border-radius:99px;overflow:hidden;margin-top:13px}
+#progressBar{height:100%;width:0;background:var(--blue);transition:.2s}
+.note{font-size:12px;color:var(--muted);line-height:1.65;margin:12px 0 0}
+.qmeta{display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:12px;font-weight:700}
+.qtitle{font-size:20px;line-height:1.65;font-weight:850;margin:14px 0}
+.source{font-size:12px;line-height:1.5;background:#f6f8fb;border:1px solid var(--line);padding:8px 10px;border-radius:10px;color:#44546a;margin-bottom:12px}
+.source a{color:var(--blue);font-weight:700;text-decoration:none}
+.options{display:grid;gap:9px}
+.opt{text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:13px;padding:12px 13px;line-height:1.55;color:var(--text)}
+.opt:hover{border-color:#9db9e8}
+.opt:disabled{cursor:default}
+.opt.correct{border-color:#7bc8ad;background:#effbf6}
+.opt.wrong{border-color:#f0a6a6;background:#fff2f2}
+.feedback{display:none;margin-top:14px;border:1px solid var(--line);border-radius:14px;padding:13px;background:#fafcff}
+.feedback.show{display:block}
+.feedback.good{border-color:#a8dcc9;background:#f4fcf8}
+.feedback.bad{border-color:#efb0b0;background:#fff7f7}
+.feedback h3{margin:0 0 8px;font-size:18px}
+.basis{background:#eef4ff;border-left:4px solid #3b82f6;padding:9px 10px;border-radius:8px;line-height:1.55;margin-top:9px}
+.explain{line-height:1.7;margin-top:9px;color:#334155}
+.nav{display:grid;grid-template-columns:1fr 1.4fr;gap:9px;margin-top:14px}
+.jump{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;margin-top:12px}
+.jbtn{min-width:0;padding:7px 0;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:11px}
+.jbtn.done{background:#eaf1fb}
+.jbtn.correctnav{background:#e8f7ee;border-color:#72bf91;color:#12663d;font-weight:900}
+.jbtn.wrongnav{background:#fff0f0;border-color:#e49999;color:#a82f2f;font-weight:900}
+.jbtn.current{outline:2px solid #2563eb}
+#quizPanel,#resultPanel{display:none}
+#quizPanel.show,#resultPanel.show{display:block}
+.resultScore{font-size:48px;font-weight:900;color:var(--navy);margin:7px 0}
+.wronglist{max-height:360px;overflow:auto;border-top:1px solid var(--line);margin-top:12px}
+.wrongitem{padding:10px 2px;border-bottom:1px solid var(--line);font-size:13px;line-height:1.55}
+.footer{text-align:center;color:#7b8798;font-size:11px;margin-top:20px;line-height:1.6}
+@media(max-width:600px){
+  .hero h1{font-size:25px}
+  .controls{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .qtitle{font-size:18px}
+  .jump{grid-template-columns:repeat(10,1fr)}
+  .jbtn{font-size:10px;padding:6px 0}
+}
+</style>
+<link rel="stylesheet" href="https://law-quiz-hub.pp124916961.chatgpt.site/wrong-history.css?v=1">
+</head>
+<body>
+<div class="app">
+<section class="hero">
+  <h1>警察職權行使法<br>第二回 100 題進階測驗</h1>
+  <p>本回刻意避開第一回題目，主攻《警察遴選第三人蒐集資料辦法》、《治安顧慮人口查訪辦法》、司法院釋字第535號、最高行政法院111年度上字第675號、最高法院113年度台上字第502號及106年度台上字第3788號等實務。</p>
+  <div class="badges">
+    <span class="badge">100 題</span><span class="badge">第 2 回</span>
+    <span class="badge">相關子法</span><span class="badge">釋字 535</span>
+    <span class="badge">最高法院／最高行政法院</span><span class="badge">錯題重練</span>
+  </div>
+</section>
+
+<section class="panel" id="controlPanel">
+  <div class="controls">
+    <button class="btn btn-primary" id="startSeq">依序開始 100 題</button>
+    <button class="btn btn-soft" id="startRandom">隨機開始 100 題</button>
+    <button class="btn btn-soft" id="resumeBtn">繼續上次進度</button>
+    <button class="btn btn-danger" id="resetBtn">清除本次作答</button>
+  </div>
+  <div class="stats">
+    <div class="stat"><b id="statDone">0</b><span>已作答</span></div>
+    <div class="stat"><b id="statCorrect">0</b><span>答對</span></div>
+    <div class="stat"><b id="statWrong">0</b><span>答錯</span></div>
+    <div class="stat"><b id="statRate">0%</b><span>正確率</span></div>
+  </div>
+  <div class="progress"><div id="progressBar"></div></div>
+  <p class="note">本回為進階題庫：子法題依現行條文精準命題；釋字與裁判題依官方解釋／裁判要旨整理。凡非直接取自國考原題者，都標示為「整理題」，不冒充歷屆原題。</p>
+</section>
+
+<section class="panel" id="quizPanel">
+  <div class="qmeta"><span id="qCount"></span><span id="qTopic"></span></div>
+  <div class="source" id="qSource"></div>
+   <div class="qtitle" id="qTitle"></div>
+
+  <div class="options" id="options"></div>
+  <div class="feedback" id="feedback">
+    <h3 id="feedbackTitle"></h3>
+    <div id="correctAnswer"></div>
+    <div class="basis"><b>法條／理論依據：</b><span id="basis"></span></div>
+    <div class="explain"><b>簡要解析：</b><span id="explanation"></span></div>
+  </div>
+  <div class="nav">
+    <button class="btn btn-soft" id="prevBtn">上一題</button>
+    <button class="btn btn-primary" id="nextBtn">下一題</button>
+  </div>
+  <div class="jump" id="jump"></div>
+</section>
+
+<section class="panel" id="resultPanel">
+  <div class="qmeta"><span>本回合完成</span><span id="resultMode"></span></div>
+  <div class="resultScore" id="resultScore"></div>
+  <p id="resultText"></p>
+  <div class="controls">
+    <button class="btn btn-primary" id="retryWrong">只重練本回合錯題</button>
+    <button class="btn btn-soft" id="restart">重新作答 100 題</button>
+  </div>
+  <div class="wronglist" id="wrongList"></div>
+</section>
+
+<section class="panel">
+  <b>收錄來源</b>
+  <p class="note">本回重點來源：現行《警察遴選第三人蒐集資料辦法》、《治安顧慮人口查訪辦法》；司法院釋字第535號；最高行政法院111年度上字第675號；最高法院113年度台上字第502號、106年度台上字第3788號。每題附法源／裁判依據。</p>
+</section>
+<div class="footer">警察職權行使法｜第二回100題進階測驗｜本機自動保存進度</div>
+</div>
+
+<script src="https://law-quiz-hub.pp124916961.chatgpt.site/wrong-history.js?v=1"></script>
+<script src="questions.js?v=20260925-round2-v1"></script>
+<script>
+const QUESTIONS = window.POLICE_Q2;
+const KEY='police_powers_act_100_round2_v1';
+let state={order:[...Array(QUESTIONS.length).keys()],pos:0,answers:{},mode:'依序'};
+let currentRoundWrong=[];
+
+function esc(s){
+  return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+}
+function label(i){ return ['A','B','C','D'][i] || String(i+1); }
+const wrongHistory = window.QuizWrongHistory?.mount({quizId:"police-powers-act-100-round2", title:"警察職權行使法｜第二回100題", questions:QUESTIONS, getState:()=>state, idsAreQuestionIds:false}) || {capture(){},newRound(){}};
+if(!window.QuizWrongHistory){ const warning=document.createElement("p"); warning.textContent="錯題紀錄功能未載入，請確認網路後重新整理。"; (document.getElementById("controlPanel")||document.getElementById("home")).appendChild(warning); }
+function save(){ wrongHistory.capture(state); localStorage.setItem(KEY,JSON.stringify(state)); updateStats(); }
+function load(){
+  try{
+    const s=JSON.parse(localStorage.getItem(KEY));
+    if(s && Array.isArray(s.order) && s.answers) state=s;
+  }catch(e){}
+  updateStats();
+}
+function updateStats(){
+  const vals=Object.values(state.answers||{});
+  const done=vals.length;
+  const correct=vals.filter(x=>x.correct).length;
+  const wrong=done-correct;
+  document.getElementById('statDone').textContent=done;
+  document.getElementById('statCorrect').textContent=correct;
+  document.getElementById('statWrong').textContent=wrong;
+  document.getElementById('statRate').textContent=done?Math.round(correct/done*100)+'%':'0%';
+  document.getElementById('progressBar').style.width=(done/QUESTIONS.length*100)+'%';
+}
+function shuffled(a){
+  a=[...a];
+  for(let i=a.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+function start(mode){
+  state={
+    order:mode==='隨機'?shuffled([...Array(QUESTIONS.length).keys()]):[...Array(QUESTIONS.length).keys()],
+    pos:0,answers:{},mode
+  };
+  currentRoundWrong=[];
+  save(); showQuiz(); render();
+}
+function resume(){ load(); showQuiz(); render(); }
+function showQuiz(){
+  document.getElementById('quizPanel').classList.add('show');
+  document.getElementById('resultPanel').classList.remove('show');
+  document.getElementById('quizPanel').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function render(){
+  if(state.pos>=state.order.length) return finish();
+  const qi=state.order[state.pos];
+  const q=QUESTIONS[qi];
+  const saved=state.answers[qi];
+  document.getElementById('qCount').textContent='第 '+(state.pos+1)+' / '+state.order.length+' 題（題庫 #'+(qi+1)+'）';
+  document.getElementById('qTopic').textContent=q.topic;
+  document.getElementById('qTitle').textContent=q.q;
+  document.getElementById('qSource').innerHTML='<b>出處：</b>'+esc(q.source)+'　<a href="'+esc(q.url)+'" target="_blank" rel="noopener">查看原題來源 ↗</a>';
+
+  const box=document.getElementById('options');
+  box.innerHTML='';
+  q.opts.forEach((t,i)=>{
+    const b=document.createElement('button');
+    b.className='opt';
+    b.innerHTML='<b>'+label(i)+'.</b> '+esc(t);
+    if(saved){
+      b.disabled=true;
+      if(i===q.ans) b.classList.add('correct');
+      if(i===saved.pick && i!==q.ans) b.classList.add('wrong');
+    } else {
+      b.onclick=()=>answer(qi,i);
+    }
+    box.appendChild(b);
+  });
+
+  const fb=document.getElementById('feedback');
+  if(saved){
+    fb.className='feedback show '+(saved.correct?'good':'bad');
+    document.getElementById('feedbackTitle').textContent=saved.correct?'答對了':'答錯了';
+    document.getElementById('correctAnswer').innerHTML='正確答案：<b>'+label(q.ans)+'. '+esc(q.opts[q.ans])+'</b>';
+    document.getElementById('basis').textContent=q.basis;
+    document.getElementById('explanation').textContent=q.explanation;
+  } else {
+    fb.className='feedback';
+  }
+
+  document.getElementById('prevBtn').disabled=state.pos===0;
+  document.getElementById('nextBtn').textContent=state.pos===state.order.length-1?'完成本回合':'下一題';
+  renderJump();
+  save();
+}
+function answer(qi,pick){
+  const q=QUESTIONS[qi];
+  const correct=pick===q.ans;
+  state.answers[qi]={pick,correct};
+  if(!correct && !currentRoundWrong.includes(qi)) currentRoundWrong.push(qi);
+  save(); render();
+}
+function renderJump(){
+  const j=document.getElementById('jump');
+  j.innerHTML='';
+  state.order.forEach((qi,idx)=>{
+    const b=document.createElement('button');
+    const a=state.answers[qi];
+    b.className='jbtn'+(a?(a.correct?' correctnav':' wrongnav'):'')+(idx===state.pos?' current':'');
+    b.textContent=idx+1;
+    b.onclick=()=>{state.pos=idx;render();};
+    j.appendChild(b);
+  });
+}
+function finish(){
+  document.getElementById('quizPanel').classList.remove('show');
+  document.getElementById('resultPanel').classList.add('show');
+  const ids=state.order;
+  const correct=ids.filter(i=>state.answers[i] && state.answers[i].correct).length;
+  const answered=ids.filter(i=>state.answers[i]).length;
+  document.getElementById('resultMode').textContent=state.mode;
+  document.getElementById('resultScore').textContent=correct+' / '+ids.length;
+  document.getElementById('resultText').textContent='本回合已作答 '+answered+' 題；答對 '+correct+' 題。';
+  const wrong=ids.filter(i=>state.answers[i] && !state.answers[i].correct);
+  const w=document.getElementById('wrongList');
+  w.innerHTML='';
+  if(!wrong.length){
+    w.innerHTML='<div class="wrongitem">本回合沒有錯題。</div>';
+  }else{
+    wrong.forEach(qi=>{
+      const q=QUESTIONS[qi];
+      const d=document.createElement('div');
+      d.className='wrongitem';
+      d.innerHTML='<b>#'+(qi+1)+'｜'+esc(q.source)+'</b><br>'+esc(q.q);
+      w.appendChild(d);
+    });
+  }
+  currentRoundWrong=wrong;
+  save();
+  document.getElementById('resultPanel').scrollIntoView({behavior:'smooth'});
+}
+function retryWrong(){
+  const wrong=currentRoundWrong.length?[...currentRoundWrong]:
+    Object.keys(state.answers).filter(k=>!state.answers[k].correct).map(Number);
+  if(!wrong.length){ alert('目前沒有錯題。'); return; }
+  wrong.forEach(i=>delete state.answers[i]);
+  state.order=wrong; state.pos=0; state.mode='錯題重練'; wrongHistory.newRound(state); currentRoundWrong=[];
+  save(); showQuiz(); render();
+}
+document.getElementById('startSeq').onclick=()=>start('依序');
+document.getElementById('startRandom').onclick=()=>start('隨機');
+document.getElementById('resumeBtn').onclick=resume;
+document.getElementById('resetBtn').onclick=()=>{
+  if(confirm('只清除本次作答，歷史錯題仍保留。確定清除？')){
+    localStorage.removeItem(KEY);
+    state={order:[...Array(QUESTIONS.length).keys()],pos:0,answers:{},mode:'依序'};
+    currentRoundWrong=[];
+    updateStats();
+    alert('已清除。');
+  }
+};
+document.getElementById('prevBtn').onclick=()=>{ if(state.pos>0){ state.pos--; render(); } };
+document.getElementById('nextBtn').onclick=()=>{ if(state.pos<state.order.length-1){ state.pos++; render(); } else finish(); };
+document.getElementById('retryWrong').onclick=retryWrong;
+document.getElementById('restart').onclick=()=>start('依序');
+load();
+
+wrongHistory.capture(state,true); save();
+</script>
+</body>
+</html>

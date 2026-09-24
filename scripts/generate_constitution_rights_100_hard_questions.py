@@ -23,7 +23,11 @@ def clean_piece(s):
         # Occasional page header fragment
         if re.fullmatch(r"\d+－\d+",z): continue
         lines.append(z)
-    return re.sub(r"\s+"," "," ".join(lines)).strip()
+    joined=re.sub(r"\s+"," "," ".join(lines)).strip()
+    # PDF line wraps sometimes split a Chinese word ("下 列"). Chinese prose itself
+    # does not use inter-character spaces, so remove only CJK-to-CJK wrap spaces.
+    joined=re.sub(r"(?<=[\u3400-\u9fff])\s+(?=[\u3400-\u9fff])","",joined)
+    return joined
 
 def parse_first_questions(text, upto=20):
     # Question starts in MoEx PDFs are left-aligned "<number> <text>".

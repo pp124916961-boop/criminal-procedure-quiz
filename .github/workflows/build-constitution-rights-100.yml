@@ -1,11 +1,11 @@
-name: Build Constitution Rights 100
+name: Build Constitution Rights Round3 Fresh 100
 
 on:
   push:
     paths:
       - '.github/workflows/build-constitution-rights-100.yml'
+      - 'scripts/generate_constitution_rights_100_round3.py'
       - 'scripts/reuse_template_constitution_rights_100.py'
-      - 'constitution-rights-100/questions.json'
   workflow_dispatch:
 
 permissions:
@@ -19,39 +19,53 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Build Constitution 100
+      - name: Install PDF reader
+        run: pip install pypdf
+      - name: Generate fresh Round3 bank
+        run: python scripts/generate_constitution_rights_100_round3.py
+      - name: Build Constitution Round3 100
         run: python scripts/reuse_template_constitution_rights_100.py
-      - name: Verify final quiz
+      - name: Verify zero overlap with rounds 1 2 4
         run: |
           python - <<'PY'
-          import json,pathlib,base64,gzip
+          import json,pathlib,base64,gzip,re,unicodedata
           root=pathlib.Path('constitution-rights-100')
           q=json.load(open(root/'questions.json',encoding='utf-8'))
           q1=json.load(open(pathlib.Path('constitution-rights-50')/'questions.json',encoding='utf-8'))
           q2=json.load(open(pathlib.Path('constitution-rights-50-round2')/'questions.json',encoding='utf-8'))
+          q4=json.load(open(pathlib.Path('constitution-rights-100-hard')/'questions.json',encoding='utf-8'))
+          def norm(s):
+              s=unicodedata.normalize('NFKC',s)
+              return re.sub(r'[\s，。、「」『』：；？！,.!?:;（）()【】\[\]《》〈〉—–\-．·…]','',s).lower()
           assert len(q)==100
-          assert [x['question'] for x in q] == [x['question'] for x in q1+q2]
-          norm=lambda s: ''.join(s.split())
           assert len({norm(x['question']) for x in q})==100
+          for name,bank in [('第一回',q1),('第二回',q2),('第四回',q4)]:
+              ov={norm(x['question']) for x in q}&{norm(x['question']) for x in bank}
+              assert not ov,(name,len(ov))
           assert all(x.get('source_url','').startswith('https://wwwq.moex.gov.tw/') for x in q)
+          audit=json.load(open(root/'round3-source-audit.json',encoding='utf-8'))
+          assert audit['question_count']==100
+          assert audit['excluded_against']==['第一回','第二回','第四回']
           parts=['p1.txt','p2.txt','p2b.txt','p3.txt','p4.txt','p5.txt','p6.txt']
           html=gzip.decompress(base64.b64decode(''.join((root/n).read_text() for n in parts))).decode()
           assert q[0]['question'] in html and q[-1]['question'] in html
           assert html.find('id="qSource"') < html.find('id="qTitle"')
-          assert 'quizId:"constitution-rights-100"' in html
+          assert 'quizId:"constitution-rights-100-round3-v2"' in html
+          assert '第三回' in html
           assert 'wrongHistory.capture(state)' in html
           assert 'wrongHistory.newRound(state)' in html
           assert '.jbtn.correct' in html and '.jbtn.wrong' in html
           assert "qa.correct?' correct':' wrong'" in html
-          assert 'https://wwwq.moex.gov.tw/' in html
+          assert 'href=""' not in html
           assert '刑法 → 行政處分' not in html
-          print('verified Constitution 100-question quiz')
+          print('VERIFIED fresh Round3: 100 questions, zero overlap with rounds 1/2/4')
+          print(json.dumps(audit['source_counts'],ensure_ascii=False,indent=2))
           PY
-      - name: Commit generated quiz
+      - name: Commit generated Round3
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add constitution-rights-100
           git diff --cached --quiet && exit 0
-          git commit -m 'Build Constitution 100-question historical quiz'
+          git commit -m 'Rebuild Constitution round3 with fresh non-overlapping 100 questions'
           git push

@@ -28,30 +28,34 @@ jobs:
           def fetch(u):
             req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'})
             return urllib.request.urlopen(req,timeout=45).read()
-          def textpdf(data):
-            return '\n'.join((p.extract_text() or '') for p in PdfReader(io.BytesIO(data)).pages)
-          for url,items in groups.items():
-            txt=textpdf(fetch(url))
-            print('\nURL',url)
-            print(txt[:5000])
-            # Try common answer-table formats: question number followed by A-D,
-            # or grouped rows where answers appear after numbered columns.
-            # Normalize MoEx choice glyphs to letters if present.
-            trans={'':'A','':'B','':'C','':'D','Ａ':'A','Ｂ':'B','Ｃ':'C','Ｄ':'D'}
-            for a,b in trans.items(): txt=txt.replace(a,b)
-            compact=' '.join(txt.split())
+          def parse_answers(data):
             parsed={}
-            # Generic nearby number/letter pair.
-            for m in re.finditer(r'(?<!\d)(\d{1,2})\s*([ABCD])(?![A-Z])',compact):
-              n=int(m.group(1))
-              if 1<=n<=100: parsed.setdefault(n,m.group(2))
+            for page in PdfReader(io.BytesIO(data)).pages:
+              txt=page.extract_text(extraction_mode='layout') or ''
+              lines=[ln.strip() for ln in txt.splitlines()]
+              for i,line in enumerate(lines):
+                if not line.startswith('題號'): continue
+                nums=[int(x) for x in re.findall(r'第(\d+)題',line)]
+                if not nums: continue
+                j=i+1
+                while j<len(lines) and not lines[j]: j+=1
+                if j>=len(lines) or not lines[j].startswith('答案'): continue
+                ans=re.findall(r'(?<![A-Z])([ABCD])(?![A-Z])',lines[j])
+                if len(nums)!=len(ans):
+                  raise RuntimeError(f'answer table parse mismatch: {nums} vs {ans}')
+                parsed.update(dict(zip(nums,ans)))
+            return parsed
+          total=0
+          for url,items in groups.items():
+            parsed=parse_answers(fetch(url))
             missing=[]; bad=[]
             for x in items:
-              n=x['q_no']
-              if n not in parsed: missing.append(n)
+              n=x['q_no']; total+=1
+              if n not in parsed: missing.append((n,x['source']))
               elif parsed[n]!=x['answer']: bad.append((n,x['answer'],parsed[n],x['source']))
-            print('selected',[(x['q_no'],x['answer']) for x in items])
-            print('parsed',sorted((n,a) for n,a in parsed.items() if n<=25))
-            print('missing',missing,'bad',bad)
-            if bad: raise SystemExit('official answer mismatch')
+            print(url,'checked',len(items),'missing',missing,'bad',bad)
+            if missing or bad:
+              raise SystemExit('official answer verification failed')
+          assert total==92,total
+          print('VERIFIED_MOEX_ANSWERS',total)
           PY

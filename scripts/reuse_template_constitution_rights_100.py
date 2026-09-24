@@ -53,12 +53,12 @@ prefix=html[:arr_start]; suffix=html[arr_end:]
 
 # Static labels only; historical question wording is injected later and stays untouched.
 repls={
-    '刑法 → 行政處分 50 題歷屆原題':'憲法 → 基本原則＋自由權利 100 題歷屆原題',
+    '刑法 → 行政處分 50 題歷屆原題':'憲法 → 基本原則＋自由權利 第三回 100 題歷屆原題',
     '刑法 → 行政處分':'憲法 → 基本原則＋自由權利',
-    '行政處分 50 題歷屆原題':'憲法 → 基本原則＋自由權利 100 題歷屆原題',
+    '行政處分 50 題歷屆原題':'憲法 → 基本原則＋自由權利 第三回 100 題歷屆原題',
     '刑法總則｜違法性':'憲法｜基本原則＋自由權利',
     '刑法總則 違法性':'憲法｜基本原則＋自由權利',
-    '違法性｜50題歷屆原題':'憲法 → 基本原則＋自由權利 100 題歷屆原題',
+    '違法性｜50題歷屆原題':'憲法 → 基本原則＋自由權利 第三回 100 題歷屆原題',
     '範圍限刑法至行政處分。題幹與選項保留歷屆試題原文，不自行改編；每題標示年度、考試、科目與原題題號。作答後立即顯示正解、法條／理論依據與簡要解析。':
       '範圍限憲法基本原則與自由權利。題幹與選項保留歷屆試題原文，不自行改編；每題標示年度、考試、科目與原題題號。作答後立即顯示正解、法條／理論依據與簡要解析。',
     '三等考試如原科目為申論題，本版不擅自改造成選擇題。高階選擇題以司法官／律師第一試原題補充。正犯共犯、罪數、刑罰等超出本次範圍者不收。':
@@ -66,7 +66,7 @@ repls={
     '司法官／律師第一試':'司法人員特考',
     '司法特考':'普通考試',
     '答案與解析依原題答案及現行刑法整理。':'答案依原考試官方答案整理；每題原題來源直接連結考選部試題。',
-    '刑法總則｜違法性｜50題歷屆原題互動測驗｜本機自動保存進度':'憲法｜基本原則＋自由權利｜100題歷屆原題互動測驗｜本機自動保存進度'
+    '刑法總則｜違法性｜50題歷屆原題互動測驗｜本機自動保存進度':'憲法｜基本原則＋自由權利｜第三回100題歷屆原題互動測驗｜本機自動保存進度'
 }
 for oldlabel,newlabel in repls.items():
     prefix=prefix.replace(oldlabel,newlabel)
@@ -77,7 +77,7 @@ prefix=prefix.replace('50 題','100 題').replace('50題','100題')
 suffix=suffix.replace('50 題','100 題').replace('50題','100題')
 
 # Independent resumable progress.
-ns='constitution-rights-100'
+ns='constitution-rights-100-round3-v2'
 def namespace_storage(text):
     for m in list(re.finditer(r"localStorage\.(?:getItem|setItem|removeItem)\(\s*(['\"])([^'\"]+)\1",text)):
         key=m.group(2)
@@ -115,7 +115,7 @@ if 'wrong-history.js' not in html:
         raise RuntimeError('could not locate main quiz script')
     html=html[:script_pos]+'<script src="https://law-quiz-hub.pp124916961.chatgpt.site/wrong-history.js?v=1"></script>\n'+html[script_pos:]
 
-mount_repl='QuizWrongHistory?.mount({quizId:"constitution-rights-100", title:"憲法－基本原則＋自由權利100題", questions:QUESTIONS, getState:()=>state, idsAreQuestionIds:false})'
+mount_repl='QuizWrongHistory?.mount({quizId:"constitution-rights-100-round3-v2", title:"憲法－基本原則＋自由權利第三回100題", questions:QUESTIONS, getState:()=>state, idsAreQuestionIds:false})'
 if 'QuizWrongHistory?.mount' in html:
     mount_pattern=r'QuizWrongHistory\?\.mount\(\{.*?\}\)'
     html,n=re.subn(mount_pattern,mount_repl,html,count=1,flags=re.S)
@@ -125,7 +125,7 @@ else:
     save_marker='function save(){'
     if save_marker not in html:
         raise RuntimeError('save() hook not found')
-    mount_js='''const wrongHistory = window.QuizWrongHistory?.mount({quizId:"constitution-rights-100", title:"憲法－基本原則＋自由權利100題", questions:QUESTIONS, getState:()=>state, idsAreQuestionIds:false}) || {capture(){},newRound(){}};\nif(!window.QuizWrongHistory){ const warning=document.createElement("p"); warning.textContent="錯題紀錄功能未載入，請確認網路後重新整理。"; (document.getElementById("controlPanel")||document.getElementById("home")).appendChild(warning); }\n'''
+    mount_js='''const wrongHistory = window.QuizWrongHistory?.mount({quizId:"constitution-rights-100-round3-v2", title:"憲法－基本原則＋自由權利第三回100題", questions:QUESTIONS, getState:()=>state, idsAreQuestionIds:false}) || {capture(){},newRound(){}};\nif(!window.QuizWrongHistory){ const warning=document.createElement("p"); warning.textContent="錯題紀錄功能未載入，請確認網路後重新整理。"; (document.getElementById("controlPanel")||document.getElementById("home")).appendChild(warning); }\n'''
     html=html.replace(save_marker,mount_js+'function save(){ wrongHistory.capture(state); ',1)
 
 if 'wrongHistory.newRound(state)' not in html:
@@ -176,12 +176,12 @@ browser_html=gzip.decompress(base64.b64decode(''.join(out))).decode('utf-8')
 assert newq[0]['question'] in browser_html and newq[-1]['question'] in browser_html
 assert 'jbtn.correct' in browser_html and 'jbtn.wrong' in browser_html
 assert "qa.correct?' correct':' wrong'" in browser_html
-assert 'quizId:"constitution-rights-100"' in browser_html
+assert 'quizId:"constitution-rights-100-round3-v2"' in browser_html
 assert 'https://wwwq.moex.gov.tw/' in browser_html
 assert '刑法 → 行政處分' not in browser_html
 
-REV='20260924-constitution-rights-100-source-jump-v1'
-loader=f'''<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>憲法｜基本原則＋自由權利｜100題歷屆原題</title><script>(async()=>{{const v='{REV}';const names={json.dumps(parts)};const a=(await Promise.all(names.map(n=>fetch(n+'?v='+v,{{cache:'no-store'}}).then(r=>r.text())))).join('');const b=atob(a);const u=Uint8Array.from(b,c=>c.charCodeAt(0));const t=await new Response(new Blob([u]).stream().pipeThrough(new DecompressionStream('gzip'))).text();document.open();document.write(t);document.close()}})();</script>'''
+REV='20260925-constitution-rights-round3-fresh100-v2'
+loader=f'''<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>憲法｜基本原則＋自由權利｜第三回100題歷屆原題</title><script>(async()=>{{const v='{REV}';const names={json.dumps(parts)};const a=(await Promise.all(names.map(n=>fetch(n+'?v='+v,{{cache:'no-store'}}).then(r=>r.text())))).join('');const b=atob(a);const u=Uint8Array.from(b,c=>c.charCodeAt(0));const t=await new Response(new Blob([u]).stream().pipeThrough(new DecompressionStream('gzip'))).text();document.open();document.write(t);document.close()}})();</script>'''
 (DST/'index.html').write_text(loader,encoding='utf-8')
 
 summary={
@@ -194,6 +194,8 @@ summary={
  'question_number_colors':'correct green / wrong red',
  'storage_namespaced':True,
  'persistent_wrong_history':True,
+ 'round':'第三回',
+ 'fresh_nonoverlap':True,
  'revision':REV
 }
 (DST/'template-reuse-summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')

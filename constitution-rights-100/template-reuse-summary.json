@@ -8,5 +8,7 @@
   "question_number_colors": "correct green / wrong red",
   "storage_namespaced": true,
   "persistent_wrong_history": true,
-  "revision": "20260924-constitution-rights-100-source-jump-v1"
+  "round": "第三回",
+  "fresh_nonoverlap": true,
+  "revision": "20260925-constitution-rights-round3-fresh100-v2"
 }

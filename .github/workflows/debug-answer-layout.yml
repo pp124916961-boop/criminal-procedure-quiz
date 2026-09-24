@@ -1,0 +1,25 @@
+name: Debug Answer Layout
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/debug-answer-layout.yml'
+permissions:
+  contents: read
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pypdf
+      - run: |
+          python - <<'PY'
+          import io,urllib.request
+          from pypdf import PdfReader
+          u='https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=S'
+          d=urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'})).read()
+          p=PdfReader(io.BytesIO(d)).pages[0]
+          print(p.extract_text(extraction_mode='layout'))
+          PY

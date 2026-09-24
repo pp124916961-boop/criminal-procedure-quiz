@@ -60,3 +60,5 @@ jobs:
           assert total==92,total
           print('VERIFIED_MOEX_ANSWERS',total)
           PY
+
+# final strict answer recheck after Q12 correction

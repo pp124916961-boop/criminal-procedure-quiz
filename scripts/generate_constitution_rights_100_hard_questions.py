@@ -188,7 +188,13 @@ for qno,q,opts,ans in cpu_2tech:
 assert len(bank)==100, len(bank)
 assert all(len(x["options"])==4 and x["answer"] in "ABCD" for x in bank)
 norm=lambda s: re.sub(r"\s+","",s)
-assert len({norm(x["question"]) for x in bank})==100
+groups={}
+for x in bank:
+    groups.setdefault(norm(x["question"]),[]).append(x)
+dups=[v for v in groups.values() if len(v)>1]
+if dups:
+    raise RuntimeError("duplicate questions: "+json.dumps([[{"id":x["id"],"source":x["source"],"question":x["question"]} for x in g] for g in dups],ensure_ascii=False))
+assert len(groups)==100
 
 (DST/"questions.json").write_text(json.dumps(bank,ensure_ascii=False,indent=2),encoding="utf-8")
 print(json.dumps({

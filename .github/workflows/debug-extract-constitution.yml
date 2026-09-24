@@ -1,0 +1,28 @@
+name: Debug Extract Constitution PDF
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/debug-extract-constitution.yml'
+permissions:
+  contents: read
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pypdf
+      - name: Extract
+        run: |
+          python - <<'PY'
+          import urllib.request
+          from pypdf import PdfReader
+          url='https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=Q'
+          urllib.request.urlretrieve(url,'/tmp/q.pdf')
+          r=PdfReader('/tmp/q.pdf')
+          txt='\n'.join((p.extract_text() or '') for p in r.pages[:2])
+          print(txt[:16000])
+          PY

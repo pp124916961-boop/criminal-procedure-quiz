@@ -30,6 +30,7 @@ jobs:
             ('101司法官','https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=201&code=101120&q=1&s=0214&t=Q',20),
             ('115警三','https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=401&code=115060&q=1&s=0503&t=Q',22),
             ('114警三','https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=301&code=114060&q=1&s=0503&t=Q',18),
+            ('115警察三等專業憲法','https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=201&code=115060&q=1&s=0205&t=Q',35),
           ]
           def fetch(u):
             return urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'}),timeout=45).read()

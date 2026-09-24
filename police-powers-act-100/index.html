@@ -153,7 +153,17 @@ function save(){ wrongHistory.capture(state); localStorage.setItem(KEY,JSON.stri
 function load(){
   try{
     const s=JSON.parse(localStorage.getItem(KEY));
-    if(s && Array.isArray(s.order) && s.answers) state=s;
+    if(s && Array.isArray(s.order) && s.answers){
+      state=s;
+      // 答案鍵修正後，以使用者原本選項重新計算對錯，避免沿用舊版 correct 布林值。
+      Object.keys(state.answers).forEach(k=>{
+        const qi=Number(k), a=state.answers[k];
+        if(Number.isInteger(qi) && QUESTIONS[qi] && a && Number.isInteger(a.pick)){
+          a.correct=(a.pick===QUESTIONS[qi].ans);
+        }
+      });
+      localStorage.setItem(KEY,JSON.stringify(state));
+    }
   }catch(e){}
   updateStats();
 }

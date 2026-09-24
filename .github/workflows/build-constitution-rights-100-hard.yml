@@ -1,0 +1,71 @@
+name: Build Constitution Rights 100 Hard
+
+on:
+  push:
+    paths:
+      - '.github/workflows/build-constitution-rights-100-hard.yml'
+      - 'scripts/generate_constitution_rights_100_hard_questions.py'
+      - 'scripts/reuse_template_constitution_rights_100_hard.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PDF reader
+        run: pip install pypdf
+      - name: Generate verified historical question bank
+        run: python scripts/generate_constitution_rights_100_hard_questions.py
+      - name: Build advanced Constitution quiz
+        run: python scripts/reuse_template_constitution_rights_100_hard.py
+      - name: Verify question bank and program
+        run: |
+          python - <<'PY'
+          import json,pathlib,base64,gzip,re,collections
+          root=pathlib.Path('constitution-rights-100-hard')
+          q=json.load(open(root/'questions.json',encoding='utf-8'))
+          old=json.load(open(pathlib.Path('constitution-rights-100')/'questions.json',encoding='utf-8'))
+          assert len(q)==100
+          norm=lambda s: re.sub(r'\s+','',s)
+          assert len({norm(x['question']) for x in q})==100
+          oldset={norm(x['question']) for x in old}
+          overlap=[x for x in q if norm(x['question']) in oldset]
+          assert not overlap, [(x['id'],x['question']) for x in overlap]
+          assert all(len(x['options'])==4 and x['answer'] in 'ABCD' for x in q)
+          assert all(x.get('source_url','').startswith('https://') for x in q)
+          counts=collections.Counter(
+            '司法官／律師一試' if '司法官／律師第一試' in x['source'] else
+            '司法三等' if '司法人員三等' in x['source'] else
+            '警佐班' if '警佐班' in x['source'] else
+            '警大二技' if '二年制技術系' in x['source'] else '其他'
+            for x in q
+          )
+          assert counts=={'司法官／律師一試':82,'司法三等':10,'警佐班':5,'警大二技':3}, counts
+          parts=['p1.txt','p2.txt','p2b.txt','p3.txt','p4.txt','p5.txt','p6.txt']
+          html=gzip.decompress(base64.b64decode(''.join((root/n).read_text() for n in parts))).decode()
+          assert q[0]['question'] in html and q[-1]['question'] in html
+          assert html.find('id="qSource"') < html.find('id="qTitle"')
+          assert 'quizId:"constitution-rights-100-hard"' in html
+          assert '.jbtn.correct' in html and '.jbtn.wrong' in html
+          assert "qa.correct?' correct':' wrong'" in html
+          assert 'wrongHistory.capture(state)' in html
+          assert 'wrongHistory.newRound(state)' in html
+          assert 'href=""' not in html
+          assert '刑法 → 行政處分' not in html
+          print('verified advanced Constitution 100:', dict(counts))
+          PY
+      - name: Commit generated quiz
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add constitution-rights-100-hard
+          git diff --cached --quiet && exit 0
+          git commit -m 'Build advanced Constitution 100-question quiz'
+          git push

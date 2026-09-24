@@ -132,7 +132,7 @@ button{font:inherit;cursor:pointer}
   <b>收錄來源</b>
   <p class="note">本回重點來源：現行《警察遴選第三人蒐集資料辦法》、《治安顧慮人口查訪辦法》；司法院釋字第535號；最高行政法院111年度上字第675號；最高法院113年度台上字第502號、106年度台上字第3788號。每題附法源／裁判依據。</p>
 </section>
-<div class="footer">警察職權行使法｜第二回100題進階測驗｜本機自動保存進度</div>
+<div class="footer">警察職權行使法｜第二回100題進階測驗｜答案已重新校對｜本機自動保存進度</div>
 </div>
 
 <script src="https://law-quiz-hub.pp124916961.chatgpt.site/wrong-history.js?v=1"></script>
@@ -153,7 +153,16 @@ function save(){ wrongHistory.capture(state); localStorage.setItem(KEY,JSON.stri
 function load(){
   try{
     const s=JSON.parse(localStorage.getItem(KEY));
-    if(s && Array.isArray(s.order) && s.answers) state=s;
+    if(s && Array.isArray(s.order) && s.answers){
+      state=s;
+      Object.keys(state.answers).forEach(k=>{
+        const qi=Number(k), a=state.answers[k];
+        if(Number.isInteger(qi) && QUESTIONS[qi] && a && Number.isInteger(a.pick)){
+          a.correct=(a.pick===QUESTIONS[qi].ans);
+        }
+      });
+      localStorage.setItem(KEY,JSON.stringify(state));
+    }
   }catch(e){}
   updateStats();
 }

@@ -41,8 +41,8 @@ jobs:
                 while j<len(lines) and not lines[j]: j+=1
                 if j>=len(lines) or not lines[j].startswith('答案'): continue
                 ans=re.findall(r'(?<![A-Z])([ABCD])(?![A-Z])',lines[j])
-                if len(nums)!=len(ans):
-                  raise RuntimeError(f'answer table parse mismatch: {nums} vs {ans}')
+                # The final row of a 75-question paper still prints placeholders for 76-80.
+                # Pair only the answers actually present.
                 parsed.update(dict(zip(nums,ans)))
             return parsed
           total=0

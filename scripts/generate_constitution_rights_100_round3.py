@@ -140,7 +140,7 @@ for src in sources:
     for no in src["nos"]:
         if no not in qs:
             print("SKIP_PARSE",src["year"],src["label"],no); continue
-        if ans.get(no) not in "ABCD":
+        if ans.get(no) not in ("A","B","C","D"):
             print("SKIP_ANSWER",src["year"],src["label"],no,ans.get(no)); continue
         q,opts=qs[no]
         topic,basis=topic_basis(q+" "+" ".join(opts))

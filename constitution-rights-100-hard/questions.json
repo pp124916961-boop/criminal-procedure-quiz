@@ -1,0 +1,1902 @@
+[
+  {
+    "id": 1,
+    "question": "依司法院解釋意旨，關於憲法基本國策中「保護母性」與「國家應保障婦女之人身安全」之規定，下 列何者錯誤？",
+    "options": [
+      "為落實上述規定之意旨，立法者制訂禁止女性勞工於夜間工作之法律應屬合憲",
+      "國家有義務採取各種安全保護措施，保障女性夜行之人身安全",
+      "法律課以有意使女性勞工於夜間工作之雇主，必要時提供宿舍之義務，應屬合憲",
+      "立法目的若係為追求保護女性勞工之人身安全，屬重要公共利益"
+    ],
+    "answer": "A",
+    "topic": "憲法基本國策",
+    "basis": "憲法基本國策章及相關解釋",
+    "explanation": "本題依115年官方標準答案，答案為A。",
+    "source": "115年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第2題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=S",
+    "year_roc": 115,
+    "q_no": 2
+  },
+  {
+    "id": 2,
+    "question": "關於憲法人身自由之保障，下列敘述何者錯誤？",
+    "options": [
+      "不具刑事被告身分之自然人，亦受保障",
+      "人民身體完整不受侵犯與傷害之身體權，非屬保障範圍",
+      "內政部移民署並非所稱之警察機關，故其要逮捕、拘禁人民，須經法院同意",
+      "法律限制人身自由，非屬刑事處罰者，其是否符合法律明確性原則，依釋憲實務見解，適用中度審 查標準予以審查"
+    ],
+    "answer": "C",
+    "topic": "人身自由",
+    "basis": "憲法第8條及相關解釋、憲法法庭判決",
+    "explanation": "本題依115年官方標準答案，答案為C。",
+    "source": "115年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第3題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=S",
+    "year_roc": 115,
+    "q_no": 3
+  },
+  {
+    "id": 3,
+    "question": "關於憲法遷徙自由之敘述，下列何者正確？",
+    "options": [
+      "人民以旅行為目的而入出國境，不在遷徙自由之保障範圍內",
+      "遷徙自由之限制，屬於絕對法律保留事項，法律不得授權行政機關訂定行政命令予以規範",
+      "外國人亦受遷徙自由保障，故國家機關將外國人強制驅逐出國，構成對遷徙自由之干預",
+      "依釋憲實務見解，法律對於遷徙自由之限制是否符合比例原則，應採嚴格審查標準予以審查"
+    ],
+    "answer": "C",
+    "topic": "居住遷徙自由",
+    "basis": "憲法第10條及相關解釋",
+    "explanation": "本題依115年官方標準答案，答案為C。",
+    "source": "115年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第4題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=S",
+    "year_roc": 115,
+    "q_no": 4
+  },
+  {
+    "id": 4,
+    "question": "依司法院釋字第 756 號解釋意旨，關於受刑人之秘密通訊自由，下列敘述何者正確？",
+    "options": [
+      "受刑人就通訊有無及內容等事項，有不受國家及他人任意侵擾之權利",
+      "為維護人性尊嚴，秘密通訊自由乃憲法保障表現自由之具體態樣之一",
+      "監獄長官檢查受刑人書信有無夾帶違禁品，即侵害通訊內容之秘密性",
+      "監獄長官不得閱讀受刑人書信之內容，始足以確保通訊內容之秘密性"
+    ],
+    "answer": "A",
+    "topic": "秘密通訊自由",
+    "basis": "憲法第12條及相關解釋",
+    "explanation": "本題依115年官方標準答案，答案為A。",
+    "source": "115年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第5題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=S",
+    "year_roc": 115,
+    "q_no": 5
+  },
+  {
+    "id": 5,
+    "question": "依司法院解釋意旨及憲法法庭裁判，關於言論自由之審查基準，下列何者與其他三個選項不同？",
+    "options": [
+      "禁止醫師為醫療廣告之規定",
+      "對街頭藝人演出內容之審查規定",
+      "容許法院得以判決命加害人強制道歉，以回復他人名譽之立法",
+      "人民團體法對主張共產主義、分裂國體之團體不許可設立之規定"
+    ],
+    "answer": "A",
+    "topic": "言論自由",
+    "basis": "憲法第11條及相關解釋、憲法法庭判決",
+    "explanation": "本題依115年官方標準答案，答案為A。",
+    "source": "115年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第6題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=S",
+    "year_roc": 115,
+    "q_no": 6
+  },
+  {
+    "id": 6,
+    "question": "依司法院解釋意旨，關於依政府採購法得標之廠商員工逾百者，未依法僱用一定比例之原住民而須繳 納代金之規定，下列敘述何者錯誤？",
+    "options": [
+      "要求得標廠商於履約期間進用一定比例原住民，係限制廠商之營業自由",
+      "廠商未達進用原住民之標準者須繳納代金，屬對財產權之限制",
+      "依國內員工人數是否逾百，決定廠商是否負有進用原住民義務，形成差別待遇，與平等原則有違",
+      "廠商應繳納之代金金額超過採購金額，個案顯然過苛之情狀，立法者若未設適當調整機制，則有違 比例原則"
+    ],
+    "answer": "C",
+    "topic": "原住民族權利",
+    "basis": "憲法第22條、增修條文及相關解釋",
+    "explanation": "本題依115年官方標準答案，答案為C。",
+    "source": "115年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第7題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=S",
+    "year_roc": 115,
+    "q_no": 7
+  },
+  {
+    "id": 7,
+    "question": "依司法院解釋意旨及憲法法庭裁判，關於財產權之限制，下列何者並未形成財產上特別犧牲？",
+    "options": [
+      "援引農田水利法關於原提供為水利使用之土地，應照舊使用之規定，作為未以租用、價購或其他方 式取得人民所有土地之使用權源",
+      "需用土地人因興辦土地徵收條例規定所定之事業，而穿越私有土地之上空或地下",
+      "土地所有人因定著於其土地上之建造物及附屬設施，被依文化資產保護法相關規定登錄為歷史建築",
+      "騎樓通道所在土地之所有權人因道路交通管理處罰條例相關規定，遭禁止於該騎樓通道擺設攤位"
+    ],
+    "answer": "D",
+    "topic": "財產權",
+    "basis": "憲法第15條及相關解釋、憲法法庭判決",
+    "explanation": "本題依115年官方標準答案，答案為D。",
+    "source": "115年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第8題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=S",
+    "year_roc": 115,
+    "q_no": 8
+  },
+  {
+    "id": 8,
+    "question": "依司法院解釋意旨，下列何者違憲侵害憲法保障之工作權？",
+    "options": [
+      "不動產估價師法禁止不動產估價師設立分事務所",
+      "藥事法限制醫師藥品調劑權",
+      "藥師法規定藥師執業處所應以一處為限",
+      "中醫師特考有零分或專業科目平均成績或特定科目成績未達規定者不予及格"
+    ],
+    "answer": "C",
+    "topic": "工作權／職業自由",
+    "basis": "憲法第15條及相關解釋、憲法法庭判決",
+    "explanation": "本題依115年官方標準答案，答案為C。",
+    "source": "115年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第9題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=S",
+    "year_roc": 115,
+    "q_no": 9
+  },
+  {
+    "id": 9,
+    "question": "依司法院解釋意旨及憲法法庭裁判，關於訴訟權保障之敘述，下列何者錯誤？",
+    "options": [
+      "向法院提起訴訟，請求依正當法律程序公平審判，以獲及時有效救濟之機會，為訴訟權保障之核心 內容",
+      "審級制度屬訴訟權保障之核心內容，故任何訴訟事件均得上訴於第三審",
+      "法官先後參與同一案件上下級審判之迴避，屬訴訟權保障之核心內容",
+      "法定法官原則為法治國家所依循之憲法原則，法院案件之分配不容恣意操控"
+    ],
+    "answer": "B",
+    "topic": "訴訟權／正當程序",
+    "basis": "憲法第16條及相關解釋、憲法法庭判決",
+    "explanation": "本題依115年官方標準答案，答案為B。",
+    "source": "115年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第10題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=S",
+    "year_roc": 115,
+    "q_no": 10
+  },
+  {
+    "id": 10,
+    "question": "依司法院解釋意旨，下列何者不屬於憲法服公職權保障之範圍？",
+    "options": [
+      "公務人員依法令晉敘陞遷之權利",
+      "公務人員之在職進修",
+      "公務人員依法取得之官等",
+      "公務人員之俸給"
+    ],
+    "answer": "B",
+    "topic": "服公職權",
+    "basis": "憲法第18條及相關解釋",
+    "explanation": "本題依115年官方標準答案，答案為B。",
+    "source": "115年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第11題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=S",
+    "year_roc": 115,
+    "q_no": 11
+  },
+  {
+    "id": 11,
+    "question": "依司法院釋字第 490 號解釋意旨，關於我國兵役制度，下列敘述何者錯誤？",
+    "options": [
+      "有關人民服兵役之重要事項，應由立法者斟酌國家安全、社會發展之需要，以法律定之，屬立法政 策之考量",
+      "立法者未考量宗教自由，使人民有免服兵役之權利，係屬違憲",
+      "服兵役之義務，並無違反人性尊嚴，亦未動搖憲法價值體系之基礎",
+      "服兵役之義務，係為保護人民，防衛國家之安全所必需，與憲法第 7 條平等原則並無牴觸"
+    ],
+    "answer": "B",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依115年官方標準答案，答案為B。",
+    "source": "115年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第12題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=S",
+    "year_roc": 115,
+    "q_no": 12
+  },
+  {
+    "id": 12,
+    "question": "依司法院解釋意旨及憲法法庭裁判，關於隱私權之敘述，下列何者正確？",
+    "options": [
+      "人體尿液雖不如血液般蘊含大量個人生物特徵識別資料，其對受採尿者憲法上資訊隱私權之侵害程 度，仍與強制採檢血液之情形相當",
+      "個人一旦身處在公共場所中，一舉一動本來就是可為人所共見共聞，自無從主張不受他人持續注視、 監看、監聽、接近等侵擾之私人活動領域及個人資料自主之自由",
+      "指紋作為一種敏感性個人資訊，國家如以強制之方法大規模蒐集國民之指紋資料，必須是為了達成 重大公益之目的，且以密切關聯之侵害較小手段為之，方能合憲",
+      "經處理過的個人健保資料，僅屬於「間接識別該個人」之資料，當事人對於此類資料之自主控制權， 並不受憲法保障"
+    ],
+    "answer": "C",
+    "topic": "隱私權／資訊自主",
+    "basis": "憲法第22條及相關解釋、憲法法庭判決",
+    "explanation": "本題依115年官方標準答案，答案為C。",
+    "source": "115年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第13題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=S",
+    "year_roc": 115,
+    "q_no": 13
+  },
+  {
+    "id": 13,
+    "question": "依司法院解釋意旨，下列何者應由立法者以法律定之，不得授權行政機關以命令予以規範？",
+    "options": [
+      "容器回收清除處理費之課徵對象及費率",
+      "全民健康保險醫事服務機構違反全民健康保險特約之處理",
+      "涉及公共利益或實現人民基本權利之保障等重大事項之給付行政措施",
+      "公法上請求權之消滅時效"
+    ],
+    "answer": "D",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依115年官方標準答案，答案為D。",
+    "source": "115年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第14題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=115110&q=1&s=0101&t=S",
+    "year_roc": 115,
+    "q_no": 14
+  },
+  {
+    "id": 14,
+    "question": "依司法院解釋意旨及憲法法庭裁判，關於憲法第 155 條：「人民之老弱殘廢，無力生活，……國家應 予以適當之扶助與救濟」，下列敘述何者錯誤？",
+    "options": [
+      "租稅優惠為國家得採取保障人民生存與生活之扶助措施之一",
+      "國家保障視障者之工作權屬特別重要公共利益",
+      "憲法特別著重弱勢者之保障，第 155 條即為例證之一",
+      "對身心障礙者優惠性差別待遇之合憲性，應採寬鬆之合理性審查"
+    ],
+    "answer": "D",
+    "topic": "生存權／社會權",
+    "basis": "憲法第15條、第155條及相關解釋",
+    "explanation": "本題依114年官方標準答案，答案為D。",
+    "source": "114年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第2題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=S",
+    "year_roc": 114,
+    "q_no": 2
+  },
+  {
+    "id": 15,
+    "question": "依司法院解釋意旨及憲法法庭裁判，關於政黨之敘述，下列何者錯誤？",
+    "options": [
+      "政黨應服膺自由民主憲政秩序",
+      "政黨與其他團體受憲法保障與限制之程度無平等原則之適用",
+      "國家應致力於建立並確保複數政黨得以自由形成發展與公平參與選舉之法治環境",
+      "國家得對政黨之財產權加以更多限制或給予政黨補助金"
+    ],
+    "answer": "B",
+    "topic": "結社自由／政黨",
+    "basis": "憲法第14條、增修條文及相關解釋",
+    "explanation": "本題依114年官方標準答案，答案為B。",
+    "source": "114年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第3題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=S",
+    "year_roc": 114,
+    "q_no": 3
+  },
+  {
+    "id": 16,
+    "question": "有關家庭暴力防治法中之保護令，依司法院解釋意旨及憲法法庭裁判，下列敘述何者錯誤？",
+    "options": [
+      "涉及人身自由之限制，應以法律定之",
+      "法律已就人身之處置為明文規定者，得透過具體明確之授權，委由主管機關執行之",
+      "有關人身自由限制之決定，得由法院依法定程序以裁定為之",
+      "民事保護令並不涉及人身自由之限制"
+    ],
+    "answer": "D",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依114年官方標準答案，答案為D。",
+    "source": "114年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第4題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=S",
+    "year_roc": 114,
+    "q_no": 4
+  },
+  {
+    "id": 17,
+    "question": "下列何者非屬釋憲實務對於宗教自由保障之意旨？",
+    "options": [
+      "宗教結社屬宗教自由之絕對保障",
+      "國家考試不得基於人民之特定信仰給與加分優待",
+      "國家不得基於人民之特定信仰為理由予以不利益",
+      "不許人民以宗教理由免除服兵役義務"
+    ],
+    "answer": "A",
+    "topic": "宗教自由",
+    "basis": "憲法第13條及相關解釋",
+    "explanation": "本題依114年官方標準答案，答案為A。",
+    "source": "114年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第5題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=S",
+    "year_roc": 114,
+    "q_no": 5
+  },
+  {
+    "id": 18,
+    "question": "依司法院解釋意旨及憲法法庭裁判，關於大學自治之敘述，下列何者錯誤？",
+    "options": [
+      "為避免學術自由受國家不當干預，立法機關僅得在合理之範圍內對大學事務加以規範",
+      "大學為確保學位之授予具備一定之水準，得於合理及必要之範圍內，訂定有關取得學位之資格條件",
+      "審理大學學生提起行政爭訟事件，應本於維護大學自治之原則，對大學之專業判斷予以適度之尊重",
+      "大學法明定大學應設教務處、學生事務處、總務處之內部組織，限制大學之自主組織權而與保障大 學自治之意旨相牴觸"
+    ],
+    "answer": "D",
+    "topic": "教育權／大學自治",
+    "basis": "憲法第11條、第21條、第22條及相關解釋",
+    "explanation": "本題依114年官方標準答案，答案為D。",
+    "source": "114年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第6題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=S",
+    "year_roc": 114,
+    "q_no": 6
+  },
+  {
+    "id": 19,
+    "question": "關於生命權保障，下列敘述何者錯誤？",
+    "options": [
+      "我國憲法對生命權之保障依據，依司法院解釋意旨及憲法法庭裁判，應係憲法第 22 條其他自由權 利的保障範圍",
+      "公民及政治權利國際公約規定，任何被判處死刑的人應有權請求赦免或減刑，但赦免法未有類似規 定，使被判處死刑的人有權請求獲得赦免",
+      "法律規定不得對未滿 18 歲之人處以死刑，符合兒童權利公約之精神",
+      "公民及政治權利國際公約規定，未廢除死刑之國家，非犯情節最重大之罪，不得科處死刑"
+    ],
+    "answer": "A",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依114年官方標準答案，答案為A。",
+    "source": "114年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第7題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=S",
+    "year_roc": 114,
+    "q_no": 7
+  },
+  {
+    "id": 20,
+    "question": "有關平等原則，下列敘述何者錯誤？",
+    "options": [
+      "人民無權主張不法之平等",
+      "行政機關依裁量基準而形成之慣例，發生間接對外效力，屬於平等原則之內涵",
+      "平等原則可以導出行政機關須受行政慣例之自我拘束",
+      "夜市攤販甲因逃漏營業稅而應予補稅，甲有權請求稅務機關要求其他夜市攤販補稅"
+    ],
+    "answer": "D",
+    "topic": "平等權",
+    "basis": "憲法第7條及相關解釋、憲法法庭判決",
+    "explanation": "本題依114年官方標準答案，答案為D。",
+    "source": "114年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第8題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=S",
+    "year_roc": 114,
+    "q_no": 8
+  },
+  {
+    "id": 21,
+    "question": "關於訴訟權保障，下列敘述何者錯誤？",
+    "options": [
+      "訴訟救濟由何種法院審理，為訴訟權保障之核心內容，非屬立法形成自由",
+      "受刑事有罪判決之被告，應有上訴救濟之機會，屬於訴訟權保障之核心內容",
+      "直接審理、言詞辯論、對審及辯護制度係本於正當法律程序之原則",
+      "有權利即有救濟，權利受公權力侵害者，皆享有訴訟救濟之基本權"
+    ],
+    "answer": "A",
+    "topic": "訴訟權／正當程序",
+    "basis": "憲法第16條及相關解釋、憲法法庭判決",
+    "explanation": "本題依114年官方標準答案，答案為A。",
+    "source": "114年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第9題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=S",
+    "year_roc": 114,
+    "q_no": 9
+  },
+  {
+    "id": 22,
+    "question": "計程車駕駛人觸犯法定之罪，經法院判決有期徒刑以上之刑，吊扣或廢止其執業登記，依司法院解釋 意旨及憲法法庭裁判，係對於何種自由之限制？",
+    "options": [
+      "遷徙自由",
+      "職業選擇自由之主觀條件",
+      "職業選擇自由之客觀條件",
+      "職業自由之執行方式"
+    ],
+    "answer": "B",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依114年官方標準答案，答案為B。",
+    "source": "114年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第10題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=S",
+    "year_roc": 114,
+    "q_no": 10
+  },
+  {
+    "id": 23,
+    "question": "關於服兵役之義務，下列敘述何者錯誤？",
+    "options": [
+      "甲男因宗教信仰而不願使用武器，向主管機關申請獲准服替代役，故甲男因此免除服兵役之義務",
+      "中華民國男子依法有服兵役之義務，係立法者鑒於男女之生理上差異，所為之合理差別待遇",
+      "為防衛國家之安全，在實施徵兵制之國家，即規定人民有服兵役之義務",
+      "因有痼疾不堪服役者，得依法律規定免除服兵役之義務"
+    ],
+    "answer": "A",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依114年官方標準答案，答案為A。",
+    "source": "114年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第11題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=S",
+    "year_roc": 114,
+    "q_no": 11
+  },
+  {
+    "id": 24,
+    "question": "依司法院解釋意旨及憲法法庭裁判，憲法第 22 條規定之基本權利，下列何者受絕對保障？",
+    "options": [
+      "原住民之身分認同權",
+      "原住民依循文化傳承從事狩獵活動",
+      "個人自主控制其個人資料之資訊隱私權",
+      "人民內在精神活動之思想自由"
+    ],
+    "answer": "D",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依114年官方標準答案，答案為D。",
+    "source": "114年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第12題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=S",
+    "year_roc": 114,
+    "q_no": 12
+  },
+  {
+    "id": 25,
+    "question": "依司法院解釋意旨及憲法法庭裁判，關於人民健康權之敘述，下列何者錯誤？",
+    "options": [
+      "國家對於健康權負有最低限度之保護義務",
+      "公務員之值勤與健康權無涉",
+      "旨在保障人民生理及心理機能之完整性，不受任意侵害",
+      "健康權為憲法第 22 條所保障之基本權利"
+    ],
+    "answer": "B",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依114年官方標準答案，答案為B。",
+    "source": "114年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第13題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=S",
+    "year_roc": 114,
+    "q_no": 13
+  },
+  {
+    "id": 26,
+    "question": "依司法院解釋意旨及憲法法庭裁判，何者非屬憲法上之制度性保障？",
+    "options": [
+      "學術自由",
+      "人身自由",
+      "地方自治",
+      "一般行動自由"
+    ],
+    "answer": "D",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依114年官方標準答案，答案為D。",
+    "source": "114年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第14題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=114110&q=1&s=0101&t=S",
+    "year_roc": 114,
+    "q_no": 14
+  },
+  {
+    "id": 27,
+    "question": "關於貨物應許自由流通之憲法規定，下列敘述何者錯誤？",
+    "options": [
+      "體系上屬基本國策章之規定，並非全無規範效力",
+      "為確保該規定目標得以實現，國家公權力之行使至少不應與其背道而馳",
+      "本條規定係以全國為空間範圍，故跨地方轄區間之貨物自由流通應受到保障",
+      "地方自治立法禁止特定之合法商品於轄內進行交易，屬地方自治權之行使，應優先於本條適用"
+    ],
+    "answer": "D",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依113年官方標準答案，答案為D。",
+    "source": "113年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第1題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=S",
+    "year_roc": 113,
+    "q_no": 1
+  },
+  {
+    "id": 28,
+    "question": "關於憲法人身自由之規定，依司法院解釋意旨，下列敘述何者正確？",
+    "options": [
+      "憲法第 8 條第 1 項所稱之法院，指有審判權之法官所構成之獨任或合議之法院",
+      "憲法第 8 條第 1 項所稱之司法機關，並不包括檢察機關",
+      "憲法第 8 條有關提審之規定，以非法逮捕拘禁為要件",
+      "憲法第 8 條第 1 項所稱之審問機關，包含法院以外之機關"
+    ],
+    "answer": "A",
+    "topic": "人身自由",
+    "basis": "憲法第8條及相關解釋、憲法法庭判決",
+    "explanation": "本題依113年官方標準答案，答案為A。",
+    "source": "113年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第2題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=S",
+    "year_roc": 113,
+    "q_no": 2
+  },
+  {
+    "id": 29,
+    "question": "有關遷徙自由，下列敘述何者錯誤？",
+    "options": [
+      "於臺灣地區設有住所而有戶籍之國民得隨時返回我國，無待許可",
+      "僑居國外具有中華民國國籍之國民若非於臺灣地區設有住所而有戶籍，仍應適用相關法律之規定， 始得返國",
+      "大陸地區人民進入臺灣地區設有限制，係法律特別規定，應符合憲法增修條文第 11 條之意旨",
+      "香港澳門地區人民進入臺灣地區之限制，係比照外國人，適用入出國及移民法"
+    ],
+    "answer": "D",
+    "topic": "居住遷徙自由",
+    "basis": "憲法第10條及相關解釋",
+    "explanation": "本題依113年官方標準答案，答案為D。",
+    "source": "113年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第3題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=S",
+    "year_roc": 113,
+    "q_no": 3
+  },
+  {
+    "id": 30,
+    "question": "依司法院解釋意旨及憲法法庭裁判，關於法規範差別待遇之合憲性審查標準，下列敘述何者正確？",
+    "options": [
+      "法規範採取性別分類而形成差別待遇者，因係以難以改變之個人特徵、歷史性或系統性之刻板印象 為差別待遇之標準，應採嚴格審查",
+      "法規範就僅父或母為原住民者，附加「從具原住民身分之父或母之姓或原住民傳統名字」之要求， 因未涉及原住民身分認同之重要基本權利，應採中度審查",
+      "法規範以媒合是否涉及跨國（境）婚姻為分類，而對跨國（境）婚姻媒合給予相對不利之差別待遇， 未涉及可疑分類，亦未涉及攸關個人人格發展及人性尊嚴之重要基本權利，應採中度審查",
+      "法規範將特定犯罪規定為告訴乃論之罪，係屬刑事立法政策之選擇，其因此與其他非告訴乃論之罪 形成之差別待遇，應採寬鬆審查"
+    ],
+    "answer": "D",
+    "topic": "平等權",
+    "basis": "憲法第7條及相關解釋、憲法法庭判決",
+    "explanation": "本題依113年官方標準答案，答案為D。",
+    "source": "113年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第5題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=S",
+    "year_roc": 113,
+    "q_no": 5
+  },
+  {
+    "id": 31,
+    "question": "依司法院解釋意旨及憲法法庭裁判，關於財產權之社會義務性，下列敘述何者錯誤？",
+    "options": [
+      "行使財產權應依法受社會責任及環境生態責任之限制，形成個人利益之特別犧牲時，既係因社會責 任所生，當無補償之必要",
+      "法律限制對土地之利用至為輕微，則屬人民享受財產權同時所應負擔之社會義務，騎樓即為適例",
+      "財產權人之財產已由過去不受限制支配之絕對性，轉變成並非聽由財產權人任意為之，而須注意到 公共利益",
+      "基於增進公共利益之必要，對人民依法取得之土地所有權，國家並非不得以法律為合理之限制"
+    ],
+    "answer": "A",
+    "topic": "財產權",
+    "basis": "憲法第15條及相關解釋、憲法法庭判決",
+    "explanation": "本題依113年官方標準答案，答案為A。",
+    "source": "113年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第6題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=S",
+    "year_roc": 113,
+    "q_no": 6
+  },
+  {
+    "id": 32,
+    "question": "依司法院解釋意旨及憲法法庭裁判，關於憲法上工作權之保障及其限制，下列敘述何者錯誤？",
+    "options": [
+      "職業自由為人民充實生活內涵及自由發展人格所必要，不因職業之性質為公益或私益、營利或非營 利而有異",
+      "人民之工作權保障，包括選擇職業之自由",
+      "憲法工作權保障人民有開業、停業與否及從事營業之時間、地點、對象及方式之自由",
+      "營業場所之選定亦受營業自由保障，僅得以法律為必要之限制，不得授權主管機關發布法規命令為 規範"
+    ],
+    "answer": "D",
+    "topic": "工作權／職業自由",
+    "basis": "憲法第15條及相關解釋、憲法法庭判決",
+    "explanation": "本題依113年官方標準答案，答案為D。",
+    "source": "113年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第7題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=S",
+    "year_roc": 113,
+    "q_no": 7
+  },
+  {
+    "id": 33,
+    "question": "憲法上人民權利救濟請求權，下列敘述何者正確？",
+    "options": [
+      "訴願作為行政訴訟之先行程序，係對人民訴訟權施予不必要之限制",
+      "訴願審理之範圍必須與法院審理之範圍相同",
+      "人民請願未獲得行政機關積極處理時，得提起訴願",
+      "憲法並未規定訴願審議委員會之具體組成方式"
+    ],
+    "answer": "D",
+    "topic": "訴訟權／正當程序",
+    "basis": "憲法第16條及相關解釋、憲法法庭判決",
+    "explanation": "本題依113年官方標準答案，答案為D。",
+    "source": "113年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第8題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=S",
+    "year_roc": 113,
+    "q_no": 8
+  },
+  {
+    "id": 34,
+    "question": "依司法院解釋意旨及憲法法庭裁判，有關人民之受教育權，下列敘述何者錯誤？",
+    "options": [
+      "國民受教育之機會，一律平等。對於原住民族、身心障礙者之教育，考慮其自主性及特殊性，應依 法令予以特別保障",
+      "已逾學齡未受基本教育之國民，有受補習教育之權利",
+      "憲法所稱 6 歲至 12 歲之學齡兒童，一律受基本教育，係屬最低標準",
+      "受國民教育以外教育者，尚包括賦予人民請求給予入學許可、提供特定教育給付之權利"
+    ],
+    "answer": "D",
+    "topic": "教育權／大學自治",
+    "basis": "憲法第11條、第21條、第22條及相關解釋",
+    "explanation": "本題依113年官方標準答案，答案為D。",
+    "source": "113年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第9題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=S",
+    "year_roc": 113,
+    "q_no": 9
+  },
+  {
+    "id": 35,
+    "question": "依司法院解釋意旨及憲法法庭裁判，有關法律保留原則，下列敘述何者錯誤？",
+    "options": [
+      "凡是限制人民自由權利之事項，概應由立法者以法律直接規定之",
+      "屬於執行法律之技術性或細節性之事項，法律得交由主管機關發布命令為必要之規範",
+      "法律授權行政機關以命令補充規定者，母法之授權必須明確",
+      "基於法律授權而訂定法規命令，不得逾越授權範圍"
+    ],
+    "answer": "A",
+    "topic": "法治國原則",
+    "basis": "憲法第23條及相關解釋",
+    "explanation": "本題依113年官方標準答案，答案為A。",
+    "source": "113年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第10題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=S",
+    "year_roc": 113,
+    "q_no": 10
+  },
+  {
+    "id": 36,
+    "question": "依司法院解釋意旨及憲法法庭裁判，關於未成年人之人格權，下列敘述何者錯誤？",
+    "options": [
+      "受概括基本權之保障，屬具憲法位階之權利",
+      "公權力措施涉及未成年人之人格權時，應以維護未成年人之最佳利益為依歸",
+      "家事非訟程序中，為尊重未成年人之人格獨立與主體性，法院應踐行給予陳述意見機會之正當法律 程序",
+      "公權力措施涉及未成年人與父母意見不一致時，本於人格權之保障，概以未成年人意願為優先"
+    ],
+    "answer": "D",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依113年官方標準答案，答案為D。",
+    "source": "113年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第11題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=S",
+    "year_roc": 113,
+    "q_no": 11
+  },
+  {
+    "id": 37,
+    "question": "依司法院解釋意旨及憲法法庭裁判，關於基本權之保障，下列敘述何者錯誤？",
+    "options": [
+      "公立大學就各科系學生畢業條件之規定，受憲法大學自治之保障",
+      "中央與地方合資經營之公營公司，概不受憲法財產權之保障",
+      "少年若涉及少年保護事件處理程序，其到庭陳述意見，應受正當法律程序之保障",
+      "街頭藝人之藝文活動受憲法藝術表現自由之保障"
+    ],
+    "answer": "B",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依113年官方標準答案，答案為B。",
+    "source": "113年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第12題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=S",
+    "year_roc": 113,
+    "q_no": 12
+  },
+  {
+    "id": 38,
+    "question": "有關憲法保障之基本權利，下列敘述何者錯誤？",
+    "options": [
+      "基本權利之限制適用法律保留原則",
+      "法人作為基本權利主體，僅限於私法人",
+      "保障基本權利是自由民主憲政秩序之基礎",
+      "基本權利之保障規定，其拘束對象，原則上為公權力"
+    ],
+    "answer": "B",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依113年官方標準答案，答案為B。",
+    "source": "113年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第20題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=113110&q=1&s=0101&t=S",
+    "year_roc": 113,
+    "q_no": 20
+  },
+  {
+    "id": 39,
+    "question": "有關平等權與平等原則，下列敘述何者錯誤？",
+    "options": [
+      "憲法所保障之各種權利，均應受法律平等保護，私法自治原則亦應遵循，故依居住權利平等，出租 人不得因承租人年紀因素而拒絕出租",
+      "當聲請釋憲之人民無法主張憲法上之平等權時，立法機關行使職權仍須遵循平等原則者，違憲審查 機關亦應依平等原則審查系爭規定",
+      "憲法第 7 條不僅為主觀權利，並為客觀價值規範，應適用於所有法領域，指導行政、立法與司法",
+      "國家機關為達成公行政任務，縱以私法形式所為之行為，亦應遵循平等原則"
+    ],
+    "answer": "A",
+    "topic": "平等權",
+    "basis": "憲法第7條及相關解釋、憲法法庭判決",
+    "explanation": "本題依112年官方標準答案，答案為A。",
+    "source": "112年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第1題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=S",
+    "year_roc": 112,
+    "q_no": 1
+  },
+  {
+    "id": 40,
+    "question": "依憲法及司法院解釋與憲法法庭裁判意旨，有關修憲程序與事項之敘述，下列何者正確？",
+    "options": [
+      "領土變更之程序與修憲程序相同",
+      "因修憲機關具有民意基礎，故修憲無任何限制",
+      "人民及立法院皆得直接提出憲法修正案",
+      "憲法修正案交付人民複決時，須經中華民國自由地區選舉人總額過半數之投票，有效票過半數之同 意，始為通過"
+    ],
+    "answer": "A",
+    "topic": "憲法基本原則／修憲",
+    "basis": "憲法增修條文及相關解釋、憲法法庭判決",
+    "explanation": "本題依112年官方標準答案，答案為A。",
+    "source": "112年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第2題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=S",
+    "year_roc": 112,
+    "q_no": 2
+  },
+  {
+    "id": 41,
+    "question": "有關扶持自耕農，依憲法及司法院解釋意旨與憲法法庭裁判，下列敘述何者錯誤？",
+    "options": [
+      "法律規定私有農地所有權移轉時，承受人以能自耕者為限，並不違憲",
+      "耕地租約期滿時，如因收回耕地致承租人將失其家庭生活依據者，不得收回耕地，係保護農民之必 要手段",
+      "耕地租約期滿後，法律如不問情狀如何，皆課予出租人按固定比例補償承租人之義務，應檢討修正",
+      "有關耕地租約最低租期之規定，並非必要且適當之手段，違反比例原則及契約自由"
+    ],
+    "answer": "D",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依112年官方標準答案，答案為D。",
+    "source": "112年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第3題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=S",
+    "year_roc": 112,
+    "q_no": 3
+  },
+  {
+    "id": 42,
+    "question": "中央流行疫情指揮中心公布航空公司機組人員防疫旅館隔離之相關規定，主要涉及下列何種基本權利 之限制？",
+    "options": [
+      "人身自由",
+      "居住自由",
+      "職業自由",
+      "人格發展自由"
+    ],
+    "answer": "A",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依112年官方標準答案，答案為A。",
+    "source": "112年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第4題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=S",
+    "year_roc": 112,
+    "q_no": 4
+  },
+  {
+    "id": 43,
+    "question": "關於講學自由或大學生權利，依司法院解釋意旨及憲法法庭裁判，下列敘述何者錯誤？",
+    "options": [
+      "憲法關於講學自由之規定，其目的包括保障學術自由",
+      "講學自由，就大學教育而言，包含研究自由、教學自由及學習自由",
+      "大學依法訂定章則，對品行重大偏差之學生，予以退學處分，屬大學自治之範疇",
+      "大學生所受大學之處分或措施，限於退學或類此之處分，始得提起行政爭訟"
+    ],
+    "answer": "D",
+    "topic": "教育權／大學自治",
+    "basis": "憲法第11條、第21條、第22條及相關解釋",
+    "explanation": "本題依112年官方標準答案，答案為D。",
+    "source": "112年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第5題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=S",
+    "year_roc": 112,
+    "q_no": 5
+  },
+  {
+    "id": 44,
+    "question": "有關於妨害名譽之行為，民法第 195 條第 1 項規定得請求回復名譽之適當處分，惟該適當處分並不包 含判決命加害人公開道歉，倘加害人為自然人，係因為將不法侵害其憲法所保障之基本權利，下列何 者並不包含在內？",
+    "options": [
+      "言論自由",
+      "財產權",
+      "思想自由",
+      "人性尊嚴"
+    ],
+    "answer": "B",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依112年官方標準答案，答案為B。",
+    "source": "112年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第6題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=S",
+    "year_roc": 112,
+    "q_no": 6
+  },
+  {
+    "id": 45,
+    "question": "依司法院解釋意旨及憲法法庭裁判，下列何種法律規定屬於違憲之事實上不平等？",
+    "options": [
+      "夫妻非薪資所得應由納稅義務人及其配偶合併申報且合併計算其稅額，而不得選擇分別申報",
+      "納稅義務人申報受扶養人，除無謀生能力並確係其扶養者外，且須未滿 20 歲或滿 60 歲以上",
+      "特種考試警察人員考試三等考試筆試錄取未具警察教育體系學歷之人員，皆安排至臺灣警察專科學 校受考試錄取人員訓練",
+      "受聘僱外國人其眷屬在勞工保險條例實施區域外死亡者，不得請領保險給付"
+    ],
+    "answer": "C",
+    "topic": "平等權",
+    "basis": "憲法第7條及相關解釋、憲法法庭判決",
+    "explanation": "本題依112年官方標準答案，答案為C。",
+    "source": "112年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第7題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=S",
+    "year_roc": 112,
+    "q_no": 7
+  },
+  {
+    "id": 46,
+    "question": "有關土地徵收，依司法院解釋意旨及憲法法庭裁判，下列敘述何者錯誤？",
+    "options": [
+      "基於憲法正當程序之要求，國家辦理徵收應踐行最嚴謹之程序",
+      "辦理徵收時，國家應踐行公告及書面通知之程序",
+      "徵收之補償應儘速發給，否則徵收土地核准案即應失效",
+      "原土地所有權人之收回權雖係私法上請求權，亦受憲法財產權之保障"
+    ],
+    "answer": "D",
+    "topic": "財產權",
+    "basis": "憲法第15條及相關解釋、憲法法庭判決",
+    "explanation": "本題依112年官方標準答案，答案為D。",
+    "source": "112年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第8題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=S",
+    "year_roc": 112,
+    "q_no": 8
+  },
+  {
+    "id": 47,
+    "question": "依司法院解釋意旨及憲法法庭裁判，關於工作權保障之敘述，下列何者正確？",
+    "options": [
+      "不動產估價師法限制不動產估價師僅能設置單一事務所而無例外，使其於有重大公益或緊急情況之 需要時，無法於其他處所執行不動產估價業務，已牴觸比例原則而與憲法保障工作權之意旨相違",
+      "臺北市街頭藝人從事藝文活動實施要點關於街頭藝人技藝之審查部分，雖涉及對人民選擇職業自由 之主觀條件限制，但係為提供臺北市市民品質優良之娛樂之重要公共利益，且目的與手段間具實質 關聯性而屬合憲",
+      "藥事法關於在全民健康保險實施滿 2 年後，醫師除於無藥事人員執業之偏遠地區或醫療急迫情形 外，不得為藥品之調劑之規定，雖係對醫師執行職業自由之限制，但係為保障民眾之用藥安全，符 合比例原則而屬合憲",
+      "身心障礙者保護法禁止非視障者從事按摩業，係屬對非視障者選擇職業自由之主觀條件限制，因按 摩業之規範不甚明確，且未能形成多元競爭環境裨益消費者選擇，已牴觸比例原則而與憲法保障工 作權之意旨相違"
+    ],
+    "answer": "C",
+    "topic": "工作權／職業自由",
+    "basis": "憲法第15條及相關解釋、憲法法庭判決",
+    "explanation": "本題依112年官方標準答案，答案為C。",
+    "source": "112年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第9題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=S",
+    "year_roc": 112,
+    "q_no": 9
+  },
+  {
+    "id": 48,
+    "question": "依司法院解釋意旨及憲法法庭裁判，關於訴訟權保障及法定法官原則，下列敘述何者錯誤？",
+    "options": [
+      "不得設置非常法院",
+      "憲法第 16 條訴訟權保障不包括法定法官原則",
+      "法定法官原則為法治國家所依循之憲法原則",
+      "法院案件之分配涉及法官之獨立審判職責及工作之公平負荷，得依法於合理及必要之範圍內，訂定 補充規範"
+    ],
+    "answer": "B",
+    "topic": "訴訟權／正當程序",
+    "basis": "憲法第16條及相關解釋、憲法法庭判決",
+    "explanation": "本題依112年官方標準答案，答案為B。",
+    "source": "112年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第10題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=S",
+    "year_roc": 112,
+    "q_no": 10
+  },
+  {
+    "id": 49,
+    "question": "依據司法院解釋，關於原住民族傳統文化權利之保障，下列敘述何者錯誤？",
+    "options": [
+      "受憲法增修條文之明文肯認，國家有保障、扶助，並促其發展之義務",
+      "屬原住民族之集體權，身為成員之個別原住民，並不享有依循傳統文化生活之獨立的憲法上權利",
+      "國家法律若對原住民族傳統文化權利有保護不足之處，國家應負有積極修法之義務",
+      "原住民族傳統文化權利若與生態環境之保護產生衝突時，國家應為妥適調和，必要時非不得限制原 住民族傳統文化權之行使"
+    ],
+    "answer": "B",
+    "topic": "原住民族權利",
+    "basis": "憲法第22條、增修條文及相關解釋",
+    "explanation": "本題依112年官方標準答案，答案為B。",
+    "source": "112年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第11題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=S",
+    "year_roc": 112,
+    "q_no": 11
+  },
+  {
+    "id": 50,
+    "question": "依司法院解釋意旨及憲法法庭裁判，汽車駕駛人肇事拒絕接受實施酒精濃度檢定者，主管機關若強制 將其移由檢驗機構實施血液檢測，與人民之下列何種基本權無涉？",
+    "options": [
+      "人身自由",
+      "身體權",
+      "名譽權",
+      "資訊隱私權"
+    ],
+    "answer": "C",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依112年官方標準答案，答案為C。",
+    "source": "112年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第12題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=S",
+    "year_roc": 112,
+    "q_no": 12
+  },
+  {
+    "id": 51,
+    "question": "依司法院解釋意旨及憲法法庭裁判，下列涉及基本權限制之法規，何者因違反法律明確性原則而違憲？",
+    "options": [
+      "槍砲彈藥刀械管制條例關於「自製之獵槍」之規定",
+      "藥害救濟法關於「常見且可預期之藥物不良反應」之規定",
+      "教師法關於「行為不檢有損師道，經有關機關查證屬實」之規定",
+      "懲治走私條例關於「管制物品及其數額由行政院公告」之刑罰規定"
+    ],
+    "answer": "D",
+    "topic": "法治國原則",
+    "basis": "憲法第23條及相關解釋",
+    "explanation": "本題依112年官方標準答案，答案為D。",
+    "source": "112年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第13題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=112120&q=1&s=0101&t=S",
+    "year_roc": 112,
+    "q_no": 13
+  },
+  {
+    "id": 52,
+    "question": "有關憲法基本國策「國民經濟」規定之敘述，下列何者錯誤？",
+    "options": [
+      "人民依法取得之土地所有權，應受法律之保障與限制",
+      "國家應普設平民金融機構，以救濟失業",
+      "附著於土地之鑛，屬於國家所有，但屬於私有土地者不在此限",
+      "國家對於土地之分配與整理，應以扶植自耕農及自行使用土地人為原則"
+    ],
+    "answer": "C",
+    "topic": "憲法基本國策",
+    "basis": "憲法基本國策章及相關解釋",
+    "explanation": "本題依111年官方標準答案，答案為C。",
+    "source": "111年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第2題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=S",
+    "year_roc": 111,
+    "q_no": 2
+  },
+  {
+    "id": 53,
+    "question": "對於下列何者之政治參與，憲法要求給予特別之保障？",
+    "options": [
+      "客家民族",
+      "身心障礙者",
+      "澎湖地區人民",
+      "新住民"
+    ],
+    "answer": "C",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依111年官方標準答案，答案為C。",
+    "source": "111年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第3題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=S",
+    "year_roc": 111,
+    "q_no": 3
+  },
+  {
+    "id": 54,
+    "question": "有關軍事審判制度，下列敘述何者錯誤？",
+    "options": [
+      "現役軍人戰時及非戰時犯陸海空軍刑法或其特別法之罪，仍均依軍事審判法追訴、處罰",
+      "非現役軍人不受軍事審判",
+      "軍事審判機關所行使者，屬國家刑罰權之一種，具司法權之性質，其審判權之發動與運作應符合正 當法律程序之要求",
+      "如同法官身分之保障與一般公務員不同，戰時軍事審判官身分之保障有別於一般軍官"
+    ],
+    "answer": "A",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依111年官方標準答案，答案為A。",
+    "source": "111年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第4題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=S",
+    "year_roc": 111,
+    "q_no": 4
+  },
+  {
+    "id": 55,
+    "question": "下列何者非屬憲法居住及遷徙自由之保障範圍？",
+    "options": [
+      "人民有設定住、居所之自由",
+      "國民有任意移居或旅行各地，包括入出國境之自由",
+      "人民有於其居住處所營私人生活不受干預之自由",
+      "外國人進入國境之自由"
+    ],
+    "answer": "D",
+    "topic": "居住遷徙自由",
+    "basis": "憲法第10條及相關解釋",
+    "explanation": "本題依111年官方標準答案，答案為D。",
+    "source": "111年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第5題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=S",
+    "year_roc": 111,
+    "q_no": 5
+  },
+  {
+    "id": 56,
+    "question": "宗教社團甲為籌措宗教活動之經費而銷售開運商品，依現行稅法仍必須被課徵營利事業所得稅。下 列敘述何者錯誤？",
+    "options": [
+      "此一課稅處分並未限制人民內在信仰之自由",
+      "此一課稅處分並未限制人民宗教行為之自由",
+      "此一課稅處分違反國家對於各宗教應維持中立之原則",
+      "此一課稅處分不違反平等原則"
+    ],
+    "answer": "C",
+    "topic": "宗教自由",
+    "basis": "憲法第13條及相關解釋",
+    "explanation": "本題依111年官方標準答案，答案為C。",
+    "source": "111年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第6題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=S",
+    "year_roc": 111,
+    "q_no": 6
+  },
+  {
+    "id": 57,
+    "question": "有關眷村改建規定之敘述，依司法院大法官解釋之意旨，下列何者錯誤？",
+    "options": [
+      "國家機關為達成公行政任務，以私法形式所為之行為，亦應遵循平等原則",
+      "軍人之眷舍配住，為使用借貸性質之福利措施，其終止不以配住眷戶之同意為必要",
+      "對於不同意改建之原眷戶得逕行註銷其眷舍居住憑證及原眷戶權益，以加速老舊眷村改建，不違平 等原則",
+      "不同意改建之原眷戶喪失承購住宅權益，並喪失搬遷補助費及拆遷補償費，其與同意改建者間之差 別待遇，尚屬妥適"
+    ],
+    "answer": "D",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依111年官方標準答案，答案為D。",
+    "source": "111年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第7題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=S",
+    "year_roc": 111,
+    "q_no": 7
+  },
+  {
+    "id": 58,
+    "question": "有關財產平等權之保障，下列敘述何者錯誤？",
+    "options": [
+      "自然人享有財產平等權",
+      "私法人享有財產平等權",
+      "未成年人享有財產平等權",
+      "地方自治團體享有財產平等權"
+    ],
+    "answer": "D",
+    "topic": "平等權",
+    "basis": "憲法第7條及相關解釋、憲法法庭判決",
+    "explanation": "本題依111年官方標準答案，答案為D。",
+    "source": "111年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第8題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=S",
+    "year_roc": 111,
+    "q_no": 8
+  },
+  {
+    "id": 59,
+    "question": "關於憲法保障人民訴訟權之敘述，下列何者錯誤？",
+    "options": [
+      "訴訟權旨在確保人民有權依法請求法院救濟",
+      "訴訟權包括要求立法者依訴訟程序之目的制定法律之請求權",
+      "訴訟權包括法院應依正當法律程序原則公平審判",
+      "訴訟權包括提供犯罪被害人於法院程序進行中享有一定程序參與權"
+    ],
+    "answer": "B",
+    "topic": "訴訟權／正當程序",
+    "basis": "憲法第16條及相關解釋、憲法法庭判決",
+    "explanation": "本題依111年官方標準答案，答案為B。",
+    "source": "111年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第10題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=S",
+    "year_roc": 111,
+    "q_no": 10
+  },
+  {
+    "id": 60,
+    "question": "關於服公職的差別對待標準，我國釋憲實務曾認為下列何者違憲？",
+    "options": [
+      "以有無色盲作為報考警察之標準",
+      "以個人品德作為國軍志願役預備軍官應考資格之標準",
+      "以年齡作為報考國家考試之標準",
+      "以學歷資格作為軍法官應考資格之標準"
+    ],
+    "answer": "B",
+    "topic": "服公職權",
+    "basis": "憲法第18條及相關解釋",
+    "explanation": "本題依111年官方標準答案，答案為B。",
+    "source": "111年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第11題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=S",
+    "year_roc": 111,
+    "q_no": 11
+  },
+  {
+    "id": 61,
+    "question": "依司法院大法官解釋意旨，道路交通管理處罰條例規定之吊銷駕照規定，係限制何種基本權利？",
+    "options": [
+      "遊行自由",
+      "一般行為自由",
+      "遷徙自由",
+      "人身自由"
+    ],
+    "answer": "B",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依111年官方標準答案，答案為B。",
+    "source": "111年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第12題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=S",
+    "year_roc": 111,
+    "q_no": 12
+  },
+  {
+    "id": 62,
+    "question": "依憲法法庭裁判意旨，關於憲法保障原住民身分認同權之敘述，下列何者錯誤？",
+    "options": [
+      "原住民身分原則上係依自我認同原則",
+      "原住民之身分認同權受憲法第 22 條保障",
+      "原住民之身分認同乃人格權保護特定人身分之範疇",
+      "原住民之身分認同繫於原住民族之姓氏"
+    ],
+    "answer": "D",
+    "topic": "原住民族權利",
+    "basis": "憲法第22條、增修條文及相關解釋",
+    "explanation": "本題依111年官方標準答案，答案為D。",
+    "source": "111年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第13題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=S",
+    "year_roc": 111,
+    "q_no": 13
+  },
+  {
+    "id": 63,
+    "question": "下列何者非屬基本權利主體？",
+    "options": [
+      "國家",
+      "自然人",
+      "社團法人",
+      "財團法人"
+    ],
+    "answer": "A",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依111年官方標準答案，答案為A。",
+    "source": "111年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第14題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=111120&q=1&s=0101&t=S",
+    "year_roc": 111,
+    "q_no": 14
+  },
+  {
+    "id": 64,
+    "question": "關於我國憲政體制下之民主，下列敘述何者錯誤？",
+    "options": [
+      "以代議民主為主，直接民主為輔",
+      "總統、副總統及立法委員由人民直接選舉產生",
+      "行政院對立法院負責，係直接民主制度之體現",
+      "人民對重大政策以投票方式直接決定，與代議民主相輔相成"
+    ],
+    "answer": "C",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依110年官方標準答案，答案為C。",
+    "source": "110年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第1題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=S",
+    "year_roc": 110,
+    "q_no": 1
+  },
+  {
+    "id": 65,
+    "question": "依司法院大法官解釋意旨，關於外國人之暫時收容，下列敘述何者錯誤？",
+    "options": [
+      "對外國人之暫時收容處分，須由法院事前為之",
+      "憲法第 8 條所稱法定程序，及於暫時收容之非刑事程序",
+      "外國人之人身自由亦受憲法之保障",
+      "主管機關依法於合理作業期間內暫時收容外國人，非憲法所不許"
+    ],
+    "answer": "A",
+    "topic": "人身自由",
+    "basis": "憲法第8條及相關解釋、憲法法庭判決",
+    "explanation": "本題依110年官方標準答案，答案為A。",
+    "source": "110年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第2題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=S",
+    "year_roc": 110,
+    "q_no": 2
+  },
+  {
+    "id": 66,
+    "question": "依司法院大法官解釋意旨，有關軍事審判，下列敘述何者正確？",
+    "options": [
+      "依憲法規定，軍事審判機關對軍人犯罪有專屬審判權",
+      "軍事審判之建制及訴訟程序，憲法已設有明文規定",
+      "軍事審判機關所行使者，雖屬國家刑罰權，但不具司法權之性質",
+      "本於憲法之意旨，應就軍事審判制度依平時與戰時分別規範"
+    ],
+    "answer": "D",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依110年官方標準答案，答案為D。",
+    "source": "110年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第3題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=S",
+    "year_roc": 110,
+    "q_no": 3
+  },
+  {
+    "id": 67,
+    "question": "依司法院大法官解釋意旨，下列何法律規定涉及憲法第 10 條遷徙自由之限制？",
+    "options": [
+      "汽車駕駛人拒絕接受酒精濃度測試之檢定者，得吊銷其駕駛執照",
+      "無正當理由，跟追他人，經勸阻不聽者，得處罰鍰或申誡",
+      "被繼承人在臺灣地區之遺產，由出生於大陸地區人民依法繼承者，其所得財產總額，每人不得逾新 臺幣 200 萬元",
+      "臺灣地區無戶籍國民入國應申請許可"
+    ],
+    "answer": "D",
+    "topic": "居住遷徙自由",
+    "basis": "憲法第10條及相關解釋",
+    "explanation": "本題依110年官方標準答案，答案為D。",
+    "source": "110年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第4題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=S",
+    "year_roc": 110,
+    "q_no": 4
+  },
+  {
+    "id": 68,
+    "question": "依司法院大法官解釋意旨，有關憲法保障之言論及出版自由，下列敘述何者錯誤？",
+    "options": [
+      "性言論之表現與性資訊之流通，不問是否出於營利之目的，均受憲法言論及出版自由之保障",
+      "為維持性道德感情與社會風化，釋憲者就立法者關於社會多數共通價值所為之判斷，原則上應予尊重",
+      "刑法第 235 條所稱猥褻之資訊、物品，因「猥褻」屬不確定法律概念，違反法律明確性原則",
+      "憲法對言論及出版自由之保障尚非絕對，法律非不得依其性質而為必要之限制"
+    ],
+    "answer": "C",
+    "topic": "言論自由",
+    "basis": "憲法第11條及相關解釋、憲法法庭判決",
+    "explanation": "本題依110年官方標準答案，答案為C。",
+    "source": "110年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第5題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=S",
+    "year_roc": 110,
+    "q_no": 5
+  },
+  {
+    "id": 69,
+    "question": "依司法院大法官解釋意旨，關於秘密通訊自由之限制，下列敘述何者錯誤？",
+    "options": [
+      "秘密通訊自由乃憲法保障隱私權之具體態樣之一",
+      "其法律限制要件應具體、明確，不得逾越必要之範圍",
+      "警察機關偵查犯罪而需要監察人民秘密通訊時，原則上應聲請法院核發通訊監察書",
+      "通訊監察未限制人身自由，尚非刑事訴訟上之強制處分"
+    ],
+    "answer": "D",
+    "topic": "秘密通訊自由",
+    "basis": "憲法第12條及相關解釋",
+    "explanation": "本題依110年官方標準答案，答案為D。",
+    "source": "110年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第6題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=S",
+    "year_roc": 110,
+    "q_no": 6
+  },
+  {
+    "id": 70,
+    "question": "依司法院大法官解釋意旨，有關結社自由，下列敘述何者錯誤？",
+    "options": [
+      "結社自由與人民發展其個人人格相關",
+      "各種團體雖然性質有所不同，但其結社自由受法律保障之程度，不得有所差異",
+      "結社自由之保障包含團體之存續、內部組織與事務之自主決定及對外活動之自由",
+      "單純僅因人民團體主張共產主義或分裂國土，即於申請時不予許可，並不合憲"
+    ],
+    "answer": "B",
+    "topic": "結社自由／政黨",
+    "basis": "憲法第14條、增修條文及相關解釋",
+    "explanation": "本題依110年官方標準答案，答案為B。",
+    "source": "110年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第7題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=S",
+    "year_roc": 110,
+    "q_no": 7
+  },
+  {
+    "id": 71,
+    "question": "有關特別公課，依司法院大法官解釋意旨，下列敘述何者錯誤？",
+    "options": [
+      "特別公課與稅捐之性質不同",
+      "特別公課之徵收係基於特定政策目的需要，無須適用法律保留原則",
+      "空氣污染防制費之性質為特別公課",
+      "工業區開發管理基金兼具特別公課與使用規費之性質"
+    ],
+    "answer": "B",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依110年官方標準答案，答案為B。",
+    "source": "110年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第8題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=S",
+    "year_roc": 110,
+    "q_no": 8
+  },
+  {
+    "id": 72,
+    "question": "依司法院大法官解釋意旨，有關隱私權之敘述，下列何者錯誤？",
+    "options": [
+      "為保障個人日常私密領域免於他人侵擾，隱私權為絕對不可限制之基本權利",
+      "隱私權為憲法第 22 條之人民其他自由權利",
+      "資訊隱私權保障人民自主決定是否揭露其個人資料",
+      "資訊隱私權保障人民對其個人資料之使用有知悉與控制權"
+    ],
+    "answer": "A",
+    "topic": "隱私權／資訊自主",
+    "basis": "憲法第22條及相關解釋、憲法法庭判決",
+    "explanation": "本題依110年官方標準答案，答案為A。",
+    "source": "110年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第9題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=S",
+    "year_roc": 110,
+    "q_no": 9
+  },
+  {
+    "id": 73,
+    "question": "臺北市政府若依法律規定公告「臺北市政府員工性騷擾防治辦法」，此一辦法係在保障下列何種憲法 上權利？",
+    "options": [
+      "地方自治權",
+      "契約自由",
+      "人格權",
+      "財產權"
+    ],
+    "answer": "C",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依110年官方標準答案，答案為C。",
+    "source": "110年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第10題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=S",
+    "year_roc": 110,
+    "q_no": 10
+  },
+  {
+    "id": 74,
+    "question": "依司法院大法官有關言論自由之解釋意旨，下列敘述何者正確？",
+    "options": [
+      "商業言論之事前審查當然違憲",
+      "猥褻性言論不在言論自由的保障範圍內",
+      "法律規定，具醫療性之藥物，於刊播廣告前申請主管機關核准，尚屬合憲",
+      "言論自由之保護範疇及限制準則，不因言論之性質而有不同"
+    ],
+    "answer": "C",
+    "topic": "言論自由",
+    "basis": "憲法第11條及相關解釋、憲法法庭判決",
+    "explanation": "本題依110年官方標準答案，答案為C。",
+    "source": "110年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第12題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=110120&q=1&s=0101&t=S",
+    "year_roc": 110,
+    "q_no": 12
+  },
+  {
+    "id": 75,
+    "question": "依司法院大法官解釋，社會秩序維護法就意圖得利與人姦、宿者，處3日以下拘留或新臺幣3萬元以下 罰鍰之規定違憲。有關其所持違憲理由，下列敘述何者正確？",
+    "options": [
+      "違反契約自由",
+      "違反平等原則",
+      "違反性自主自由",
+      "違反婚姻自由"
+    ],
+    "answer": "B",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依109年官方標準答案，答案為B。",
+    "source": "109年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第1題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=109120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=109120&q=1&s=0101&t=S",
+    "year_roc": 109,
+    "q_no": 1
+  },
+  {
+    "id": 76,
+    "question": "有關憲法基本國策，下列敘述何者正確？",
+    "options": [
+      "基本國策之規定屬於憲法修改之界限",
+      "基本國策皆為政治宣言，對國家機關並無實質拘束力",
+      "基本國策中之國家目標條款，具有引導國家政策之功能",
+      "基本國策係屬憲法不可或缺之內容"
+    ],
+    "answer": "C",
+    "topic": "憲法基本國策",
+    "basis": "憲法基本國策章及相關解釋",
+    "explanation": "本題依109年官方標準答案，答案為C。",
+    "source": "109年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第2題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=109120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=109120&q=1&s=0101&t=S",
+    "year_roc": 109,
+    "q_no": 2
+  },
+  {
+    "id": 77,
+    "question": "有關都市更新之性質及其正當行政程序，依相關司法院大法官解釋，下列敘述何者錯誤？",
+    "options": [
+      "都市更新本質上係屬國家或地方自治團體之公共事務",
+      "國家或地方自治團體引入民間活力辦理都市更新，仍應為必要之監督",
+      "由都市更新申請人或實施者舉辦公聽會，尚不足以保障利害關係人適時向主管機關陳述意見之權利",
+      "都市更新事業概要之核准與都市更新事業計畫之核定，無須事前舉行公開之聽證程序"
+    ],
+    "answer": "D",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依109年官方標準答案，答案為D。",
+    "source": "109年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第3題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=109120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=109120&q=1&s=0101&t=S",
+    "year_roc": 109,
+    "q_no": 3
+  },
+  {
+    "id": 78,
+    "question": "依司法院大法官解釋，下列敘述何者正確？",
+    "options": [
+      "藥事法規定藥商刊播藥物廣告時，應於刊播前申請主管機關核准，當然有違憲法保障財產權意旨",
+      "藥物廣告屬言論自由，與財產權無涉",
+      "化粧品衛生管理條例規定，廠商登載或宣播化粧品廣告時，應於事前申請主管機關核准，有違憲法 保障言論自由之意旨",
+      "化粧品廣告屬財產權保障之範疇，不受憲法言論自由保障"
+    ],
+    "answer": "C",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依109年官方標準答案，答案為C。",
+    "source": "109年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第4題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=109120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=109120&q=1&s=0101&t=S",
+    "year_roc": 109,
+    "q_no": 4
+  },
+  {
+    "id": 79,
+    "question": "依司法院大法官解釋，下列何者非屬大學自治之限制？",
+    "options": [
+      "法律規定大學教師升等資格之評審程序",
+      "教育部邀請大學法律院系討論增設選修課程之需要",
+      "法律規定大學設置學生護理課程之相關組織事項",
+      "主管機關依法核定國立警察大學擬訂之招生簡章"
+    ],
+    "answer": "B",
+    "topic": "教育權／大學自治",
+    "basis": "憲法第11條、第21條、第22條及相關解釋",
+    "explanation": "本題依109年官方標準答案，答案為B。",
+    "source": "109年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第5題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=109120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=109120&q=1&s=0101&t=S",
+    "year_roc": 109,
+    "q_no": 5
+  },
+  {
+    "id": 80,
+    "question": "依憲法及相關司法院大法官解釋，有關勞工之保障，下列敘述何者錯誤？",
+    "options": [
+      "勞工保險之效力及保險事故之種類，均攸關勞工權益，屬於國會保留事項",
+      "勞工依法參加勞工保險及因此所生之公法上請求權，應受憲法保障",
+      "勞工請領退休金之權利，屬於私法上債權，亦受憲法財產權所保障",
+      "國家基於憲法基本國策之規定，得以立法方式介入勞資關係"
+    ],
+    "answer": "A",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依109年官方標準答案，答案為A。",
+    "source": "109年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第6題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=109120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=109120&q=1&s=0101&t=S",
+    "year_roc": 109,
+    "q_no": 6
+  },
+  {
+    "id": 81,
+    "question": "公務員服務法規定，公務員於離職後3年內不得擔任與其離職前5年內之職務直接相關之營利事業職 位。依司法院大法官解釋意旨，下列敘述何者正確？",
+    "options": [
+      "限制離職公務員選擇職業自由，所採取之手段與目的達成間具合理關聯性即可",
+      "本條係為維護公務員公正廉明之重要公益，且未限制離職公務員執行職業之自由",
+      "限制公務員選擇職業自由，可避免公務員離職後利益衝突或利益輸送，手段具實質關聯",
+      "因公務員對此限制無法預見而不能預作準備，違反比例原則"
+    ],
+    "answer": "C",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依109年官方標準答案，答案為C。",
+    "source": "109年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第7題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=109120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=109120&q=1&s=0101&t=S",
+    "year_roc": 109,
+    "q_no": 7
+  },
+  {
+    "id": 82,
+    "question": "依司法院釋字第654號解釋，下列敘述何者錯誤？",
+    "options": [
+      "受羈押被告得選任辯護人，屬其憲法上訴訟權",
+      "受羈押被告之人身自由依法固受有限制，其他憲法權利之保障與一般人民毫無不同",
+      "律師接見受羈押被告時，不問是否為達成羈押目的或維持押所秩序之必要，一律監聽、錄音，不符 憲法保障訴訟權之意旨",
+      "受羈押被告與辯護人接見時監聽、錄音所獲得之資訊，得作為認定被告本案犯罪事實之證據，會妨 害被告之防禦權"
+    ],
+    "answer": "B",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依109年官方標準答案，答案為B。",
+    "source": "109年司法官／律師第一試｜綜合法學（一）（憲法、行政法、國際公法、國際私法）｜第8題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=109120&q=1&s=0101&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=302&code=109120&q=1&s=0101&t=S",
+    "year_roc": 109,
+    "q_no": 8
+  },
+  {
+    "id": 83,
+    "question": "1 4 年 未 具 擬 任 職 務 任 用 資 格 者 取 得 法 官 遴 選 資 格 考 試 試 題 考 試 別：司法人員、海岸巡防人員 等 別：三等考試 類 科 組：各類科組 科 目：法學知識與英文（包括中華民國憲法、法學緒論、英文） 考試時間： 1 小時 座號： ※注意：本試題為單一選擇題，請選出一個正確或最適當答案。 本科目共50題，每題2分，須用2B鉛筆在試卡上依題號清楚劃記，於本試題上作答者，不予計分。 禁止使用電子計算器。 1 關於修憲程序，下列敘述何者正確？",
+    "options": [
+      "修憲機關提出之憲法修正案，須先送請監察院人權委員會審查，始能通過施行",
+      "修憲機關提出之憲法修正案，須先送請憲法法庭審查，始能通過施行",
+      "行政院若認為修憲機關提出之憲法修正案窒礙難行，得移請修憲機關覆議",
+      "修憲機關提出之憲法修正案，須經人民投票複決，始能通過施行"
+    ],
+    "answer": "D",
+    "topic": "憲法基本原則／修憲",
+    "basis": "憲法增修條文及相關解釋、憲法法庭判決",
+    "explanation": "本題依114年官方標準答案，答案為D。",
+    "source": "114年司法人員三等考試｜法學知識與英文（中華民國憲法、法學緒論、英文）｜第1題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=S",
+    "year_roc": 114,
+    "q_no": 1
+  },
+  {
+    "id": 84,
+    "question": "依憲法規定，已逾學齡未受基本教育之國民，如何受補習教育？",
+    "options": [
+      "得自行決定受補習教育，免繳納學費",
+      "得自行決定受補習教育，須繳納學費",
+      "一律受補習教育，免繳納學費",
+      "一律受補習教育，須繳納學費"
+    ],
+    "answer": "C",
+    "topic": "教育權／大學自治",
+    "basis": "憲法第11條、第21條、第22條及相關解釋",
+    "explanation": "本題依114年官方標準答案，答案為C。",
+    "source": "114年司法人員三等考試｜法學知識與英文（中華民國憲法、法學緒論、英文）｜第2題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=S",
+    "year_roc": 114,
+    "q_no": 2
+  },
+  {
+    "id": 85,
+    "question": "憲法第 16 條保障人民之訴訟權，依司法院大法官解釋與憲法法庭判決之意旨，下列敘述何者錯誤？",
+    "options": [
+      "針對軍法判決之特別救濟案，軍事審判法規定，僅許被告不服高等軍事法院宣告有期徒刑之上訴判決者， 得以判決違背法令為理由，向高等法院提起上訴，與保障人民訴訟權之意旨有違",
+      "針對公立大學就不續聘教師之再申訴決定提起行政訴訟案，最高行政法院決議，關於公立大學就不予維 持其不續聘教師措施之再申訴決定，不得循序提起行政訴訟部分，牴觸保障訴訟權之意旨",
+      "針對偵查中辯護人在場筆記權等之救濟案，禁止或限制辯護人於訊問時在場、筆記或陳述意見之處分， 未賦予被告、犯罪嫌疑人或其辯護人享有向法院聲明不服、請求救濟之機會，違反憲法第 16 條保障訴 訟權之意旨",
+      "未明文規範被害人（及其法定代理人）於少年保護事件處理程序中得到庭陳述意見，於此範圍內，不符 憲法正當法律程序原則之要求，有違憲法保障被害人程序參與權之意旨"
+    ],
+    "answer": "A",
+    "topic": "訴訟權／正當程序",
+    "basis": "憲法第16條及相關解釋、憲法法庭判決",
+    "explanation": "本題依114年官方標準答案，答案為A。",
+    "source": "114年司法人員三等考試｜法學知識與英文（中華民國憲法、法學緒論、英文）｜第3題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=S",
+    "year_roc": 114,
+    "q_no": 3
+  },
+  {
+    "id": 86,
+    "question": "國家基於犯罪偵查之目的，對被告或犯罪嫌疑人進行通訊監察，並未直接影響受監察人下列何種權利？",
+    "options": [
+      "緘默權",
+      "委任律師之辯護權",
+      "隱私權",
+      "閱覽卷宗權"
+    ],
+    "answer": "D",
+    "topic": "秘密通訊自由",
+    "basis": "憲法第12條及相關解釋",
+    "explanation": "本題依114年官方標準答案，答案為D。",
+    "source": "114年司法人員三等考試｜法學知識與英文（中華民國憲法、法學緒論、英文）｜第4題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=S",
+    "year_roc": 114,
+    "q_no": 4
+  },
+  {
+    "id": 87,
+    "question": "依司法院大法官解釋，關於原住民文化權及身分認同權，下列敘述何者錯誤？",
+    "options": [
+      "狩獵係原住民族利用自然資源之方式之一，乃長期以來之重要傳統，屬於文化權保障範圍",
+      "原住民之文化權保障，僅為個人權利，不具有集體權之性質及內涵",
+      "以漢族之姓氏習慣否定原住民之身分認定，與原住民之身分認同權有違",
+      "由憲法第 22 條及憲法增修條文整體觀察，原住民集體身分認同權亦受憲法保障"
+    ],
+    "answer": "B",
+    "topic": "原住民族權利",
+    "basis": "憲法第22條、增修條文及相關解釋",
+    "explanation": "本題依114年官方標準答案，答案為B。",
+    "source": "114年司法人員三等考試｜法學知識與英文（中華民國憲法、法學緒論、英文）｜第5題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=S",
+    "year_roc": 114,
+    "q_no": 5
+  },
+  {
+    "id": 88,
+    "question": "依司法院大法官解釋意旨，有關人身自由之保障，下列敘述何者錯誤？",
+    "options": [
+      "對人身自由之剝奪尤應遵循正當法律程序原則",
+      "刑法規定累犯一律加重最低本刑，使人身自由遭受過苛侵害，牴觸憲法比例原則",
+      "毒品危害防制條例規定，意圖供製造毒品之用而栽種大麻者，處 5 年以上有期徒刑，未違憲法比例原則， 未侵害人身自由",
+      "刑法規定之於刑之執行前強制工作處分，就受處分人之人身自由所為限制，違反憲法第 23 條比例原則"
+    ],
+    "answer": "C",
+    "topic": "人身自由",
+    "basis": "憲法第8條及相關解釋、憲法法庭判決",
+    "explanation": "本題依114年官方標準答案，答案為C。",
+    "source": "114年司法人員三等考試｜法學知識與英文（中華民國憲法、法學緒論、英文）｜第6題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=S",
+    "year_roc": 114,
+    "q_no": 6
+  },
+  {
+    "id": 89,
+    "question": "依司法院大法官解釋及憲法法庭裁判，關於土地徵收制度，下列敘述何者正確？",
+    "options": [
+      "因時效而成立之公用地役關係，屬所有權人社會責任所應忍受之範圍，無須辦理徵收作業",
+      "未於法定期限內核發土地補償費，不影響原土地徵收處分之合法性",
+      "文化資產保存法將私人建築物指定為古蹟，已逾越所有權人社會責任所應忍受之範圍，國家應給予相當補償",
+      "大眾捷運法規定，大眾捷運系統毗鄰地區辦理開發所需之土地，雖非屬捷運交通事業所必需之土地，亦 得徵收"
+    ],
+    "answer": "C",
+    "topic": "財產權",
+    "basis": "憲法第15條及相關解釋、憲法法庭判決",
+    "explanation": "本題依114年官方標準答案，答案為C。",
+    "source": "114年司法人員三等考試｜法學知識與英文（中華民國憲法、法學緒論、英文）｜第11題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=S",
+    "year_roc": 114,
+    "q_no": 11
+  },
+  {
+    "id": 90,
+    "question": "憲法第 19 條規定：「人民有依法律納稅之義務。」下列關於租稅之敘述，何者正確？",
+    "options": [
+      "依據租稅法律主義之要求，有關稅捐稽徵之程序，立法者不得授權以命令定之",
+      "主管機關於職權範圍內適用租稅法律規定，本於法定職權予以闡釋，如係秉持憲法原則及相關之立法意 旨，遵守一般法律解釋方法為之，即與租稅法律主義無違",
+      "稅捐僅係為了支應國家普通施政支出而課徵，特別公課則係以特別施政用途為目的而課徵",
+      "行政機關縱依立法授權，仍不得就特定範圍納稅義務人給予減輕或免除租稅之優惠措施，始不牴觸憲法 平等原則"
+    ],
+    "answer": "C",
+    "topic": "納稅義務／租稅法律主義",
+    "basis": "憲法第19條及相關解釋",
+    "explanation": "本題依114年官方標準答案，答案為C。",
+    "source": "114年司法人員三等考試｜法學知識與英文（中華民國憲法、法學緒論、英文）｜第12題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=S",
+    "year_roc": 114,
+    "q_no": 12
+  },
+  {
+    "id": 91,
+    "question": "有關我國法律違憲審查制度，下列敘述何者錯誤？",
+    "options": [
+      "係採集中制",
+      "設有抽象法規審查",
+      "須有具體個案始得為審查",
+      "人民之聲請審查設有期限限制"
+    ],
+    "answer": "C",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依114年官方標準答案，答案為C。",
+    "source": "114年司法人員三等考試｜法學知識與英文（中華民國憲法、法學緒論、英文）｜第14題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=S",
+    "year_roc": 114,
+    "q_no": 14
+  },
+  {
+    "id": 92,
+    "question": "下列關於性傾向在憲法上之評價，何者錯誤？",
+    "options": [
+      "性傾向非憲法第 7 條明文規定，但仍屬平等權規範之範圍",
+      "民法規定婚姻為一男一女的結合，是以性傾向為分類標準之差別待遇",
+      "同性性傾向者為社會上孤立而隔絕之少數，並因受刻板印象之影響，久為政治上之弱勢",
+      "以性傾向為基礎之差別待遇，應採最嚴格審查標準"
+    ],
+    "answer": "D",
+    "topic": "平等權／人格自由",
+    "basis": "憲法第7條、第22條及相關解釋",
+    "explanation": "本題依114年官方標準答案，答案為D。",
+    "source": "114年司法人員三等考試｜法學知識與英文（中華民國憲法、法學緒論、英文）｜第17題",
+    "source_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=Q",
+    "answer_url": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=101&code=114120&q=1&s=0309&t=S",
+    "year_roc": 114,
+    "q_no": 17
+  },
+  {
+    "id": 93,
+    "question": "關於服公職權的差別對待標準，我國司法院大法官曾認為下列何者違憲？",
+    "options": [
+      "以年齡作為報考國家考試之標準",
+      "以學歷資格作為國防法務官報考資格之標準",
+      "以有無色盲作為報考警察之標準",
+      "以是否曾受刑之宣告作為國軍志願役預備軍官應考資格之標準"
+    ],
+    "answer": "D",
+    "topic": "服公職權",
+    "basis": "憲法第18條及相關解釋",
+    "explanation": "本題依中央警察大學114年警佐班第45期官方更正版答案，答案為D。",
+    "source": "114年中央警察大學警佐班第45期｜國文與憲法｜第12題",
+    "source_url": "https://se.cpu.edu.tw/p/404-1006-44002.php",
+    "answer_url": "https://se.cpu.edu.tw/p/404-1006-44002.php",
+    "year_roc": 114,
+    "q_no": 12
+  },
+  {
+    "id": 94,
+    "question": "下列哪一事項屬於得由行政機關依據法律授權而訂定行政命令予以規範之事項？",
+    "options": [
+      "公務員一次記二大過免職之構成要件",
+      "保險業務員停止招攬處分之構成要件",
+      "警察實施臨檢之要件、程序與救濟方式",
+      "公法或私法上之請求權消滅時效"
+    ],
+    "answer": "B",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依中央警察大學114年警佐班第45期官方更正版答案，答案為B。",
+    "source": "114年中央警察大學警佐班第45期｜國文與憲法｜第13題",
+    "source_url": "https://se.cpu.edu.tw/p/404-1006-44002.php",
+    "answer_url": "https://se.cpu.edu.tw/p/404-1006-44002.php",
+    "year_roc": 114,
+    "q_no": 13
+  },
+  {
+    "id": 95,
+    "question": "依司法院大法官解釋，關於學生之訴訟權，下列敘述何者正確？",
+    "options": [
+      "學校對學生之處分或公權力措施，若非屬對於學生之受教育權之侵害，則學生不得提起行政爭訟請求救濟",
+      "依目前之大法官解釋，中小學學生之權利因學校之處分而遭受侵害時，原則上僅能循學校內部申訴途徑謀求救濟",
+      "如學校基於教育目的或維持學校秩序，對學生所為之教育或管理等公權力措施，僅屬顯然輕微之干預，則學生不得提起行政爭訟",
+      "學生遭學校記過或申誡時，原則上不得就該不利處分提起行政爭訟"
+    ],
+    "answer": "C",
+    "topic": "訴訟權／正當程序",
+    "basis": "憲法第16條及相關解釋、憲法法庭判決",
+    "explanation": "本題依中央警察大學114年警佐班第45期官方更正版答案，答案為C。",
+    "source": "114年中央警察大學警佐班第45期｜國文與憲法｜第14題",
+    "source_url": "https://se.cpu.edu.tw/p/404-1006-44002.php",
+    "answer_url": "https://se.cpu.edu.tw/p/404-1006-44002.php",
+    "year_roc": 114,
+    "q_no": 14
+  },
+  {
+    "id": 96,
+    "question": "關於「受國民教育之權利」與「受國民教育以外教育之權利」的比較，下列敘述何者正確？",
+    "options": [
+      "兩者皆兼具權利與義務之性質",
+      "兩者之憲法條文基礎皆為《憲法》第 22 條",
+      "兩者不僅皆具有防禦權之性質，亦具有請求國家提供特定教育給付之性質",
+      "不論是提供國民教育或國民教育以外之教育，各級學校皆有遵守《憲法》第 7 條平等權保障之義務"
+    ],
+    "answer": "D",
+    "topic": "教育權／大學自治",
+    "basis": "憲法第11條、第21條、第22條及相關解釋",
+    "explanation": "本題依中央警察大學114年警佐班第45期官方更正版答案，答案為D。",
+    "source": "114年中央警察大學警佐班第45期｜國文與憲法｜第15題",
+    "source_url": "https://se.cpu.edu.tw/p/404-1006-44002.php",
+    "answer_url": "https://se.cpu.edu.tw/p/404-1006-44002.php",
+    "year_roc": 114,
+    "q_no": 15
+  },
+  {
+    "id": 97,
+    "question": "司法院大法官釋字第 432 號解釋中提及「法律明確性原則」的基本內涵。下列何者並非該解釋所提及關於該原則的基本內涵之一？",
+    "options": [
+      "法律規範之意義須非難以理解",
+      "法律規範應使受規範者能預見何種作為或不作為構成義務之違反，及所應受之懲戒為何",
+      "嚴重拘束人身自由之法律規範，其明確性應受較為嚴格之審查",
+      "爭議發生時，可經由司法審查加以確認"
+    ],
+    "answer": "C",
+    "topic": "法治國原則",
+    "basis": "憲法第23條及相關解釋",
+    "explanation": "本題依中央警察大學114年警佐班第45期官方更正版答案，答案為C。",
+    "source": "114年中央警察大學警佐班第45期｜國文與憲法｜第16題",
+    "source_url": "https://se.cpu.edu.tw/p/404-1006-44002.php",
+    "answer_url": "https://se.cpu.edu.tw/p/404-1006-44002.php",
+    "year_roc": 114,
+    "q_no": 16
+  },
+  {
+    "id": 98,
+    "question": "司法院大法官釋字第 509 號解釋理由書指出，《憲法》第十一條規定人民之言論自由應予保障，其具有之功能，不包括下列何者？",
+    "options": [
+      "追求真理、滿足人民知的權利",
+      "形成公意，促進各種合理的政治及社會活動",
+      "保障個人內心精神活動",
+      "實現自我、溝通意見"
+    ],
+    "answer": "C",
+    "topic": "言論自由",
+    "basis": "憲法第11條及相關解釋、憲法法庭判決",
+    "explanation": "本題依中央警察大學114學年度學士班二年制技術系入學考試修正版答案，答案為C。",
+    "source": "114學年度中央警察大學二年制技術系入學考試｜國文與憲法｜第15題",
+    "source_url": "https://se.cpu.edu.tw/p/406-1006-44317%2Cr257.php",
+    "answer_url": "https://se.cpu.edu.tw/p/406-1006-44317%2Cr257.php",
+    "year_roc": 114,
+    "q_no": 15
+  },
+  {
+    "id": 99,
+    "question": "司法院大法官釋字第 631 號解釋理由書指出，秘密通訊自由乃《憲法》保障隱私權之具體態樣之一，其所維護權利，不包括下列何者？",
+    "options": [
+      "人性尊嚴、個人主體性",
+      "保障個人生活私密領域免於國家、他人侵擾",
+      "人格發展之完整",
+      "維護個人財產之自主控制"
+    ],
+    "answer": "D",
+    "topic": "秘密通訊自由",
+    "basis": "憲法第12條及相關解釋",
+    "explanation": "本題依中央警察大學114學年度學士班二年制技術系入學考試修正版答案，答案為D。",
+    "source": "114學年度中央警察大學二年制技術系入學考試｜國文與憲法｜第16題",
+    "source_url": "https://se.cpu.edu.tw/p/406-1006-44317%2Cr257.php",
+    "answer_url": "https://se.cpu.edu.tw/p/406-1006-44317%2Cr257.php",
+    "year_roc": 114,
+    "q_no": 16
+  },
+  {
+    "id": 100,
+    "question": "下列對於《國民年金法》之遺屬年金請領之司法院大法官釋字第 766 號解釋之敘述，何者錯誤？",
+    "options": [
+      "如其內容涉及人民最低限度生存需求，則應兼受《憲法》第 15 條生存權之保障。對此等兼受生存權保障之社會保險給付請求權之限制，即應受較為嚴格之審查",
+      "人民依社會保險相關法律享有之社會保險給付請求權，具有財產上價值，應受《憲法》第 15 條財產權之保障",
+      "社會保險給付之請領要件及金額，應由立法者盱衡國家財政資源之有限性、人口增減及結構變遷可能對社會保險帶來之衝擊等因素而為規範",
+      "《憲法》第 155 條前段規定：「國家為謀社會福利，應實施社會保險制度。」基於前開《憲法》委託，立法者對於社會保險制度有較小之自由形成空間"
+    ],
+    "answer": "D",
+    "topic": "憲法基本原則／基本權",
+    "basis": "憲法本文、增修條文及相關司法院解釋、憲法法庭判決",
+    "explanation": "本題依中央警察大學114學年度學士班二年制技術系入學考試修正版答案，答案為D。",
+    "source": "114學年度中央警察大學二年制技術系入學考試｜國文與憲法｜第17題",
+    "source_url": "https://se.cpu.edu.tw/p/406-1006-44317%2Cr257.php",
+    "answer_url": "https://se.cpu.edu.tw/p/406-1006-44317%2Cr257.php",
+    "year_roc": 114,
+    "q_no": 17
+  }
+]

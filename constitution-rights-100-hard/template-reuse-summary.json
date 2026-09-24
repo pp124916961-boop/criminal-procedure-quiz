@@ -1,0 +1,13 @@
+{
+  "template": "criminal-illegality-50",
+  "program_reused": true,
+  "question_count": 100,
+  "new_path": "constitution-rights-100-hard",
+  "source_position": "above_question",
+  "official_source_links": true,
+  "difficulty_mix": "司法官／律師一試82＋司法三等10＋警佐5＋警大二技3",
+  "question_number_colors": "correct green / wrong red",
+  "storage_namespaced": true,
+  "persistent_wrong_history": true,
+  "revision": "20260924-constitution-rights-100-hard-v1"
+}

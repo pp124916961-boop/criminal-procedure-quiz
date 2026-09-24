@@ -1,0 +1,68 @@
+name: Debug Constitution Round3 Candidates
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/debug-constitution-round3-candidates.yml'
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pypdf
+      - run: |
+          python - <<'PY'
+          import io,re,urllib.request
+          from pypdf import PdfReader
+          CH=['\ue18c','\ue18d','\ue18e','\ue18f']
+          sources=[
+            ('108司律','https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=108120&q=1&s=0101&t=Q',20),
+            ('107司律','https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=107120&q=1&s=0101&t=Q',20),
+            ('106司律','https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=106120&q=1&s=0101&t=Q',20),
+            ('105司律','https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=105110&q=1&s=0101&t=Q',20),
+            ('104司律','https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=104110&q=1&s=0101&t=Q',20),
+            ('103司律','https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=303&code=103110&q=1&s=0101&t=Q',20),
+            ('102司法官','https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=201&code=102121&q=1&s=0214&t=Q',20),
+            ('101司法官','https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=201&code=101120&q=1&s=0214&t=Q',20),
+            ('115警三','https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=401&code=115060&q=1&s=0503&t=Q',22),
+            ('114警三','https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=301&code=114060&q=1&s=0503&t=Q',18),
+          ]
+          def fetch(u):
+            return urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'}),timeout=45).read()
+          def text(u):
+            return '\n'.join((p.extract_text() or '') for p in PdfReader(io.BytesIO(fetch(u))).pages)
+          def clean(s):
+            ls=[]
+            for line in s.splitlines():
+              z=line.strip()
+              if not z or z.startswith('代號：') or z.startswith('頁次：'): continue
+              ls.append(z)
+            z=re.sub(r'\s+',' ',' '.join(ls)).strip()
+            z=re.sub(r'(?<=[\u3400-\u9fff])\s+(?=[\u3400-\u9fff])','',z)
+            return z
+          def parse(t,upto):
+            starts=[]; expected=1
+            for m in re.finditer(r'(?m)^(\d{1,2})\s+(?=\S)',t):
+              n=int(m.group(1))
+              if n==expected:
+                starts.append((n,m.start(),m.end())); expected+=1
+                if expected>upto+1: break
+            out=[]
+            for i,(n,s,e) in enumerate(starts):
+              if n>upto: break
+              end=starts[i+1][1] if i+1<len(starts) else len(t)
+              b=t[e:end]
+              ps=[b.find(ch) for ch in CH]
+              if any(x<0 for x in ps): continue
+              out.append((n,clean(b[:ps[0]])))
+            return out
+          for name,u,n in sources:
+            print('\n###',name)
+            try:
+              for no,q in parse(text(u),n): print(no,q)
+            except Exception as e: print('ERROR',e)
+          PY

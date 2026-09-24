@@ -49,6 +49,8 @@ button{font:inherit;cursor:pointer}
 .jump{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;margin-top:12px}
 .jbtn{min-width:0;padding:7px 0;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:11px}
 .jbtn.done{background:#eaf1fb}
+.jbtn.correctnav{background:#e8f7ee;border-color:#72bf91;color:#12663d;font-weight:900}
+.jbtn.wrongnav{background:#fff0f0;border-color:#e49999;color:#a82f2f;font-weight:900}
 .jbtn.current{outline:2px solid #2563eb}
 #quizPanel,#resultPanel{display:none}
 #quizPanel.show,#resultPanel.show{display:block}
@@ -242,7 +244,8 @@ function renderJump(){
   j.innerHTML='';
   state.order.forEach((qi,idx)=>{
     const b=document.createElement('button');
-    b.className='jbtn'+(state.answers[qi]?' done':'')+(idx===state.pos?' current':'');
+    const a=state.answers[qi];
+    b.className='jbtn'+(a?(a.correct?' correctnav':' wrongnav'):'')+(idx===state.pos?' current':'');
     b.textContent=idx+1;
     b.onclick=()=>{state.pos=idx;render();};
     j.appendChild(b);

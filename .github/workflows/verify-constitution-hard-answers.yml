@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '.github/workflows/verify-constitution-hard-answers.yml'
+      - 'constitution-rights-100-hard/questions.json'
 permissions:
   contents: read
 jobs:

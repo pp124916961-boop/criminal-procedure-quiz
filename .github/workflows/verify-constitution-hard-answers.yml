@@ -1,0 +1,57 @@
+name: Verify Constitution Hard Official Answers
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/verify-constitution-hard-answers.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pypdf
+      - name: Verify MoEx answer tables
+        run: |
+          python - <<'PY'
+          import io,json,re,urllib.request
+          from pypdf import PdfReader
+          q=json.load(open('constitution-rights-100-hard/questions.json',encoding='utf-8'))
+          groups={}
+          for x in q:
+            if 'wwwq.moex.gov.tw' in x['answer_url']:
+              groups.setdefault(x['answer_url'],[]).append(x)
+          def fetch(u):
+            req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'})
+            return urllib.request.urlopen(req,timeout=45).read()
+          def textpdf(data):
+            return '\n'.join((p.extract_text() or '') for p in PdfReader(io.BytesIO(data)).pages)
+          for url,items in groups.items():
+            txt=textpdf(fetch(url))
+            print('\nURL',url)
+            print(txt[:5000])
+            # Try common answer-table formats: question number followed by A-D,
+            # or grouped rows where answers appear after numbered columns.
+            # Normalize MoEx choice glyphs to letters if present.
+            trans={'':'A','':'B','':'C','':'D','Ａ':'A','Ｂ':'B','Ｃ':'C','Ｄ':'D'}
+            for a,b in trans.items(): txt=txt.replace(a,b)
+            compact=' '.join(txt.split())
+            parsed={}
+            # Generic nearby number/letter pair.
+            for m in re.finditer(r'(?<!\d)(\d{1,2})\s*([ABCD])(?![A-Z])',compact):
+              n=int(m.group(1))
+              if 1<=n<=100: parsed.setdefault(n,m.group(2))
+            missing=[]; bad=[]
+            for x in items:
+              n=x['q_no']
+              if n not in parsed: missing.append(n)
+              elif parsed[n]!=x['answer']: bad.append((n,x['answer'],parsed[n],x['source']))
+            print('selected',[(x['q_no'],x['answer']) for x in items])
+            print('parsed',sorted((n,a) for n,a in parsed.items() if n<=25))
+            print('missing',missing,'bad',bad)
+            if bad: raise SystemExit('official answer mismatch')
+          PY

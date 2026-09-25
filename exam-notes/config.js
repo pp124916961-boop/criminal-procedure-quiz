@@ -51,7 +51,9 @@ window.EXAM_NOTES_CONFIG = Object.freeze({
       directory: 'assets/criminal-law',
       prefix: 'page-',
       defaultExtension: 'jpg',
-      overrides: Object.freeze({\n        99: 'page-99.png'\n      })
+      overrides: Object.freeze({
+        99: 'page-99.png'
+      })
     }),
     admin: Object.freeze({
       name: '行政法',

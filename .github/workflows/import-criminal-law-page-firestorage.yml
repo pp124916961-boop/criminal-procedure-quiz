@@ -34,11 +34,9 @@ jobs:
           from pathlib import Path
           from urllib.parse import urljoin
           from playwright.sync_api import sync_playwright
-
           share = os.environ['SHARE_URL']
           name = os.environ['EXPECTED_NAME']
           out = Path('/tmp/criminal-law-page.png')
-
           with sync_playwright() as p:
               browser = p.chromium.launch(headless=True)
               page = browser.new_page(accept_downloads=True)
@@ -47,11 +45,7 @@ jobs:
                   page.wait_for_load_state('networkidle', timeout=30000)
               except Exception:
                   pass
-              candidates = [
-                  page.get_by_text(name, exact=True),
-                  page.locator(f'a:has-text("{name}")'),
-                  page.locator(f'text={name}')
-              ]
+              candidates = [page.get_by_text(name, exact=True), page.locator(f'a:has-text("{name}")'), page.locator(f'text={name}')]
               locator = None
               for c in candidates:
                   try:
@@ -91,7 +85,6 @@ jobs:
                   if not downloaded:
                       raise first_error
               browser.close()
-
           data = out.read_bytes()
           size = len(data)
           sha = hashlib.sha256(data).hexdigest()
@@ -99,7 +92,7 @@ jobs:
           print('Downloaded sha256:', sha)
           assert size == int(os.environ['EXPECTED_SIZE']), (size, os.environ['EXPECTED_SIZE'])
           assert sha == os.environ['EXPECTED_SHA256'], (sha, os.environ['EXPECTED_SHA256'])
-          assert data[:8] == b'\x89PNG\r\n\x1a\n', 'Not a PNG file'
+          assert data[:8] == bytes.fromhex('89504e470d0a1a0a'), 'Not a PNG file'
           PY
 
       - name: Add original PNG as criminal law page 99
@@ -113,32 +106,15 @@ jobs:
           from pathlib import Path
           p = Path('exam-notes/config.js')
           s = p.read_text(encoding='utf-8')
-          old = """    criminalLaw: Object.freeze({
-      name: '刑法',
-      total: 98,
-      directory: 'assets/criminal-law',
-      prefix: 'page-',
-      defaultExtension: 'jpg',
-      overrides: Object.freeze({})
-    }),"""
-          new = """    criminalLaw: Object.freeze({
-      name: '刑法',
-      total: 99,
-      directory: 'assets/criminal-law',
-      prefix: 'page-',
-      defaultExtension: 'jpg',
-      overrides: Object.freeze({
-        99: 'page-99.png'
-      })
-    }),"""
-          if old not in s:
-              if new in s:
-                  print('Criminal Law page 99 config is already present.')
-              else:
-                  raise SystemExit('Could not safely locate Criminal Law config.')
-          else:
-              s = s.replace(old, new, 1)
-              p.write_text(s, encoding='utf-8')
+          start = s.index("    criminalLaw: Object.freeze({")
+          end = s.index("    admin: Object.freeze({", start)
+          block = s[start:end]
+          if "total: 99" not in block:
+              block = block.replace("total: 98", "total: 99", 1)
+          if "99: 'page-99.png'" not in block:
+              block = block.replace("overrides: Object.freeze({})", "overrides: Object.freeze({\\n        99: 'page-99.png'\\n      })", 1)
+          s = s[:start] + block + s[end:]
+          p.write_text(s, encoding='utf-8')
           PY
 
       - name: Verify criminal law page 99

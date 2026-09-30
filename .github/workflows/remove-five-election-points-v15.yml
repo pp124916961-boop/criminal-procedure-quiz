@@ -1,0 +1,54 @@
+name: Remove Five Election Patrol Points v15
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/remove-five-election-points-v15.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch patrol data
+        run: |
+          python - <<'PY'
+          import re, base64, gzip, json
+          from pathlib import Path
+          p=Path('beigang-patrol-v14/index.html')
+          s=p.read_text(encoding='utf-8')
+          m=re.search(r'const gz="([A-Za-z0-9+/=]+)";', s)
+          if not m:
+              raise SystemExit('gz data not found')
+          data=json.loads(gzip.decompress(base64.b64decode(m.group(1))).decode('utf-8'))
+          remove={
+              '吳雅雯住宅',
+              '吳建章住宅',
+              '吳建彰住宅',
+              '蕭美文住宅',
+              '北港鎮公所',
+              '宣傳車停放處',
+              '競選宣傳車停放處（公園民有路口）',
+              '北港聯合競選宣傳車停放處',
+          }
+          before=len(data)
+          data=[x for x in data if not (x.get('r')=='選舉巡簽線' and x.get('n') in remove)]
+          after=len(data)
+          print(f'removed {before-after} items')
+          new=base64.b64encode(gzip.compress(json.dumps(data,ensure_ascii=False,separators=(',',':')).encode('utf-8'))).decode('ascii')
+          s=s[:m.start(1)]+new+s[m.end(1):]
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- beigang-patrol-v14/index.html; then
+            echo 'No changes needed'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add beigang-patrol-v14/index.html
+          git commit -m 'Remove five election patrol points from Beigang v15'
+          git push

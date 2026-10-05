@@ -1,0 +1,62 @@
+name: Add Beigang Nursery Patrol Point
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/add-beigang-nursery-20261005.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch patrol data
+        run: |
+          python - <<'PY'
+          import re, base64, gzip, json
+          from pathlib import Path
+          p=Path('beigang-patrol-v14/index.html')
+          s=p.read_text(encoding='utf-8')
+          m=re.search(r'const gz="([A-Za-z0-9+/=]+)";', s)
+          if not m:
+              raise SystemExit('gz data not found')
+          data=json.loads(gzip.decompress(base64.b64decode(m.group(1))).decode('utf-8'))
+
+          payload='S4OI8P05sJXzkPNANEKXbdcK7tHyFkiuwOaL6RpOLHA='
+          route='巡邏三線'
+          name='北港鎮鎮立托兒所'
+
+          changed=False
+          for x in data:
+              if x.get('q')==payload:
+                  if x.get('r')!=route or x.get('n')!=name:
+                      x['r']=route
+                      x['n']=name
+                      changed=True
+                  break
+          else:
+              used={x.get('i') for x in data}
+              num=1
+              while f'init-{num}' in used:
+                  num+=1
+              data.append({'i':f'init-{num}','r':route,'n':name,'q':payload})
+              changed=True
+
+          if changed:
+              new=base64.b64encode(gzip.compress(json.dumps(data,ensure_ascii=False,separators=(',',':')).encode('utf-8'))).decode('ascii')
+              s=s[:m.start(1)]+new+s[m.end(1):]
+              p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- beigang-patrol-v14/index.html; then
+            echo 'No changes needed'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add beigang-patrol-v14/index.html
+          git commit -m 'Add Beigang nursery patrol point to route 3'
+          git push

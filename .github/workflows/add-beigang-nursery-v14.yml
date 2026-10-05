@@ -1,0 +1,56 @@
+name: Add Beigang Nursery Patrol Point v14
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/add-beigang-nursery-v14.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch patrol data
+        run: |
+          python - <<'PY'
+          import re, base64, gzip, json
+          from pathlib import Path
+          p=Path('beigang-patrol-v14/index.html')
+          s=p.read_text(encoding='utf-8')
+          m=re.search(r'const gz="([A-Za-z0-9+/=]+)";',s)
+          if not m:
+              raise SystemExit('gz data not found')
+          data=json.loads(gzip.decompress(base64.b64decode(m.group(1))).decode('utf-8'))
+          payload='S4OI8P05sJXzkPNANEKXbdcK7tHyFkiuwOaL6RpOLHA='
+          route='巡邏三線'
+          name='北港鎮鎮立托兒所'
+          found=False
+          for x in data:
+              if x.get('q')==payload:
+                  x['r']=route
+                  x['n']=name
+                  found=True
+                  break
+          if not found:
+              used={x.get('i') for x in data}
+              n=1
+              while f'init-{n}' in used:
+                  n+=1
+              data.append({'i':f'init-{n}','r':route,'n':name,'q':payload})
+          new=base64.b64encode(gzip.compress(json.dumps(data,ensure_ascii=False,separators=(',',':')).encode('utf-8'))).decode('ascii')
+          s=s[:m.start(1)]+new+s[m.end(1):]
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- beigang-patrol-v14/index.html; then
+            echo 'No changes needed'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add beigang-patrol-v14/index.html
+          git commit -m 'Add Beigang nursery patrol point to v14'
+          git push

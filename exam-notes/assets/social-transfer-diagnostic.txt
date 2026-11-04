@@ -1,62 +1,121 @@
-size 149
-HTTP/1.1 200 OK
-Server: nginx
-Date: Wed, 04 Nov 2026 16:17:47 GMT
-Content-Type: application/javascript
-Content-Length: 149
-Last-Modified: Wed, 02 Sep 2026 06:18:16 GMT
-Connection: keep-alive
-ETag: "6a97bfa8-95"
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-Referrer-Policy: strict-origin-when-cross-origin
-Permissions-Policy: camera=(), microphone=(), geolocation=()
-Strict-Transport-Security: max-age=31536000
-Accept-Ranges: bytes
+CHUNK /tmp/firechunks/3794-56f19dc9e2f95fcd.js bytes 241298
 
+KEYWORD fetch( 1
+__esModule&&(Object.defineProperty(t.default,"__esModule",{value:!0}),Object.assign(t.default,t),e.exports=t.default)},1132:(e,t,r)=>{"use strict";function n(e,t){return fetch(e,t)}Object.defineProperty(t,"__esModule",{value:!0}),Object.defineProperty(t,"fetch",{enumerable:!0,get:function(){return n}}),r(9197),("function"==typeof t.default||"object"==typeof t.default&&null!==t.default)&&void 0===t.default.__esModule&&(Obje
+---
 
-prefix (self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[3080],{},_=>{_.O(0,[9041,8500,8437,5841,4899,8441,3794,7358],()=>_(_.s=4899)),_N_E=_.O()}]);
+KEYWORD share 5
+ED_BOT_UA_RE",{enumerable:!0,get:function(){return r}});let r=/[\w-]+-Google|Google-[\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight/i},4454:(e,t)=>{"use strict";Object.defineProperty(t,"_
+---
+s.org/docs/messages/ssg-fallback-true-export",el=["app","pages","components","lib","src"],eo={edge:"edge",experimentalEdge:"experimental-edge",nodejs:"nodejs"},ei=12,es={shared:"shared",reactServerComponents:"rsc",serverSideRendering:"ssr",actionBrowser:"action-browser",apiNode:"api-node",apiEdge:"api-edge",middleware:"middleware",instrument:"instrument",edgeAsset:"edge-asset",appPagesBrowser:"app-pages-browser",pagesDirB
+---
+cs/messages/ssg-fallback-true-export",el=["app","pages","components","lib","src"],eo={edge:"edge",experimentalEdge:"experimental-edge",nodejs:"nodejs"},ei=12,es={shared:"shared",reactServerComponents:"rsc",serverSideRendering:"ssr",actionBrowser:"action-browser",apiNode:"api-node",apiEdge:"api-edge",middleware:"middleware",instrument:"instrument",edgeAsset:"edge-asset",appPagesBrowser:"app-pages-browser",pagesDirBrowser:"
+---
+piNode,es.apiEdge],clientOnly:[es.serverSideRendering,es.appPagesBrowser],bundled:[es.reactServerComponents,es.actionBrowser,es.serverSideRendering,es.appPagesBrowser,es.shared,es.instrument,es.middleware],appPages:[es.reactServerComponents,es.serverSideRendering,es.appPagesBrowser,es.actionBrowser]}},ef={edgeSSREntry:"__next_edge_ssr_entry__",metadata:"__next_metadata__",metadataRoute:"__next_metadata_route__",metadataIm
+---
+ngBoundary:{let e=(l.prefetchHints&(u.PrefetchHint.SegmentHasLoadingBoundary|u.PrefetchHint.SubtreeHasLoadingBoundary))!=0?function e(t,r,n,a,l,i){let s=null===l?"inside-shared-layout":null,f=(0,o.readOrCreateSegmentCacheEntry)(t,r.segmentCacheMap,r.fetchStrategy,a);switch(f.status){case o.EntryStatus.Empty:{let e=(0,o.upgradeToPendingSegment)(f,c.FetchStrategy.LoadingBoundary);i.set(a.requestKey,e),D(r,e),"refetch"!==l&&
+---
+CHUNK /tmp/firechunks/8500-f4d7bfbe7500f274.js bytes 8632
 
-=== api/ ===
+KEYWORD download 1
+=e.currentTarget.getAttribute("target"))&&"_self"!==f||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.nativeEvent&&2===e.nativeEvent.which)||e.currentTarget.hasAttribute("download"))return;if(!(0,y.isLocalURL)(t)){o&&(e.preventDefault(),location.replace(t));return}if(e.preventDefault(),a){let e=!1;if(a({preventDefault:()=>{e=!0}}),e)return}let{dispatchNavigateAction:p}=r(156);i.default.startTransition(()=>{p(t,o?"replace":"pu
+---
+CHUNK /tmp/firechunks/8437-d65cc193dc908afa.js bytes 14254
+CHUNK /tmp/firechunks/5841-1160578ba9bb4f3e.js bytes 12263
 
-matches 0
+KEYWORD fetch( 1
+cation.hostname}function i(e){try{let t=new URL(e);return`${window.location.origin}${t.pathname}${t.search}${t.hash}`}catch{return e}}async function n(e,t,r){let a=await fetch(new URL(t,e),{...r,credentials:"include",headers:r?.body?{"Content-Type":"application/json",...r.headers}:r?.headers}),i=null;try{i=await a.json()}catch{}if(!a.ok)throw Object.assign(Error((i&&"object"==typeof i&&"detail"in i?function(e){if(null==e)r
+---
 
-=== fetch( ===
+KEYWORD share 1
+s,l,"transfer"===l?d:null,"transfer"===l?c:null,v);t=e.subdir,r=e}catch(r){var j;let t=(j=e.passwordSetupFailedMessage,(c&&j&&r?.status===503&&(r?.message||"").includes("Share password setup failed")?j:null)??r?.message);return i.forEach(e=>p(e.id,{status:"failed",errorMessage:t})),{subdir:"",succeeded:i.map(()=>!1),fileIds:i.map(()=>null),generatedPassword:null}}let $=await Promise.all(i.map(async(e,i)=>{p(e.id,{status:"
+---
 
-matches 0
+KEYWORD publicId 4
+ Map(s.parts.map(e=>[e.partNumber,e.uploadUrl]));e.parts.forEach(e=>{t.has(e.partNumber)&&(e.uploadUrl=t.get(e.partNumber))})}}async function p(e){let{entry:t,fileInfo:r,publicId:i,subdir:n,refreshEndpoint:o,requestBody:d,index:p,idempotencyKey:f,updateEntry:m,registerAbort:h,onCompleted:g}=e;if(m(t.id,{status:"uploading",progress:0}),await c(r,o,d,p,f),r.isMultipart&&r.parts&&r.partSizeBytes){let e=r.partSizeBytes,g={},y=()
+---
+ts/${i}/${n}/files/${r.fileId}/complete`,{method:"POST",...e?{body:JSON.stringify(e)}:{}})}m(t.id,{status:"completed"}),g?.(t.id)}async function f(e){let{activeEntries:t,publicId:r,subdir:a,files:i,refreshEndpoint:n,requestBody:o,idempotencyKey:s,updateEntry:l,registerAbort:d,stoppedMessage:u,onCompleted:c}=e;return Promise.all(t.map(async(e,t)=>{let f=i[t];if(!f)return!1;try{return await p({entry:e,fileInfo:f,publicId:r,sub
+---
+:s,updateEntry:l,registerAbort:d,stoppedMessage:u,onCompleted:c}=e;return Promise.all(t.map(async(e,t)=>{let f=i[t];if(!f)return!1;try{return await p({entry:e,fileInfo:f,publicId:r,subdir:a,refreshEndpoint:n,requestBody:o,index:t,idempotencyKey:s,updateEntry:l,registerAbort:d,onCompleted:c}),!0}catch(r){let t=!!(r&&"object"==typeof r&&"aborted"in r);return l(e.id,{status:"failed",errorMessage:t?u:r?.message}),!1}}))}async fu
+---
+raHeaders:l.upload.requiredHeaders});break}catch(r){let e=r?.status;if(1===t&&403===e){l=await i();continue}throw r}return l}async function y(e){let t,r,{activeEntries:i,publicId:n,folderTitle:s,storageType:l,expiresInHours:d,password:c=null,updateEntry:p,registerAbort:f,stoppedMessage:y,onCompleted:w}=e;if(!i.length)return{subdir:"",succeeded:[],fileIds:[],generatedPassword:null};i.forEach(e=>p(e.id,{status:"waiting"}));let
+---
 
-=== download ===
+KEYWORD fileId 10
+f(i=e,e&&"object"==typeof e&&"aborted"in e)throw e;g[a.partNumber]=0,y()}throw i});m(t.id,{status:"completing",progress:100}),await (0,a.gT)(`objects/${i}/${n}/files/${r.fileId}/multipart/complete`,{method:"POST",body:JSON.stringify({uploadId:r.uploadId,parts:w,...u(t.thumbnailDataUrl)})})}else if(r.uploadUrl){await s(r.uploadUrl,t.file,t.file.type||"application/octet-stream",(e,r)=>{m(t.id,{progress:e/r*100})},h),m(t.id,{
+---
+n/octet-stream",(e,r)=>{m(t.id,{progress:e/r*100})},h),m(t.id,{status:"completing",progress:100});let e=u(t.thumbnailDataUrl);await (0,a.gT)(`objects/${i}/${n}/files/${r.fileId}/complete`,{method:"POST",...e?{body:JSON.stringify(e)}:{}})}m(t.id,{status:"completed"}),g?.(t.id)}async function f(e){let{activeEntries:t,publicId:r,subdir:a,files:i,refreshEndpoint:n,requestBody:o,idempotencyKey:s,updateEntry:l,registerAbort:d,st
+---
+n,folderTitle:s,storageType:l,expiresInHours:d,password:c=null,updateEntry:p,registerAbort:f,stoppedMessage:y,onCompleted:w}=e;if(!i.length)return{subdir:"",succeeded:[],fileIds:[],generatedPassword:null};i.forEach(e=>p(e.id,{status:"waiting"}));let b=o(),v=o();try{let e=await m(n,i[0],b,s,l,"transfer"===l?d:null,"transfer"===l?c:null,v);t=e.subdir,r=e}catch(r){var j;let t=(j=e.passwordSetupFailedMessage,(c&&j&&r?.status==
+---
+essage||"").includes("Share password setup failed")?j:null)??r?.message);return i.forEach(e=>p(e.id,{status:"failed",errorMessage:t})),{subdir:"",succeeded:i.map(()=>!1),fileIds:i.map(()=>null),generatedPassword:null}}let $=await Promise.all(i.map(async(e,i)=>{p(e.id,{status:"uploading",progress:0});try{let y,j;0===i?(y=r,j=b):(j=o(),y=await h(n,t,e,j,v));let $=await g(e,n,t,y,()=>0===i?m(n,e,j,s,l,"transfer"===l?d:null,"t
+---
+null,"transfer"===l?c:null,v):h(n,t,e,j,v),p,f);p(e.id,{status:"completing",progress:100});let E=u(e.thumbnailDataUrl);return await (0,a.gT)(`objects/${n}/${t}/files/${$.fileId}/complete`,{method:"POST",...E?{body:JSON.stringify(E)}:{}}),p(e.id,{status:"completed"}),w?.(e.id),{succeeded:!0,fileId:$.fileId}}catch(r){let t=!!(r&&"object"==typeof r&&"aborted"in r);return p(e.id,{status:"failed",errorMessage:t?y:r?.message}),{
+---
+turn await (0,a.gT)(`objects/${n}/${t}/files/${$.fileId}/complete`,{method:"POST",...E?{body:JSON.stringify(E)}:{}}),p(e.id,{status:"completed"}),w?.(e.id),{succeeded:!0,fileId:$.fileId}}catch(r){let t=!!(r&&"object"==typeof r&&"aborted"in r);return p(e.id,{status:"failed",errorMessage:t?y:r?.message}),{succeeded:!1,fileId:null}}}));return{subdir:t,succeeded:$.map(e=>e.succeeded),fileIds:$.map(e=>e.fileId),generatedPasswor
+---
+t (0,a.gT)(`objects/${n}/${t}/files/${$.fileId}/complete`,{method:"POST",...E?{body:JSON.stringify(E)}:{}}),p(e.id,{status:"completed"}),w?.(e.id),{succeeded:!0,fileId:$.fileId}}catch(r){let t=!!(r&&"object"==typeof r&&"aborted"in r);return p(e.id,{status:"failed",errorMessage:t?y:r?.message}),{succeeded:!1,fileId:null}}}));return{subdir:t,succeeded:$.map(e=>e.succeeded),fileIds:$.map(e=>e.fileId),generatedPassword:r.gener
+---
+CHUNK /tmp/firechunks/4899-d89df949f2dbd5af.js bytes 35788
 
-matches 0
+KEYWORD fetch( 6
+name.match(g),l=e?e[1]:null,o=e?`/shares/${e[1]}`:a?`/objects/${a[1]}/${a[2]}`:null;if(!o)return{state:{kind:"notFound"},shareId:null,shareEndpoint:null};try{let e=await fetch(`${f}${o}/files?maxResults=1000`,{cache:"no-store"});if(404===e.status)return{state:{kind:"notFound"},shareId:l,shareEndpoint:o};if(410===e.status)return{state:{kind:"expired"},shareId:l,shareEndpoint:o};if(503===e.status)return{state:{kind:"unavaila
+---
+n eC(){if(!I||0===Y.length||ej)return;eb(!0),ey(null),eS(null),es({});let e=_(),l=x[et]||72;try{let a=null,o=null;for(let i=0;i<Y.length;i+=1){let t=Y[i],n=0===i,r=await fetch(n?`${f}/shares/${I}/visitor-uploads`:`${f}/shares/${I}/${a}/visitor-uploads`,{method:"POST",cache:"no-store",headers:{"Content-Type":"application/json","Idempotency-Key":_(),"X-Firestorage-Upload-Session":e,...U?{"X-Firestorage-Share-Password":U}:{}}
+---
+und(e/a*100):0})),()=>{},{method:d.upload.method,extraHeaders:d.upload.requiredHeaders}),es(e=>({...e,[i]:100}));let s=(0,u.Sg)(await (0,m.Z)(t).catch(()=>null)),c=await fetch(`${f}/shares/${I}/${a}/visitor-uploads/${d.fileId}/complete`,{method:"POST",cache:"no-store",headers:{"X-Firestorage-Upload-Session":e,...U?{"X-Firestorage-Share-Password":U}:{},...s?{"Content-Type":"application/json"}:{}},...s?{body:JSON.stringify(s
+---
+);$(e.shareId),D(e.shareEndpoint),t(e.state),"cushionRedirecting"===e.state.kind&&e.shareId&&eD(e.shareId,null,!1)}async function eD(l,o,i){V(!0),Z(null);try{let i=await fetch(`${f}/shares/${l}/cushion-sessions`,{method:"POST",cache:"no-store",headers:{"Content-Type":"application/json"},body:JSON.stringify({password:o})});if(401===i.status){Z(a.cushionPasswordRequired),t(e=>({kind:"cushionPassword",title:"cushionPassword"=
+---
+tor.clipboard.writeText(e),eF(!0),setTimeout(()=>eF(!1),2e3)}catch{}}async function e$(){I&&!G&&eD(I,M,!0)}async function eU(){if(B&&!em){ef(!0),eg(null);try{let e=await fetch(`${f}${B}/files?maxResults=1000`,{cache:"no-store",headers:{"X-Firestorage-Share-Password":U}});if(403===e.status||401===e.status)return void eg(a.downloadErrorAuth);if(429===e.status){let l=Number(e.headers.get("Retry-After"));eg(Number.isFinite(l)&
+---
+aceTitle:l.spaceTitle?.trim()||null}:e),eh(!0)}catch{eg(a.downloadErrorGeneric)}finally{ef(!1)}}}async function ez(e){if(B&&null===p){w(e.fileId),E(null);try{let o=await fetch(`${f}${B}/files/${e.fileId}/download`,"ready"===l.kind&&l.passwordProtected?{method:"POST",cache:"no-store",headers:{"Content-Type":"application/json"},body:JSON.stringify({password:U})}:{method:"POST",cache:"no-store"});if(410===o.status)return void
+---
 
-=== share ===
+KEYWORD download 142
+eqsH0GCP7YAAAABHRSTlMoGz1yEoX1dAAAAAlwSFlzAAABigAAAYoBM5cwWAAAAA5JREFUCJljYGZiAAFGAAAwAAdLhPPxAAAAAElFTkSuQmCC",blurWidth:8,blurHeight:1}},2778:e=>{e.exports={page:"file-download-preparing_page__e4Cke",header:"file-download-preparing_header__cM0VS",headerInner:"file-download-preparing_headerInner__OitUz",footerInner:"file-download-preparing_footerInner__xscPd",copyright:"file-download-preparing_copyright__0f_yt",logo:"file-d
+---
+BigAAAYoBM5cwWAAAAA5JREFUCJljYGZiAAFGAAAwAAdLhPPxAAAAAElFTkSuQmCC",blurWidth:8,blurHeight:1}},2778:e=>{e.exports={page:"file-download-preparing_page__e4Cke",header:"file-download-preparing_header__cM0VS",headerInner:"file-download-preparing_headerInner__OitUz",footerInner:"file-download-preparing_footerInner__xscPd",copyright:"file-download-preparing_copyright__0f_yt",logo:"file-download-preparing_logo__tbrHy",footer:"file-d
+---
+AAElFTkSuQmCC",blurWidth:8,blurHeight:1}},2778:e=>{e.exports={page:"file-download-preparing_page__e4Cke",header:"file-download-preparing_header__cM0VS",headerInner:"file-download-preparing_headerInner__OitUz",footerInner:"file-download-preparing_footerInner__xscPd",copyright:"file-download-preparing_copyright__0f_yt",logo:"file-download-preparing_logo__tbrHy",footer:"file-download-preparing_footer__80Oqg",main:"file-download
+---
+rts={page:"file-download-preparing_page__e4Cke",header:"file-download-preparing_header__cM0VS",headerInner:"file-download-preparing_headerInner__OitUz",footerInner:"file-download-preparing_footerInner__xscPd",copyright:"file-download-preparing_copyright__0f_yt",logo:"file-download-preparing_logo__tbrHy",footer:"file-download-preparing_footer__80Oqg",main:"file-download-preparing_main__OICYi",contentGrid:"file-download-prepar
+---
+"file-download-preparing_header__cM0VS",headerInner:"file-download-preparing_headerInner__OitUz",footerInner:"file-download-preparing_footerInner__xscPd",copyright:"file-download-preparing_copyright__0f_yt",logo:"file-download-preparing_logo__tbrHy",footer:"file-download-preparing_footer__80Oqg",main:"file-download-preparing_main__OICYi",contentGrid:"file-download-preparing_contentGrid__WHahH",card:"file-download-preparing_c
+---
+ner:"file-download-preparing_headerInner__OitUz",footerInner:"file-download-preparing_footerInner__xscPd",copyright:"file-download-preparing_copyright__0f_yt",logo:"file-download-preparing_logo__tbrHy",footer:"file-download-preparing_footer__80Oqg",main:"file-download-preparing_main__OICYi",contentGrid:"file-download-preparing_contentGrid__WHahH",card:"file-download-preparing_card__YgeAf",cardHeader:"file-download-preparing_
+---
+Uz",footerInner:"file-download-preparing_footerInner__xscPd",copyright:"file-download-preparing_copyright__0f_yt",logo:"file-download-preparing_logo__tbrHy",footer:"file-download-preparing_footer__80Oqg",main:"file-download-preparing_main__OICYi",contentGrid:"file-download-preparing_contentGrid__WHahH",card:"file-download-preparing_card__YgeAf",cardHeader:"file-download-preparing_cardHeader__KJEF1",titleRow:"file-download-pr
+---
 
-matches 0
+KEYWORD share 34
+ンロードする",aiDownloadCopyLabel:"コピー",aiDownloadCopied:"コピーしました",aiDownloadPrompt:e=>`このURLにあるファイルをダウンロードして下さい ${e}`},en:{topAriaLabel:"Go to firestorage.ai home",pageTitle:"Shared files",publicBadge:"Public",endedBadge:"Ended",loadingStatus:"Checking files…",notFoundTitle:"Shared file not found",notFoundText:"Please double-check the URL and try again.",expiredTitle:"Files have been removed",expiredText:"This share has passed
+---
+して下さい ${e}`},en:{topAriaLabel:"Go to firestorage.ai home",pageTitle:"Shared files",publicBadge:"Public",endedBadge:"Ended",loadingStatus:"Checking files…",notFoundTitle:"Shared file not found",notFoundText:"Please double-check the URL and try again.",expiredTitle:"Files have been removed",expiredText:"This share has passed its retention period.",errorTitle:"Couldn't load file information",errorText:"Please check your conn
+---
+Checking files…",notFoundTitle:"Shared file not found",notFoundText:"Please double-check the URL and try again.",expiredTitle:"Files have been removed",expiredText:"This share has passed its retention period.",errorTitle:"Couldn't load file information",errorText:"Please check your connection and try again.",unavailableTitle:"This file is currently unavailable",unavailableText:"We are rebuilding the service, and share URL
+---
+mation",errorText:"Please check your connection and try again.",unavailableTitle:"This file is currently unavailable",unavailableText:"We are rebuilding the service, and share URLs issued earlier are no longer valid. Please contact the sender.",retry:"Reload",summaryFiles:e=>`${e} file${1===e?"":"s"}`,summaryExpiry:"Expires",passwordLabel:"Download password",passwordPlaceholder:"Enter password",passwordUnlockButton:"Unloc
+---
+b(e,a){return"ready"===e.kind&&e.passwordProtected&&!a}async function v(){let e=window.location.pathname.match(w),a=window.location.pathname.match(g),l=e?e[1]:null,o=e?`/shares/${e[1]}`:a?`/objects/${a[1]}/${a[2]}`:null;if(!o)return{state:{kind:"notFound"},shareId:null,shareEndpoint:null};try{let e=await fetch(`${f}${o}/files?maxResults=1000`,{cache:"no-store"});if(404===e.status)return{state:{kind:"notFound"},shareId:l,s
+---
+location.pathname.match(w),a=window.location.pathname.match(g),l=e?e[1]:null,o=e?`/shares/${e[1]}`:a?`/objects/${a[1]}/${a[2]}`:null;if(!o)return{state:{kind:"notFound"},shareId:null,shareEndpoint:null};try{let e=await fetch(`${f}${o}/files?maxResults=1000`,{cache:"no-store"});if(404===e.status)return{state:{kind:"notFound"},shareId:l,shareEndpoint:o};if(410===e.status)return{state:{kind:"expired"},shareId:l,shareEndpoint
+---
+name.match(w),a=window.location.pathname.match(g),l=e?e[1]:null,o=e?`/shares/${e[1]}`:a?`/objects/${a[1]}/${a[2]}`:null;if(!o)return{state:{kind:"notFound"},shareId:null,shareEndpoint:null};try{let e=await fetch(`${f}${o}/files?maxResults=1000`,{cache:"no-store"});if(404===e.status)return{state:{kind:"notFound"},shareId:l,shareEndpoint:o};if(410===e.status)return{state:{kind:"expired"},shareId:l,shareEndpoint:o};if(503===
+---
 
-=== publicId ===
-
-matches 0
-
-=== fileId ===
-
-matches 0
-
-=== slug ===
-
-matches 0
-
-=== signed ===
-
-matches 0
-
-=== folder ===
-
-matches 0
-
-=== storage ===
-
-matches 0
-
-=== /f/ ===
-
-matches 0
+KEYWORD fileId 7
+extraHeaders:d.upload.requiredHeaders}),es(e=>({...e,[i]:100}));let s=(0,u.Sg)(await (0,m.Z)(t).catch(()=>null)),c=await fetch(`${f}/shares/${I}/${a}/visitor-uploads/${d.fileId}/complete`,{method:"POST",cache:"no-store",headers:{"X-Firestorage-Upload-Session":e,...U?{"X-Firestorage-Share-Password":U}:{},...s?{"Content-Type":"application/json"}:{}},...s?{body:JSON.stringify(s)}:{}});if(!c.ok)throw Error(`visitor-uploads com
+---
+t,title:l.title?.trim()||null,spaceTitle:l.spaceTitle?.trim()||null}:e),eh(!0)}catch{eg(a.downloadErrorGeneric)}finally{ef(!1)}}}async function ez(e){if(B&&null===p){w(e.fileId),E(null);try{let o=await fetch(`${f}${B}/files/${e.fileId}/download`,"ready"===l.kind&&l.passwordProtected?{method:"POST",cache:"no-store",headers:{"Content-Type":"application/json"},body:JSON.stringify({password:U})}:{method:"POST",cache:"no-store"
+---
+m()||null}:e),eh(!0)}catch{eg(a.downloadErrorGeneric)}finally{ef(!1)}}}async function ez(e){if(B&&null===p){w(e.fileId),E(null);try{let o=await fetch(`${f}${B}/files/${e.fileId}/download`,"ready"===l.kind&&l.passwordProtected?{method:"POST",cache:"no-store",headers:{"Content-Type":"application/json"},body:JSON.stringify({password:U})}:{method:"POST",cache:"no-store"});if(410===o.status)return void t({kind:"expired"});if(40
+---
+}),(0,o.jsx)("span",{children:a.columnStatus}),(0,o.jsx)("span",{children:a.columnAction})]}),(0,o.jsx)("ul",{className:h().fileList,children:l.files.map(i=>{let t=p===i.fileId,n=a.fileMeta(R(i.uploadedAt,e),L(i.sizeBytes));return(0,o.jsxs)("li",{className:h().fileItem,children:[(0,o.jsxs)("div",{className:h().fileInfo,children:[i.thumbnailUrl&&!eu[i.fileId]?(0,o.jsx)("span",{className:h().fileThumbnail,children:(0,o.jsx)(
+---
+leMeta(R(i.uploadedAt,e),L(i.sizeBytes));return(0,o.jsxs)("li",{className:h().fileItem,children:[(0,o.jsxs)("div",{className:h().fileInfo,children:[i.thumbnailUrl&&!eu[i.fileId]?(0,o.jsx)("span",{className:h().fileThumbnail,children:(0,o.jsx)("img",{src:i.thumbnailUrl,alt:"",loading:"lazy",onError:()=>ec(e=>({...e,[i.fileId]:!0}))})}):(0,o.jsx)("span",{className:h().fileIcon,children:(0,o.jsx)(N,{})}),(0,o.jsxs)("div",{chi
+---
+.thumbnailUrl&&!eu[i.fileId]?(0,o.jsx)("span",{className:h().fileThumbnail,children:(0,o.jsx)("img",{src:i.thumbnailUrl,alt:"",loading:"lazy",onError:()=>ec(e=>({...e,[i.fileId]:!0}))})}):(0,o.jsx)("span",{className:h().fileIcon,children:(0,o.jsx)(N,{})}),(0,o.jsxs)("div",{children:[(0,o.jsx)("button",{className:h().fileNameButton,type:"button",disabled:null!==p||l.passwordProtected&&U.length<8,onClick:()=>void ez(i),child
+---
+me:h().downloadButton,type:"button",disabled:null!==p||l.passwordProtected&&U.length<8,onClick:()=>void ez(i),children:[(0,o.jsx)(A,{}),t?a.downloading:a.download]})]},i.fileId)})})]}),l.allowVisitorUpload&&I&&(0,o.jsxs)("div",{className:h().uploadSection,children:[(0,o.jsx)("h2",{className:h().uploadSectionTitle,children:eM?a.uploadOnlySectionTitle:a.uploadSectionTitle}),(0,o.jsx)("p",{className:h().uploadSectionDesc,chil
+---

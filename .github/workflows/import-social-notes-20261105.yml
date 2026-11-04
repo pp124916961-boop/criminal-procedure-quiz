@@ -9,12 +9,20 @@ jobs:
   inspect:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Inspect temporary uploaded note images
         run: |
           set -euo pipefail
           curl -LsS -D /tmp/headers "https://firestorage.ai/ja/f/clfFuFWbpOCd" -o /tmp/fire.html
-          echo "HTML size: $(wc -c </tmp/fire.html)"
-          head -c 16000 /tmp/fire.html
-          echo
-          echo "Headers:"
-          head -30 /tmp/headers
+          mkdir -p exam-notes/assets
+          { 
+            echo '== HEADERS =='
+            head -30 /tmp/headers
+            echo '== PAGE =='
+            head -c 16000 /tmp/fire.html
+          } > exam-notes/assets/social-transfer-diagnostic.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add exam-notes/assets/social-transfer-diagnostic.txt
+          git commit -m 'Inspect image transfer page [skip ci]'
+          git push

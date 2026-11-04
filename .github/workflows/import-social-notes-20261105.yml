@@ -10,19 +10,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Inspect temporary uploaded note images
+      - name: Inspect share page client API
         run: |
           set -euo pipefail
-          curl -LsS -D /tmp/headers "https://firestorage.ai/ja/f/clfFuFWbpOCd" -o /tmp/fire.html
-          mkdir -p exam-notes/assets
-          { 
-            echo '== HEADERS =='
-            head -30 /tmp/headers
-            echo '== PAGE =='
-            head -c 16000 /tmp/fire.html
-          } > exam-notes/assets/social-transfer-diagnostic.txt
+          curl -LsS 'https://firestorage.ai/_next/static/chunks/app/%28files%29/ja/f/page-4d19ae0a4ce39d79.js' -o /tmp/page.js
+          python3 - <<'PY' > exam-notes/assets/social-transfer-diagnostic.txt
+          import re
+          s=open('/tmp/page.js').read()
+          print('size',len(s))
+          for pat in ['api/','fetch(','download','share','getShared','publicId','fileId','slug','signed','folder','storage','/f/']:
+              print('\n===',pat,'===\n')
+              occ=list(re.finditer(re.escape(pat),s,re.I))
+              print('matches',len(occ))
+              for m in occ[:20]:
+                  print(s[max(0,m.start()-260):m.end()+350])
+                  print('---')
+          PY
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add exam-notes/assets/social-transfer-diagnostic.txt
-          git commit -m 'Inspect image transfer page [skip ci]'
+          git commit -m 'Inspect temporary share download API [skip ci]'
           git push

@@ -23,10 +23,10 @@ window.EXAM_NOTES_CONFIG = Object.freeze({
     }),
     policeLaw: Object.freeze({
       name: '警察法規',
-      total: 0,
+      total: 3,
       directory: 'assets/police-law',
       prefix: 'page-',
-      defaultExtension: 'jpg',
+      defaultExtension: 'png',
       overrides: Object.freeze({})
     }),
     policeDuty: Object.freeze({

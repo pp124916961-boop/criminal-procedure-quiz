@@ -10,28 +10,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Inspect public download API of temporary note share
+      - name: Find share service API base and download response
         run: |
           set -euo pipefail
-          mkdir -p /tmp/firechunks
-          for entry in '4899-d89df949f2dbd5af' '5841-1160578ba9bb4f3e' '8437-d65cc193dc908afa' '8500-f4d7bfbe7500f274' '3794-56f19dc9e2f95fcd'; do
-            curl -LsS "https://firestorage.ai/_next/static/chunks/$entry.js" -o "/tmp/firechunks/$entry.js"
-          done
+          curl -LsS 'https://firestorage.ai/_next/static/chunks/4899-d89df949f2dbd5af.js' -o /tmp/page.js
           python3 - <<'PY' > exam-notes/assets/social-transfer-diagnostic.txt
-          import re,glob
-          for file in glob.glob('/tmp/firechunks/*'):
-              s=open(file).read()
-              print('CHUNK',file,'bytes',len(s))
-              if len(s)<500: print(s)
-              for pat in ['/api/','fetch(','download','share','publicId','fileId','slug','signed','public_id','/f/']:
-                  occ=list(re.finditer(re.escape(pat),s,re.I))
-                  if occ: print('\nKEYWORD',pat,len(occ))
-                  for m in occ[:7]:
-                      print(s[max(0,m.start()-170):m.end()+250])
-                      print('---')
+          import re
+          s=open('/tmp/page.js').read()
+          print('size',len(s))
+          for pat in ['async function v()','async function ez(e)','https://','api.firestorage','/api','const f=','var f=','let f=','NEXT_PUBLIC','downloadUrl','downloadURL','await o.json()','url:']:
+              print('\n===',pat,'===\n')
+              occ=list(re.finditer(re.escape(pat),s,re.I))
+              print('matches',len(occ))
+              for m in occ[:7]:
+                  print(s[max(0,m.start()-700):m.end()+1500])
+                  print('---')
           PY
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add exam-notes/assets/social-transfer-diagnostic.txt
-          git commit -m 'Find image share download API [skip ci]'
+          git commit -m 'Find note sharing API endpoints [skip ci]'
           git push

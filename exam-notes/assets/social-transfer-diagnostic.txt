@@ -1,4 +1,21 @@
 size 149
+HTTP/1.1 200 OK
+Server: nginx
+Date: Wed, 04 Nov 2026 16:17:47 GMT
+Content-Type: application/javascript
+Content-Length: 149
+Last-Modified: Wed, 02 Sep 2026 06:18:16 GMT
+Connection: keep-alive
+ETag: "6a97bfa8-95"
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: camera=(), microphone=(), geolocation=()
+Strict-Transport-Security: max-age=31536000
+Accept-Ranges: bytes
+
+
+prefix (self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[3080],{},_=>{_.O(0,[9041,8500,8437,5841,4899,8441,3794,7358],()=>_(_.s=4899)),_N_E=_.O()}]);
 
 === api/ ===
 
@@ -13,10 +30,6 @@ matches 0
 matches 0
 
 === share ===
-
-matches 0
-
-=== getShared ===
 
 matches 0
 

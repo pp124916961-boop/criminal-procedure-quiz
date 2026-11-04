@@ -1,0 +1,20 @@
+name: Import social order notes (diagnostic)
+on:
+  push:
+    paths:
+      - '.github/workflows/import-social-notes-20261105.yml'
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect temporary uploaded note images
+        run: |
+          set -euo pipefail
+          curl -LsS -D /tmp/headers "https://firestorage.ai/ja/f/clfFuFWbpOCd" -o /tmp/fire.html
+          echo "HTML size: $(wc -c </tmp/fire.html)"
+          head -c 16000 /tmp/fire.html
+          echo
+          echo "Headers:"
+          head -30 /tmp/headers

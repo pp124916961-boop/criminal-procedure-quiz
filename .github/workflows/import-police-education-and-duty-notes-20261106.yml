@@ -53,12 +53,12 @@ jobs:
           config=cfg_path.read_text('utf-8')
           old="      total: 3,\n      directory: 'assets/police-law',"
           new="""      total: 11,
-      chapters: Object.freeze([
-        Object.freeze({ name: '社會秩序維護法｜時效 1–3 頁', start: 1 }),
-        Object.freeze({ name: '警察教育條例｜重點 4–7 頁', start: 4 }),
-        Object.freeze({ name: '警職法與子法｜時效 8–11 頁', start: 8 })
-      ]),
-      directory: 'assets/police-law',"""
+                chapters: Object.freeze([
+                  Object.freeze({ name: '社會秩序維護法｜時效 1–3 頁', start: 1 }),
+                  Object.freeze({ name: '警察教育條例｜重點 4–7 頁', start: 4 }),
+                  Object.freeze({ name: '警職法與子法｜時效 8–11 頁', start: 8 })
+                ]),
+                directory: 'assets/police-law',"""
           if config.count(old)!=1: raise RuntimeError('Police-law config unexpectedly changed')
           cfg_path.write_text(config.replace(old,new,1),'utf-8')
 
@@ -78,21 +78,21 @@ jobs:
           html=html.replace(anchor,replacement,1)
           anchor='function storageKey(key){'
           extra="""function setupChapters(key){
- const chapters=(SUBJECTS[key]||{}).chapters||[];
- const nav=$('chapterNav'), sel=$('chapterSelect');
- nav.classList.toggle('hidden',chapters.length===0);
- sel.innerHTML='';
- chapters.forEach(c=>{const option=document.createElement('option');option.value=String(c.start);option.textContent=c.name;sel.append(option)});
- syncChapter();
-}
-function syncChapter(){
- if(!activeKey)return;
- const chapters=(SUBJECTS[activeKey]||{}).chapters||[];
- let current=null;
- chapters.forEach(c=>{if(pageNum>=c.start)current=c.start});
- if(current!==null)$('chapterSelect').value=String(current);
-}
-"""
+           const chapters=(SUBJECTS[key]||{}).chapters||[];
+           const nav=$('chapterNav'), sel=$('chapterSelect');
+           nav.classList.toggle('hidden',chapters.length===0);
+           sel.innerHTML='';
+           chapters.forEach(c=>{const option=document.createElement('option');option.value=String(c.start);option.textContent=c.name;sel.append(option)});
+           syncChapter();
+          }
+          function syncChapter(){
+           if(!activeKey)return;
+           const chapters=(SUBJECTS[activeKey]||{}).chapters||[];
+           let current=null;
+           chapters.forEach(c=>{if(pageNum>=c.start)current=c.start});
+           if(current!==null)$('chapterSelect').value=String(current);
+          }
+          """
           if html.count(anchor)!=1: raise RuntimeError('Expected JS storage function not found')
           html=html.replace(anchor,extra+anchor,1)
           anchor="slider.value=pageNum;$('prev').disabled="
@@ -114,7 +114,7 @@ function syncChapter(){
           python3 - <<'PY'
           import pathlib,re
           text=pathlib.Path('exam-notes/index.html').read_text('utf-8')
-          scripts=re.findall(r'<script(?: [^>]*)?>([\s\S]*?)</script>',text)
+          scripts=[x for x in re.findall(r'<script(?: [^>]*)?>([\s\S]*?)</script>',text) if x.strip()]
           assert len(scripts)==1,len(scripts)
           pathlib.Path('/tmp/notes-inline.js').write_text(scripts[0])
           files=sorted(pathlib.Path('exam-notes/assets/police-law').glob('page-*.png'))

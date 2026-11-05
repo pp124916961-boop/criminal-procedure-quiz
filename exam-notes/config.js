@@ -23,7 +23,12 @@ window.EXAM_NOTES_CONFIG = Object.freeze({
     }),
     policeLaw: Object.freeze({
       name: '警察法規',
-      total: 3,
+      total: 11,
+      chapters: Object.freeze([
+        Object.freeze({ name: '社會秩序維護法｜時效 1–3 頁', start: 1 }),
+        Object.freeze({ name: '警察教育條例｜重點 4–7 頁', start: 4 }),
+        Object.freeze({ name: '警職法與子法｜時效 8–11 頁', start: 8 })
+      ]),
       directory: 'assets/police-law',
       prefix: 'page-',
       defaultExtension: 'png',

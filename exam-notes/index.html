@@ -16,6 +16,11 @@
 .modal{position:fixed;inset:0;z-index:20;display:grid;place-items:center;background:#1f1b187f;padding:22px;backdrop-filter:blur(5px)}.modal-card{width:min(340px,100%);background:#fffdf9;border-radius:22px;padding:24px;text-align:center;box-shadow:0 18px 55px #42302422}.modal-card h3{margin:0 0 8px;font-size:21px}.modal-card p{margin:0 0 18px;color:var(--muted);font-size:15px;line-height:1.55}.ok{width:100%;height:44px;border:0;border-radius:13px;background:var(--ink);color:#fff;font-weight:700}
 #zoom{position:fixed;inset:0;z-index:30;background:#171615;display:grid;grid-template-rows:50px minmax(0,1fr)}.zoom-bar{display:flex;align-items:center;justify-content:space-between;padding:0 12px;color:#fff;background:#201f1e}.zoom-label{font:700 12px system-ui}.close{width:38px;height:38px;border:0;border-radius:11px;background:#353331;color:#fff;font-size:26px}.zoom-area{overflow:auto;-webkit-overflow-scrolling:touch;padding:16px;touch-action:pan-x pan-y pinch-zoom}.zoom-image{display:block;width:1000px;height:auto;max-width:none;margin:0 auto;background:#fff;box-shadow:0 8px 28px #0008}
 @media(max-height:610px){.home-card{gap:6px}.mark{width:42px;height:42px}.brand h1{font-size:28px}.subjects{gap:5px}.subject{font-size:15px;border-radius:13px}.foot{display:none}.viewer-head{height:54px}.controls{padding-top:5px;padding-bottom:calc(5px + env(safe-area-inset-bottom))}.nav{height:34px}.slide{margin-top:3px}}
+
+.chapter-nav{display:flex;align-items:center;gap:8px;margin:0 0 7px}
+.chapter-nav label{white-space:nowrap;font-size:12px;color:var(--muted);font-weight:700}
+.chapter-nav select{flex:1;min-width:0;max-width:100%;height:33px;background:#fffdf9;color:var(--ink);border:1px solid var(--border);border-radius:9px;font:600 12px/1.3 -apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC",sans-serif;padding:2px 7px}
+
 </style>
 </head>
 <body>
@@ -27,7 +32,7 @@
 <main id="viewer" class="hidden">
 <header class="viewer-head"><button id="back" class="icon" aria-label="返回首頁">‹</button><div class="viewer-title"><p>考試筆記</p><h2 id="viewerSubject">筆記</h2></div><button id="zoomBtn" class="icon" aria-label="放大閱讀">＋</button></header>
 <section class="stage" id="stage"><img id="pageImage" class="page-image" alt="筆記第 1 頁" draggable="false"><div id="loadMsg" class="load-msg hidden">載入原稿中…</div></section>
-<section class="controls"><div class="pager"><button id="prev" class="nav">上一頁</button><div class="counter"><strong id="cur">1</strong> / <span id="totalCount">1</span></div><button id="next" class="nav">下一頁</button></div><div class="slide"><span class="edge">1</span><input id="pageSlider" type="range" min="1" max="1" value="1" step="1" aria-label="快速跳頁"><span class="edge" id="lastPage">1</span></div></section>
+<section class="controls"><div id="chapterNav" class="chapter-nav hidden"><label for="chapterSelect">筆記單元</label><select id="chapterSelect" aria-label="跳至筆記單元"></select></div><div class="pager"><button id="prev" class="nav">上一頁</button><div class="counter"><strong id="cur">1</strong> / <span id="totalCount">1</span></div><button id="next" class="nav">下一頁</button></div><div class="slide"><span class="edge">1</span><input id="pageSlider" type="range" min="1" max="1" value="1" step="1" aria-label="快速跳頁"><span class="edge" id="lastPage">1</span></div></section>
 </main>
 <div id="empty" class="modal hidden"><div class="modal-card"><h3 id="emptyTitle">筆記尚未上傳</h3><p>這個科目的筆記之後上傳後，可以直接接進來。</p><button id="emptyClose" class="ok">知道了</button></div></div>
 <div id="zoom" class="hidden"><div class="zoom-bar"><span id="zoomLabel" class="zoom-label">第 1 頁</span><button id="zoomClose" class="close">×</button></div><div class="zoom-area" id="zoomArea"><img id="zoomImage" class="zoom-image" alt="放大筆記"></div></div>
@@ -45,17 +50,32 @@ function renderSubjects(){
  const nav=$('subjectsNav');nav.innerHTML='';
  ORDER.forEach(key=>{const cfg=SUBJECTS[key];if(!cfg)return;const total=totalFor(key),b=document.createElement('button');b.className='subject'+(total>0?' ready':'');b.dataset.key=key;b.append(document.createTextNode(cfg.name||key));if(total>0){const tag=document.createElement('span');tag.className='tag';tag.textContent=`${total} 頁`;b.append(tag)}const arrow=document.createElement('span');arrow.className='arrow';arrow.textContent='›';b.append(arrow);b.addEventListener('click',()=>openSubject(key));nav.append(b)})
 }
+function setupChapters(key){
+ const chapters=(SUBJECTS[key]||{}).chapters||[];
+ const nav=$('chapterNav'), sel=$('chapterSelect');
+ nav.classList.toggle('hidden',chapters.length===0);
+ sel.innerHTML='';
+ chapters.forEach(c=>{const option=document.createElement('option');option.value=String(c.start);option.textContent=c.name;sel.append(option)});
+ syncChapter();
+}
+function syncChapter(){
+ if(!activeKey)return;
+ const chapters=(SUBJECTS[activeKey]||{}).chapters||[];
+ let current=null;
+ chapters.forEach(c=>{if(pageNum>=c.start)current=c.start});
+ if(current!==null)$('chapterSelect').value=String(current);
+}
 function storageKey(key){return `exam-notes:${key}:page`}
 function pumpPreloads(){while(preloadActive<2&&preloadQueue.length){const job=preloadQueue.shift(),id=job.id;preloadQueued.delete(id);if(preloadDone.has(id)||preloadActiveIds.has(id))continue;preloadActive++;preloadActiveIds.add(id);const im=new Image();im.decoding='async';const finish=()=>{preloadDone.add(id);preloadActiveIds.delete(id);preloadActive--;pumpPreloads()};im.onload=finish;im.onerror=finish;im.src=source(job.key,job.n)}}
 function queuePreload(key,n){const total=totalFor(key);if(n<1||n>total)return;const id=`${key}:${n}`;if(preloadDone.has(id)||preloadQueued.has(id)||preloadActiveIds.has(id))return;preloadQueued.add(id);preloadQueue.push({key,n,id});pumpPreloads()}
 function preloadNearby(key,center){preloadQueue.length=0;preloadQueued.clear();[1,-1,2,-2,3,-3].forEach(d=>queuePreload(key,center+d))}
 async function pageSrc(key,n){return source(key,n)}
 function applySubjectUI(key){const cfg=SUBJECTS[key],total=totalFor(key);$('viewerSubject').textContent=cfg.name;$('totalCount').textContent=total;$('lastPage').textContent=total;slider.max=total;slider.value=pageNum;$('cur').textContent=pageNum;$('zoomLabel').textContent=`第 ${pageNum} / ${total} 頁`}
-async function showPage(n){if(!activeKey)return;const key=activeKey,cfg=SUBJECTS[key],total=totalFor(key);pageNum=Math.min(total,Math.max(1,Number(n)||1));const token=++loadToken;$('cur').textContent=pageNum;slider.value=pageNum;$('prev').disabled=pageNum===1;$('next').disabled=pageNum===total;$('zoomLabel').textContent=`第 ${pageNum} / ${total} 頁`;localStorage.setItem(storageKey(key),pageNum);img.classList.add('loading');$('loadMsg').textContent='載入原稿中…';$('loadMsg').classList.remove('hidden');try{const src=await pageSrc(key,pageNum);if(token!==loadToken||key!==activeKey)return;img.src=src;img.alt=`${cfg.name}筆記第 ${pageNum} 頁`;await img.decode().catch(()=>{});$('loadMsg').classList.add('hidden');if(token===loadToken&&key===activeKey)preloadNearby(key,pageNum)}catch(e){if(token!==loadToken||key!==activeKey)return;$('loadMsg').textContent='這一頁載入失敗，請重新整理後再試。'}finally{if(token===loadToken&&key===activeKey)img.classList.remove('loading')}}
-function openSubject(key){const cfg=SUBJECTS[key],total=totalFor(key);if(!cfg)return;if(total<=0){$('emptyTitle').textContent=(cfg.name||key)+'筆記尚未上傳';$('empty').classList.remove('hidden');return}activeKey=key;pageNum=Math.min(total,Math.max(1,Number(localStorage.getItem(storageKey(key)))||1));applySubjectUI(key);home.classList.add('hidden');viewer.classList.remove('hidden');showPage(pageNum)}
+async function showPage(n){if(!activeKey)return;const key=activeKey,cfg=SUBJECTS[key],total=totalFor(key);pageNum=Math.min(total,Math.max(1,Number(n)||1));const token=++loadToken;$('cur').textContent=pageNum;slider.value=pageNum;syncChapter();$('prev').disabled=pageNum===1;$('next').disabled=pageNum===total;$('zoomLabel').textContent=`第 ${pageNum} / ${total} 頁`;localStorage.setItem(storageKey(key),pageNum);img.classList.add('loading');$('loadMsg').textContent='載入原稿中…';$('loadMsg').classList.remove('hidden');try{const src=await pageSrc(key,pageNum);if(token!==loadToken||key!==activeKey)return;img.src=src;img.alt=`${cfg.name}筆記第 ${pageNum} 頁`;await img.decode().catch(()=>{});$('loadMsg').classList.add('hidden');if(token===loadToken&&key===activeKey)preloadNearby(key,pageNum)}catch(e){if(token!==loadToken||key!==activeKey)return;$('loadMsg').textContent='這一頁載入失敗，請重新整理後再試。'}finally{if(token===loadToken&&key===activeKey)img.classList.remove('loading')}}
+function openSubject(key){const cfg=SUBJECTS[key],total=totalFor(key);if(!cfg)return;if(total<=0){$('emptyTitle').textContent=(cfg.name||key)+'筆記尚未上傳';$('empty').classList.remove('hidden');return}activeKey=key;pageNum=Math.min(total,Math.max(1,Number(localStorage.getItem(storageKey(key)))||1));applySubjectUI(key);setupChapters(key);home.classList.add('hidden');viewer.classList.remove('hidden');showPage(pageNum)}
 function showHome(){viewer.classList.add('hidden');home.classList.remove('hidden');$('zoom').classList.add('hidden')}
 async function openZoom(){if(!activeKey)return;const key=activeKey,cfg=SUBJECTS[key];try{zimg.src=await pageSrc(key,pageNum);zimg.alt=`${cfg.name}筆記第 ${pageNum} 頁放大圖`;$('zoom').classList.remove('hidden');$('zoomArea').scrollTo({top:0,left:0})}catch(_){}}
-renderSubjects();$('back').addEventListener('click',showHome);$('prev').addEventListener('click',()=>showPage(pageNum-1));$('next').addEventListener('click',()=>showPage(pageNum+1));slider.addEventListener('input',e=>{const preview=Math.min(totalFor(activeKey),Math.max(1,Number(e.target.value)||1));$('cur').textContent=preview});slider.addEventListener('change',e=>showPage(e.target.value));$('zoomBtn').addEventListener('click',openZoom);$('zoomClose').addEventListener('click',()=>$('zoom').classList.add('hidden'));$('emptyClose').addEventListener('click',()=>$('empty').classList.add('hidden'));
+$('chapterSelect').addEventListener('change',e=>showPage(e.target.value));renderSubjects();$('back').addEventListener('click',showHome);$('prev').addEventListener('click',()=>showPage(pageNum-1));$('next').addEventListener('click',()=>showPage(pageNum+1));slider.addEventListener('input',e=>{const preview=Math.min(totalFor(activeKey),Math.max(1,Number(e.target.value)||1));$('cur').textContent=preview});slider.addEventListener('change',e=>showPage(e.target.value));$('zoomBtn').addEventListener('click',openZoom);$('zoomClose').addEventListener('click',()=>$('zoom').classList.add('hidden'));$('emptyClose').addEventListener('click',()=>$('empty').classList.add('hidden'));
 function resetTouch(){touchX=null;touchY=null;touchMulti=false}
 stage.addEventListener('touchstart',e=>{if(e.touches.length!==1){touchMulti=true;touchX=null;touchY=null;return}touchMulti=false;touchX=e.touches[0].clientX;touchY=e.touches[0].clientY},{passive:true});
 stage.addEventListener('touchmove',e=>{if(e.touches.length!==1||(typeof e.scale==='number'&&e.scale!==1)){touchMulti=true;touchX=null;touchY=null}},{passive:true});

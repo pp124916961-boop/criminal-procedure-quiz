@@ -52,7 +52,7 @@ window.EXAM_NOTES_CONFIG = Object.freeze({
     }),
     criminalLaw: Object.freeze({
       name: '刑法',
-      total: 99,
+      total: 100,
       directory: 'assets/criminal-law',
       prefix: 'page-',
       defaultExtension: 'jpg',

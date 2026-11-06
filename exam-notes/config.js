@@ -62,7 +62,7 @@ window.EXAM_NOTES_CONFIG = Object.freeze({
     }),
     admin: Object.freeze({
       name: '行政法',
-      total: 52,
+      total: 54,
       directory: 'assets/admin-pages',
       prefix: 'page-',
       defaultExtension: 'jpg',

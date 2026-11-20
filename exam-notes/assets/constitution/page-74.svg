@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 1754" width="1240" height="1754" role="img" aria-label="憲法考試口訣筆記第4頁 總統去留 × 修憲門檻">
+<style>
+text{font-family:'YuanSui','芫荽','PingFang TC','Noto Sans CJK TC','Microsoft JhengHei',sans-serif;letter-spacing:.2px}
+.head{fill:#282928;font-size:52px;font-weight:800}
+.sub{fill:#746a65;font-size:25px;font-weight:500}
+.cardTitle{font-size:36px;font-weight:850;fill:#713e43}
+.ref{font-size:21px;fill:#9a706b}
+</style>
+<rect width="1240" height="1754" fill="#faf4ec"/>
+<rect x="34" y="34" width="1172" height="1686" fill="none" stroke="#e5d7c7" stroke-width="2"/>
+<rect x="74" y="62" width="354" height="50" rx="16" fill="#f1dad7"/>
+<text x="97" y="97" font-size="25" font-weight="800" fill="#94565c">憲法國考必備口訣 · 現行法</text>
+<text x="74" y="172" class="head">總統去留 × 修憲門檻</text>
+<text x="76" y="212" class="sub">分母最愛考；分清提議、同意、人民投票</text>
+<rect x="74" y="250" width="1092" height="429" rx="23" fill="#fffdf9" stroke="#e8d8c9" stroke-width="2"/><rect x="100" y="275" width="206" height="52" rx="18" fill="#f3d8d6"/><text x="125" y="312" class="cardTitle">彈二罷四</text><text x="117" y="380" fill="#34302f" font-size="29" font-weight="600">彈劾：全體立委 1/2 以上提議，</text><text x="117" y="432" fill="#34302f" font-size="29" font-weight="500">　　　 全體立委 2/3 以上決議。</text><text x="117" y="484" fill="#34302f" font-size="29" font-weight="500">罷免：全體立委 1/4 提議，</text><text x="117" y="536" fill="#34302f" font-size="29" font-weight="500">　　　 全體立委 2/3 同意提出。</text><text x="117" y="588" fill="#34302f" font-size="29" font-weight="500">彈劾送憲法法庭；罷免交人民投票。</text><text x="119" y="654" class="ref">增修條文 §4、§2</text><rect x="74" y="705" width="1092" height="377" rx="23" fill="#fffdf9" stroke="#e8d8c9" stroke-width="2"/><rect x="100" y="730" width="278" height="52" rx="18" fill="#f3d8d6"/><text x="125" y="767" class="cardTitle">罷免 123</text><text x="117" y="835" fill="#34302f" font-size="29" font-weight="600">① 立委 1/4 提議　② 立委 2/3 同意</text><text x="117" y="887" fill="#34302f" font-size="29" font-weight="500">③ 選舉人總額「過半數」投票，</text><text x="117" y="939" fill="#34302f" font-size="29" font-weight="500">　 且「有效票過半數」同意，始通過。</text><text x="117" y="991" fill="#a44746" font-size="29" font-weight="500">注意兩個「過半」分母不同。</text><text x="119" y="1057" class="ref">增修條文 §2</text><rect x="74" y="1108" width="1092" height="481" rx="23" fill="#fffdf9" stroke="#e8d8c9" stroke-width="2"/><rect x="100" y="1133" width="134" height="52" rx="18" fill="#f3d8d6"/><text x="125" y="1170" class="cardTitle">修四</text><text x="117" y="1238" fill="#34302f" font-size="29" font-weight="600">全體立委 1/4 提議。</text><text x="117" y="1290" fill="#34302f" font-size="29" font-weight="500">全體立委 3/4 出席。</text><text x="117" y="1342" fill="#34302f" font-size="29" font-weight="500">出席立委 3/4 決議。</text><text x="117" y="1394" fill="#34302f" font-size="29" font-weight="500">公告半年後，由人民投票複決。</text><text x="117" y="1446" fill="#34302f" font-size="29" font-weight="500">有效同意票須「超過選舉人總額 1/2」。</text><text x="117" y="1498" fill="#34302f" font-size="29" font-weight="500">領土變更亦採相同門檻。</text><text x="119" y="1564" class="ref">增修條文 §12；領土變更見 §4</text>
+<line x1="74" y1="1684" x2="1166" y2="1684" stroke="#decfc1" stroke-width="2"/>
+<text x="76" y="1712" font-size="18" fill="#85746b">依憲法、增修條文及相關現行法規整理｜115.11.20 查核</text>
+<text x="1143" y="1712" font-size="20" fill="#8d6c67" text-anchor="end">4 / 6</text>
+</svg>

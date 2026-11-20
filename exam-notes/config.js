@@ -15,11 +15,22 @@ window.EXAM_NOTES_CONFIG = Object.freeze({
   subjects: Object.freeze({
     constitution: Object.freeze({
       name: '憲法',
-      total: 70,
+      total: 76,
+      chapters: Object.freeze([
+        Object.freeze({ name: '原有憲法筆記｜第 1–70 頁', start: 1 }),
+        Object.freeze({ name: '憲法國考口訣｜第 71–76 頁', start: 71 })
+      ]),
       directory: 'assets/constitution',
       prefix: 'page-',
       defaultExtension: 'jpg',
-      overrides: Object.freeze({})
+      overrides: Object.freeze({
+        71: 'page-71.svg',
+        72: 'page-72.svg',
+        73: 'page-73.svg',
+        74: 'page-74.svg',
+        75: 'page-75.svg',
+        76: 'page-76.svg'
+      })
     }),
     policeLaw: Object.freeze({
       name: '警察法規',

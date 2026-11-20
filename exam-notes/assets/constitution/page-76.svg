@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 1754" width="1240" height="1754" role="img" aria-label="憲法考試口訣筆記第6頁 人民基本權｜條號與審查">
+<style>
+text{font-family:'YuanSui','芫荽','PingFang TC','Noto Sans CJK TC','Microsoft JhengHei',sans-serif;letter-spacing:.2px}
+.head{fill:#282928;font-size:52px;font-weight:800}
+.sub{fill:#746a65;font-size:25px;font-weight:500}
+.cardTitle{font-size:36px;font-weight:850;fill:#713e43}
+.ref{font-size:21px;fill:#9a706b}
+</style>
+<rect width="1240" height="1754" fill="#faf4ec"/>
+<rect x="34" y="34" width="1172" height="1686" fill="none" stroke="#e5d7c7" stroke-width="2"/>
+<rect x="74" y="62" width="354" height="50" rx="16" fill="#f1dad7"/>
+<text x="97" y="97" font-size="25" font-weight="800" fill="#94565c">憲法國考必備口訣 · 現行法</text>
+<text x="74" y="172" class="head">人民基本權｜條號與審查</text>
+<text x="76" y="212" class="sub">條文記憶＋比例原則的選擇題關鍵</text>
+<rect x="74" y="250" width="1092" height="481" rx="23" fill="#fffdf9" stroke="#e8d8c9" stroke-width="2"/><rect x="100" y="275" width="278" height="52" rx="18" fill="#f3d8d6"/><text x="125" y="312" class="cardTitle">深居終極岩洞</text><text x="117" y="380" fill="#34302f" font-size="29" font-weight="600">深（身）＝人身自由 §8</text><text x="117" y="432" fill="#34302f" font-size="29" font-weight="500">居＝居住、遷徙自由 §10</text><text x="117" y="484" fill="#34302f" font-size="29" font-weight="500">終（宗）＝宗教信仰自由 §13</text><text x="117" y="536" fill="#34302f" font-size="29" font-weight="500">極（集）＝集會、結社自由 §14</text><text x="117" y="588" fill="#34302f" font-size="29" font-weight="500">岩（言）＝言論等表意自由 §11</text><text x="117" y="640" fill="#34302f" font-size="29" font-weight="500">洞（通）＝秘密通訊自由 §12</text><text x="119" y="706" class="ref">憲法 §8、§10～§14</text><rect x="74" y="757" width="1092" height="429" rx="23" fill="#fffdf9" stroke="#e8d8c9" stroke-width="2"/><rect x="100" y="782" width="206" height="52" rx="18" fill="#f3d8d6"/><text x="125" y="819" class="cardTitle">防避維增</text><text x="117" y="887" fill="#34302f" font-size="29" font-weight="600">防＝防止妨礙他人自由</text><text x="117" y="939" fill="#34302f" font-size="29" font-weight="500">避＝避免緊急危難</text><text x="117" y="991" fill="#34302f" font-size="29" font-weight="500">維＝維持社會秩序</text><text x="117" y="1043" fill="#34302f" font-size="29" font-weight="500">增＝增進公共利益</text><text x="117" y="1095" fill="#34302f" font-size="29" font-weight="500">限制自由權利，尚須符合法律保留等要求。</text><text x="119" y="1161" class="ref">憲法 §23</text><rect x="74" y="1212" width="1092" height="377" rx="23" fill="#fffdf9" stroke="#e8d8c9" stroke-width="2"/><rect x="100" y="1237" width="170" height="52" rx="18" fill="#f3d8d6"/><text x="125" y="1274" class="cardTitle">適必衡</text><text x="117" y="1342" fill="#34302f" font-size="29" font-weight="600">適當性：手段能否促進目的達成？</text><text x="117" y="1394" fill="#34302f" font-size="29" font-weight="500">必要性：有無同樣有效、侵害較小手段？</text><text x="117" y="1446" fill="#34302f" font-size="29" font-weight="500">衡量性：公益與權利侵害是否顯失均衡？</text><text x="117" y="1498" fill="#a44746" font-size="29" font-weight="500">選擇題：『最小侵害』常在考必要性。</text><text x="119" y="1564" class="ref">比例原則三階段（憲法 §23）</text>
+<line x1="74" y1="1684" x2="1166" y2="1684" stroke="#decfc1" stroke-width="2"/>
+<text x="76" y="1712" font-size="18" fill="#85746b">依憲法、增修條文及相關現行法規整理｜115.11.20 查核</text>
+<text x="1143" y="1712" font-size="20" fill="#8d6c67" text-anchor="end">6 / 6</text>
+</svg>

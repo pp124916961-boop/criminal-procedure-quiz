@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 1754" width="1240" height="1754" role="img" aria-label="憲法考試口訣筆記第1頁 五院職權 ①｜考試院">
+<style>
+text{font-family:'YuanSui','芫荽','PingFang TC','Noto Sans CJK TC','Microsoft JhengHei',sans-serif;letter-spacing:.2px}
+.head{fill:#282928;font-size:52px;font-weight:800}
+.sub{fill:#746a65;font-size:25px;font-weight:500}
+.cardTitle{font-size:36px;font-weight:850;fill:#713e43}
+.ref{font-size:21px;fill:#9a706b}
+</style>
+<rect width="1240" height="1754" fill="#faf4ec"/>
+<rect x="34" y="34" width="1172" height="1686" fill="none" stroke="#e5d7c7" stroke-width="2"/>
+<rect x="74" y="62" width="354" height="50" rx="16" fill="#f1dad7"/>
+<text x="97" y="97" font-size="25" font-weight="800" fill="#94565c">憲法國考必備口訣 · 現行法</text>
+<text x="74" y="172" class="head">五院職權 ①｜考試院</text>
+<text x="76" y="212" class="sub">兩句口訣，分清「全面掌理」與「僅法制」</text>
+<rect x="74" y="250" width="1092" height="377" rx="23" fill="#fffdf9" stroke="#e8d8c9" stroke-width="2"/><rect x="100" y="275" width="206" height="52" rx="18" fill="#f3d8d6"/><text x="125" y="312" class="cardTitle">包袱全退</text><text x="117" y="380" fill="#34302f" font-size="29" font-weight="600">包（保）＝ 保障　　袱（撫）＝ 撫卹</text><text x="117" y="432" fill="#34302f" font-size="29" font-weight="500">全（銓）＝ 銓敘　　退＝退休</text><text x="117" y="484" fill="#34302f" font-size="29" font-weight="500">這四項是考試院掌理的公務人員事項。</text><text x="117" y="536" fill="#34302f" font-size="29" font-weight="500">再加上「考試」：§6 第1項第1款。</text><text x="119" y="602" class="ref">增修條文 §6 第1項第2款</text><rect x="74" y="653" width="1092" height="377" rx="23" fill="#fffdf9" stroke="#e8d8c9" stroke-width="2"/><rect x="100" y="678" width="242" height="52" rx="18" fill="#f3d8d6"/><text x="125" y="715" class="cardTitle">嫩烤即鮮包</text><text x="117" y="783" fill="#34302f" font-size="29" font-weight="600">嫩（任）＝ 任免　　烤（考）＝ 考績</text><text x="117" y="835" fill="#34302f" font-size="29" font-weight="500">即（級）＝ 級俸　　鮮（陞）＝ 陞遷</text><text x="117" y="887" fill="#34302f" font-size="29" font-weight="500">包（褒）＝ 褒獎</text><text x="117" y="939" fill="#a44746" font-size="29" font-weight="500">上述五項，考試院僅掌理「法制事項」。</text><text x="119" y="1005" class="ref">增修條文 §6 第1項第3款</text><rect x="74" y="1056" width="1092" height="325" rx="23" fill="#fffdf9" stroke="#e8d8c9" stroke-width="2"/><rect x="100" y="1081" width="206" height="52" rx="18" fill="#f3d8d6"/><text x="125" y="1118" class="cardTitle">秒殺陷阱</text><text x="117" y="1186" fill="#34302f" font-size="29" font-weight="600">考試院不是所有公務人事事項都負責執行。</text><text x="117" y="1238" fill="#a44746" font-size="29" font-weight="500">現行考試委員 7～9 人；任期 4 年。</text><text x="117" y="1290" fill="#a44746" font-size="29" font-weight="500">舊題的「19 人、6 年」不可當成現行法。</text><text x="119" y="1356" class="ref">考試院組織法 §3</text>
+<line x1="74" y1="1684" x2="1166" y2="1684" stroke="#decfc1" stroke-width="2"/>
+<text x="76" y="1712" font-size="18" fill="#85746b">依憲法、增修條文及相關現行法規整理｜115.11.20 查核</text>
+<text x="1143" y="1712" font-size="20" fill="#8d6c67" text-anchor="end">1 / 6</text>
+</svg>

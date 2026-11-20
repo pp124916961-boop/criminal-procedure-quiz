@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 1754" width="1240" height="1754" role="img" aria-label="憲法考試口訣筆記第2頁 五院職權 ②｜人事與監察">
+<style>
+text{font-family:'YuanSui','芫荽','PingFang TC','Noto Sans CJK TC','Microsoft JhengHei',sans-serif;letter-spacing:.2px}
+.head{fill:#282928;font-size:52px;font-weight:800}
+.sub{fill:#746a65;font-size:25px;font-weight:500}
+.cardTitle{font-size:36px;font-weight:850;fill:#713e43}
+.ref{font-size:21px;fill:#9a706b}
+</style>
+<rect width="1240" height="1754" fill="#faf4ec"/>
+<rect x="34" y="34" width="1172" height="1686" fill="none" stroke="#e5d7c7" stroke-width="2"/>
+<rect x="74" y="62" width="354" height="50" rx="16" fill="#f1dad7"/>
+<text x="97" y="97" font-size="25" font-weight="800" fill="#94565c">憲法國考必備口訣 · 現行法</text>
+<text x="74" y="172" class="head">五院職權 ②｜人事與監察</text>
+<text x="76" y="212" class="sub">職權主體與總統提名同意權</text>
+<rect x="74" y="250" width="1092" height="481" rx="23" fill="#fffdf9" stroke="#e8d8c9" stroke-width="2"/><rect x="100" y="275" width="242" height="52" rx="18" fill="#f3d8d6"/><text x="125" y="312" class="cardTitle">思考兼審查</text><text x="117" y="380" fill="#34302f" font-size="29" font-weight="600">思（司）＝ 大法官（含司法院正、副院長）</text><text x="117" y="432" fill="#34302f" font-size="29" font-weight="500">考＝考試院正、副院長及考試委員</text><text x="117" y="484" fill="#34302f" font-size="29" font-weight="500">兼（監）＝監察院正、副院長及監察委員</text><text x="117" y="536" fill="#34302f" font-size="29" font-weight="500">審＝審計長　　查（察）＝檢察總長</text><text x="117" y="588" fill="#34302f" font-size="29" font-weight="500">共通：總統提名、立法院同意任命。</text><text x="117" y="640" fill="#a44746" font-size="29" font-weight="500">檢察總長依《法院組織法》，非增修條文。</text><text x="119" y="706" class="ref">增修 §5～7／憲法 §104／法院組織法 §66</text><rect x="74" y="757" width="1092" height="377" rx="23" fill="#fffdf9" stroke="#e8d8c9" stroke-width="2"/><rect x="100" y="782" width="206" height="52" rx="18" fill="#f3d8d6"/><text x="125" y="819" class="cardTitle">正是舉人</text><text x="117" y="887" fill="#34302f" font-size="29" font-weight="600">正＝糾正：針對行政院及有關部會等機關</text><text x="117" y="939" fill="#34302f" font-size="29" font-weight="500">舉＝糾舉：針對違法或失職的公務人員</text><text x="117" y="991" fill="#34302f" font-size="29" font-weight="500">另有「彈劾」：亦以特定人員為對象。</text><text x="117" y="1043" fill="#34302f" font-size="29" font-weight="500">糾正、糾舉、彈劾，程序與效果不同。</text><text x="119" y="1109" class="ref">憲法 §97；增修條文 §7</text><rect x="74" y="1160" width="1092" height="377" rx="23" fill="#fffdf9" stroke="#e8d8c9" stroke-width="2"/><rect x="100" y="1185" width="170" height="52" rx="18" fill="#f3d8d6"/><text x="125" y="1222" class="cardTitle">撕烤煎</text><text x="117" y="1290" fill="#34302f" font-size="29" font-weight="600">撕（司）＝法官：依法獨立「審判」</text><text x="117" y="1342" fill="#34302f" font-size="29" font-weight="500">烤（考）＝考試委員：獨立行使職權</text><text x="117" y="1394" fill="#34302f" font-size="29" font-weight="500">煎（監）＝監察委員：獨立行使職權</text><text x="117" y="1446" fill="#a44746" font-size="29" font-weight="500">注意：法官與兩類委員的條文用語不同。</text><text x="119" y="1512" class="ref">憲法 §80、§88；增修條文 §7</text>
+<line x1="74" y1="1684" x2="1166" y2="1684" stroke="#decfc1" stroke-width="2"/>
+<text x="76" y="1712" font-size="18" fill="#85746b">依憲法、增修條文及相關現行法規整理｜115.11.20 查核</text>
+<text x="1143" y="1712" font-size="20" fill="#8d6c67" text-anchor="end">2 / 6</text>
+</svg>

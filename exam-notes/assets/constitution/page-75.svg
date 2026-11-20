@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 1754" width="1240" height="1754" role="img" aria-label="憲法考試口訣筆記第5頁 必背數字｜人數 × 任期">
+<style>
+text{font-family:'YuanSui','芫荽','PingFang TC','Noto Sans CJK TC','Microsoft JhengHei',sans-serif;letter-spacing:.2px}
+.head{fill:#282928;font-size:52px;font-weight:800}
+.sub{fill:#746a65;font-size:25px;font-weight:500}
+.cardTitle{font-size:36px;font-weight:850;fill:#713e43}
+.ref{font-size:21px;fill:#9a706b}
+</style>
+<rect width="1240" height="1754" fill="#faf4ec"/>
+<rect x="34" y="34" width="1172" height="1686" fill="none" stroke="#e5d7c7" stroke-width="2"/>
+<rect x="74" y="62" width="354" height="50" rx="16" fill="#f1dad7"/>
+<text x="97" y="97" font-size="25" font-weight="800" fill="#94565c">憲法國考必備口訣 · 現行法</text>
+<text x="74" y="172" class="head">必背數字｜人數 × 任期</text>
+<text x="76" y="212" class="sub">立院、司院、考院、監院一次比對</text>
+<rect x="74" y="250" width="1092" height="377" rx="23" fill="#fffdf9" stroke="#e8d8c9" stroke-width="2"/><rect x="100" y="275" width="386" height="52" rx="18" fill="#f3d8d6"/><text x="125" y="312" class="cardTitle">一一三・七三六三四</text><text x="117" y="380" fill="#34302f" font-size="29" font-weight="600">立法委員總數 113 人，任期 4 年。</text><text x="117" y="432" fill="#34302f" font-size="29" font-weight="500">區域 73 ＋ 原住民 6 ＋ 不分區及僑民 34。</text><text x="117" y="484" fill="#34302f" font-size="29" font-weight="500">原住民：平地 3、山地 3。</text><text x="117" y="536" fill="#34302f" font-size="29" font-weight="500">不分區：政黨票 5% 門檻；婦女至少 1/2。</text><text x="119" y="602" class="ref">增修條文 §4</text><rect x="74" y="653" width="1092" height="429" rx="23" fill="#fffdf9" stroke="#e8d8c9" stroke-width="2"/><rect x="100" y="678" width="530" height="52" rx="18" fill="#f3d8d6"/><text x="125" y="715" class="cardTitle">十五八・二十九六・考七九四</text><text x="117" y="783" fill="#34302f" font-size="29" font-weight="600">大法官 15 人；任期 8 年，個別計算。</text><text x="117" y="835" fill="#34302f" font-size="29" font-weight="500">不得連任；院長、副院長不受任期保障。</text><text x="117" y="887" fill="#34302f" font-size="29" font-weight="500">監察委員 29 人；任期 6 年。</text><text x="117" y="939" fill="#34302f" font-size="29" font-weight="500">考試委員 7～9 人；任期 4 年。</text><text x="117" y="991" fill="#34302f" font-size="29" font-weight="500">考試院正、副院長亦為 4 年任期。</text><text x="119" y="1057" class="ref">增修條文 §5、§7；考試院組織法 §3</text><rect x="74" y="1108" width="1092" height="377" rx="23" fill="#fffdf9" stroke="#e8d8c9" stroke-width="2"/><rect x="100" y="1133" width="206" height="52" rx="18" fill="#f3d8d6"/><text x="125" y="1170" class="cardTitle">二提九審</text><text x="117" y="1238" fill="#34302f" font-size="29" font-weight="600">監察院對一般公務人員等之彈劾案：</text><text x="117" y="1290" fill="#34302f" font-size="29" font-weight="500">監察委員 2 人以上提議。</text><text x="117" y="1342" fill="#34302f" font-size="29" font-weight="500">提案委員外，9 人以上審查及決定。</text><text x="117" y="1394" fill="#a44746" font-size="29" font-weight="500">勿與總統、副總統彈劾門檻混淆。</text><text x="119" y="1460" class="ref">增修條文 §7 第3項；監察法 §8</text>
+<line x1="74" y1="1684" x2="1166" y2="1684" stroke="#decfc1" stroke-width="2"/>
+<text x="76" y="1712" font-size="18" fill="#85746b">依憲法、增修條文及相關現行法規整理｜115.11.20 查核</text>
+<text x="1143" y="1712" font-size="20" fill="#8d6c67" text-anchor="end">5 / 6</text>
+</svg>
